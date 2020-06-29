@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
-import langEn from "../../lang/en.json";
+import translationEN from "../../lang/en.json";
 
 const languageToLocale = {
   en: enUS,
@@ -18,6 +18,6 @@ export const namespaces = ["common"];
 export const supportedLocales = {
   en: {
     name: "English",
-    ...langEn,
+    ...translationEN,
   },
 };
