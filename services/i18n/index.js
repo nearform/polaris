@@ -1,12 +1,12 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { format as formatDate } from "date-fns";
 import {
   fallback,
   supportedLocales,
   namespaces,
   defaultNamespace,
+  formatDate,
 } from "./common";
 
 i18n
@@ -19,16 +19,11 @@ i18n
     defaultNS: defaultNamespace,
     interpolation: {
       escapeValue: false,
-      format: (value, format) => {
-        if (value instanceof Date && format) {
-          switch (format) {
-            case "date_do":
-              // we should pass locale to formatDate too
-              return formatDate(value, "do MMM yyyy");
-            default:
-              return value.toString();
-          }
-        } else return value.toString();
+      format: (value, format, language) => {
+        if (value instanceof Date) {
+          return formatDate(value, format, language);
+        }
+        return value.toString();
       },
     },
   });
