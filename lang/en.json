@@ -1,5 +1,12 @@
 {
   "common": {
     "name": "Polaris"
+  },
+  "home": {
+    "title": "Home Screen",
+    "button": "Go to Details"
+  },
+  "details": {
+    "title": "Details Screen"
   }
 }
