@@ -32,13 +32,25 @@ const DetailsScreen = () => {
 
 const Stack = createStackNavigator();
 
-const App = () => (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Details" component={DetailsScreen} />
-    </Stack.Navigator>
-  </NavigationContainer>
-);
+const App = () => {
+  const { t } = useTranslation();
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: t("home:title") }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{ title: t("details:title") }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default App;

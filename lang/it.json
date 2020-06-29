@@ -1,0 +1,12 @@
+{
+  "common": {
+    "name": "Polaris"
+  },
+  "home": {
+    "title": "Home Page",
+    "button": "Vai ai Dettagli"
+  },
+  "details": {
+    "title": "Dettagli"
+  }
+}

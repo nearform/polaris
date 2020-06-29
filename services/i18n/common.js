@@ -1,9 +1,11 @@
 import { format } from "date-fns";
-import { enUS } from "date-fns/locale";
+import { enUS, it } from "date-fns/locale";
 import translationEN from "../../lang/en.json";
+import translationIT from "../../lang/it.json";
 
 const languageToLocale = {
   en: enUS,
+  it,
 };
 
 const formatDate = (date, dateFormat, language) => {
@@ -18,6 +20,10 @@ const supportedLocales = {
   en: {
     name: "English",
     ...translationEN,
+  },
+  it: {
+    name: "Italiano",
+    ...translationIT,
   },
 };
 
