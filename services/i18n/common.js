@@ -6,18 +6,33 @@ const languageToLocale = {
   en: enUS,
 };
 
-export const formatDate = (date, dateFormat, lng) => {
-  const locale = languageToLocale[lng] || languageToLocale.en;
+const formatDate = (date, dateFormat, language) => {
+  const locale = languageToLocale[language] || languageToLocale.en;
   return format(date, dateFormat, { locale: locale });
 };
 
-export const fallback = "en";
-export const defaultNamespace = "common";
-export const namespaces = ["common"];
-
-export const supportedLocales = {
+const fallback = "en";
+const namespaces = ["common"];
+const defaultNamespace = "common";
+const supportedLocales = {
   en: {
     name: "English",
     ...translationEN,
+  },
+};
+
+export const i18nextConfiguration = {
+  fallbackLng: fallback,
+  resources: supportedLocales,
+  ns: namespaces,
+  defaultNS: defaultNamespace,
+  interpolation: {
+    escapeValue: false,
+    format: (value, format, language) => {
+      if (value instanceof Date) {
+        return formatDate(value, format, language);
+      }
+      return value.toString();
+    },
   },
 };

@@ -1,0 +1,18 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import * as Localization from "expo-localization";
+import { i18nextConfiguration } from "./common";
+
+const languageDetector = {
+  type: "languageDetector",
+  async: true,
+  detect: async (callback) => {
+    callback(Localization.locale.split("-")[0]);
+  },
+  init: () => {},
+  cacheUserLanguage: () => {},
+};
+
+i18n.use(languageDetector).use(initReactI18next).init(i18nextConfiguration);
+
+export default i18n;
