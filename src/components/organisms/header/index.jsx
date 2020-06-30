@@ -1,9 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text} from 'react-native';
 
-const isWeb = Platform.OS === 'web';
-
-const LinkNativeProps = !isWeb ? { underlayColor: 'none' } : {};
 
 const Header = () => {
   return (
