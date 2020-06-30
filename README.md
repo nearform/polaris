@@ -11,6 +11,7 @@ For every language supported, a JSON file containing all the translated labels i
 {
   "home": {
     "title": "Home Screen",
+    "today": "Today is {{date, do MMM yyyy}}"
   },
   ...
 }
@@ -28,35 +29,10 @@ const HomeScreen = () => {
   return (
     <View>
       <Text>{t("home:title")}</Text>
-    </View>
-  );
-};
-```
-
-The library provides support for date formatting and internationalisation using [date-fns](https://date-fns.org/) package. You can define date's format directly into the JSON file:
-
-```JSON
-// lang/en.json
-{
-  "home": {
-    "today": "Today is {{date, do MMM yyyy}}"
-  }
-}
-```
-
-And pass the date object directly to the `t` function:
-
-```JSX
-...
-import { useTranslation } from "react-i18next";
-
-const HomeScreen = () => {
-  const { t } = useTranslation();
-
-  return (
-    <View>
       <Text>{t("home:today", { date: new Date() })}</Text>
     </View>
   );
 };
 ```
+
+In the example above, you can see how the library also provides support for date formatting and internationalisation using [date-fns](https://date-fns.org/) package. You can define date's format in the JSON file and pass the date object to the `t` function.
