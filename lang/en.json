@@ -5,7 +5,6 @@
   },
   "home": {
     "title": "Home Screen",
-    "detailsButton": "Go to Details",
     "settingsButton": "Go to Settings"
   },
   "settings": {
