@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, StatusBar, Platform, Dimensions, Animated } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, StatusBar, Platform } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 import Header from '../../organisms/header';
 import TabBar from '../../organisms/tab-bar';
