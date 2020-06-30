@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-const TabBar = () => {
+const Nav = () => {
   return (
     <View style={styles.view}>
       <View style={styles.item}>
@@ -17,7 +17,7 @@ const TabBar = () => {
   );
 };
 
-export default TabBar;
+export default Nav;
 
 const styles = StyleSheet.create({
   view: {

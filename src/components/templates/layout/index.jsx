@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, StatusBar, Platform } from 'react-native';
 import SideMenu from 'react-native-side-menu';
-import Header from '../../organisms/header';
-import TabBar from '../../organisms/tab-bar';
+import Nav from '../../organisms/navigation/nav';
 
 const LayoutBase = props => {
   const { children } = props;
@@ -18,10 +17,10 @@ const LayoutBase = props => {
     >
       <SideMenu menuPosition="left">
         <View style={[styles.layout, styles.tabBarSpacing]}>
-          {Platform.OS === 'web' ? <Header /> : <StatusBar hidden={true} style="auto" />}
+          {Platform.OS === 'web' && <Nav />}
           {children}
         </View>
-        {Platform.OS !== 'web' && <TabBar />}
+        {Platform.OS !== 'web' && <Nav />}
       </SideMenu>
     </View>
   );
