@@ -1,5 +1,5 @@
 import React from "react";
-import { ActionSheetIOS, Button, StyleSheet, Text, View } from "react-native";
+import { ActionSheetIOS, Button, StyleSheet, View } from "react-native";
 import { useTranslation } from "react-i18next";
 import { supportedLocales } from "../../../services/i18n";
 
@@ -10,10 +10,11 @@ const LanguageSelector = () => {
 
   const changeLanguage = () => {
     const languages = Object.keys(supportedLocales);
+    const langLabels = languages.map((l) => t(`language:${l}`));
 
     return ActionSheetIOS.showActionSheetWithOptions(
       {
-        options: [t("cancel"), ...languages.map((l) => t(`language:${l}`))],
+        options: [t("cancel"), ...langLabels],
         cancelButtonIndex: 0,
       },
       (buttonIndex) => {
