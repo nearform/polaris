@@ -5,7 +5,7 @@ import Header from '../../organisms/header';
 import TabBar from '../../organisms/tab-bar';
 
 const LayoutBase = props => {
-  const { children, toggleSidebar } = props;
+  const { children } = props;
 
   return (
     <View
