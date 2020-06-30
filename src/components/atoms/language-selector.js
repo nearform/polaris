@@ -6,12 +6,13 @@ import { supportedLocales } from "../../../services/i18n";
 const LanguageSelector = () => {
   const { t, i18n } = useTranslation();
   const languages = Object.keys(supportedLocales);
+  const currentLanguage = i18n.language;
 
   const changeLanguage = (lang) => i18n.changeLanguage(lang);
 
   return (
     <Picker
-      selectedValue={i18n.language}
+      selectedValue={currentLanguage}
       style={styles.picker}
       onValueChange={changeLanguage}
     >

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, StatusBar, StyleSheet } from "react-native";
+import { View, StatusBar, StyleSheet } from "react-native";
 import { useTranslation } from "react-i18next";
 import SettingItem from "../molecules/setting-item";
 import LanguageSelector from "../atoms/language-selector";
@@ -10,7 +10,6 @@ const SettingsScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.title}>{t("settings:title")}</Text>
       <SettingItem
         label={t("settings:languageLabel")}
         value={<LanguageSelector />}

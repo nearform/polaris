@@ -1,6 +1,7 @@
 {
   "common": {
-    "name": "Polaris"
+    "name": "Polaris",
+    "cancel": "Cancel"
   },
   "home": {
     "title": "Home Screen",

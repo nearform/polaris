@@ -1,6 +1,7 @@
 {
   "common": {
-    "name": "Polaris"
+    "name": "Polaris",
+    "cancel": "Annulla"
   },
   "home": {
     "title": "Home Page",
