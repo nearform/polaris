@@ -15,17 +15,19 @@ YellowBox.ignoreWarnings(['Animated', 'Warning: componentWill', 'Possible Unhand
 const Stack = createStackNavigator();
 
 const App = () => (
-  <Layout>
-    <NavigationContainer>
-      <StatusBar style="auto" />
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="ViewOne" component={ViewOne} />
-        <Stack.Screen name="ViewTwo" component={ViewTwo} />
-        <Stack.Screen name="ViewThree" component={ViewThree} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  </Layout>
+  <UIProvider>
+    <Layout>
+      <NavigationContainer>
+        <StatusBar style="auto" />
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="ViewOne" component={ViewOne} />
+          <Stack.Screen name="ViewTwo" component={ViewTwo} />
+          <Stack.Screen name="ViewThree" component={ViewThree} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Layout>
+  </UIProvider>
 );
 
 export default App;

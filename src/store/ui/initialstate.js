@@ -1,2 +1,3 @@
-export const darkColor = '#1e272e';
-export const lightColor = '#d2dae2';
+export { default } from '../../constants/colors';
+
+export const theme = 'light';

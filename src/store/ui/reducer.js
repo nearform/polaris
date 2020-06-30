@@ -1,31 +1,45 @@
-import { SET_LIGHT_THEME, SET_DARK_THEME } from './actions';
-import { darkColor, lightColor } from './initialstate';
+import { SET_LIGHT_THEME, SET_DARK_THEME, TOGGLE_THEME } from './actions';
+import colors, { theme } from './initialstate';
 
-export const initialUI = {
-  theme: 'light',
-  textColor: darkColor,
-  bgColor: lightColor
+const { darkColor, lightColor } = colors;
+
+const themes = {
+  light: {
+    theme: 'light',
+    textColor: darkColor,
+    bgColor: lightColor
+  },
+  dark: {
+    theme: 'dark',
+    textColor: lightColor,
+    bgColor: darkColor
+  }
 };
 
-const uiReducer = (state, action) => {
+export const defaultTheme = themes[theme];
+
+const UIReducer = (state, action) => {
   switch (action.type) {
     case SET_LIGHT_THEME:
       return {
         ...state,
-        theme: 'light',
-        textColor: darkColor,
-        bgColor: lightColor
+        ...lightTheme
       };
     case SET_DARK_THEME:
       return {
         ...state,
-        theme: 'dark',
-        textColor: lightColor,
-        bgColor: darkColor
+        ...darkTheme
+      };
+    case TOGGLE_THEME:
+      const newState = themes[state.theme === 'light' ? 'dark' : 'light'];
+
+      return {
+        ...state,
+        ...newState
       };
     default:
       return state;
   }
 };
 
-export default uiReducer;
+export default UIReducer;

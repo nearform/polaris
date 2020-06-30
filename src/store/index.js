@@ -1,1 +1,1 @@
-export { UIConsumer, UIProvider } from './ui/context';
+export { UIContext, UIProvider } from './ui/context';
