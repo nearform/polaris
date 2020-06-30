@@ -34,12 +34,6 @@ const styles = StyleSheet.create({
   },
   tabBarSpacing: {
     paddingBottom: 0
-  },
-  navBarStyle: {
-    backgroundColor: '#fff'
-  },
-  cardStyle: {
-    backgroundColor: '#fff'
   }
 });
 

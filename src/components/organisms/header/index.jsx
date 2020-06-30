@@ -23,23 +23,7 @@ const Header = () => {
 
 export default Header;
 
-const tabLinkStyle = {
-  textDecoration: 'none',
-  alignItems: 'center',
-  height: '100%'
-};
-
 const styles = StyleSheet.create({
-  tab: {
-    textDecorationLine: 'none',
-    fontSize: 14,
-    color: '#797979',
-    fontFamily: 'NB'
-  },
-  tabActive: {
-    color: '#4C4C4C',
-    fontWeight: 'bold'
-  },
   header: {
     padding: 0,
     paddingTop: 30,
@@ -51,24 +35,6 @@ const styles = StyleSheet.create({
     borderBottomColor: '#e0e0e0',
     borderBottomWidth: 1,
     position: 'relative'
-  },
-  tabItem: {
-    height: '100%',
-    paddingHorizontal: 15,
-    marginHorizontal: 10,
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  tabItemBorderActive: {
-    position: 'absolute',
-    left: 0,
-    bottom: -1,
-    height: 2,
-    backgroundColor: '#4c9e00',
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center'
   },
   center: {
     flex: 1,
@@ -88,22 +54,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     paddingRight: 20
-  },
-  menu: {
-    paddingHorizontal: 20,
-    paddingTop: 3
-  },
-  logoHeader: {
-    width: 110,
-    height: 24
-  },
-  userName: {
-    fontSize: 12,
-    marginHorizontal: 5
-  },
-  avatar: {
-    marginHorizontal: 5,
-    width: 26,
-    height: 26
   }
 });
