@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { View, Text } from 'react-native';
+
+import { styles } from '../views.styles';
 
 export const ViewThree = () => (
-	<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-		<StatusBar style="auto" />
+	<View style={styles.container}>
 		<Text>View Three Screen</Text>
 	</View>
 );

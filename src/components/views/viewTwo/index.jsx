@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { View, Text, StatusBar } from 'react-native';
 
+import { styles } from '../views.styles';
+
 export const ViewTwo = () => (
-	<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-		<StatusBar style="auto" />
+	<View style={styles.container}>
 		<Text>View Two Screen</Text>
 	</View>
 );
