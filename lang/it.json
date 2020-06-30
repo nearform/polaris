@@ -4,9 +4,15 @@
   },
   "home": {
     "title": "Home Page",
-    "button": "Vai ai Dettagli"
+    "detailsButton": "Vai ai Dettagli",
+    "settingsButton": "Vai alle Impostazioni"
   },
-  "details": {
-    "title": "Dettagli"
+  "settings": {
+    "title": "Impostazioni",
+    "languageLabel": "Cambia lingua:"
+  },
+  "language": {
+    "en": "Inglese",
+    "it": "Italiano"
   }
 }

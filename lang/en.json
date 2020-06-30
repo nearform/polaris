@@ -4,9 +4,15 @@
   },
   "home": {
     "title": "Home Screen",
-    "button": "Go to Details"
+    "detailsButton": "Go to Details",
+    "settingsButton": "Go to Settings"
   },
-  "details": {
-    "title": "Details Screen"
+  "settings": {
+    "title": "Settings Screen",
+    "languageLabel": "Change language:"
+  },
+  "language": {
+    "en": "English",
+    "it": "Italian"
   }
 }

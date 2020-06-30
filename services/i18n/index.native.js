@@ -17,4 +17,5 @@ const languageDetector = {
 
 i18n.use(languageDetector).use(initReactI18next).init(i18nextConfiguration);
 
+export { supportedLocales } from "./common";
 export default i18n;

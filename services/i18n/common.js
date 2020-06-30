@@ -16,7 +16,7 @@ const formatDate = (date, dateFormat, language) => {
 const fallback = "en";
 const namespaces = ["common"];
 const defaultNamespace = "common";
-const supportedLocales = {
+export const supportedLocales = {
   en: {
     name: "English",
     ...translationEN,
