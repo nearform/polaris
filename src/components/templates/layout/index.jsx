@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, StatusBar, Platform } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 import Nav from '../../organisms/navigation/nav';
 
