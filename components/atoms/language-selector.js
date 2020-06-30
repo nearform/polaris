@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Picker } from "react-native";
 import { useTranslation } from "react-i18next";
-import { supportedLocales } from "../../../services/i18n";
+import { supportedLocales } from "../../services/i18n";
 
 const LanguageSelector = () => {
   const { t, i18n } = useTranslation();

@@ -2,8 +2,8 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useTranslation } from "react-i18next";
-import HomeScreen from "./src/components/views/home";
-import SettingsScreen from "./src/components/views/settings";
+import HomeScreen from "./components/views/home";
+import SettingsScreen from "./components/views/settings";
 import "./services/i18n";
 
 const Stack = createStackNavigator();
