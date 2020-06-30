@@ -18,7 +18,6 @@ const LanguageSelector = () => {
         cancelButtonIndex: 0,
       },
       (buttonIndex) => {
-        console.log(`buttonIndex`, buttonIndex);
         if (buttonIndex > 0) {
           i18n.changeLanguage(languages[buttonIndex - 1]);
         }
