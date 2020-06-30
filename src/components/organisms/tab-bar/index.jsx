@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useMemo } from 'react';
-import { View, StyleSheet, Animated, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
 
 const TabBar = () => {
   return (
