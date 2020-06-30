@@ -9,7 +9,7 @@
   },
   "settings": {
     "title": "Settings Screen",
-    "languageLabel": "Change language:"
+    "languageLabel": "Language:"
   },
   "language": {
     "en": "English",
