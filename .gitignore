@@ -1,4 +1,3 @@
-node_modules/**/*
 .expo/*
 npm-debug.*
 *.jks
@@ -7,7 +6,38 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
-web-build/
 
-# macOS
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.expo
+
+# production
+web-build
+build
+
+# misc
 .DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editors
+.vscode
+.idea
+
+terraform/.terraform/
+terrarform/.zip
+
+# coverage reports
+server/coverage/*
+coverage/*
