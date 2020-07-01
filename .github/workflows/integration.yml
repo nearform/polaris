@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: [ci]
+    branches: [master]
 
 jobs:
   test:
@@ -30,5 +30,7 @@ jobs:
         with:
           expo-version: 3.x
       - run: yarn
+      # ios and android js bundles + assets
       - run: expo export -f --dev --public-url http://localhost
+      # web js bundle + assets
       - run: expo build:web
