@@ -1,4 +1,4 @@
-name: Continuos Integration
+name: CI
 
 on:
   pull_request:
@@ -13,5 +13,22 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: npm ci
-      - run: npm test
+      - run: yarn
+      - run: yarn test
+
+  build:
+    needs: test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - uses: expo/expo-github-action@v5
+        with:
+          expo-version: 3.x
+      - run: yarn
+      - run: expo export -f --dev --public-url http://localhost
+      - run: expo build:web
