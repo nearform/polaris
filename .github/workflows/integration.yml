@@ -5,19 +5,19 @@ on:
     branches: [ci]
 
 jobs:
-  # test:
-  #   runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12.x
-  #     - run: yarn
-  #     - run: yarn test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn
+      - run: yarn test
 
   build:
-    # needs: test
+    needs: test
 
     runs-on: macos-latest
 
@@ -26,16 +26,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      # - uses: expo/expo-github-action@v5
-      # with:
-      #   expo-version: 3.x
-      #   expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
-      #   expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
-      # - run: yarn
+      - uses: expo/expo-github-action@v5
+        # with:
+        #   expo-version: 3.x
+        #   expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
+        #   expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+      - run: yarn
+
       # - run: expo publish --release-channel=pr-${{ github.event.number }}
+
       - run: npm i turtle-cli
-      - run: ./node_modules/.bin/turtle setup:ios
-      # - uses: github-actions-up-and-running/pr-comment@v1.0.0
-      #   with:
-      #     repo-token: ${{ secrets.GH_TOKEN }}
-      #     message: App is ready for review, you can [see it here](https://expo.io/@hizo/use-expo?release-channel=pr-${{ github.event.number }}).
+      - run: ./node_modules/.bin/turtle build:ios -t simulator -u ${{ secrets.EXPO_CLI_USERNAME }} -p ${{ secrets.EXPO_CLI_PASSWORD }}
