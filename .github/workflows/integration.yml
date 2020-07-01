@@ -34,7 +34,7 @@ jobs:
       # - run: yarn
       # - run: expo publish --release-channel=pr-${{ github.event.number }}
       - run: npm i turtle-cli
-      - run: turtle setup:ios
+      - run: ./node_modules/.bin/turtle setup:ios
       # - uses: github-actions-up-and-running/pr-comment@v1.0.0
       #   with:
       #     repo-token: ${{ secrets.GH_TOKEN }}
