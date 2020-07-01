@@ -36,8 +36,7 @@
       "eslint --cache --fix"
     ],
     "*.{css,md,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "prettier": {
