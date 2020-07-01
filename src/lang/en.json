@@ -1,15 +1,38 @@
 {
   "common": {
     "name": "Polaris",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark"
+    }
   },
   "home": {
     "title": "Home Screen",
+    "viewOneButton": "Go to View One",
+    "viewTwoButton": "Go to View Two",
+    "viewThreeButton": "Go to View Three",
     "settingsButton": "Go to Settings"
   },
+  "viewOne": {
+    "title": "View One",
+    "message": "View One Screen"
+  },
+  "viewTwo": {
+    "title": "View Two",
+    "message": "View Two Screen"
+  },
+  "viewThree": {
+    "title": "View Three",
+    "message": "View Three Screen"
+  },
   "settings": {
-    "title": "Settings Screen",
+    "title": "Settings",
     "languageLabel": "Language:"
+  },
+  "nav": {
+    "topLeft": "Top Left",
+    "topCenter": "Top Center"
   },
   "language": {
     "en": "English",

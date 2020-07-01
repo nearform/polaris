@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusBar, YellowBox } from "react-native";
+import { useTranslation } from "react-i18next";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -23,21 +24,45 @@ YellowBox.ignoreWarnings([
 
 const Stack = createStackNavigator();
 
-const App = () => (
-  <UIProvider>
-    <Layout>
-      <NavigationContainer>
-        <StatusBar style="auto" />
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="ViewOne" component={ViewOne} />
-          <Stack.Screen name="ViewTwo" component={ViewTwo} />
-          <Stack.Screen name="ViewThree" component={ViewThree} />
-          <Stack.Screen name="Settings" component={Settings} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </Layout>
-  </UIProvider>
-);
+const App = () => {
+  const { t } = useTranslation();
+
+  return (
+    <UIProvider>
+      <Layout>
+        <NavigationContainer>
+          <StatusBar style="auto" />
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{ title: t("home:title") }}
+            />
+            <Stack.Screen
+              name="ViewOne"
+              component={ViewOne}
+              options={{ title: t("viewOne:title") }}
+            />
+            <Stack.Screen
+              name="ViewTwo"
+              component={ViewTwo}
+              options={{ title: t("viewTwo:title") }}
+            />
+            <Stack.Screen
+              name="ViewThree"
+              component={ViewThree}
+              options={{ title: t("viewThree:title") }}
+            />
+            <Stack.Screen
+              name="Settings"
+              component={Settings}
+              options={{ title: t("settings:title") }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Layout>
+    </UIProvider>
+  );
+};
 
 export default App;

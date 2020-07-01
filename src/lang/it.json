@@ -1,15 +1,38 @@
 {
   "common": {
     "name": "Polaris",
-    "cancel": "Annulla"
+    "cancel": "Annulla",
+    "theme": {
+      "light": "Chiaro",
+      "dark": "Scuro"
+    }
   },
   "home": {
     "title": "Home Page",
+    "viewOneButton": "Vai alla View Uno",
+    "viewTwoButton": "Vai alla View Due",
+    "viewThreeButton": "Vai alla View Tre",
     "settingsButton": "Vai alle Impostazioni"
+  },
+  "viewOne": {
+    "title": "View Uno",
+    "message": "Schermata View Uno"
+  },
+  "viewTwo": {
+    "title": "View Due",
+    "message": "Schermata View Due"
+  },
+  "viewThree": {
+    "title": "View Tre",
+    "message": "Schermata View Tre"
   },
   "settings": {
     "title": "Impostazioni",
     "languageLabel": "Lingua:"
+  },
+  "nav": {
+    "topLeft": "Alto Sinistra",
+    "topCenter": "Alto Centro"
   },
   "language": {
     "en": "Inglese",
