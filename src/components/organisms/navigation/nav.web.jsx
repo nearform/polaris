@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 import { View, StyleSheet, Text, Switch } from 'react-native';
-import { UIContext } from '../../../store';
+import { UIContext } from 'store';
 
 export default function Header() {
   const [state, reducers] = useContext(UIContext);

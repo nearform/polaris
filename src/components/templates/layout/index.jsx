@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import SideMenu from 'react-native-side-menu';
-import Nav from '../../organisms/navigation/nav';
+import Nav from 'components/organisms/navigation/nav';
 
 const LayoutBase = props => {
   const { children } = props;
