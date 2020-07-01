@@ -1,11 +1,11 @@
-import { format } from "date-fns";
-import { enUS, it } from "date-fns/locale";
-import translationEN from "../../lang/en.json";
-import translationIT from "../../lang/it.json";
+import { format } from 'date-fns';
+import { enUS, it } from 'date-fns/locale';
+import translationEN from '../../lang/en.json';
+import translationIT from '../../lang/it.json';
 
 const languageToLocale = {
   en: enUS,
-  it,
+  it
 };
 
 const formatDate = (date, dateFormat, language) => {
@@ -13,18 +13,18 @@ const formatDate = (date, dateFormat, language) => {
   return format(date, dateFormat, { locale: locale });
 };
 
-const fallback = "en";
-const namespaces = ["common"];
-const defaultNamespace = "common";
+const fallback = 'en';
+const namespaces = ['common'];
+const defaultNamespace = 'common';
 export const supportedLocales = {
   en: {
-    name: "English",
-    ...translationEN,
+    name: 'English',
+    ...translationEN
   },
   it: {
-    name: "Italiano",
-    ...translationIT,
-  },
+    name: 'Italiano',
+    ...translationIT
+  }
 };
 
 export const i18nextConfiguration = {
@@ -39,6 +39,6 @@ export const i18nextConfiguration = {
         return formatDate(value, format, language);
       }
       return value.toString();
-    },
-  },
+    }
+  }
 };

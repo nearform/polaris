@@ -1,6 +1,6 @@
-import React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 const Nav = () => {
   const { t } = useTranslation();
@@ -8,13 +8,13 @@ const Nav = () => {
   return (
     <View style={styles.view}>
       <View style={styles.item}>
-        <Text>{t("viewOne:title")}</Text>
+        <Text>{t('viewOne:title')}</Text>
       </View>
       <View style={styles.item}>
-        <Text>{t("viewTwo:title")}</Text>
+        <Text>{t('viewTwo:title')}</Text>
       </View>
       <View style={styles.item}>
-        <Text>{t("viewThree:title")}</Text>
+        <Text>{t('viewThree:title')}</Text>
       </View>
     </View>
   );
@@ -24,25 +24,25 @@ export default Nav;
 
 const styles = StyleSheet.create({
   view: {
-    flexDirection: "row",
-    backgroundColor: "white",
-    position: "absolute",
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    position: 'absolute',
     bottom: 0,
     left: 0,
-    width: "100%",
+    width: '100%',
     zIndex: 1,
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 2
     },
     shadowRadius: 2,
-    shadowOpacity: 1,
+    shadowOpacity: 1
   },
   item: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingTop: 10,
-    paddingBottom: 30,
-  },
+    paddingBottom: 30
+  }
 });
