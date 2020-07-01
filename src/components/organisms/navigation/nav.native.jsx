@@ -1,17 +1,20 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 const Nav = () => {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.view}>
       <View style={styles.item}>
-        <Text>View One</Text>
+        <Text>{t('viewOne:title')}</Text>
       </View>
       <View style={styles.item}>
-        <Text>View Two</Text>
+        <Text>{t('viewTwo:title')}</Text>
       </View>
       <View style={styles.item}>
-        <Text>View Three</Text>
+        <Text>{t('viewThree:title')}</Text>
       </View>
     </View>
   );

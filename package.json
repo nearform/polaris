@@ -2,20 +2,32 @@
   "main": "./index.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
     "web": "expo start --web",
+    "ios": "expo start --ios",
+    "android": "expo start --android",
+    "build:web": "expo build:web",
+    "build:ios": "expo build:ios",
+    "build:android": "expo build:android",
     "eject": "expo eject",
+    "lint": "eslint --ext .js,.jsx .",
+    "lint:fix": "npm run lint -- --fix",
+    "checks": "run-p lint:fix && run-p lint",
     "test": "echo No tests found; exit 0"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.6.1",
     "@react-navigation/stack": "^5.6.2",
+    "date-fns": "^2.14.0",
     "expo": "~38.0.1",
+    "expo-localization": "~8.2.1",
     "expo-status-bar": "^1.0.0",
+    "husky": "^4.2.5",
+    "i18next": "^19.5.2",
+    "i18next-browser-languagedetector": "^5.0.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
+    "react-i18next": "^11.7.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-reanimated": "~1.9.0",
@@ -24,9 +36,54 @@
     "react-native-side-menu": "^1.1.3",
     "react-native-web": "~0.11.7"
   },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ],
+    "*.{css,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "endOfLine": "auto",
+    "trailingComma": "none",
+    "semi": true,
+    "singleQuote": true
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0"
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-inline-dotenv": "^1.5.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-preset-expo": "~8.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
+    "eslint-plugin-standard": "^4.0.1",
+    "lint-staged": "^10.2.11",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5"
   },
   "private": true
 }

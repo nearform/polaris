@@ -1,10 +1,15 @@
 import * as React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { View, Text } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { styles } from '../views.styles';
 
-export const ViewTwo = () => (
-	<View style={styles.container}>
-		<Text>View Two Screen</Text>
-	</View>
-);
+export const ViewTwo = () => {
+  const { t } = useTranslation();
+
+  return (
+    <View style={styles.container}>
+      <Text>{t('viewTwo:message')}</Text>
+    </View>
+  );
+};

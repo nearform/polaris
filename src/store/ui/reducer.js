@@ -23,20 +23,21 @@ const UIReducer = (state, action) => {
     case SET_LIGHT_THEME:
       return {
         ...state,
-        ...lightTheme
+        ...themes.light
       };
     case SET_DARK_THEME:
       return {
         ...state,
-        ...darkTheme
+        ...themes.dark
       };
-    case TOGGLE_THEME:
+    case TOGGLE_THEME: {
       const newState = themes[state.theme === 'light' ? 'dark' : 'light'];
 
       return {
         ...state,
         ...newState
       };
+    }
     default:
       return state;
   }
