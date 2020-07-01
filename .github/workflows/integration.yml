@@ -33,8 +33,7 @@ jobs:
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - run: yarn
       - run: expo publish --release-channel=pr-${{ github.event.number }}
-      - uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - uses: github-actions-up-and-running/pr-comment@v1.0.0
         with:
-          msg: App is ready for review, you can [see it here](https://expo.io/@${{ secrets.EXPO_CLI_USERNAME }}/use-expo?release-channel=pr-${{ github.event.number }}).
+          repo-token: ${{ secrets.GH_TOKEN }}
+          message: App is ready for review, you can [see it here](https://expo.io/@hizo/use-expo?release-channel=pr-${{ github.event.number }}).
