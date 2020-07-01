@@ -1,0 +1,18 @@
+{
+  "common": {
+    "name": "Polaris",
+    "cancel": "Cancel"
+  },
+  "home": {
+    "title": "Home Screen",
+    "settingsButton": "Go to Settings"
+  },
+  "settings": {
+    "title": "Settings Screen",
+    "languageLabel": "Language:"
+  },
+  "language": {
+    "en": "English",
+    "it": "Italian"
+  }
+}

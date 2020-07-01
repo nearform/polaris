@@ -1,0 +1,18 @@
+{
+  "common": {
+    "name": "Polaris",
+    "cancel": "Annulla"
+  },
+  "home": {
+    "title": "Home Page",
+    "settingsButton": "Vai alle Impostazioni"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "languageLabel": "Lingua:"
+  },
+  "language": {
+    "en": "Inglese",
+    "it": "Italiano"
+  }
+}
