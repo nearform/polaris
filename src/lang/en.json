@@ -1,11 +1,7 @@
 {
   "common": {
     "name": "Polaris",
-    "cancel": "Cancel",
-    "theme": {
-      "light": "Light",
-      "dark": "Dark"
-    }
+    "cancel": "Cancel"
   },
   "home": {
     "title": "Home Screen",
@@ -32,7 +28,11 @@
   },
   "nav": {
     "topLeft": "Top Left",
-    "topCenter": "Top Center"
+    "topCenter": "Top Center",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark"
+    }
   },
   "language": {
     "en": "English",

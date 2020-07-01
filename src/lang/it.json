@@ -1,11 +1,7 @@
 {
   "common": {
     "name": "Polaris",
-    "cancel": "Annulla",
-    "theme": {
-      "light": "Chiaro",
-      "dark": "Scuro"
-    }
+    "cancel": "Annulla"
   },
   "home": {
     "title": "Home Page",
@@ -32,7 +28,11 @@
   },
   "nav": {
     "topLeft": "Alto Sinistra",
-    "topCenter": "Alto Centro"
+    "topCenter": "Alto Centro",
+    "theme": {
+      "light": "Chiaro",
+      "dark": "Scuro"
+    }
   },
   "language": {
     "en": "Inglese",

@@ -30,7 +30,7 @@ export default function Header() {
       </View>
       <View style={styles.right}>
         <Text style={[styles.themeText, themeStyles.themeTextColor]}>
-          {theme}
+          {t(`nav:theme:${theme}`)}
         </Text>
         <Switch
           onValueChange={toggleTheme}
