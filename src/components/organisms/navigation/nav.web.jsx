@@ -16,7 +16,7 @@ export default function Header() {
         color: textColor
       }
     };
-  }, [theme]);
+  }, [textColor, bgColor]);
 
   return (
     <View style={[styles.header, themeStyles.header]}>
@@ -28,7 +28,7 @@ export default function Header() {
       </View>
       <View style={styles.right}>
         <Text style={[styles.themeText, themeStyles.themeTextColor]}>{theme}</Text>
-        <Switch onValueChange={toggleTheme} value={theme === 'light' ? true : false} />
+        <Switch onValueChange={toggleTheme} value={theme === 'light'} />
       </View>
     </View>
   );

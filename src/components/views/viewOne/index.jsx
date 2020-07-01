@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import { styles } from '../views.styles';
 
 export const ViewOne = () => (
-	<View style={styles.container}>
-		<Text>View One Screen</Text>
-	</View>
+  <View style={styles.container}>
+    <Text>View One Screen</Text>
+  </View>
 );
