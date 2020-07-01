@@ -1,5 +1,5 @@
-import * as React from "react";
-import { View, Text, StyleSheet, Platform } from "react-native";
+import * as React from 'react';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 
 const SettingItem = ({ label, value }) => (
   <View style={styles.item}>
@@ -14,13 +14,13 @@ export default SettingItem;
 
 const styles = StyleSheet.create({
   item: {
-    width: "100%",
+    width: '100%',
     paddingHorizontal: 10,
-    flexDirection: "row",
-    justifyContent: Platform.OS === "web" ? "center" : "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: Platform.OS === 'web' ? 'center' : 'space-between',
+    alignItems: 'center'
   },
   itemLabel: {
-    marginRight: 10,
-  },
+    marginRight: 10
+  }
 });

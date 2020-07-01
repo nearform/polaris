@@ -1,3 +1,3 @@
-export { default } from '../../constants/colors';
+export { default } from 'constants/colors';
 
 export const theme = 'light';
