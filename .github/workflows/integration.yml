@@ -29,7 +29,6 @@ jobs:
       - uses: expo/expo-github-action@v5
         with:
           expo-version: 3.x
-          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
-          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - run: yarn
-      - run: expo export --dev --public-url http://localhost
+      - run: expo export -f --dev --public-url http://localhost
+      - run: expo build:web
