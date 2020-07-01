@@ -6,7 +6,7 @@ import { i18nextConfiguration } from "./common";
 const languageDetector = {
   type: "languageDetector",
   async: true,
-  detect: async (callback) => {
+  detect: (callback) => {
     // We will get back a string like "en-US".
     // We return a string like "en" to match our language files.
     callback(Localization.locale.split("-")[0]);
