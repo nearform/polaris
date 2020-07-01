@@ -12,8 +12,7 @@ For every language supported, a JSON file containing all the translated labels i
   "home": {
     "title": "Home Screen",
     "today": "Today is {{date, do MMM yyyy}}"
-  },
-  ...
+  }
 }
 ```
 
