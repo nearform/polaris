@@ -3,7 +3,6 @@ import T from 'prop-types'
 
 import { Link } from 'react-router-dom'
 import { getPathFromParams, replaceParams, getPathQueryString } from 'utils/paths' 
-import usePlatformNavigation from 'hooks/usePlatformNavigation'
 import routes from 'routes'
 
 // Temporary styles to allign with Native view

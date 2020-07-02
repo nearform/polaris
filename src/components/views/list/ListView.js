@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, StatusBar, Picker } from 'react-native';
 import usePlatformNavigation from 'hooks/usePlatformNavigation';
 import usePlatformLocation from 'hooks/usePlatformLocation';
-import LinkButton from 'components/atoms/LinkButton'
+import LinkButton from 'components/atoms/link-button'
 
 import content from './content'
 

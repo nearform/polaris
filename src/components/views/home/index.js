@@ -3,7 +3,7 @@ import { View, Text, Button } from 'react-native';
 import { useTranslation } from "react-i18next";
 import usePlatformNavigation from 'hooks/usePlatformNavigation';
 
-import LinkButton from 'components/atoms/LinkButton'
+import LinkButton from 'components/atoms/link-button'
 
 export const HomeScreen = ({ navigation }) => {
 	const { navigate } = usePlatformNavigation()
