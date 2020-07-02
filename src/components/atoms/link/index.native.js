@@ -8,7 +8,7 @@ const Link = ({ path, title, params, style, Component = TouchableHighlight, titl
   const { navigate } = usePlatformNavigation();
   return (
     <Component style={style} title={titleAsProp ? title : null} onPress={() => navigate(path, params)}>
-      {titleAsProp ? null : <Text>title</Text>}
+      {titleAsProp ? null : <Text>{title}</Text>}
     </Component>
   );
 };

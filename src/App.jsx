@@ -10,9 +10,7 @@ YellowBox.ignoreWarnings(['Animated', 'Warning: componentWill', 'Possible Unhand
 
 const App = () => (
   <UIProvider>
-    <Layout>
-      <Route />
-    </Layout>
+    <Route />
   </UIProvider>
 );
 

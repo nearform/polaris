@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react';
 import { View, StyleSheet, Text, Switch } from 'react-native';
 import { UIReducerContext, UISettingsContext } from 'store';
 import { useTranslation } from 'react-i18next';
+import Link from 'components/atoms/link'
 
 export default function Header() {
   const { t } = useTranslation();
@@ -22,13 +23,13 @@ export default function Header() {
   return (
     <View style={[styles.header, themeStyles.header]}>
       <View style={styles.left}>
-        <Text style={themeStyles.themeTextColor}>{t('nav:topLeft')}</Text>
+        <Link title={t('home:title')} path={'/'} />
       </View>
       <View style={styles.center}>
         <Text style={themeStyles.themeTextColor}>{t('nav:topCenter')}</Text>
       </View>
       <View style={styles.right}>
-        <Text style={[styles.themeText, themeStyles.themeTextColor]}>{t(`nav:theme:${theme}`)}</Text>
+        <Link title={t('settings:title')} path={'/settings'} />
         <Switch onValueChange={toggleTheme} value={theme === 'light'} />
       </View>
     </View>

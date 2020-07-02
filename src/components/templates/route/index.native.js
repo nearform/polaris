@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import defaultRoutes, { defaultPath, routeShape } from 'routes';
 import { replaceParams } from 'utils/paths';
+import Layout from 'components/templates/layout'
 
 const withNavigationContainer = Component => {
   return props => (
@@ -14,6 +15,14 @@ const withNavigationContainer = Component => {
     </NavigationContainer>
   );
 };
+
+const withLayout = Component => {
+  return props => (
+    <Layout>
+      <Component {...props} />
+    </Layout>
+  )
+}
 
 const Stack = createStackNavigator();
 const isViewRoute = route => !!route.View;
@@ -26,7 +35,7 @@ const Route = ({ routes = defaultRoutes }) => {
       {viewRoutes.map(route => (
         <Stack.Screen
           name={route.path}
-          component={route.View}
+          component={withLayout(route.View)}
           options={({ route: { params } }) => ({
             title: replaceParams(route.name, params)
           })}

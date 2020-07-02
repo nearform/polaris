@@ -6,6 +6,7 @@ import { ViewTwo } from 'components/views/viewTwo';
 import { ViewThree } from 'components/views/viewThree';
 import { ListView } from 'components/views/list/ListView';
 import { ListItem } from 'components/views/list/ListItem';
+import { Settings } from 'components/views/settings';
 // import Login from 'components/views/login'
 // import User from 'components/views/User'
 
@@ -16,7 +17,8 @@ const routes = [
   { path: '/viewTwo', View: ViewTwo, menuIndex: 2, name: 'View two' },
   { path: '/viewThree', View: ViewThree, menuIndex: 3, name: 'View three' },
   { path: '/listView', View: ListView, menuIndex: 4, name: 'List view' },
-  { path: '/listItem/:id', View: ListItem, name: 'List item {:id}' }
+  { path: '/listItem/:id', View: ListItem, name: 'List item {:id}' },
+  { path: '/settings', View: Settings, name: 'Settings' }
   //  { path: '/login', View: Login, name: 'Log in' },
   //  { path: '/user', View: User, name: 'User profile' }
 ];
