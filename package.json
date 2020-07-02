@@ -14,7 +14,8 @@
     "checks": "run-p lint:fix && run-p lint",
     "test": "jest",
     "test:ci": "jest --ci --passWithNoTests",
-    "cypress:open": "cypress open"
+    "e2e:web:open": "cypress open",
+    "e2e:web:run": "cypress run"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
