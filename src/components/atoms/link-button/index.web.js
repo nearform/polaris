@@ -1,9 +1,9 @@
-import React from 'react'
-import T from 'prop-types'
+import React from 'react';
+import T from 'prop-types';
 
-import { Link } from 'react-router-dom'
-import { getPathFromParams, replaceParams, getPathQueryString } from 'utils/paths' 
-import routes from 'routes'
+import { Link } from 'react-router-dom';
+import { getPathFromParams, replaceParams, getPathQueryString } from 'utils/paths';
+import routes from 'routes';
 
 // Temporary styles to allign with Native view
 // TODO: apply cross-platform styles once styling approach is stable
@@ -16,22 +16,22 @@ const defaultStyle = {
   textTransform: 'uppercase',
   fontFamily: 'sans',
   borderRadius: '3px',
-  boxShadow: '0px 2px 3px 3px rgba(0,0,0,0.1)',
-}
+  boxShadow: '0px 2px 3px 3px rgba(0,0,0,0.1)'
+};
 
 // React Navigation `Link` and `useLinkProps` are currently "experimental" - investigate
 // using those when they're stable - see https://reactnavigation.org/docs/link
 const LinkButton = ({ path, title: buttonText, params = {}, style = defaultStyle }) => {
-  const pathname = getPathFromParams(path, params)
-  const queryString = getPathQueryString(params.queryParams)
-  const routeDef = routes.find(route => route.path === path)
-  const title = routeDef && replaceParams(routeDef.name, params)
+  const pathname = getPathFromParams(path, params);
+  const queryString = getPathQueryString(params.queryParams);
+  const routeDef = routes.find(route => route.path === path);
+  const title = routeDef && replaceParams(routeDef.name, params);
 
   return (
     <Link
       to={{
         pathname,
-        search: queryString,
+        search: queryString
       }}
       title={title}
       // TODO: apply cross-platform styles once styling approach is stable
@@ -40,13 +40,13 @@ const LinkButton = ({ path, title: buttonText, params = {}, style = defaultStyle
     >
       {buttonText}
     </Link>
-  )
-}
+  );
+};
 
 LinkButton.propTypes = {
   path: T.string.isRequired,
   title: T.string.isRequired,
-  params: T.object,
-}
+  params: T.object
+};
 
-export default LinkButton
+export default LinkButton;

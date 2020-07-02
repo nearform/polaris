@@ -1,27 +1,30 @@
-import React, { useCallback, Fragment } from 'react'
+import { useCallback } from 'react';
 
-import { useNavigation } from '@react-navigation/native'
-import usePlatformLocation from 'hooks/usePlatformLocation'
+import { useNavigation } from '@react-navigation/native';
+import usePlatformLocation from 'hooks/usePlatformLocation';
 
 const usePlatformNavigation = () => {
-  const navigation = useNavigation()
-  const currentRoute = usePlatformLocation()
-  const currentParams = currentRoute.params
-  const { navigate, setParams } = navigation
+  const navigation = useNavigation();
+  const currentRoute = usePlatformLocation();
+  const currentParams = currentRoute.params;
+  const { navigate, setParams } = navigation;
 
-  const replaceParams = useCallback((params) => {
-    const nullifiedParams = Object.keys(currentParams).reduce((newParams, key) => {
-      newParams[key] = null
-      return newParams
-    }, {})
-    setParams(Object.assign({}, nullifiedParams, params))
-  }, [currentParams, setParams])
+  const replaceParams = useCallback(
+    params => {
+      const nullifiedParams = Object.keys(currentParams).reduce((newParams, key) => {
+        newParams[key] = null;
+        return newParams;
+      }, {});
+      setParams(Object.assign({}, nullifiedParams, params));
+    },
+    [currentParams, setParams]
+  );
 
   return {
     navigate,
     replaceParams,
     setParams
-  }
-}
+  };
+};
 
-export default usePlatformNavigation
+export default usePlatformNavigation;
