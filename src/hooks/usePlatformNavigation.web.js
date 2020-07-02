@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
 
-import { useHistory } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { getPathFromParams } from 'utils/paths';
-import usePlatformLocation from 'hooks/usePlatformLocation';
+import usePlatformParams from 'hooks/usePlatformParams';
 
 const usePlatformNavigation = () => {
-  const currentRoute = usePlatformLocation();
-  const currentPath = currentRoute.path;
-  const currentParams = currentRoute.params;
+  const currentParams = usePlatformParams();
+  const webLocation = useLocation();
+  const currentPath = webLocation.pathname;
 
   const history = useHistory();
   const { push } = history;

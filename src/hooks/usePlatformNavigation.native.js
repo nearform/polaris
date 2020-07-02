@@ -1,12 +1,11 @@
 import { useCallback } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
-import usePlatformLocation from 'hooks/usePlatformLocation';
+import usePlatformParams from 'hooks/usePlatformParams';
 
 const usePlatformNavigation = () => {
   const navigation = useNavigation();
-  const currentRoute = usePlatformLocation();
-  const currentParams = currentRoute.params;
+  const currentParams = usePlatformParams();
   const { navigate, setParams } = navigation;
 
   const replaceParams = useCallback(

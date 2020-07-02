@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Text, View, StatusBar, Picker } from 'react-native';
 import usePlatformNavigation from 'hooks/usePlatformNavigation';
-import usePlatformLocation from 'hooks/usePlatformLocation';
+import usePlatformParams from 'hooks/usePlatformParams';
 import LinkButton from 'components/atoms/link-button';
 
 import content from './content';
 
 export const ListView = () => {
   const { setParams } = usePlatformNavigation();
-  const currentRoute = usePlatformLocation();
-  const currentSort = currentRoute.params?.queryParams?.sort || 'id';
+  const params = usePlatformParams();
+  const currentSort = params.queryParams?.sort || 'id';
   const sortedContent = [...content].sort((a, b) => a[currentSort] - b[currentSort]);
 
   const handleSortChange = itemValue => {

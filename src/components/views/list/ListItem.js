@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { View, Text, StatusBar } from 'react-native';
-import usePlatformLocation from 'hooks/usePlatformLocation';
+import usePlatformParams from 'hooks/usePlatformParams';
 import usePlatformNavigation from 'hooks/usePlatformNavigation';
 
 import contentList from './content';
 
 export const ListItem = () => {
   const { navigate } = usePlatformNavigation();
-  const { params } = usePlatformLocation();
+  const params = usePlatformParams();
   const contentItem = params && contentList.find(({ id }) => id === Number(params.id));
 
   if (!contentItem) {
