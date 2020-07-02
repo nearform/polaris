@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import defaultRoutes, { defaultPath, routeShape } from 'routes'
+import { replaceParams } from 'utils/paths'
 
 const withNavigationContainer = (Component) => {
   return (props) => (
@@ -23,7 +24,14 @@ const Route = ({ routes = defaultRoutes }) => {
   return (
     <Stack.Navigator initialRouteName={defaultPath}>
       {viewRoutes.map(route => (
-        <Stack.Screen name={route.path} component={withRouteValidation(route.View)} options={route.options} key={route.path} />
+        <Stack.Screen
+          name={route.path}
+          component={route.View}
+          options={({ route: { params } }) => ({
+            title: replaceParams(route.name, params)
+          })}
+          key={route.path}
+        />
       ))}
     </Stack.Navigator>
   )
