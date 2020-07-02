@@ -1,9 +1,11 @@
-import routes, { defaultPath, routeShape } from './index.common'
-import { Settings } from 'components/views/settings'
+import routes, { defaultPath, routeShape } from './index.common';
+import { Camera } from 'components/views';
+import { Settings } from 'components/views/settings';
 
 const nativeOnlyRoutes = [
-  { path: '/settings', View: Settings, name: 'App settings'}
-]
+  { path: '/camera', View: Camera, name: 'camera:title', menuIndex: 6 },
+  { path: '/settings', View: Settings, name: 'App settings' }
+];
 
-export default [ ...routes, ...nativeOnlyRoutes ]
-export { defaultPath, routeShape }
+export default [...routes, ...nativeOnlyRoutes];
+export { defaultPath, routeShape };
