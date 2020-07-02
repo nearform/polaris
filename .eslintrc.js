@@ -35,9 +35,7 @@ module.exports = {
     ],
     'space-before-function-paren': 'off',
     'react/prop-types': 'off',
-    'react/display-name': 'off',
-    'no-unused-expressions': 0,
-    'cypress/no-unnecessary-waiting': 'warn'
+    'react/display-name': 'off'
   },
   settings: {
     react: {
