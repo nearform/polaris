@@ -32,6 +32,7 @@ const renderNodes = reactNodes => {
 const useMock = [k => k, {}];
 useMock.t = k => k;
 useMock.i18n = {
+  changeLanguage: l => l,
   format: value => {
     const date = new Date(value);
     return `${date.getUTCMonth()} - ${date.getUTCFullYear()}`;

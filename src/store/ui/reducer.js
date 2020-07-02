@@ -18,7 +18,7 @@ const themes = {
 
 export const defaultTheme = themes[theme];
 
-const UIReducer = (state, action) => {
+const UIReducer = (state = {}, action) => {
   switch (action.type) {
     case SET_LIGHT_THEME:
       return {

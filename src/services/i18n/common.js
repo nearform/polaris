@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { enUS, it } from 'date-fns/locale';
-import translationEN from '../../lang/en.json';
-import translationIT from '../../lang/it.json';
+import translationEN from 'src/lang/en.json';
+import translationIT from 'src/lang/it.json';
 
 const languageToLocale = {
   en: enUS,

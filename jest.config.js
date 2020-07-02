@@ -1,14 +1,17 @@
 module.exports = {
-  preset: 'jest-expo',
+  preset: 'react-native',
   testTimeout: 10000,
+  verbose: true,
   moduleFileExtensions: ['js', 'jsx', 'json'],
   moduleDirectories: ['node_modules', 'src'],
   transform: {
-    '^.+\\.(js|jsx)$': 'babel-jest'
+    '\\.(js|jsx)': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
+    '\\.json': '<rootDir>/jest.jsonTransform.js'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(jest-)?react-native|unimodules-permissions-interface|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base|react-router-native|react-router-navigation|@babel)'
+    'node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|@unimodules/.*|jest-expo/.*|sentry-expo|native-base))'
   ],
+  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],
   automock: false,
   moduleNameMapper: {
     '^store/(.*)$': '<rootDir>/src/store/$1',
