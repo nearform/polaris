@@ -33,7 +33,6 @@ const usePlatformNavigation = () => {
     params => {
       const mergedParams = Object.assign({}, currentParams, params);
       const newPath = getPathFromParams(currentPath, mergedParams);
-      console.log('newPath', newPath, 'mergedParams', mergedParams);
       push(newPath, mergedParams);
     },
     [currentPath, currentParams, push]

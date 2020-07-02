@@ -13,7 +13,6 @@ export const ListView = () => {
   const sortedContent = [...content].sort((a, b) => a[currentSort] - b[currentSort]);
 
   const handleSortChange = itemValue => {
-    console.log('itemValue', itemValue);
     setParams({
       queryParams: {
         sort: itemValue

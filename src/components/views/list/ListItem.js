@@ -10,8 +10,6 @@ export const ListItem = () => {
   const { params } = usePlatformLocation();
   const contentItem = params && contentList.find(({ id }) => id === Number(params.id));
 
-  console.log('params', params, 'contentList', contentList);
-
   if (!contentItem) {
     navigate('/listView');
     return '';

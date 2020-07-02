@@ -30,7 +30,6 @@ export const replaceParams = (template, params) => {
   if (!placeholderMatches) return template;
   const edittedString = placeholderMatches.reduce((edittedTemplate, placeholder) => {
     const key = placeholder.match(/\{:(.*?)\}/)[1];
-    console.log(placeholder, key, placeholder.match(/\{:.*?\}/));
     return edittedTemplate.replace(placeholder, params[key] || '');
   }, template);
   return edittedString;
