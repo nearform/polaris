@@ -3,6 +3,7 @@ import T from 'prop-types'
 import { Switch, Route as DomRoute, Redirect, BrowserRouter } from 'react-router-dom'
 
 import defaultRoutes, { routeShape } from 'routes'
+import { View404 } from 'components/views/404'
 
 const withBrowserRouter = (Component) => {
   return (props) => (
@@ -22,6 +23,7 @@ const Route = ({ routes = defaultRoutes }) => {
           <Redirect from={route.path} to={route.redirectTo} key={route.path} />
         )
       ))}
+      <DomRoute component={View404} />
     </Switch>
   )
 }
