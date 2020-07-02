@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from 'react-native-testing-library';
-import { LanguageSelector } from '../index.web';
+import { LanguageSelector } from '../index.jsx';
 
 const mocks = {
   changeLanguage: jest.fn(),
