@@ -13,7 +13,8 @@
     "lint:fix": "npm run lint -- --fix",
     "checks": "run-p lint:fix && run-p lint",
     "test": "jest",
-    "test:ci": "jest --ci --passWithNoTests"
+    "test:ci": "jest --ci --passWithNoTests",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
@@ -64,9 +65,11 @@
     "babel-plugin-inline-dotenv": "^1.5.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-expo": "~8.1.0",
+    "cypress": "^4.9.0",
     "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
