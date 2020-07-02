@@ -3,7 +3,7 @@ import translationIT from '../../src/lang/it.json';
 
 describe('Internationalisation support', () => {
   it('changes the app language', () => {
-    cy.visit('http://localhost:19006/');
+    cy.visit('/');
 
     cy.contains(translationEN.home.settingsButton).click();
 
