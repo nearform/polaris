@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
+    "test:ci": "jest --ci --passWithNoTests",
     "test:build": "jest -w 2",
     "test:update": "jest -u",
     "test:watch": "jest --watch",
@@ -49,15 +50,6 @@
       "prettier --write"
     ]
   },
-  "prettier": {
-    "printWidth": 120,
-    "bracketSpacing": true,
-    "arrowParens": "avoid",
-    "endOfLine": "auto",
-    "trailingComma": "none",
-    "semi": true,
-    "singleQuote": true
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -74,6 +66,7 @@
     "@babel/preset-env": "^7.10.4",
     "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
     "babel-plugin-inline-dotenv": "^1.5.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-expo": "~8.1.0",
@@ -87,8 +80,6 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.5",
     "eslint-plugin-standard": "^4.0.1",
-    "jest": "^26.1.0",
-    "jest-expo": "^38.0.2",
     "lint-staged": "^10.2.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
