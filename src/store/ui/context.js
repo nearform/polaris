@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import { SET_LIGHT_THEME, SET_DARK_THEME, TOGGLE_THEME } from './actions';
 import UIReducer, { defaultTheme } from './reducer';
 
-export const UIContext = React.createContext();
+export const UIReducerContext = React.createContext();
+export const UISettingsContext = React.createContext();
 
 export const UIProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(UIReducer, defaultTheme);
@@ -20,5 +21,9 @@ export const UIProvider = ({ children }) => {
     });
   const reducersRef = useRef({ setLightTheme, setDarkTheme, toggleTheme });
 
-  return <UIContext.Provider value={[state, reducersRef.current]}>{children}</UIContext.Provider>;
+  return (
+    <UIReducerContext.Provider value={reducersRef.current}>
+      <UISettingsContext.Provider value={state}>{children}</UISettingsContext.Provider>
+    </UIReducerContext.Provider>
+  );
 };

@@ -1,1 +1,1 @@
-export { UIContext, UIProvider } from './ui/context';
+export { UIReducerContext, UISettingsContext, UIProvider } from './ui/context';
