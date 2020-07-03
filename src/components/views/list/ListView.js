@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StatusBar, Picker } from 'react-native';
-import usePlatformNavigation from 'hooks/usePlatformNavigation';
-import usePlatformParams from 'hooks/usePlatformParams';
+import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
+import usePlatformParams from 'utils/hooks/usePlatformParams';
 import LinkButton from 'components/molecules/link-button';
 
 import content from './content';

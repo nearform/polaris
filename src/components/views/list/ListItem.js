@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text, StatusBar } from 'react-native';
-import usePlatformParams from 'hooks/usePlatformParams';
-import usePlatformNavigation from 'hooks/usePlatformNavigation';
+import usePlatformParams from 'utils/hooks/usePlatformParams';
+import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 
 import contentList from './content';
 
