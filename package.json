@@ -12,9 +12,7 @@
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
-    "test:ci": "jest --ci --passWithNoTests",
-    "test:build": "jest -w 2",
-    "test:update": "jest -u",
+    "test:ci": "jest --ci",
     "test:watch": "jest --watch",
     "checks": "run-p lint:fix && run-p lint && run-p test"
   },
