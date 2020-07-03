@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, View, StatusBar, Picker } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import usePlatformNavigation from 'hooks/usePlatformNavigation';
 import usePlatformParams from 'hooks/usePlatformParams';
 import LinkButton from 'components/molecules/link-button';
@@ -7,6 +8,7 @@ import LinkButton from 'components/molecules/link-button';
 import content from './content';
 
 export const ListView = () => {
+  const { t } = useTranslation();
   const { setParams } = usePlatformNavigation();
   const params = usePlatformParams();
   const currentSort = params.queryParams?.sort || 'id';
@@ -23,7 +25,7 @@ export const ListView = () => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <StatusBar style="auto" />
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Text>Sort by:</Text>
+        <Text>{t('listView:sortBy')}</Text>
         <View style={{ borderColor: '#ccc', borderWidth: 1, marginLeft: 16 }}>
           <Picker
             onValueChange={handleSortChange}
@@ -34,8 +36,8 @@ export const ListView = () => {
               backgroundColor: 'white'
             }}
           >
-            <Picker.Item label="ID" value="id" />
-            <Picker.Item label="Score" value="score" />
+            <Picker.Item label={t('listView:id')} value="id" />
+            <Picker.Item label={t('listView:score')} value="score" />
           </Picker>
         </View>
       </View>
@@ -55,7 +57,7 @@ export const ListView = () => {
               <Text>{score} / 10</Text>
             </View>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
-              <LinkButton path="/listItem/:id" params={{ id }} title={`View ${id}`} />
+              <LinkButton path="/listItem/:id" params={{ id }} title={t('listView:viewButton', { id: id })} />
             </View>
           </View>
         ))}
