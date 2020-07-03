@@ -18,7 +18,8 @@
     "checks": "run-p lint:fix && run-p lint && run-p test",
     "e2e:web:open": "cypress open",
     "e2e:web:run": "cypress run",
-    "e2e:web:run:ci": "wait-on http://localhost:19006 && npm run e2e:web:run -- --config video=false"
+    "e2e:web:run:ci": "wait-on http://localhost:19006 && npm run e2e:web:run -- --config video=false",
+    "postinstall": "npm i jest@26.1.0"
   },
   "dependencies": {
     "@expo/vector-icons": "^10.2.0",
