@@ -1,7 +1,6 @@
 import React from 'react';
 import { YellowBox } from 'react-native';
 
-import Layout from 'components/templates/layout';
 import Route from 'components/templates/route';
 import { UIProvider } from 'store/ui/context';
 

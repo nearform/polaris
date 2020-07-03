@@ -2,7 +2,7 @@ import React, { useContext, useMemo } from 'react';
 import { View, StyleSheet, Text, Switch } from 'react-native';
 import { UIReducerContext, UISettingsContext } from 'store';
 import { useTranslation } from 'react-i18next';
-import Link from 'components/atoms/link'
+import Link from 'components/atoms/link';
 
 export default function Header() {
   const { t } = useTranslation();
