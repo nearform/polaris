@@ -1,13 +1,12 @@
 import React, { useContext, useMemo } from 'react';
 import { View, StyleSheet, Text, Switch } from 'react-native';
-import { UIContext } from 'store';
+import { UIReducerContext, UISettingsContext } from 'store';
 import { useTranslation } from 'react-i18next';
 
 export default function Header() {
   const { t } = useTranslation();
-  const [state, reducers] = useContext(UIContext);
-  const { theme, textColor, bgColor } = state;
-  const { toggleTheme } = reducers;
+  const { theme, textColor, bgColor } = useContext(UISettingsContext);
+  const { toggleTheme } = useContext(UIReducerContext);
 
   const themeStyles = useMemo(() => {
     return {
