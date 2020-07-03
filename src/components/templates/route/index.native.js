@@ -75,25 +75,6 @@ const withLayout = (ViewComponent, screenName) => {
     );
   };
   return WrappedView;
-  /*
-  // Including a nested stack navigator to get a Header.
-  // TODO: don't do this, it loses params in the inner navigator. Just make a fake header
-  return props => {
-    const params = usePlatformParams();
-    console.log('Outer params', params);
-    return (
-      <Stack.Navigator>
-        <Stack.Screen
-          name={screenName}
-          component={WrappedView}
-          options={({ route: { params } }) => ({
-            title: console.log('Stack params', params) || replaceParams(route.name, params)
-          })}
-        />
-      </Stack.Navigator>
-    );
-  }
-  */
 };
 
 // Have navigator aware of all routes, but show only menu routes in the nav drawer
