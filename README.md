@@ -1,5 +1,19 @@
 # Polaris
 
+Polaris is NearForm's frontend development accelerator. 
+
+Polaris is a curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches. It aims to provide the necessary tools
+to create native mobile apps and web apps with a single codebase.
+
+## Quick start
+
+```bash
+$ git clone git@github.com:nearform/polaris.git
+$ cd polaris
+$ npm install
+$ npm start
+```
+
 ## Internationalisation support
 
 Polaris uses [i18next](https://www.i18next.com/) and [react-i18next](https://react.i18next.com/) packages to provide internationalisation support.
@@ -35,34 +49,6 @@ const HomeScreen = () => {
 ```
 
 In the example above, you can see how the library also provides support for date formatting and internationalisation using [date-fns](https://date-fns.org/) package. You can define date's format in the JSON file and pass the date object to the `t` function.
-
-## CI
-
-Polaris has a simple continuous integration pipeline built in with [Github Actions](https://docs.github.com/en/actions) that lints, run tests and builds js bundles for each target. Note that GitHub has a [free plan](https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions) included for every account type and you shouldn't be billed for additional usage until a spending limit has been set for the account.
-
-To adjust the pipeline see [integration.yml file](.github/workflows/integration.yml).
-
-## End-to-end web testing
-
-Polaris uses [Cypress](https://www.cypress.io/) to define and run end-to-end tests for the web application.
-
-Execute the Expo web application before starting any test:
-
-```sh
-npm run web
-```
-
-Then you can run the test in two different modes, silently with:
-
-```sh
-npm run e2e:web:run
-```
-
-or interactively using [Cypress test runner](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview):
-
-```sh
-npm run e2e:web:open
-```
 
 ## Routing
 
@@ -157,3 +143,32 @@ Returns an object of functions memoized with `useCallback`, `{ navigate, setPara
  - `navigate( path:string, params:object (optional) )`: navigates to the given location, applying any provided params
  - `setParams( params )`: shallow-merges the provided params object with the location's current params
  - `replaceParams( params )`: applies the provided params object, and sets any currently-defined params not defined in the new params object to `null`.
+
+## CI
+
+Polaris has a simple continuous integration pipeline built in with [Github Actions](https://docs.github.com/en/actions) that lints, run tests and builds js bundles for each target. Note that GitHub has a [free plan](https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions) included for every account type and you shouldn't be billed for additional usage until a spending limit has been set for the account.
+
+To adjust the pipeline see [integration.yml file](.github/workflows/integration.yml).
+
+## End-to-end web testing
+
+Polaris uses [Cypress](https://www.cypress.io/) to define and run end-to-end tests for the web application.
+
+Execute the Expo web application before starting any test:
+
+```sh
+npm run web
+```
+
+Then you can run the test in two different modes, silently with:
+
+```sh
+npm run e2e:web:run
+```
+
+or interactively using [Cypress test runner](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview):
+
+```sh
+npm run e2e:web:open
+```
+
