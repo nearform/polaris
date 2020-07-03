@@ -5,11 +5,12 @@ import { supportedLocales } from 'services/i18n';
 
 const LanguageSelector = () => {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const currentLangCode = i18n.language;
+  const currentLanguage = supportedLocales[currentLangCode].name;
 
   const changeLanguage = () => {
     const languages = Object.keys(supportedLocales);
-    const langLabels = languages.map(l => t(`language:${l}`));
+    const langLabels = languages.map(langCode => supportedLocales[langCode].name);
 
     return ActionSheetIOS.showActionSheetWithOptions(
       {
@@ -26,7 +27,7 @@ const LanguageSelector = () => {
 
   return (
     <View style={styles.container}>
-      <Button onPress={changeLanguage} title={t(`language:${currentLanguage}`)} />
+      <Button onPress={changeLanguage} title={currentLanguage} />
     </View>
   );
 };

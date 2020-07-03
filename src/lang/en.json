@@ -9,6 +9,7 @@
     "viewTwoButton": "Go to View Two",
     "viewThreeButton": "Go to View Three",
     "settingsButton": "Go to Settings",
+    "listViewButton": "Go to List View",
     "cameraButton": "Go to Camera"
   },
   "viewOne": {
@@ -25,7 +26,11 @@
   },
   "listView": {
     "title": "List View",
-    "message": "List View Screen"
+    "message": "List View Screen",
+    "sortBy": "Sort by:",
+    "id": "ID",
+    "score": "Score",
+    "viewButton": "View {{id}}"
   },
   "listItem": {
     "title": "List item {:id}"
@@ -46,8 +51,7 @@
       "dark": "Dark"
     }
   },
-  "language": {
-    "en": "English",
-    "it": "Italian"
+  "errors": {
+    "404": "404: Page {{path}}not found"
   }
 }
