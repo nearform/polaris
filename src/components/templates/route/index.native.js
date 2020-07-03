@@ -10,7 +10,7 @@ import { AntDesign } from '@expo/vector-icons';
 import routes, { defaultPath } from 'routes';
 import { replaceParams } from 'utils/paths';
 import Layout from 'components/templates/layout';
-import usePlatformLocation from 'hooks/usePlatformLocation';
+import usePlatformLocation from 'utils/hooks/usePlatformLocation';
 
 const Drawer = createDrawerNavigator();
 const isViewRoute = route => !!route.View;

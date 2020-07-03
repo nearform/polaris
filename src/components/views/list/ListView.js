@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Text, View, StatusBar, Picker } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import usePlatformNavigation from 'hooks/usePlatformNavigation';
-import usePlatformParams from 'hooks/usePlatformParams';
-import LinkButton from 'components/molecules/link-button';
 
+import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
+import usePlatformParams from 'utils/hooks/usePlatformParams';
+
+import LinkButton from 'components/molecules/link-button';
 import content from './content';
 
 export const ListView = () => {

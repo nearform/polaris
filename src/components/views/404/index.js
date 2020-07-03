@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-import usePlatformLocation from 'hooks/usePlatformLocation';
+import usePlatformLocation from 'utils/hooks/usePlatformLocation';
 
 export const View404 = () => {
   const { t } = useTranslation();
