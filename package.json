@@ -1,5 +1,6 @@
 {
   "main": "./index.js",
+  "name": "Polaris",
   "scripts": {
     "start": "expo start",
     "web": "expo start --web",
