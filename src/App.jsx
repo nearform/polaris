@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { HomeScreen, ViewOne, ViewTwo, ViewThree, Settings } from 'components/views';
+import { HomeScreen, ViewOne, ViewTwo, ViewThree, Settings, Camera } from 'components/views';
 import Layout from 'components/templates/layout';
 import { UIProvider } from 'store/ui/context';
 import 'services/i18n';
@@ -28,6 +28,7 @@ const App = () => {
             <Stack.Screen name="ViewTwo" component={ViewTwo} options={{ title: t('viewTwo:title') }} />
             <Stack.Screen name="ViewThree" component={ViewThree} options={{ title: t('viewThree:title') }} />
             <Stack.Screen name="Settings" component={Settings} options={{ title: t('settings:title') }} />
+            <Stack.Screen name="Camera" component={Camera} options={{ title: t('camera:title') }} />
           </Stack.Navigator>
         </NavigationContainer>
       </Layout>
