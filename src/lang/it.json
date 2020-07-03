@@ -23,6 +23,13 @@
     "title": "View Tre",
     "message": "Schermata View Tre"
   },
+  "listView": {
+    "title": "View Elenco",
+    "message": "Schermata View Elenco"
+  },
+  "listItem": {
+    "title": "Elenco articolo {:id}"
+  },
   "settings": {
     "title": "Impostazioni",
     "languageLabel": "Lingua:"
