@@ -13,10 +13,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - uses: expo/expo-github-action@v5
+        with:
+          expo-version: 3.x
       - run: npm ci
       - run: npm run lint
       - run: npm run test:ci
-      - run: expo start --web
+      - run: npm run web
       - run: npm run e2e:web:run
 
   build:
