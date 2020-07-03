@@ -43,3 +43,7 @@ terrarform/.zip
 # coverage reports
 server/coverage/*
 coverage/*
+
+# e2e tests
+cypress/videos
+cypress/screenshots

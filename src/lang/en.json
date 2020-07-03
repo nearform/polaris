@@ -8,7 +8,8 @@
     "viewOneButton": "Go to View One",
     "viewTwoButton": "Go to View Two",
     "viewThreeButton": "Go to View Three",
-    "settingsButton": "Go to Settings"
+    "settingsButton": "Go to Settings",
+    "cameraButton": "Go to Camera"
   },
   "viewOne": {
     "title": "View One",
@@ -25,6 +26,10 @@
   "settings": {
     "title": "Settings",
     "languageLabel": "Language:"
+  },
+  "camera": {
+    "title": "Camera",
+    "permissionDenied": "No access to camera"
   },
   "nav": {
     "topLeft": "Top Left",

@@ -16,6 +16,9 @@ const Nav = () => {
       <View style={styles.item}>
         <Text>{t('viewThree:title')}</Text>
       </View>
+      <View style={styles.item}>
+        <Text>{t('camera:title')}</Text>
+      </View>
     </View>
   );
 };

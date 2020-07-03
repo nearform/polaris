@@ -14,6 +14,7 @@ export const HomeScreen = ({ navigation }) => {
       <Button title={t('home:viewTwoButton')} onPress={() => navigation.push('ViewTwo')} />
       <Button title={t('home:viewThreeButton')} onPress={() => navigation.push('ViewThree')} />
       <Button title={t('home:settingsButton')} onPress={() => navigation.push('Settings')} />
+      <Button title={t('home:cameraButton')} onPress={() => navigation.push('Camera')} />
     </View>
   );
 };

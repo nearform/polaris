@@ -11,6 +11,7 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|@unimodules/.*|jest-expo/.*|sentry-expo|native-base))'
   ],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/'],
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],
   automock: false,
   moduleNameMapper: {

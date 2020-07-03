@@ -8,7 +8,8 @@
     "viewOneButton": "Vai alla View Uno",
     "viewTwoButton": "Vai alla View Due",
     "viewThreeButton": "Vai alla View Tre",
-    "settingsButton": "Vai alle Impostazioni"
+    "settingsButton": "Vai alle Impostazioni",
+    "cameraButton": "Vai alla Telecamera"
   },
   "viewOne": {
     "title": "View Uno",
@@ -25,6 +26,10 @@
   "settings": {
     "title": "Impostazioni",
     "languageLabel": "Lingua:"
+  },
+  "camera": {
+    "title": "Telecamera",
+    "permissionDenied": "Nessun accesso alla videocamera"
   },
   "nav": {
     "topLeft": "Alto Sinistra",
