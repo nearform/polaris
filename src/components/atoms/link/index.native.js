@@ -2,7 +2,7 @@ import React from 'react';
 import T from 'prop-types';
 
 import { Text, TouchableOpacity } from 'react-native';
-import usePlatformNavigation from 'hooks/usePlatformNavigation';
+import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 
 const Link = ({ path, title, params, style, Component = TouchableOpacity, titleAsProp }) => {
   const { navigate } = usePlatformNavigation();

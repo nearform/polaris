@@ -30,7 +30,7 @@ export default function Header() {
       </View>
       <View style={styles.right}>
         <Link title={t('home:settingsButton')} path={'/settings'} />
-        <Switch onValueChange={toggleTheme} value={theme === 'light'} />
+        <Switch onValueChange={toggleTheme} value={theme === 'light'} testID="theme-switch" />
       </View>
     </View>
   );

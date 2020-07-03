@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, StatusBar } from 'react-native';
-import usePlatformLocation from 'hooks/usePlatformLocation';
+import usePlatformLocation from 'utils/hooks/usePlatformLocation';
 
 export const View404 = () => {
   const currentRoute = usePlatformLocation();
