@@ -9,7 +9,7 @@ export const Settings = () => {
 
   return (
     <View style={styles.container}>
-      <SettingItem label={t('settings:languageLabel')} value={<LanguageSelector />} />
+      <SettingItem label={t('settings:languageLabel')} value={<LanguageSelector nativeID="languageSelector" />} />
     </View>
   );
 };
