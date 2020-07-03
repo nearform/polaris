@@ -29,7 +29,7 @@ export default function Header() {
         <Text style={themeStyles.themeTextColor}>{t('nav:topCenter')}</Text>
       </View>
       <View style={styles.right}>
-        <Link title={t('settings:title')} path={'/settings'} />
+        <Link title={t('home:settingsButton')} path={'/settings'} />
         <Switch onValueChange={toggleTheme} value={theme === 'light'} />
       </View>
     </View>
