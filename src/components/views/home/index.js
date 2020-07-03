@@ -12,7 +12,7 @@ export const HomeScreen = ({ navigation }) => {
       <LinkButton title={t('home:viewOneButton')} path="/viewOne" />
       <LinkButton title={t('home:viewTwoButton')} path="/viewTwo" />
       <LinkButton title={t('home:viewThreeButton')} path="/viewThree" />
-      <LinkButton title="Go to List View" path="/listView" />
+      <LinkButton title={t('home:listViewButton')} path="/listView" />
     </View>
   );
 };

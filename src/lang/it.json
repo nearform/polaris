@@ -5,27 +5,32 @@
   },
   "home": {
     "title": "Home Page",
-    "viewOneButton": "Vai alla View Uno",
-    "viewTwoButton": "Vai alla View Due",
-    "viewThreeButton": "Vai alla View Tre",
+    "viewOneButton": "Vai alla Schermata Uno",
+    "viewTwoButton": "Vai alla Schermata Due",
+    "viewThreeButton": "Vai alla Schermata Tre",
     "settingsButton": "Vai alle Impostazioni",
+    "listViewButton": "Vai alla Schermata Lista",
     "cameraButton": "Vai alla Telecamera"
   },
   "viewOne": {
-    "title": "View Uno",
-    "message": "Schermata View Uno"
+    "title": "Schermata Uno",
+    "message": "Schermata Uno"
   },
   "viewTwo": {
-    "title": "View Due",
-    "message": "Schermata View Due"
+    "title": "Schermata Due",
+    "message": "Schermata Due"
   },
   "viewThree": {
-    "title": "View Tre",
-    "message": "Schermata View Tre"
+    "title": "Schermata Tre",
+    "message": "Schermata Tre"
   },
   "listView": {
-    "title": "View Elenco",
-    "message": "Schermata View Elenco"
+    "title": "Schermata Lista",
+    "sortBy": "Ordina per:",
+    "message": "Schermata Lista",
+    "id": "ID",
+    "score": "Punteggio",
+    "viewButton": "Schermata {{id}}"
   },
   "listItem": {
     "title": "Elenco articolo {:id}"
@@ -35,8 +40,8 @@
     "languageLabel": "Lingua:"
   },
   "camera": {
-    "title": "Telecamera",
-    "permissionDenied": "Nessun accesso alla videocamera"
+    "title": "Fotocamera",
+    "permissionDenied": "Nessun accesso alla fotocamera"
   },
   "nav": {
     "topLeft": "Alto Sinistra",
@@ -46,8 +51,7 @@
       "dark": "Scuro"
     }
   },
-  "language": {
-    "en": "Inglese",
-    "it": "Italiano"
+  "errors": {
+    "404": "404: Pagina {{path}}non trovata"
   }
 }
