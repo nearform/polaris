@@ -41,3 +41,25 @@ In the example above, you can see how the library also provides support for date
 Polaris has a simple continuous integration pipeline built in with [Github Actions](https://docs.github.com/en/actions) that lints, run tests and builds js bundles for each target. Note that GitHub has a [free plan](https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions) included for every account type and you shouldn't be billed for additional usage until a spending limit has been set for the account.
 
 To adjust the pipeline see [integration.yml file](.github/workflows/integration.yml).
+
+## End-to-end web testing
+
+Polaris uses [Cypress](https://www.cypress.io/) to define and run end-to-end tests for the web application.
+
+Execute the Expo web application before starting any test:
+
+```sh
+npm run web
+```
+
+Then you can run the test in two different modes, silently with:
+
+```sh
+npm run e2e:web:run
+```
+
+or interactively using [Cypress test runner](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview):
+
+```sh
+npm run e2e:web:open
+```

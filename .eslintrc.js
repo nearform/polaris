@@ -4,7 +4,8 @@ module.exports = {
     'standard',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'prettier' // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    'prettier', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    'plugin:cypress/recommended'
   ],
   plugins: ['prettier'],
   env: {
