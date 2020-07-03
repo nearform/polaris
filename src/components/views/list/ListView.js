@@ -22,19 +22,23 @@ export const ListView = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <StatusBar style="auto" />
-      <Text>Sort by:</Text>
-      <Picker
-        onValueChange={handleSortChange}
-        selectedValue={currentSort}
-        style={{
-          width: 128,
-          height: 48,
-          backgroundColor: 'white'
-        }}
-      >
-        <Picker.Item label="ID" value="id" />
-        <Picker.Item label="Score" value="score" />
-      </Picker>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Text>Sort by:</Text>
+        <View style={{ borderColor: '#ccc', borderWidth: 1, marginLeft: 16 }}>
+          <Picker
+            onValueChange={handleSortChange}
+            selectedValue={currentSort}
+            style={{
+              width: 128,
+              height: 48,
+              backgroundColor: 'white'
+            }}
+          >
+            <Picker.Item label="ID" value="id" />
+            <Picker.Item label="Score" value="score" />
+          </Picker>
+        </View>
+      </View>
       <View style={{ justifyContent: 'space-around', alignSelf: 'stretch', alignItems: 'stretch' }}>
         {sortedContent.map(({ id, title, score }) => (
           <View

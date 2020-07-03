@@ -1,10 +1,10 @@
 import React from 'react';
 import T from 'prop-types';
 
-import { Text, TouchableHighlight } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import usePlatformNavigation from 'hooks/usePlatformNavigation';
 
-const Link = ({ path, title, params, style, Component = TouchableHighlight, titleAsProp }) => {
+const Link = ({ path, title, params, style, Component = TouchableOpacity, titleAsProp }) => {
   const { navigate } = usePlatformNavigation();
   return (
     <Component style={style} title={titleAsProp ? title : null} onPress={() => navigate(path, params)}>
