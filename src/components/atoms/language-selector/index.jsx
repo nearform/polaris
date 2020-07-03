@@ -4,19 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 import { supportedLocales } from 'services/i18n';
 
-const LanguageSelector = ({ nativeID }) => {
-  const { i18n } = useTranslation();
-  const languages = Object.keys(supportedLocales).map(langCode => ({
-    code: langCode,
-    name: supportedLocales[langCode].name
-  }));
-
-  const currentLanguage = i18n.language;
-
-  const changeLanguage = lang => i18n.changeLanguage(lang);
-
 export const LanguageSelector = ({ changeLanguage, languages, currentLanguage, nativeID }) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (
     <Picker
       selectedValue={currentLanguage}
@@ -34,7 +23,10 @@ export const LanguageSelector = ({ changeLanguage, languages, currentLanguage, n
 
 export default function LanguageSelectorComponent({ nativeID }) {
   const { i18n } = useTranslation();
-  const languages = Object.keys(supportedLocales);
+  const languages = Object.keys(supportedLocales).map(langCode => ({
+    code: langCode,
+    name: supportedLocales[langCode].name
+  }));
   const currentLanguage = i18n.language;
 
   const changeLanguage = lang => i18n.changeLanguage(lang);
