@@ -51,10 +51,6 @@
       "dark": "Dark"
     }
   },
-  "language": {
-    "en": "English",
-    "it": "Italiano"
-  },
   "errors": {
     "404": "404: Page {{path}}not found"
   }
