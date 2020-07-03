@@ -1,5 +1,5 @@
 module.exports = {
-  preset: 'react-native',
+  preset: 'jest-expo',
   testTimeout: 10000,
   verbose: true,
   moduleFileExtensions: ['js', 'jsx', 'json'],
@@ -9,7 +9,7 @@ module.exports = {
     '\\.json': '<rootDir>/jest.jsonTransform.js'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|@unimodules/.*|jest-expo/.*|sentry-expo|native-base))'
+    'node_modules/(?!((jest-)?react-native|expo-camera|react-native-adapter|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|unimodules-permissions-interface|@unimodules|@unimodules/.*|jest-expo/.*|sentry-expo|native-base))'
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/'],
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],

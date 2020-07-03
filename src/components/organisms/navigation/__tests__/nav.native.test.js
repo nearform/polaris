@@ -7,13 +7,13 @@ const initialState = { theme: 'light', textColor: 'white', bgColor: 'black' };
 const reducers = { toggleTheme: jest.fn() };
 
 describe('Navigation Header Native', () => {
-  it('renders with 3 children', () => {
+  it('renders with 4 children', () => {
     const { toJSON } = render(
       <UIProvider value={[initialState, reducers]}>
         <Header />
       </UIProvider>
     );
     const tree = toJSON();
-    expect(tree.children.length).toBe(3);
+    expect(tree.children.length).toBe(4);
   });
 });
