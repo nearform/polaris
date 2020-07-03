@@ -19,8 +19,8 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run test:ci
-      - run: npm run web
-      - run: npm run e2e:web:run
+      - run: npm run web:ci
+      - run: npm run e2e:web:run:ci
 
   build:
     needs: test
