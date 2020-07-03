@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { render, fireEvent, cleanup } from 'react-native-testing-library';
-import { renderHook } from '@testing-library/react-hooks';
 import { UIProvider } from 'store';
 import Header from '../nav.web';
 
@@ -9,14 +8,9 @@ afterEach(cleanup);
 const initState = { theme: 'light', textColor: 'white', bgColor: 'black' };
 const reducers = { toggleTheme: jest.fn() };
 
-describe('Navigation Header Web', () => {
-  it('has context default state', () => {
-    const UIContext = React.createContext();
-    const wrapper = ({ children }) => <UIContext.Provider value={initState}>{children}</UIContext.Provider>;
-    const { result } = renderHook(() => useContext(UIContext), { wrapper });
-    expect(result.current).toStrictEqual(initState);
-  });
+jest.mock('components/atoms/link', () => {});
 
+describe('Navigation Header Web', () => {
   it('renders with 3 children', () => {
     const { toJSON } = render(
       <UIProvider value={[initState, reducers]}>

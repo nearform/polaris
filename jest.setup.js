@@ -16,3 +16,10 @@ global.console = {
 };
 
 jest.useFakeTimers();
+
+jest.mock('@react-navigation/native', () => ({
+  useNavigation: () => jest.fn(),
+  useNavigationParam: () => jest.fn(),
+  useRoute: () => jest.fn(),
+  NavigationEvents: 'mockNavigationEvents'
+}));
