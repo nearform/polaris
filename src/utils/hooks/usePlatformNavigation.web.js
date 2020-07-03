@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useLocation, useHistory } from 'react-router-dom';
 import { getPathFromParams } from 'utils/paths';
-import usePlatformParams from 'hooks/usePlatformParams';
+import usePlatformParams from './usePlatformParams';
 
 const usePlatformNavigation = () => {
   const currentParams = usePlatformParams();

@@ -22,6 +22,7 @@ module.exports = {
     '^constants/(.*)$': '<rootDir>/src/constants/$1',
     '^assets(.*)$': '<rootDir>/src/assets/$1',
     '^services(.*)$': '<rootDir>/src/services/$1',
+    '^routes(.*)$': '<rootDir>/src/routes/$1',
     '^test-utils(.*)$': '<rootDir>/src/test-utils'
   }
 };
