@@ -11,14 +11,14 @@ import { Settings } from 'components/views/settings';
 // import User from 'components/views/User'
 
 const routes = [
-  { path: '/', View: HomeScreen, menuIndex: 0, name: 'Home' },
+  { path: '/', View: HomeScreen, menuIndex: 0, name: 'home:title' },
   { path: '/index.html', redirectTo: '/' },
-  { path: '/viewOne', View: ViewOne, menuIndex: 1, name: 'View one' },
-  { path: '/viewTwo', View: ViewTwo, menuIndex: 2, name: 'View two' },
-  { path: '/viewThree', View: ViewThree, menuIndex: 3, name: 'View three' },
-  { path: '/listView', View: ListView, menuIndex: 4, name: 'List view' },
-  { path: '/listItem/:id', View: ListItem, name: 'List item {:id}' },
-  { path: '/settings', View: Settings, name: 'Settings' }
+  { path: '/viewOne', View: ViewOne, menuIndex: 1, name: 'viewOne:title' },
+  { path: '/viewTwo', View: ViewTwo, menuIndex: 2, name: 'viewTwo:title' },
+  { path: '/viewThree', View: ViewThree, menuIndex: 3, name: 'viewThree:title' },
+  { path: '/listView', View: ListView, menuIndex: 4, name: 'listView:title' },
+  { path: '/listItem/:id', View: ListItem, name: 'listItem:title' },
+  { path: '/settings', View: Settings, menuIndex: 4, name: 'settings:title' }
   //  { path: '/login', View: Login, name: 'Log in' },
   //  { path: '/user', View: User, name: 'User profile' }
 ];
