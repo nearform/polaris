@@ -6,6 +6,5 @@ module.exports = {
   constants: './src/constants',
   assets: './src/assets',
   services: './src/services',
-  routes: './src/routes',
-  hooks: './src/hooks'
+  routes: './src/routes'
 };

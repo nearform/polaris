@@ -7,14 +7,7 @@ const LayoutBase = props => {
   const { children } = props;
 
   return (
-    <View
-      style={{
-        flex: 1,
-        overflow: 'hidden',
-        width: '100%',
-        height: '100%'
-      }}
-    >
+    <View style={styles.container}>
       <SideMenu menuPosition="left">
         <View style={[styles.layout, styles.tabBarSpacing]}>
           {Platform.OS === 'web' && <Nav />}
@@ -27,6 +20,12 @@ const LayoutBase = props => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    overflow: 'hidden',
+    width: '100%',
+    height: '100%'
+  },
   layout: {
     flex: 1,
     backgroundColor: '#fff'
