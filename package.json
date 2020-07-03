@@ -17,7 +17,7 @@
     "test:ci": "jest --ci --passWithNoTests",
     "e2e:web:open": "cypress open",
     "e2e:web:run": "cypress run",
-    "e2e:web:run:ci": "wait-on http://localhost:19006 && npm run e2e:web:run"
+    "e2e:web:run:ci": "wait-on http://localhost:19006 && npm run e2e:web:run -- --config video=false"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
