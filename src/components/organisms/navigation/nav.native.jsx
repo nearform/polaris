@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Link from 'components/atoms/link';
 
@@ -12,10 +12,10 @@ const Nav = () => {
         <Link title={t('home:title')} path={'/'} />
       </View>
       <View style={styles.item}>
-        <Link title={t('settings:title')} path={'/settings'} />
+        <Link title={t('listView:title')} path={'/listView'} />
       </View>
       <View style={styles.item}>
-        <Text>{t('viewTwo:title')}</Text>
+        <Link title={t('settings:title')} path={'/settings'} />
       </View>
       <View style={styles.item}>
         <Text>{t('camera:title')}</Text>

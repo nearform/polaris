@@ -1,53 +1,135 @@
 import React from 'react';
-import T from 'prop-types';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { useTranslation } from 'react-i18next';
+import { useWindowDimensions, Text, TouchableOpacity } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createDrawerNavigator, DrawerContent } from '@react-navigation/drawer';
+import { Header } from 'react-native-elements';
+import { AntDesign } from '@expo/vector-icons';
 
-import defaultRoutes, { defaultPath, routeShape } from 'routes';
+import routes, { defaultPath } from 'routes';
 import { replaceParams } from 'utils/paths';
-import Layout from 'components/templates/layout'
+import Layout from 'components/templates/layout';
+import usePlatformLocation from 'hooks/usePlatformLocation';
 
-const withNavigationContainer = Component => {
+const Drawer = createDrawerNavigator();
+const isViewRoute = route => !!route.View;
+const isMenuRoute = route => typeof route.menuIndex === 'number';
+const viewRoutes = routes.filter(isViewRoute).sort((a, b) => a.menuIndex - b.menuIndex);
+const menuNames = routes.filter(isMenuRoute).map(route => route.path);
+
+const Left = ({ isHome, goBack }) =>
+  isHome ? (
+    <Text> </Text>
+  ) : (
+    <TouchableOpacity onPress={goBack}>
+      <AntDesign name="arrowleft" color="white" size={28} />
+    </TouchableOpacity>
+  );
+
+const Right = ({ toggleDrawer }) => (
+  <TouchableOpacity onPress={toggleDrawer}>
+    <AntDesign name="bars" color="white" size={28} />
+  </TouchableOpacity>
+);
+
+const CustomHeader = () => {
+  const { t } = useTranslation();
+  const navigation = useNavigation();
+  const { currentRoute, params } = usePlatformLocation();
+  const isHome = currentRoute.path === defaultPath;
+  const translatedName = t(currentRoute.name);
+  const title = replaceParams(translatedName, params);
+  return (
+    <Header
+      leftComponent={<Left isHome={isHome} goBack={navigation.goBack} />}
+      centerComponent={{
+        text: title,
+        style: {
+          color: '#fff',
+          fontSize: 21
+        }
+      }}
+      rightComponent={<Right toggleDrawer={navigation.toggleDrawer} />}
+    />
+  );
+};
+
+// Enable hooks that need to be inside NavigationContainer in Route component
+const withNavigationContainer = RouteComponent => {
   return props => (
     <NavigationContainer>
-      <Component {...props} />
+      <RouteComponent {...props} />
     </NavigationContainer>
   );
 };
 
-const withLayout = Component => {
-  return props => (
-    <Layout>
-      <Component {...props} />
-    </Layout>
-  )
-}
+// Place layout inside each screen, around each view, to access navigation hooks
+const withLayout = (ViewComponent, screenName) => {
+  const WrappedView = props => {
+    return (
+      <Layout>
+        <CustomHeader />
+        <ViewComponent {...props} />
+      </Layout>
+    );
+  };
+  return WrappedView;
+  /*
+  // Including a nested stack navigator to get a Header.
+  // TODO: don't do this, it loses params in the inner navigator. Just make a fake header
+  return props => {
+    const params = usePlatformParams();
+    console.log('Outer params', params);
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name={screenName}
+          component={WrappedView}
+          options={({ route: { params } }) => ({
+            title: console.log('Stack params', params) || replaceParams(route.name, params)
+          })}
+        />
+      </Stack.Navigator>
+    );
+  }
+  */
+};
 
-const Stack = createStackNavigator();
-const isViewRoute = route => !!route.View;
+// Have navigator aware of all routes, but show only menu routes in the nav drawer
+const withMenuFilter = DrawerComponent => {
+  return ({ state, ...props }) => {
+    const drawerRoutes = state.routes;
+    const filteredState = {
+      ...state,
+      routes: drawerRoutes.filter(({ name }) => menuNames.includes(name))
+    };
+    return <DrawerComponent state={filteredState} {...props} />;
+  };
+};
 
-const Route = ({ routes = defaultRoutes }) => {
-  const viewRoutes = routes.filter(isViewRoute);
+const Route = () => {
+  const dimensions = useWindowDimensions();
+  const { t } = useTranslation();
 
   return (
-    <Stack.Navigator initialRouteName={defaultPath}>
+    <Drawer.Navigator
+      initialRouteName={defaultPath}
+      drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
+      drawerContent={withMenuFilter(DrawerContent)}
+    >
       {viewRoutes.map(route => (
-        <Stack.Screen
+        <Drawer.Screen
           name={route.path}
-          component={withLayout(route.View)}
+          component={withLayout(route.View, route.path)}
           options={({ route: { params } }) => ({
-            title: replaceParams(route.name, params)
+            title: replaceParams(t(route.name), params)
           })}
           key={route.path}
         />
       ))}
-    </Stack.Navigator>
+    </Drawer.Navigator>
   );
-};
-
-Route.propTypes = {
-  routes: T.arrayOf(T.shape(routeShape))
 };
 
 export default withNavigationContainer(Route);
