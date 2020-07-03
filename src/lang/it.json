@@ -40,8 +40,8 @@
     "languageLabel": "Lingua:"
   },
   "camera": {
-    "title": "Telecamera",
-    "permissionDenied": "Nessun accesso alla videocamera"
+    "title": "Fotocamera",
+    "permissionDenied": "Nessun accesso alla fotocamera"
   },
   "nav": {
     "topLeft": "Alto Sinistra",
