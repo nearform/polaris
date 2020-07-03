@@ -8,11 +8,12 @@ import LinkButton from 'components/molecules/link-button';
 import content from './content';
 
 export const ListView = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { setParams } = usePlatformNavigation();
   const params = usePlatformParams();
   const currentSort = params.queryParams?.sort || 'id';
   const sortedContent = [...content].sort((a, b) => a[currentSort] - b[currentSort]);
+  const currentLang = i18n.language;
 
   const handleSortChange = itemValue => {
     setParams({
@@ -42,7 +43,7 @@ export const ListView = () => {
         </View>
       </View>
       <View style={{ justifyContent: 'space-around', alignSelf: 'stretch', alignItems: 'stretch' }}>
-        {sortedContent.map(({ id, title, score }) => (
+        {sortedContent.map(({ id, translations, score }) => (
           <View
             style={{ flexDirection: 'row', alignItems: 'center', height: 48, paddingLeft: 32, paddingRight: 32 }}
             key={id}
@@ -51,7 +52,7 @@ export const ListView = () => {
               <Text>#{id}</Text>
             </View>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
-              <Text>{title}</Text>
+              <Text>{translations[currentLang].title}</Text>
             </View>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
               <Text>{score} / 10</Text>
