@@ -15,8 +15,13 @@ import usePlatformLocation from 'hooks/usePlatformLocation';
 const Drawer = createDrawerNavigator();
 const isViewRoute = route => !!route.View;
 const isMenuRoute = route => typeof route.menuIndex === 'number';
-const viewRoutes = routes.filter(isViewRoute).sort((a, b) => a.menuIndex - b.menuIndex);
-const menuNames = routes.filter(isMenuRoute).map(route => route.path);
+const viewRoutes = routes.filter(isViewRoute);
+
+// Sort by lowest menu index first, with non-menu views last
+const getMenuIndexSortValue = menuIndex => (typeof menuIndex === 'number' ? menuIndex : Infinity);
+viewRoutes.sort((a, b) => getMenuIndexSortValue(a.menuIndex) - getMenuIndexSortValue(b.menuIndex));
+
+const menuNames = viewRoutes.filter(isMenuRoute).map(route => route.path);
 
 const Left = ({ isHome, goBack }) =>
   isHome ? (

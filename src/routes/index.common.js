@@ -18,7 +18,7 @@ const routes = [
   { path: '/viewThree', View: ViewThree, menuIndex: 3, name: 'viewThree:title' },
   { path: '/listView', View: ListView, menuIndex: 4, name: 'listView:title' },
   { path: '/listItem/:id', View: ListItem, name: 'listItem:title' },
-  { path: '/settings', View: Settings, menuIndex: 4, name: 'settings:title' }
+  { path: '/settings', View: Settings, menuIndex: 5, name: 'settings:title' }
   //  { path: '/login', View: Login, name: 'Log in' },
   //  { path: '/user', View: User, name: 'User profile' }
 ];
