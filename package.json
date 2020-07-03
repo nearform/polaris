@@ -21,6 +21,7 @@
     "e2e:web:run:ci": "wait-on http://localhost:19006 && npm run e2e:web:run -- --config video=false"
   },
   "dependencies": {
+    "@expo/vector-icons": "^10.2.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/drawer": "^5.8.4",
     "@react-navigation/native": "^5.6.1",
