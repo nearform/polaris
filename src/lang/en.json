@@ -23,6 +23,13 @@
     "title": "View Three",
     "message": "View Three Screen"
   },
+  "listView": {
+    "title": "List View",
+    "message": "List View Screen"
+  },
+  "listItem": {
+    "title": "List item {:id}"
+  },
   "settings": {
     "title": "Settings",
     "languageLabel": "Language:"
