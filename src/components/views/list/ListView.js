@@ -57,7 +57,7 @@ export const ListView = () => {
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
               <Text>{score} / 10</Text>
             </View>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
+            <View style={{ justifyContent: 'center', alignItems: 'center', height: 48 }}>
               <LinkButton path="/listItem/:id" params={{ id }} title={t('listView:viewButton', { id: id })} />
             </View>
           </View>
