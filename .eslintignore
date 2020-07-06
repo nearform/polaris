@@ -1,2 +1,5 @@
-node_modules
-web-build
+**/node_modules/**
+web-build/**
+dist/**
+.expo/**
+.expo-shared/**

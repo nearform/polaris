@@ -8,7 +8,9 @@
     "viewOneButton": "Go to View One",
     "viewTwoButton": "Go to View Two",
     "viewThreeButton": "Go to View Three",
-    "settingsButton": "Go to Settings"
+    "settingsButton": "Go to Settings",
+    "listViewButton": "Go to List View",
+    "cameraButton": "Go to Camera"
   },
   "viewOne": {
     "title": "View One",
@@ -22,9 +24,24 @@
     "title": "View Three",
     "message": "View Three Screen"
   },
+  "listView": {
+    "title": "List View",
+    "message": "List View Screen",
+    "sortBy": "Sort by:",
+    "id": "ID",
+    "score": "Score",
+    "viewButton": "View {{id}}"
+  },
+  "listItem": {
+    "title": "List item {:id}"
+  },
   "settings": {
     "title": "Settings",
     "languageLabel": "Language:"
+  },
+  "camera": {
+    "title": "Camera",
+    "permissionDenied": "No access to camera"
   },
   "nav": {
     "topLeft": "Top Left",
@@ -34,8 +51,7 @@
       "dark": "Dark"
     }
   },
-  "language": {
-    "en": "English",
-    "it": "Italian"
+  "errors": {
+    "404": "404: Page {{path}}not found"
   }
 }

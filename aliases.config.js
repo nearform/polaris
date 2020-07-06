@@ -5,5 +5,6 @@ module.exports = {
   utils: './src/utils',
   constants: './src/constants',
   assets: './src/assets',
-  services: './src/services'
+  services: './src/services',
+  routes: './src/routes'
 };
