@@ -6,6 +6,14 @@ import * as Permissions from 'expo-permissions';
 import * as Notifications from 'expo-notifications';
 import { styles } from '../views.styles';
 
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: true,
+    shouldSetBadge: true
+  })
+});
+
 export const PushNotifications = () => {
   const [token, setToken] = React.useState(null);
   const { t } = useTranslation();
