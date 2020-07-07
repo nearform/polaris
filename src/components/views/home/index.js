@@ -13,6 +13,7 @@ export const HomeScreen = ({ navigation }) => {
       <LinkButton title={t('home:viewTwoButton')} path="/viewTwo" />
       <LinkButton title={t('home:viewThreeButton')} path="/viewThree" />
       <LinkButton title={t('home:listViewButton')} path="/listView" />
+      <LinkButton title={t('home:pushNotificationsButton')} path="/pushNotifications" />
     </View>
   );
 };

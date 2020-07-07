@@ -10,7 +10,8 @@
     "viewThreeButton": "Go to View Three",
     "settingsButton": "Go to Settings",
     "listViewButton": "Go to List View",
-    "cameraButton": "Go to Camera"
+    "cameraButton": "Go to Camera",
+    "pushNotificationsButton": "Go to Push Notifications"
   },
   "viewOne": {
     "title": "View One",
@@ -31,6 +32,11 @@
     "id": "ID",
     "score": "Score",
     "viewButton": "View {{id}}"
+  },
+  "pushNotificationsView": {
+    "title": "Push Notifications",
+    "permissionsRejectedAlert": "Polaris wasn't granted Notification permissions",
+    "sendNotificationButton": "Press to Send Notification"
   },
   "listItem": {
     "title": "List item {:id}"

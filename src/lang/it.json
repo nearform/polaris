@@ -10,7 +10,8 @@
     "viewThreeButton": "Vai alla Schermata Tre",
     "settingsButton": "Vai alle Impostazioni",
     "listViewButton": "Vai alla Schermata Lista",
-    "cameraButton": "Vai alla Telecamera"
+    "cameraButton": "Vai alla Telecamera",
+    "pushNotificationsButton": "Vai alla Notifiche Push"
   },
   "viewOne": {
     "title": "Schermata Uno",
@@ -31,6 +32,11 @@
     "id": "ID",
     "score": "Punteggio",
     "viewButton": "Schermata {{id}}"
+  },
+  "pushNotificationsView": {
+    "title": "Notifiche Push",
+    "permissionsRejectedAlert": "Polaris non ha ottenuto le autorizzazioni di notifica",
+    "sendNotificationButton": "Premere per inviare la notifica"
   },
   "listItem": {
     "title": "Elenco articolo {:id}"
