@@ -1,30 +1,31 @@
 import React from 'react';
-// import { Platform } from 'react-native';
-// import { storiesOf as web } from '@storybook/react';
-// import { storiesOf as native } from '@storybook/react-native';
+import { I18nextProvider } from 'react-i18next';
+import i18n from 'services/i18n/';
+import { DocItem } from 'storybook/story-components';
 
-// const storiesOf = Platform.OS === 'web' ? web : native;
+import { MemoryRouter } from 'react-router';
 
-import Nav from './nav';
+import Header from './nav';
 
-// import { Button } from '@storybook/react/demo';
-
-// export default { title: 'Button' };
-
-// export const withText = () => <Button>Hello Button</Button>;
-
-// export const withEmoji = () => (
-//   <Button>
-//     <span role="img" aria-label="so cool">
-//       😀 😎 👍 💯
-//     </span>
-//   </Button>
-// );
+import { UIProvider } from 'store/ui/context';
 
 export default {
-  title: 'Nav'
+  component: Header,
+  title: 'Header'
 };
 
-export const Default = () => <Nav />;
-
-// storiesOf('Nav', module).add('Default', () => <Nav/>);
+export const header = () => (
+  <DocItem
+    example={{
+      render: () => (
+        <UIProvider>
+          <I18nextProvider i18n={i18n}>
+            <MemoryRouter>
+              <Header t={text => text} selectedItems={['Statements', 'Direct Debits']} />
+            </MemoryRouter>
+          </I18nextProvider>
+        </UIProvider>
+      )
+    }}
+  />
+);

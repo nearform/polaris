@@ -6,6 +6,7 @@
     "web": "expo start --web",
     "web:ci": "expo start --web &",
     "ios": "expo start --ios",
+    "ios:clean": "expo start -c --ios",
     "android": "expo start --android",
     "build:web": "expo build:web",
     "build:ios": "expo build:ios",
@@ -15,7 +16,9 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
     "test:ci": "jest --ci",
-    "storybook": "start-storybook -p 6006 -c ./storybook/.storybook-web",
+    "prestorybook": "rnstl",
+    "storybook:web": "start-storybook -p 6006 -c ./storybook/.storybook-web",
+    "storybook:ios": "run-p prestorybook && RUN_STORYBOOK=true expo start -c --ios",
     "test:watch": "jest --watch",
     "checks": "run-p lint:fix && run-p lint && run-p test",
     "e2e:web:open": "cypress open",
@@ -25,6 +28,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.0",
+    "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/drawer": "^5.8.4",
     "@react-navigation/native": "^5.6.1",
@@ -59,6 +63,15 @@
       "prettier --write"
     ]
   },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./src"
+      ],
+      "pattern": "**/stories/*.native.js",
+      "outputFile": "./storybook/storyLoader.js"
+    }
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -76,10 +89,14 @@
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-ondevice-knobs": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@storybook/react-native": "^5.3.19",
     "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
     "babel-plugin-inline-dotenv": "^1.5.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-expo": "^8.2.3",
@@ -101,6 +118,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "react-is": "^16.13.1",
+    "react-native-storybook-loader": "^1.8.1",
     "react-native-testing-library": "^2.1.0",
     "react-test-renderer": "^16.13.1",
     "wait-on": "^5.0.1"
