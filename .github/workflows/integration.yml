@@ -24,8 +24,6 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
 
       - run: npm i
       - run: npm run lint
@@ -54,8 +52,6 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
 
       - run: npm i
       # ios and android js bundles + assets
