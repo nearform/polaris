@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Text, View, StatusBar, Picker } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 import usePlatformParams from 'utils/hooks/usePlatformParams';
 
+import PickerSheet from 'components/atoms/picker-sheet';
 import LinkButton from 'components/molecules/link-button';
 import content from './content';
 
@@ -15,6 +16,12 @@ export const ListView = () => {
   const currentSort = params.queryParams?.sort || 'id';
   const sortedContent = [...content].sort((a, b) => a[currentSort] - b[currentSort]);
   const currentLang = i18n.language;
+
+  const sortOptions = [
+    { value: 'id', label: t('listView:id') },
+    { value: 'score', label: t('listView:score') }
+  ];
+  const currentSortOption = sortOptions.find(({ value }) => value === currentSort);
 
   const handleSortChange = itemValue => {
     setParams({
@@ -29,18 +36,16 @@ export const ListView = () => {
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Text>{t('listView:sortBy')}</Text>
         <View style={{ borderColor: '#ccc', borderWidth: 1, marginLeft: 16 }}>
-          <Picker
+          <PickerSheet
             onValueChange={handleSortChange}
-            selectedValue={currentSort}
+            currentOption={currentSortOption}
             style={{
               width: 128,
               height: 48,
               backgroundColor: 'white'
             }}
-          >
-            <Picker.Item label={t('listView:id')} value="id" />
-            <Picker.Item label={t('listView:score')} value="score" />
-          </Picker>
+            options={sortOptions}
+          />
         </View>
       </View>
       <View style={{ justifyContent: 'space-around', alignSelf: 'stretch', alignItems: 'stretch' }}>

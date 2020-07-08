@@ -50,6 +50,8 @@ const HomeScreen = () => {
 
 In the example above, you can see how the library also provides support for date formatting and internationalisation using [date-fns](https://date-fns.org/) package. You can define date's format in the JSON file and pass the date object to the `t` function.
 
+`useTranslation` is available in all components, including Jest tests where it behaves as normal but defaults to the "`cimode`" language code. In Jest, `t` simply returns the (relatively stable) key and language-specific JSON translations are not loaded.
+
 ## Routing
 
 Polaris uses [React Navigation](https://reactnavigation.org/) in Native (Android and iOS), and [React Router DOM](https://reactrouter.com/web/guides/quick-start) in Web. This allows all platforms to be given fully-featured, robust platform-appropriate routing without comprimises.
