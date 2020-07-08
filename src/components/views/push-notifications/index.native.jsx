@@ -18,7 +18,7 @@ export const PushNotifications = () => {
   const [token, setToken] = React.useState(null);
   const { t } = useTranslation();
 
-  const registerForPushNotificationsAsync = async () => {
+  const registerForPushNotificationsNative = async () => {
     try {
       if (Constants.isDevice) {
         const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
@@ -33,6 +33,8 @@ export const PushNotifications = () => {
         }
         const res = await Notifications.getExpoPushTokenAsync();
         setToken(res.data);
+      } else {
+        alert(t('pushNotificationsView:physicalDevice'));
       }
     } catch (e) {
       alert(e.message);
@@ -49,22 +51,31 @@ export const PushNotifications = () => {
   };
 
   React.useEffect(() => {
-    registerForPushNotificationsAsync();
+    registerForPushNotificationsNative();
   });
 
   return (
     <View style={styles.container}>
-      <Button title={t('pushNotificationsView:sendNotificationButton')} onPress={() => sendPushNotification(token)} />
+      <Button
+        title={t('pushNotificationsView:sendNotificationButton')}
+        onPress={() =>
+          sendPushNotification({
+            expoPushToken: token,
+            title: t('pushNotificationsView:messageTitle'),
+            body: t('pushNotificationsView:messageBody')
+          })
+        }
+      />
     </View>
   );
 };
 
-function sendPushNotification(expoPushToken) {
+function sendPushNotification({ expoPushToken, title, body }) {
   const message = {
     to: expoPushToken,
     sound: 'default',
-    title: 'Original Title',
-    body: 'And here is the body!'
+    title,
+    body
   };
 
   fetch('https://exp.host/--/api/v2/push/send', {

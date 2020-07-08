@@ -36,7 +36,11 @@
   "pushNotificationsView": {
     "title": "Push Notifications",
     "permissionsRejectedAlert": "Polaris wasn't granted Notification permissions",
-    "sendNotificationButton": "Press to Send Notification"
+    "physicalDevice": "Must use physical device for Push Notifications",
+    "invalidVapidKey": "To use web push notifications, you must generate valid VAPID keys",
+    "sendNotificationButton": "Press to Send Notification",
+    "messageTitle": "Original Title",
+    "messageBody": "And here is the body!"
   },
   "listItem": {
     "title": "List item {:id}"

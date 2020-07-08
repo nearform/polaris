@@ -36,7 +36,11 @@
   "pushNotificationsView": {
     "title": "Notifiche Push",
     "permissionsRejectedAlert": "Polaris non ha ottenuto le autorizzazioni di notifica",
-    "sendNotificationButton": "Premere per inviare la notifica"
+    "physicalDevice": "È necessario utilizzare un dispositivo fisico per le notifiche push",
+    "invalidVapidKey": "Per utilizzare le notifiche push Web, è necessario generare chiavi VAPID valide",
+    "sendNotificationButton": "Premere per inviare la notifica",
+    "messageTitle": "Titolo originale",
+    "messageBody": "Ed ecco il corpo!"
   },
   "listItem": {
     "title": "Elenco articolo {:id}"
