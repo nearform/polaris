@@ -11,7 +11,7 @@ const mocks = {
 };
 
 describe('Picker Sheet', () => {
-  it('value change calls onValueChange function', () => {
+  it('calls onValueChange function on value change', () => {
     const { onValueChange, options, currentOption } = mocks;
     const { getByTestId } = render(
       <PickerSheet onValueChange={onValueChange} options={options} currentOption={currentOption} testID="picker" />
