@@ -15,7 +15,7 @@ const LanguageTestContainer = () => {
 };
 
 describe('Language Selector', () => {
-  it('language change updates i18n langcode', async () => {
+  it('updates useTranslation consumers with new i18n langcode on value change', async () => {
     const { getByTestId, queryAllByText } = render(<LanguageTestContainer />);
     const languagePicker = getByTestId('language-selector');
 
