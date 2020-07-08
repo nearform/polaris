@@ -1,6 +1,6 @@
 # Polaris
 
-Polaris is NearForm's frontend development accelerator. 
+Polaris is NearForm's frontend development accelerator.
 
 Polaris is a curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches. It aims to provide the necessary tools
 to create native mobile apps and web apps with a single codebase.
@@ -49,6 +49,8 @@ const HomeScreen = () => {
 ```
 
 In the example above, you can see how the library also provides support for date formatting and internationalisation using [date-fns](https://date-fns.org/) package. You can define date's format in the JSON file and pass the date object to the `t` function.
+
+`useTranslation` is available in all components, including Jest tests where it behaves as normal but defaults to the "`cimode`" language code. In Jest, `t` simply returns the (relatively stable) key and language-specific JSON translations are not loaded.
 
 ## Routing
 
@@ -140,9 +142,9 @@ Query string params in a URL, such as `?sort=id&direction=asc`, are stored as ne
 
 Returns an object of functions memoized with `useCallback`, `{ navigate, setParams, replaceParams }`:
 
- - `navigate( path:string, params:object (optional) )`: navigates to the given location, applying any provided params
- - `setParams( params )`: shallow-merges the provided params object with the location's current params
- - `replaceParams( params )`: applies the provided params object, and sets any currently-defined params not defined in the new params object to `null`.
+- `navigate( path:string, params:object (optional) )`: navigates to the given location, applying any provided params
+- `setParams( params )`: shallow-merges the provided params object with the location's current params
+- `replaceParams( params )`: applies the provided params object, and sets any currently-defined params not defined in the new params object to `null`.
 
 ## CI
 
