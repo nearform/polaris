@@ -25,7 +25,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm i
+      - run: npm ci
       - run: npm run lint
       - run: npm run test:ci
       - run: npm run web:ci
@@ -53,7 +53,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm i
+      - run: npm ci
       # ios and android js bundles + assets
       - run: expo export -f --dev --public-url http://localhost
       # web js bundle + assets

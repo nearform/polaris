@@ -171,5 +171,3 @@ or interactively using [Cypress test runner](https://docs.cypress.io/guides/core
 ```sh
 npm run e2e:web:open
 ```
-
-##
