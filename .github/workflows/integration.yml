@@ -16,7 +16,18 @@ jobs:
       - uses: expo/expo-github-action@v5
         with:
           expo-version: 3.x
-      - run: npm ci
+          expo-cache: true
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+
+      - run: npm i
       - run: npm run lint
       - run: npm run test:ci
       - run: npm run web:ci
@@ -35,7 +46,18 @@ jobs:
       - uses: expo/expo-github-action@v5
         with:
           expo-version: 3.x
-      - run: npm ci
+          expo-cache: true
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+
+      - run: npm i
       # ios and android js bundles + assets
       - run: expo export -f --dev --public-url http://localhost
       # web js bundle + assets
