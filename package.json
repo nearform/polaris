@@ -17,8 +17,9 @@
     "test": "jest",
     "test:ci": "jest --ci",
     "prestorybook": "rnstl",
-    "storybook:web": "start-storybook -p 6006 -c ./storybook/.storybook-web",
+    "storybook:web": "start-storybook -p 9001 -c ./storybook/.storybook-web",
     "storybook:ios": "run-p prestorybook && RUN_STORYBOOK=true expo start -c --ios",
+    "storybook:android": "run-p prestorybook && RUN_STORYBOOK=true expo start -c --android",
     "test:watch": "jest --watch",
     "checks": "run-p lint:fix && run-p lint && run-p test",
     "e2e:web:open": "cypress open",
@@ -68,7 +69,7 @@
       "searchDir": [
         "./src"
       ],
-      "pattern": "**/stories/*.native.js",
+      "pattern": "**/stories/{*.stories.common,*.stories.native}.js",
       "outputFile": "./storybook/storyLoader.js"
     }
   },

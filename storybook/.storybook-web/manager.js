@@ -7,7 +7,8 @@ addons.setConfig({
   showPanel: true,
   theme: create({
     base: 'light',
-    brandTitle: 'Polaris'
+
+    brandTitle: 'Polaris StoryBook'
   })
 });
 

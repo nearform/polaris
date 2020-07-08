@@ -4,10 +4,14 @@
 // https://github.com/elderfo/react-native-storybook-loader.git
 
 function loadStories() {
-  require('../src/components/atoms/button/stories/index.native');
+  require('../src/components/atoms/button/stories/button.stories.common');
+  require('../src/components/atoms/button/stories/button.stories.native');
 }
 
-const stories = ['../src/components/atoms/button/stories/index.native'];
+const stories = [
+  '../src/components/atoms/button/stories/button.stories.common',
+  '../src/components/atoms/button/stories/button.stories.native'
+];
 
 module.exports = {
   loadStories,

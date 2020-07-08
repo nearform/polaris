@@ -1,7 +1,7 @@
 const alias = require('../../aliases.config.js');
 
 module.exports = ({ config }) => {
-  config.resolve.extensions = ['.ts', '.tsx', '.js', '.json', '.web.js', '.web.ts', '.web.tsx', '.web.jsx', '.jsx'];
+  config.resolve.extensions = ['.js', '.json', '.web.js', '.web.jsx', '.jsx'];
 
   config.module.rules.push({
     test: /\.tsx?$/,
@@ -23,6 +23,7 @@ module.exports = ({ config }) => {
   });
 
   config.resolve.alias = {
+    '@storybook/react-native': '@storybook/react',
     'react-native': 'react-native-web'
   };
 
