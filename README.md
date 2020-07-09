@@ -170,6 +170,24 @@ Web push notifications:
 - run the node server with `npm run push:server:start`
 - restart expo build process and you should be able to run the example
 
+## SVGs
+
+Be aware that imported SVGs are automatically converted to normal React components. This is possible via `react-native-svg-transformer` library on native and `@svgr/webpack` loader on web. If you are interested in how the generated component looks like, head over to the [svgr documentation](https://react-svgr.com/docs/getting-started/).
+
+So to render an svg, simply import it:
+
+```
+import Logo from 'assets/logos/logo.svg';
+```
+
+and treat it like a normal React component:
+
+```
+<Logo width={200} height={50} fill="#2165e3" title="Logo" />
+```
+
+Note that props on the svg component are forwarded to the root `<svg>` element.
+
 ## End-to-end web testing
 
 Polaris uses [Cypress](https://www.cypress.io/) to define and run end-to-end tests for the web application.
