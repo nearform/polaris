@@ -4,3 +4,4 @@ export { ViewTwo } from './viewTwo';
 export { ViewThree } from './viewThree';
 export { Settings } from './settings';
 export { Camera } from './camera';
+export { PushNotifications } from './push-notifications';
