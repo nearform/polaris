@@ -165,7 +165,7 @@ Native push notifications:
 Web push notifications:
 
 - not yet supported out of the box with Expo, so we shipped a workaround with a custom node server
-- first create a .env for storing [VAPID](https://tools.ietf.org/html/draft-ietf-webpush-vapid-01) keys with `npm run create:env`
+- first create a .env for storing [VAPID](https://tools.ietf.org/html/draft-ietf-webpush-vapid-04) keys with `npm run create:env`
 - generate VAPID keys with `npm run push:generate:web` and save them in the .env file created in previous step
 - run the node server with `npm run push:server:start`
 - restart expo build process and you should be able to run the example
