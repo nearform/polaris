@@ -23,6 +23,7 @@ module.exports = {
     '^assets(.*)$': '<rootDir>/src/assets/$1',
     '^services(.*)$': '<rootDir>/src/services/$1',
     '^routes(.*)$': '<rootDir>/src/routes/$1',
-    '^test-utils(.*)$': '<rootDir>/src/test-utils'
+    '^test-utils(.*)$': '<rootDir>/src/test-utils',
+    '\\.svg$': '<rootDir>/__mocks__/svgrMock.js'
   }
 };
