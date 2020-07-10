@@ -50,6 +50,8 @@ const HomeScreen = () => {
 
 In the example above, you can see how the library also provides support for date formatting and internationalisation using [date-fns](https://date-fns.org/) package. You can define date's format in the JSON file and pass the date object to the `t` function.
 
+`useTranslation` is available in all components, including Jest tests where it behaves as normal but defaults to the "`cimode`" language code. In Jest, `t` simply returns the (relatively stable) key and language-specific JSON translations are not loaded.
+
 ## Routing
 
 Polaris uses [React Navigation](https://reactnavigation.org/) in Native (Android and iOS), and [React Router DOM](https://reactrouter.com/web/guides/quick-start) in Web. This allows all platforms to be given fully-featured, robust platform-appropriate routing without comprimises.
@@ -149,6 +151,42 @@ Returns an object of functions memoized with `useCallback`, `{ navigate, setPara
 Polaris has a simple continuous integration pipeline built in with [Github Actions](https://docs.github.com/en/actions) that lints, run tests and builds js bundles for each target. Note that GitHub has a [free plan](https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions) included for every account type and you shouldn't be billed for additional usage until a spending limit has been set for the account.
 
 To adjust the pipeline see [integration.yml file](.github/workflows/integration.yml).
+
+## Push Notifications
+
+Polaris supports both native and web push notifications.
+
+Native push notifications:
+
+- only supported on real devices, so it's not possible to test on a simulator
+- currently routed through Expo servers, although it's possible to send them through a custom node server if needed due to security, similar to web push notifications
+- to get the example working, you need to login with an Expo account on the computer with `expo login -u <username> -p <password>`
+
+Web push notifications:
+
+- not yet supported out of the box with Expo, so we shipped a workaround with a custom node server
+- first create a .env for storing [VAPID](https://tools.ietf.org/html/draft-ietf-webpush-vapid-04) keys with `npm run create:env`
+- generate VAPID keys with `npm run push:generate:web` and save them in the .env file created in previous step
+- run the node server with `npm run push:server:start`
+- restart expo build process and you should be able to run the example
+
+## SVGs
+
+Be aware that imported SVGs are automatically converted to normal React components. This is possible via `react-native-svg-transformer` library on native and `@svgr/webpack` loader on web. If you are interested in how the generated component looks like, head over to the [svgr documentation](https://react-svgr.com/docs/getting-started/).
+
+So to render an svg, simply import it:
+
+```
+import Logo from 'assets/logos/logo.svg';
+```
+
+and treat it like a normal React component:
+
+```
+<Logo width={200} height={50} fill="#2165e3" title="Logo" />
+```
+
+Note that props on the svg component are forwarded to the root `<svg>` element.
 
 ## End-to-end web testing
 

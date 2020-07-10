@@ -9,7 +9,7 @@ module.exports = {
     '\\.json': '<rootDir>/jest.jsonTransform.js'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native|expo-camera|react-native-adapter|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-native-vector-icons|react-native-vector-icons/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|unimodules-permissions-interface|@expo/vector-icons/.*|@unimodules|@unimodules/.*|jest-expo/.*|sentry-expo|native-base))'
+    'node_modules/(?!((jest-)?react-native|expo-camera|react-native-adapter|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-native-vector-icons|react-native-vector-icons/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|unimodules-permissions-interface|@expo/vector-icons/.*|@unimodules|@unimodules/.*|jest-expo/.*|sentry-expo|native-base|@react-native-community/picker/js/.+\\.jsx?))'
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/'],
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],
@@ -23,6 +23,7 @@ module.exports = {
     '^assets(.*)$': '<rootDir>/src/assets/$1',
     '^services(.*)$': '<rootDir>/src/services/$1',
     '^routes(.*)$': '<rootDir>/src/routes/$1',
-    '^test-utils(.*)$': '<rootDir>/src/test-utils'
+    '^test-utils(.*)$': '<rootDir>/src/test-utils',
+    '\\.svg$': '<rootDir>/__mocks__/svgrMock.js'
   }
 };
