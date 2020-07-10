@@ -6,11 +6,15 @@
 function loadStories() {
   require('../src/components/atoms/button/stories/button.stories.common');
   require('../src/components/atoms/button/stories/button.stories.native');
+  require('../src/components/atoms/link/stories/link.stories.native');
+  require('../src/components/organisms/navigation/stories/nav.stories.native');
 }
 
 const stories = [
   '../src/components/atoms/button/stories/button.stories.common',
-  '../src/components/atoms/button/stories/button.stories.native'
+  '../src/components/atoms/button/stories/button.stories.native',
+  '../src/components/atoms/link/stories/link.stories.native',
+  '../src/components/organisms/navigation/stories/nav.stories.native'
 ];
 
 module.exports = {
