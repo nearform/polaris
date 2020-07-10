@@ -23,8 +23,8 @@ export const Description = ({ children }) => (
 
 const Divider = () => <View style={styles.divider} />;
 
-const StoryPage = ({ children, description, title }) => (
-  <View style={styles.root}>
+const StoryPage = ({ children, description, title, width }) => (
+  <View style={[styles.root, { width }]}>
     <Title>{title}</Title>
     {description}
     {children}

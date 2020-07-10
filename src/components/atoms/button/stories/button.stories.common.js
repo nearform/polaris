@@ -4,10 +4,10 @@ import { action } from '@storybook/addon-actions';
 import { Text } from 'react-native';
 import Button from '../';
 
-storiesOf('Button Shared', module)
-  .add('with simple text', () => (
+storiesOf('Button', module)
+  .add('With Simple Text', () => (
     <Button onPress={action('Clicked Button')} title={'Hello'}>
       <Text>Hello Button</Text>
     </Button>
   ))
-  .add('in red color', () => <Button onPress={action('Red Button Clicked')} title={'Red Button'} color="red"></Button>);
+  .add('Red Color', () => <Button onPress={action('Red Button Clicked')} title={'Red Button'} color="red"></Button>);

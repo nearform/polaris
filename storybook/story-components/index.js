@@ -5,13 +5,12 @@ import DocCode from './doc-code';
 import DocItem from './doc-item';
 import DocLink from './doc-link';
 import DocSection from './doc-section';
-
 import StyleList from './style-list';
 import TextList from './text-list';
-
 import { DividerHorizontal, DividerVertical } from './dividers';
-
 import StoryPage, { Description } from './story-page';
+
+import './index.css';
 
 export default StoryPage;
 
