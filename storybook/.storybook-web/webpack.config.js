@@ -1,4 +1,5 @@
 const alias = require('../../aliases.config.js');
+const path = require('path');
 
 module.exports = ({ config }) => {
   config.resolve.extensions = ['.js', '.json', '.web.js', '.web.jsx', '.jsx'];
@@ -20,6 +21,7 @@ module.exports = ({ config }) => {
         }
       }
     ]
+    // include: path.resolve(__dirname, 'node_modules')
   });
 
   config.resolve.alias = {

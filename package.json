@@ -99,6 +99,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.10.4",
+    "@expo/webpack-config": "^0.12.19",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
@@ -106,6 +107,7 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@storybook/react-native": "^5.3.19",
+    "@svgr/webpack": "^5.4.0",
     "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
@@ -130,6 +132,7 @@
     "lint-staged": "^10.2.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
+    "react-native-svg-transformer": "^0.14.3",
     "react-native-testing-library": "^2.1.0",
     "react-test-renderer": "^16.13.1",
     "wait-on": "^5.0.1"
