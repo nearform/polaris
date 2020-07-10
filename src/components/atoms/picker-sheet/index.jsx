@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Picker } from 'react-native';
 
 // React Native's own picker is deprecated, this is recommended and supported in expo SDK 38
 // Import from @react-native-community/picker/js/Picker to avoid warnings due to
 // https://github.com/react-native-community/react-native-picker/issues/109
-import Picker from '@react-native-community/picker/js/Picker';
+// remove because storybook does not work with it
+// https://github.com/react-native-community/react-native-picker/issues/45#issuecomment-633163973
+// import Picker from '@react-native-community/picker/js/Picker';
 
 import propTypes from './prop-types';
 
