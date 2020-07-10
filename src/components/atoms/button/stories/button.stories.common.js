@@ -1,10 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+
 import Button from '../';
 
-storiesOf('Button', module)
+storiesOf('Atoms/Button', module)
+  .addDecorator(storyFn => (
+    <View>
+      {storyFn()}
+      <View>
+        <Text style={{ textAlign: 'center' }}>Native Button</Text>
+      </View>
+    </View>
+  ))
   .add('With Simple Text', () => (
     <Button onPress={action('Clicked Button')} title={'Hello'}>
       <Text>Hello Button</Text>

@@ -9,7 +9,7 @@ import Header from '../nav';
 
 export default {
   component: Header,
-  title: 'Navigation Header',
+  title: 'Organisms/Navigation Header',
   decorators: [
     storyFn => (
       <StoryPage title="Navigation Header" url="components/atoms/button" width={900}>

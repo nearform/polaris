@@ -4,22 +4,19 @@ import { useTranslation } from 'react-i18next';
 
 import { supportedLocales } from 'services/i18n';
 
-export const LanguageSelector = ({ changeLanguage, languages, currentLanguage, nativeID }) => {
-  // const { t } = useTranslation();
-  return (
-    <Picker
-      selectedValue={currentLanguage}
-      style={styles.picker}
-      onValueChange={changeLanguage}
-      nativeID={nativeID}
-      testID="language-selector"
-    >
-      {languages.map(lang => (
-        <Picker.Item label={lang.name} value={lang.code} key={lang.code} />
-      ))}
-    </Picker>
-  );
-};
+export const LanguageSelector = ({ changeLanguage, languages, currentLanguage, nativeID }) => (
+  <Picker
+    selectedValue={currentLanguage}
+    style={styles.picker}
+    onValueChange={changeLanguage}
+    nativeID={nativeID}
+    testID="language-selector"
+  >
+    {languages.map(lang => (
+      <Picker.Item label={lang.name} value={lang.code} key={lang.code} />
+    ))}
+  </Picker>
+);
 
 export default function LanguageSelectorComponent({ nativeID }) {
   const { i18n } = useTranslation();

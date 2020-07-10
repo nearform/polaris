@@ -2,6 +2,8 @@ import { addDecorator } from '@storybook/react';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import '../story-components/index.css';
+
 const styles = StyleSheet.create({
   root: {
     minHeight: '100vh',

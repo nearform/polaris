@@ -10,8 +10,6 @@ import TextList from './text-list';
 import { DividerHorizontal, DividerVertical } from './dividers';
 import StoryPage, { Description } from './story-page';
 
-import './index.css';
-
 export default StoryPage;
 
 export {

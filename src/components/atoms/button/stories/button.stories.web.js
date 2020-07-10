@@ -7,12 +7,12 @@ import StoryPage, { DocText, Description, DocSection, DocItem } from 'storybook/
 
 export default {
   component: Button,
-  title: 'Button',
+  title: 'Atoms/Button',
   decorators: [
     storyFn => (
       <StoryPage title="Full Width Button" url="components/atoms/button">
         <Description>
-          <DocText>Full width button description.</DocText>
+          <DocText>Full width button description</DocText>
         </Description>
         {storyFn()}
       </StoryPage>
