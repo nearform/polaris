@@ -1,30 +1,13 @@
 import React, { useMemo } from 'react';
-import { Text, View, StatusBar, Picker } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 import usePlatformParams from 'utils/hooks/usePlatformParams';
 
 import LinkButton from 'components/molecules/link-button';
+import { SortPickerComponent } from 'components/molecules/sort-picker';
 import content from './content';
-
-export const PickerComponent = ({ onSortChange: handleSortChange, currentSort, items = [] }) => {
-  return (
-    <Picker
-      onValueChange={handleSortChange}
-      selectedValue={currentSort}
-      style={{
-        width: 128,
-        height: 48,
-        backgroundColor: 'white'
-      }}
-    >
-      {items.map(({ label, value }) => (
-        <Picker.Item label={label} value={value} key={value} />
-      ))}
-    </Picker>
-  );
-};
 
 export const ListView = () => {
   const { t, i18n } = useTranslation();
@@ -55,7 +38,7 @@ export const ListView = () => {
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Text>{t('listView:sortBy')}</Text>
         <View style={{ borderColor: '#ccc', borderWidth: 1, marginLeft: 16 }}>
-          <PickerComponent onSortChange={handleSortChange} currentSort={currentSort} items={items} />
+          <SortPickerComponent onSortChange={handleSortChange} currentSort={currentSort} items={items} />
         </View>
       </View>
       <View style={{ justifyContent: 'space-around', alignSelf: 'stretch', alignItems: 'stretch' }}>
