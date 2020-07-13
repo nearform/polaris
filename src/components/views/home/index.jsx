@@ -1,20 +1,20 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
 import { useTranslation } from 'react-i18next';
-
-import { styles } from '../views.styles';
+import NearformLogo from 'assets/logos/nearform.svg';
+import LinkButton from 'components/molecules/link-button';
 
 export const HomeScreen = ({ navigation }) => {
   const { t } = useTranslation();
-
   return (
-    <View style={styles.container}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <NearformLogo width={200} height={50} fill="#2165e3" title="Nearform logo" />
       <Text>{t('home:title')}</Text>
-      <Button title={t('home:viewOneButton')} onPress={() => navigation.push('ViewOne')} />
-      <Button title={t('home:viewTwoButton')} onPress={() => navigation.push('ViewTwo')} />
-      <Button title={t('home:viewThreeButton')} onPress={() => navigation.push('ViewThree')} />
-      <Button title={t('home:settingsButton')} onPress={() => navigation.push('Settings')} />
-      <Button title={t('home:cameraButton')} onPress={() => navigation.push('Camera')} />
+      <LinkButton title={t('home:viewOneButton')} path="/viewOne" />
+      <LinkButton title={t('home:viewTwoButton')} path="/viewTwo" />
+      <LinkButton title={t('home:viewThreeButton')} path="/viewThree" />
+      <LinkButton title={t('home:listViewButton')} path="/listView" />
+      <LinkButton title={t('home:pushNotificationsButton')} path="/pushNotifications" />
     </View>
   );
 };
