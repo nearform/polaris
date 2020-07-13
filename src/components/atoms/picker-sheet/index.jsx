@@ -9,7 +9,13 @@ import Picker from '@react-native-community/picker/js/Picker';
 import propTypes from './prop-types';
 
 const PickerSheet = ({ onValueChange, styles = defaultStyles, currentOption, testID, options }) => (
-  <Picker selectedValue={currentOption?.value} style={styles.picker} onValueChange={onValueChange} testID={testID}>
+  <Picker
+    selectedValue={currentOption?.value}
+    style={styles.picker}
+    onValueChange={onValueChange}
+    testID={testID}
+    accessibilityLabel={testID}
+  >
     {options.map(option => (
       <Picker.Item label={option.label || option.value} value={option.value} key={option.value} />
     ))}

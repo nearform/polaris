@@ -15,7 +15,7 @@ const Nav = () => {
         <Link title={t('listView:title')} path={'/listView'} />
       </View>
       <View style={styles.item}>
-        <Link title={t('settings:title')} path={'/settings'} />
+        <Link title={t('settings:title')} path={'/settings'} testID="go-to-settings" />
       </View>
     </View>
   );

@@ -112,7 +112,8 @@
     "react-native-svg-transformer": "^0.14.3",
     "react-native-testing-library": "^2.1.0",
     "react-test-renderer": "^16.13.1",
-    "wait-on": "^5.0.1"
+    "wait-on": "^5.0.1",
+    "webdriverio": "^6.1.25"
   },
   "private": true
 }
