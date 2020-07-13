@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.0",
-    "@react-native-community/async-storage": "^1.11.0",
+    "@react-native-community/async-storage": "~1.11.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/picker": "1.6.0",
     "@react-navigation/drawer": "^5.8.4",
@@ -54,7 +54,7 @@
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-i18next": "^11.7.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-elements": "^2.0.4",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-reanimated": "~1.9.0",
@@ -98,7 +98,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.10.4",
-    "@expo/webpack-config": "^0.12.19",
+    "@expo/webpack-config": "^0.12.16",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",

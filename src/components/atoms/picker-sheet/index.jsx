@@ -6,7 +6,7 @@ import { StyleSheet, Picker } from 'react-native';
 // https://github.com/react-native-community/react-native-picker/issues/109
 // remove because storybook does not work with it
 // https://github.com/react-native-community/react-native-picker/issues/45#issuecomment-633163973
-// import Picker from '@react-native-community/picker/js/Picker';
+// import { Picker } from '@react-native-community/picker';
 
 import propTypes from './prop-types';
 
