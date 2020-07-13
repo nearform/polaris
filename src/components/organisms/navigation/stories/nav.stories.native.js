@@ -13,5 +13,5 @@ storiesOf('Tab Bar', module)
       </View>
     </View>
   ))
-  // .add('with 3 items', () => <TabBar />);
+  // .add('with 3 items', () => <TabBar />); fix me
   .add('with 3 items', () => <View />);

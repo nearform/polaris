@@ -21,6 +21,7 @@ module.exports = ({ config }) => {
         }
       }
     ]
+    // include: path.resolve(__dirname, 'node_modules')
   });
 
   config.resolve.alias = {
