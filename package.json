@@ -5,8 +5,8 @@
     "start": "expo start",
     "web": "expo start --web",
     "web:ci": "expo start --web &",
-    "ios": "expo start --ios",
-    "android": "expo start --android",
+    "ios": "expo start -c --ios",
+    "android": "expo start -c --android",
     "build:web": "expo build:web",
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
@@ -75,6 +75,15 @@
       "prettier --write"
     ]
   },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./src"
+      ],
+      "pattern": "**/stories/{*.stories.common,*.stories.native}.js",
+      "outputFile": "./storybook/storyLoader.js"
+    }
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -121,6 +130,7 @@
     "lint-staged": "^10.2.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
+    "react-native-storybook-loader": "^1.8.1",
     "react-native-svg-transformer": "^0.14.3",
     "react-native-testing-library": "^2.1.0",
     "react-test-renderer": "^16.13.1",
