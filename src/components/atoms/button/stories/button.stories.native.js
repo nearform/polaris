@@ -15,7 +15,7 @@ storiesOf('Atoms/Button', module)
     </View>
   ))
   .add('Native Only', () => (
-    <Button onPress={action('Clicked Button')} title={'Hello'}>
+    <Button onPress={action('Clicked Button')} title="Hello">
       <Text>Hello Native</Text>
     </Button>
   ));

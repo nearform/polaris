@@ -7,13 +7,11 @@ export default function ButtonComponent({ onPress, title, color }) {
 }
 
 Button.defaultProps = {
-  color: null,
-  title: null,
-  onPress: () => {}
+  color: null
 };
 
 Button.propTypes = {
   color: PropTypes.color,
-  title: PropTypes.string,
-  onPress: PropTypes.func
+  title: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired
 };

@@ -15,8 +15,8 @@ storiesOf('Atoms/Button', module)
     </View>
   ))
   .add('With Simple Text', () => (
-    <Button onPress={action('Clicked Button')} title={'Hello'}>
+    <Button onPress={action('Clicked Button')} title="Hello">
       <Text>Hello Button</Text>
     </Button>
   ))
-  .add('Red Color', () => <Button onPress={action('Red Button Clicked')} title={'Red Button'} color="red"></Button>);
+  .add('Red Color', () => <Button onPress={action('Red Button Clicked')} title="Red Button" color="red"></Button>);

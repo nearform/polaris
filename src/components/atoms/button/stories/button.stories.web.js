@@ -27,7 +27,7 @@ export const fullWidth = () => (
       typeInfo="string"
       description="The title to be used for the buttons content"
       example={{
-        render: () => <Button onPress={action('Clicked Button')} title={'Full Width Button Example'} />
+        render: () => <Button onPress={action('Clicked Button')} title="Full Width Button Example" />
       }}
     />
   </DocSection>
