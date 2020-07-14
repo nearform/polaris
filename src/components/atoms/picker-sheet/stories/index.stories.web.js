@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import StoryPage, { DocText, Description, DocItem } from 'storybook/story-components';
 import { action } from '@storybook/addon-actions';
 
 import PickerSheet from '../';
-
-const handlePickerChange = itemValue => action;
 
 const options = [
   { value: '1', label: 'Picker Item 1' },
@@ -14,8 +12,6 @@ const options = [
   { value: '5', label: 'Picker Item 5' },
   { value: '6', label: 'Picker Item 6' }
 ];
-
-const currentOption = options.find(({ value }) => value === '1');
 
 export default {
   component: PickerSheet,
@@ -32,10 +28,19 @@ export default {
   ]
 };
 
-export const linkWithText = () => (
-  <DocItem
-    example={{
-      render: () => <PickerSheet onValueChange={handlePickerChange} currentOption={currentOption} options={options} />
-    }}
-  />
-);
+export const WithItems = () => {
+  const [currentOption, setCurrentOption] = useState(options[0]);
+  const handlePickerChange = value => {
+    const selectedOption = options.find(option => option.value === value);
+    setCurrentOption(selectedOption);
+    action('onValueChange')(selectedOption.label);
+  };
+
+  return (
+    <DocItem
+      example={{
+        render: () => <PickerSheet onValueChange={handlePickerChange} currentOption={currentOption} options={options} />
+      }}
+    />
+  );
+};
