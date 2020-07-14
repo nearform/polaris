@@ -7,13 +7,7 @@ import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 const Link = ({ path, title, params, style, Component = TouchableOpacity, titleAsProp, testID }) => {
   const { navigate } = usePlatformNavigation();
   return (
-    <Component
-      style={style}
-      title={titleAsProp ? title : null}
-      onPress={() => navigate(path, params)}
-      testID={testID}
-      accessibilityLabel={testID}
-    >
+    <Component style={style} title={titleAsProp ? title : null} onPress={() => navigate(path, params)} testID={testID}>
       {titleAsProp ? null : <Text>{title}</Text>}
     </Component>
   );
