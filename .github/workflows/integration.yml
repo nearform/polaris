@@ -62,7 +62,8 @@ jobs:
             **/node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
 
-      - run: npm i
+      - run: npm ci
+      - run: npm run prestorybook
       # ios and android js bundles + assets
       - run: expo export -f --dev --public-url http://localhost
       # web js bundle + assets
