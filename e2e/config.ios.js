@@ -1,6 +1,6 @@
 const path = require('path');
 
-const iosAppAbsPath = path.normalize(`${__dirname}/../dist/polaris.app`);
+const iosAppAbsPath = path.normalize(`${__dirname}/../build/polaris.app`);
 const simulator = 'iPhone 11';
 
 const configuration = {
