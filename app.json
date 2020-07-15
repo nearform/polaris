@@ -20,9 +20,11 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.nearform.polaris",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.nearform.polaris",
       "useNextNotificationsApi": true
     },
     "web": {
