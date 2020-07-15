@@ -1,6 +1,6 @@
 const path = require('path');
 
-const appAbsPath = path.normalize(`${__dirname}/../polaris.apk`);
+const appAbsPath = path.normalize(`${__dirname}/../dist/polaris.apk`);
 const emulator = 'Nexus_5_API_29';
 
 const configuration = {

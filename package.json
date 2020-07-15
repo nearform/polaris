@@ -10,6 +10,8 @@
     "build:web": "expo build:web",
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
+    "build:local:android": "turtle build:android --type=apk --output=dist/polaris.apk",
+    "build:local:ios": "turtle build:ios --type=simulator --output=dist/polaris.tgz && tar xzf dist/polaris.tgz -C dist",
     "eject": "expo eject",
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "npm run lint -- --fix",
