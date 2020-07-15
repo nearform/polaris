@@ -10,7 +10,7 @@ describe('Internationalisation support', () => {
     cy.contains(translationEN.home.settingsButton).click();
 
     // Find the language drop-down and select the Italian language
-    cy.get('[testID=language-selector]').select('it');
+    cy.get('[data-testid=language-selector]').select('it');
 
     // Check if the Italian title for the Settings page is displayed
     cy.contains(translationIT.settings.title);
