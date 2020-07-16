@@ -11,7 +11,7 @@
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
     "build:local:android": "turtle build:android --type=apk --output=build/polaris.apk",
-    "build:local:ios": "turtle build:ios --type=simulator --output=build/polaris.tgz && tar xzf build/polaris.tgz -C dist",
+    "build:local:ios": "turtle build:ios --type=simulator --output=build/polaris.tgz && tar xzf build/polaris.tgz -C build",
     "publish": "expo publish",
     "eject": "expo eject",
     "lint": "eslint --ext .js,.jsx .",
