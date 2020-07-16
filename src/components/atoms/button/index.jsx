@@ -11,7 +11,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  color: PropTypes.color,
+  color: PropTypes.string,
   title: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired
 };
