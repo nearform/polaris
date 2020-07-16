@@ -13,6 +13,9 @@ npm-debug.*
 node_modules
 .expo
 
+# storybook auto generated file for stories on native
+storebook/storyLoader.js
+
 # production
 dist
 web-build

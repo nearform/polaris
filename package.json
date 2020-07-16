@@ -5,8 +5,8 @@
     "start": "expo start",
     "web": "expo start --web",
     "web:ci": "expo start --web &",
-    "ios": "expo start --ios",
-    "android": "expo start --android",
+    "ios": "expo start -c --ios",
+    "android": "expo start -c --android",
     "build:web": "expo build:web",
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
@@ -18,6 +18,10 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
     "test:ci": "jest --ci",
+    "prestorybook": "rnstl",
+    "storybook:web": "start-storybook -p 9001 -c ./storybook/.storybook-web",
+    "storybook:ios": "run-p prestorybook && RUN_STORYBOOK=true expo start -c --ios",
+    "storybook:android": "run-p prestorybook && RUN_STORYBOOK=true expo start -c --android",
     "test:watch": "jest --watch",
     "checks": "run-p lint:fix && run-p lint && run-p test",
     "e2e:web:open": "cypress open",
@@ -30,6 +34,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.0",
+    "@react-native-community/async-storage": "~1.11.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/picker": "1.6.0",
     "@react-navigation/drawer": "^5.8.4",
@@ -52,7 +57,7 @@
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-i18next": "^11.7.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-elements": "^2.0.4",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-reanimated": "~1.9.0",
@@ -73,6 +78,15 @@
       "prettier --write"
     ]
   },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./src"
+      ],
+      "pattern": "**/stories/{*.stories.common,*.stories.native}.js",
+      "outputFile": "./storybook/storyLoader.js"
+    }
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -87,7 +101,14 @@
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.10.4",
-    "@expo/webpack-config": "^0.12.18",
+    "@expo/webpack-config": "^0.12.16",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-ondevice-knobs": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "@storybook/react-native": "^5.3.19",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
@@ -112,6 +133,7 @@
     "lint-staged": "^10.2.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
+    "react-native-storybook-loader": "^1.8.1",
     "react-native-svg-transformer": "^0.14.3",
     "react-native-testing-library": "^2.1.0",
     "react-test-renderer": "^16.13.1",

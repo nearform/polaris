@@ -6,5 +6,6 @@ module.exports = {
   constants: './src/constants',
   assets: './src/assets',
   services: './src/services',
-  routes: './src/routes'
+  routes: './src/routes',
+  storybook: './storybook'
 };
