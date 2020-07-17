@@ -19,26 +19,12 @@ jest.mock('expo-localization', () => ({
   locale: 'en-US'
 }));
 
-global.console = {
-  log: console.log,
-  error: jest.fn(),
-  warn: jest.fn(),
-  info: console.info,
-  debug: console.debug
-};
+// Show error details and warnings in console but disable Native Yellowbox
+// which can cause infinite loops by failing to access native APIs
+global.console.disableYellowBox = true;
 
 jest.useFakeTimers();
 
-jest.mock('@react-navigation/native', () => ({
-  useNavigation: () => jest.fn(),
-  useNavigationParam: () => jest.fn(),
-  useRoute: () => jest.fn(),
-  NavigationContainer: () => jest.fn(),
-  NavigationEvents: 'mockNavigationEvents'
-}));
-
-jest.mock('@react-navigation/drawer', () => ({
-  createDrawerNavigator: () => jest.fn(),
   DrawerContent: () => jest.fn()
 }));
 
