@@ -1,38 +1,42 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 import { View, StyleSheet, Text, Switch } from 'react-native';
-import { UIReducerContext, UISettingsContext } from 'store';
+import styled from '@emotion/native';
+import { useTheme } from 'emotion-theming';
+import { ThemeActionsContext } from 'store';
 import { useTranslation } from 'react-i18next';
 import Link from 'components/atoms/link';
 
+const Container = styled.View`
+  padding: 0;
+  padding-top: 30;
+  height: 85;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-bottom-color: #e0e0e0;
+  border-bottom-width: 1;
+  position: relative;
+  background-color: ${props => props.theme.bgColor};
+`;
+
 export default function Header() {
   const { t } = useTranslation();
-  const { theme, textColor, bgColor } = useContext(UISettingsContext);
-  const { toggleTheme } = useContext(UIReducerContext);
-
-  const themeStyles = useMemo(() => {
-    return {
-      header: {
-        backgroundColor: bgColor
-      },
-      themeTextColor: {
-        color: textColor
-      }
-    };
-  }, [textColor, bgColor]);
+  const { toggleTheme } = useContext(ThemeActionsContext);
+  const theme = useTheme();
 
   return (
-    <View style={[styles.header, themeStyles.header]}>
+    <Container>
       <View style={styles.left}>
         <Link title={t('home:title')} path={'/'} />
       </View>
       <View style={styles.center}>
-        <Text style={themeStyles.themeTextColor}>{t('nav:topCenter')}</Text>
+        <Text style={{ color: theme.textColor }}>{t('nav:topCenter')}</Text>
       </View>
       <View style={styles.right}>
         <Link title={t('home:settingsButton')} path={'/settings'} />
-        <Switch onValueChange={toggleTheme} value={theme === 'light'} testID="theme-switch" />
+        <Switch onValueChange={toggleTheme} value={theme.name !== 'light'} testID="theme-switch" />
       </View>
-    </View>
+    </Container>
   );
 }
 
@@ -40,18 +44,6 @@ const styles = StyleSheet.create({
   themeText: {
     paddingRight: 5,
     textTransform: 'capitalize'
-  },
-  header: {
-    padding: 0,
-    paddingTop: 30,
-    height: 85,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#F7F7F7',
-    borderBottomColor: '#e0e0e0',
-    borderBottomWidth: 1,
-    position: 'relative'
   },
   center: {
     flex: 1,

@@ -1,1 +1,2 @@
-export { UIReducerContext, UISettingsContext, UIProvider } from './ui/context';
+export { ThemeSettingsProvider, ThemeSettingsContext, ThemeActionsContext } from './theme/ThemeSettingsProvider';
+export { ThemeProvider } from './theme/ThemeProvider';

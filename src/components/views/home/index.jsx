@@ -1,14 +1,20 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+import styled from '@emotion/native';
 import { useTranslation } from 'react-i18next';
 import NearformLogo from 'assets/logos/nearform.svg';
 import LinkButton from 'components/molecules/link-button';
-import { styles } from '../views.styles';
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const HomeScreen = () => {
   const { t } = useTranslation();
   return (
-    <View style={styles.container}>
+    <Container>
       <NearformLogo width={200} height={50} fill="#2165e3" title="Nearform logo" />
       <Text>{t('home:title')}</Text>
       <LinkButton title={t('home:viewOneButton')} path="/viewOne" />
@@ -16,6 +22,6 @@ export const HomeScreen = () => {
       <LinkButton title={t('home:viewThreeButton')} path="/viewThree" />
       <LinkButton title={t('home:listViewButton')} path="/listView" />
       <LinkButton title={t('home:pushNotificationsButton')} path="/pushNotifications" />
-    </View>
+    </Container>
   );
 };
