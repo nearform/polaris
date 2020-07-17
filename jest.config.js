@@ -1,5 +1,24 @@
-module.exports = {
-  preset: 'jest-expo',
+const aliasMappings = {
+  '^store/(.*)$': '<rootDir>/src/store/$1',
+  '^components/(.*)$': '<rootDir>/src/components/$1',
+  '^src/(.*)$': '<rootDir>/src/$1',
+  '^utils/(.*)$': '<rootDir>/src/utils/$1',
+  '^constants/(.*)$': '<rootDir>/src/constants/$1',
+  '^assets(.*)$': '<rootDir>/src/assets/$1',
+  '^services(.*)$': '<rootDir>/src/services/$1',
+  '^routes(.*)$': '<rootDir>/src/routes/$1',
+  '^test-utils(.*)$': '<rootDir>/src/test-utils/$1',
+  '\\.svg$': '<rootDir>/__mocks__/svgrMock.js'
+};
+
+const nativeMappings = {
+  // React Navigation nav builders contain native elements and API calls that Jest can't handle
+  // In Jest, skip the Navigation-based UI, and just follow links to their target View
+  '^utils/routing/with-navigation(.*)$': '<rootDir>/src^utils/routing/with-navigation.jest$1',
+  ...aliasMappings
+};
+
+const universalSettings = {
   testTimeout: 10000,
   verbose: true,
   moduleFileExtensions: ['js', 'jsx', 'json'],
@@ -15,16 +34,14 @@ module.exports = {
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   automock: false,
-  moduleNameMapper: {
-    '^store/(.*)$': '<rootDir>/src/store/$1',
-    '^components/(.*)$': '<rootDir>/src/components/$1',
-    '^src/(.*)$': '<rootDir>/src/$1',
-    '^utils/(.*)$': '<rootDir>/src/utils/$1',
-    '^constants/(.*)$': '<rootDir>/src/constants/$1',
-    '^assets(.*)$': '<rootDir>/src/assets/$1',
-    '^services(.*)$': '<rootDir>/src/services/$1',
-    '^routes(.*)$': '<rootDir>/src/routes/$1',
-    '^test-utils(.*)$': '<rootDir>/src/test-utils',
-    '\\.svg$': '<rootDir>/__mocks__/svgrMock.js'
-  }
+  clearMocks: true,
+  moduleNameMapper: aliasMappings
+};
+
+module.exports = {
+  projects: [
+    { preset: 'jest-expo/ios', ...universalSettings, moduleNameMapper: nativeMappings },
+    { preset: 'jest-expo/android', ...universalSettings, moduleNameMapper: nativeMappings },
+    { preset: 'jest-expo/web', ...universalSettings }
+  ]
 };
