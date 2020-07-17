@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { supportedLocales } from 'services/i18n';
 import PickerSheet from 'components/atoms/picker-sheet';
 

@@ -1,11 +1,16 @@
 import React, { useCallback } from 'react';
-import { ActionSheetIOS, Button, StyleSheet, View } from 'react-native';
-import propTypes from './prop-types';
+import { ActionSheetIOS, Button, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { css } from '@emotion/native';
+import propTypes from './prop-types';
+
+const defaultStyle = css`
+  justify-content: 'center';
+`;
 
 const PickerSheet = ({
   onValueChange,
-  styles = defaultStyles,
+  style = defaultStyle,
   currentOption,
   testID,
   cancelLabel = 'cancel',
@@ -31,7 +36,7 @@ const PickerSheet = ({
   }, [translatedCancelLabel, options, onValueChange]);
 
   return (
-    <View style={styles.container}>
+    <View style={style}>
       <Button onPress={changeOption} title={currentOption.label || currentOption.value} testID={testID} />
     </View>
   );
@@ -39,9 +44,3 @@ const PickerSheet = ({
 
 PickerSheet.propTypes = propTypes;
 export default PickerSheet;
-
-const defaultStyles = StyleSheet.create({
-  container: {
-    justifyContent: 'center'
-  }
-});

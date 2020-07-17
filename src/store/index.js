@@ -1,2 +1,1 @@
-export { ThemeSettingsProvider, ThemeSettingsContext, ThemeActionsContext } from './theme/ThemeSettingsProvider';
-export { ThemeProvider } from './theme/ThemeProvider';
+export { ThemeProvider, ThemeActionsContext } from './theme/ThemeProvider';

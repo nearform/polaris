@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Text, View, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
-
+import { css } from '@emotion/native';
 import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 import usePlatformParams from 'utils/hooks/usePlatformParams';
-
+import Container from 'components/atoms/container';
 import PickerSheet from 'components/atoms/picker-sheet';
 import LinkButton from 'components/molecules/link-button';
 import content from './content';
@@ -31,7 +31,7 @@ export const ListView = () => {
     });
   };
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Container>
       <StatusBar style="auto" />
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Text>{t('listView:sortBy')}</Text>
@@ -39,11 +39,11 @@ export const ListView = () => {
           <PickerSheet
             onValueChange={handleSortChange}
             currentOption={currentSortOption}
-            style={{
-              width: 128,
-              height: 48,
-              backgroundColor: 'white'
-            }}
+            style={css`
+              width: 128;
+              height: 48;
+              background-color: 'white';
+            `}
             options={sortOptions}
           />
         </View>
@@ -69,6 +69,6 @@ export const ListView = () => {
           </View>
         ))}
       </View>
-    </View>
+    </Container>
   );
 };
