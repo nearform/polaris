@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   src: './src',
   components: './src/components',
@@ -7,5 +9,6 @@ module.exports = {
   assets: './src/assets',
   services: './src/services',
   routes: './src/routes',
-  storybook: './storybook'
+  storybook: './storybook',
+  appRoot: path.resolve(__dirname, process.env.RUN_STORYBOOK ? './storybook' : './src/App')
 };
