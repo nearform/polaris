@@ -170,6 +170,75 @@ Web push notifications:
 - run the node server with `npm run push:server:start`
 - restart expo build process and you should be able to run the example
 
+## Storybook integration
+
+Polaris has Storybook integration for developing UI components separately in isolation environment, as an individual piece. This is useful tool for faster development and quicker iteration. Also, it's good to serve as a guide so we don't recreate a component someone else has done. The latter contributes to reusability.
+
+#### Create stories for native and web platform
+
+Storybook integrates with Polaris and offers an easy solution to presents UI components on different platform for native and web. You would need to create subfolder called `stories` inside your component folder. Then use different file names to target different platforms where you want to develop, view or test your components.
+
+For example:
+
+```bash
+src/components/atoms/button
+  - [▼] stories
+    - button.stories.common.js
+    - button.stories.native.js
+    - button.stories.web.js
+  - index.jsx
+```
+
+Storybook will read all files inside `stories` folders and use them in Storybook explorer UI:
+
+- `*.stories.native.js` file(s) will be used inside react storybook for Native platform `ios` and `android`.
+- `*.stories.web.js` files(s) will be used inside react storybook for Web
+- `*.stories.common.js` file(s) will be use to common stories for components that share same properties and functionality on all platforms native and web.
+
+#### Run storybook configuration and settings
+
+Storybook's configuration and support files located inside `/storybook` folder in root of Polaris.
+
+`/storybook/storybook-components` - Storybook **web** stories decorators files used to wrap stories components and present them with better visuals inside explorer UI.
+
+`/storybook/.storybook-web` - Storybook react for **web** configuration and support files
+
+`/storybook` - Storybook **native** configuration and support files
+
+`/storybook/storybook-components-native` - Storybook **native** stories decorators files used to wrap stories components and present them inside explorer UI.
+
+#### Run storybook for native and web platform
+
+In Polaris you can run Storybook' stories for components separately on its own platform Native (ios, android) and Web.
+
+##### Storybook Web (Browser)
+
+On Web, it runs standard Stroybook Explorer Interface with npm command:
+
+```bash
+$ npm run storybook:web
+```
+
+After it runs, browser will open storybook's url at `http://localhost:9001`
+
+##### Storybook Native (iOS, Android)
+
+On Native it runs Storybook Native Explorer Interface with npm command:
+
+for `ios` run:
+
+```bash
+$ npm run storybook:ios
+```
+
+for `android` run:
+
+```bash
+$ npm run storybook:android
+```
+
+After, it runs Storybook Explorer Application for native devices on `ios` or `android` device or inside simulators.
+
 ## SVGs
 
 Be aware that imported SVGs are automatically converted to normal React components. This is possible via `react-native-svg-transformer` library on native and `@svgr/webpack` loader on web. If you are interested in how the generated component looks like, head over to the [svgr documentation](https://react-svgr.com/docs/getting-started/).
