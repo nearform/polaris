@@ -164,6 +164,8 @@ Basic building blocks. Applied to interfaces, atoms are simplest HTML tags, such
 
 Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules take on their own properties and serve as the backbone of application design. Form label, Input or Button aren’t too useful by themselves, but combine them together as a form and now they can actually do something together.
 
+**Atoms** and **molecules** are declarative and lifeless scaffolding with no business logic. They are brought to life inside organisms.
+
 #### 3. Organisms
 
 Molecules are building blocks to work with, and we can now combine them together to form organisms. Organisms are groups of molecules joined together to form a relatively complex, distinct section of an application interface. Building up from molecules to organisms encourages creating standalone, portable, reusable components.
