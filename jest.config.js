@@ -40,8 +40,8 @@ const universalSettings = {
 
 module.exports = {
   projects: [
+    { preset: 'jest-expo/web', ...universalSettings },
     { preset: 'jest-expo/ios', ...universalSettings, moduleNameMapper: nativeMappings },
-    { preset: 'jest-expo/android', ...universalSettings, moduleNameMapper: nativeMappings },
-    { preset: 'jest-expo/web', ...universalSettings }
+    { preset: 'jest-expo/android', ...universalSettings, moduleNameMapper: nativeMappings }
   ]
 };
