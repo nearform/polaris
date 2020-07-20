@@ -195,6 +195,10 @@ Storybook will read all files inside `stories` folders and use them in Storybook
 - `*.stories.web.js` files(s) will be used inside react storybook for Web
 - `*.stories.common.js` file(s) will be use to common stories for components that share same properties and functionality on all platforms native and web.
 
+Stories in `.native.js` and `.common.js` must use `storiesOf` format due to `@storybook/react-native`. `.web.js` files may use the more declarative CSF format.
+
+It is also not possible to use the `@storybooks/addon-docs` plugin as it is not compatible with `@storybook/react-native`. There is a custom set of components in `storybook/.storybook-web` to facilitate documentation.
+
 #### Run storybook configuration and settings
 
 Storybook's configuration and support files located inside `/storybook` folder in root of Polaris.
