@@ -14,8 +14,8 @@ describe('Navigation Header Web', () => {
     );
 
     const themeSwitch = getByTestId('theme-switch');
-    expect(themeSwitch.props.value).toEqual(false);
+    expect(themeSwitch).toHaveProp('value', false);
     fireEvent(themeSwitch, 'valueChange');
-    expect(themeSwitch.props.value).toEqual(true);
+    expect(themeSwitch).toHaveProp('value', true);
   });
 });

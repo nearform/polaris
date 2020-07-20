@@ -111,6 +111,7 @@
     "@storybook/react": "^5.3.19",
     "@storybook/react-native": "^5.3.19",
     "@svgr/webpack": "^5.4.0",
+    "@testing-library/jest-native": "^3.1.0",
     "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
