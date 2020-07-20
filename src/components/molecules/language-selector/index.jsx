@@ -11,7 +11,6 @@ const LanguageSelector = () => {
   }));
 
   const currentLanguage = languages.find(({ value }) => value === i18n.language);
-
   const changeLanguage = lang => i18n.changeLanguage(lang);
 
   return (

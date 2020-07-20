@@ -1,6 +1,8 @@
-import styled from '@emotion/native';
+import React from 'react';
+import { Button } from 'react-native';
+import { useTheme } from 'emotion-theming';
 
-export default styled.Button``;
-// export default styled.Button`
-//   background-color: ${props => props.theme.primary};
-// `;
+export default props => {
+  const theme = useTheme();
+  return <Button color={theme.primary} {...props} />;
+};

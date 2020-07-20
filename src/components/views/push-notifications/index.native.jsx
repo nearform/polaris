@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
 import * as Notifications from 'expo-notifications';
+
 import Container from 'components/atoms/container';
 
 Notifications.setNotificationHandler({

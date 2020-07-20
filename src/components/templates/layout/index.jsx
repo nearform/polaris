@@ -13,7 +13,7 @@ const Screen = styled.View`
 
 const Page = styled.View`
   flex: 1;
-  background-color: '#fff';
+  background-color: white;
   padding-bottom: 0;
 `;
 

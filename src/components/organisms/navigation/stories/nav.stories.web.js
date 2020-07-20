@@ -3,7 +3,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from 'services/i18n/';
 import StoryPage, { DocText, Description, DocItem } from 'storybook/story-components';
 import { MemoryRouter } from 'react-router';
-import { UIProvider } from 'store/ui/context';
+import { ThemeProvider } from 'store';
 
 import Header from '../nav';
 
@@ -26,13 +26,13 @@ export const header = () => (
   <DocItem
     example={{
       render: () => (
-        <UIProvider>
+        <ThemeProvider>
           <I18nextProvider i18n={i18n}>
             <MemoryRouter>
               <Header />
             </MemoryRouter>
           </I18nextProvider>
-        </UIProvider>
+        </ThemeProvider>
       )
     }}
   />
