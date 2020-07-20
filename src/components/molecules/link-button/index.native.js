@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Button } from 'react-native';
 
 import Link from 'components/atoms/link';
 import Button from 'components/atoms/button';
