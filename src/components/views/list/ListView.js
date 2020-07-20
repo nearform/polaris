@@ -40,8 +40,7 @@ export const ListView = () => {
   const params = usePlatformParams();
   const currentSort = params.queryParams?.sort || 'id';
   const sortedContent = [...content].sort((a, b) => a[currentSort] - b[currentSort]);
-  // const currentLang = i18n.language;
-  const currentLang = 'en';
+  const currentLang = i18n.language.split('-')[0];
 
   const sortOptions = [
     { value: 'id', label: t('listView:id') },
