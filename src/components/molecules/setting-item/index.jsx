@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Platform } from 'react-native';
 
-const SettingItem = ({ label, value }) => (
+const SettingItem = ({ label, value, testID }) => (
   <View style={styles.item}>
     <View style={styles.itemLabel}>
-      <Text>{label}</Text>
+      <Text testID={testID}>{label}</Text>
     </View>
     {value}
   </View>

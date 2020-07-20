@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "polaris",
+    "privacy": "unlisted",
     "slug": "polaris",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,9 +20,11 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.nearform.polaris",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.nearform.polaris",
       "useNextNotificationsApi": true
     },
     "web": {
