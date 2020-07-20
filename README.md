@@ -103,7 +103,7 @@ Handles platform-specific routing and renders the appropriate `View` of the chos
 
 #### `Link({ path:string (required), title:string (required), params:object (optional), ...props })`
 
-Renders a `<a>` link on Web and a `TouchableOpacity` on Native. `title` is the text displayed to the user in the link; on web, a html `title` attr is generated from the matching route's `name`. Other props such as `style` are passed through.
+Renders a `<a>` link on Web and a `TouchableOpacity` on Native. `title` is the text displayed to the user in the link. Other props such as `style` are passed through.
 
 Where a path contains params, pass the _template_ to `path` and a keyed object to `params`, for example:
 

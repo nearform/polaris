@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
+
 import usePlatformParams from 'utils/hooks/usePlatformParams';
 import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 import Container from 'components/atoms/container';

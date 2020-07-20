@@ -1,38 +1,36 @@
 import React from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import SideMenu from 'react-native-side-menu';
+import styled from '@emotion/native';
+
 import Nav from 'components/organisms/navigation/nav';
+
+const Screen = styled.View`
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+`;
+
+const Page = styled.View`
+  flex: 1;
+  background-color: '#fff';
+  padding-bottom: 0;
+`;
 
 const LayoutBase = props => {
   const { children } = props;
 
   return (
-    <View style={styles.container}>
+    <Screen>
       <SideMenu menuPosition="left">
-        <View style={[styles.layout, styles.tabBarSpacing]}>
+        <Page>
           {Platform.OS === 'web' && <Nav />}
           {children}
-        </View>
+        </Page>
         {Platform.OS !== 'web' && <Nav />}
       </SideMenu>
-    </View>
+    </Screen>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    overflow: 'hidden',
-    width: '100%',
-    height: '100%'
-  },
-  layout: {
-    flex: 1,
-    backgroundColor: '#fff'
-  },
-  tabBarSpacing: {
-    paddingBottom: 0
-  }
-});
 
 export default LayoutBase;

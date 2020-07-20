@@ -1,21 +1,9 @@
 import React, { useCallback } from 'react';
 import { ActionSheetIOS, Button, View } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import { css } from '@emotion/native';
 import propTypes from './prop-types';
+import { useTranslation } from 'react-i18next';
 
-const defaultStyle = css`
-  justify-content: 'center';
-`;
-
-const PickerSheet = ({
-  onValueChange,
-  style = defaultStyle,
-  currentOption,
-  testID,
-  cancelLabel = 'cancel',
-  options
-}) => {
+const PickerSheet = ({ onValueChange, currentOption, testID, cancelLabel = 'cancel', options }) => {
   const { t } = useTranslation();
   const translatedCancelLabel = t(cancelLabel);
 
@@ -36,7 +24,7 @@ const PickerSheet = ({
   }, [translatedCancelLabel, options, onValueChange]);
 
   return (
-    <View style={style}>
+    <View>
       <Button onPress={changeOption} title={currentOption.label || currentOption.value} testID={testID} />
     </View>
   );

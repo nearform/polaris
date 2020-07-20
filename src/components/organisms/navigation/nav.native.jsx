@@ -1,49 +1,46 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import styled from '@emotion/native';
+
 import Link from 'components/atoms/link';
+
+const Container = styled.View`
+  flex-direction: row;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  shadow-offset: 0 2px;
+  shadow-radius: 2;
+  shadow-opacity: 1;
+`;
+
+const Item = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10;
+  padding-bottom: 30;
+`;
 
 const Nav = () => {
   const { t } = useTranslation();
 
   return (
-    <View style={styles.view}>
-      <View style={styles.item}>
+    <Container>
+      <Item>
         <Link title={t('home:title')} path={'/'} />
-      </View>
-      <View style={styles.item}>
+      </Item>
+      <Item>
         <Link title={t('listView:title')} path={'/listView'} />
-      </View>
-      <View style={styles.item}>
+      </Item>
+      <Item>
         <Link title={t('settings:title')} path={'/settings'} />
-      </View>
-    </View>
+      </Item>
+    </Container>
   );
 };
 
 export default Nav;
-
-const styles = StyleSheet.create({
-  view: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    zIndex: 1,
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowRadius: 2,
-    shadowOpacity: 1
-  },
-  item: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 10,
-    paddingBottom: 30
-  }
-});
