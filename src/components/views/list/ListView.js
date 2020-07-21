@@ -34,6 +34,12 @@ const TableRow = styled(Row)`
 
 const TableCell = Container;
 
+const pickerStyle = css`
+  width: 128;
+  height: 48;
+  background-color: white;
+`;
+
 export const ListView = () => {
   const { t, i18n } = useTranslation();
   const { setParams } = usePlatformNavigation();
@@ -64,11 +70,7 @@ export const ListView = () => {
           <PickerSheet
             onValueChange={handleSortChange}
             currentOption={currentSortOption}
-            style={css`
-              width: 128;
-              height: 48;
-              background-color: white;
-            `}
+            style={pickerStyle}
             options={sortOptions}
           />
         </PickerContainer>

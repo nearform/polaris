@@ -4,9 +4,11 @@ import styled from '@emotion/native';
 import { useTheme } from 'emotion-theming';
 import { ThemeActionsContext } from 'store';
 import { useTranslation } from 'react-i18next';
+
+import Container from 'components/atoms/container';
 import Link from 'components/atoms/link';
 
-const Container = styled.View`
+const Wrapper = styled.View`
   height: 85;
   flex-direction: row;
   align-items: stretch;
@@ -15,11 +17,7 @@ const Container = styled.View`
   background-color: ${props => props.theme.bgColor};
 `;
 
-const Column = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
+const Column = Container;
 
 const Left = styled(Column)`
   padding-left: 20;
@@ -29,10 +27,7 @@ const Right = styled(Column)`
   padding-right: 20;
 `;
 
-const Center = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+const Center = styled(Container)`
   height: 100%;
 `;
 
@@ -46,7 +41,7 @@ export default function Header() {
   const theme = useTheme();
 
   return (
-    <Container>
+    <Wrapper>
       <Left>
         <Link title={t('home:title')} path={'/'} />
       </Left>
@@ -57,6 +52,6 @@ export default function Header() {
         <Link title={t('home:settingsButton')} path={'/settings'} />
         <Switch onValueChange={toggleTheme} value={theme.name !== 'light'} testID="theme-switch" />
       </Right>
-    </Container>
+    </Wrapper>
   );
 }

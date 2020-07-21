@@ -9,18 +9,18 @@ import { ThemeProvider, ThemeActionsContext } from 'store';
 
 import Button from '../';
 
+const wrapperStyle = css`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+`;
+
 const ThemeSwitcher = () => {
   const { toggleTheme } = React.useContext(ThemeActionsContext);
   const theme = useTheme();
   return (
-    <View
-      style={css`
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-      `}
-    >
+    <View style={wrapperStyle}>
       <Text>Switch theme</Text>
       <Switch onValueChange={toggleTheme} value={theme.name !== 'light'} testID="theme-switch" />
     </View>
