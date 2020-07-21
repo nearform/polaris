@@ -13,6 +13,7 @@ module.exports = {
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/'],
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   automock: false,
   moduleNameMapper: {
     '^store/(.*)$': '<rootDir>/src/store/$1',

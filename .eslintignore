@@ -3,3 +3,4 @@ web-build/**
 dist/**
 .expo/**
 .expo-shared/**
+storybook

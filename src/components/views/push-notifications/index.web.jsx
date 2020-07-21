@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { Button } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { styles } from '../views.styles';
+
+import Container from 'components/atoms/container';
 
 export const PushNotifications = () => {
   const { t } = useTranslation();
@@ -23,12 +24,12 @@ export const PushNotifications = () => {
   });
 
   return (
-    <View style={styles.container}>
+    <Container>
       <Button
         title={t('pushNotificationsView:sendNotificationButton')}
         onPress={() => sendPushNotification(t('pushNotificationsView:messageBody'))}
       />
-    </View>
+    </Container>
   );
 };
 

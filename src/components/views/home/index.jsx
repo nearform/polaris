@@ -1,21 +1,25 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { Platform } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from 'emotion-theming';
+
 import NearformLogo from 'assets/logos/nearform.svg';
+import Container from 'components/atoms/container';
 import LinkButton from 'components/molecules/link-button';
-import { styles } from '../views.styles';
 
 export const HomeScreen = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
+
   return (
-    <View style={styles.container}>
-      <NearformLogo width={200} height={50} fill="#2165e3" title="Nearform logo" />
-      <Text>{t('home:title')}</Text>
+    <Container>
+      <NearformLogo width={200} height={50} fill={theme.primary} title="Nearform logo" />
       <LinkButton title={t('home:viewOneButton')} path="/viewOne" />
       <LinkButton title={t('home:viewTwoButton')} path="/viewTwo" />
       <LinkButton title={t('home:viewThreeButton')} path="/viewThree" />
       <LinkButton title={t('home:listViewButton')} path="/listView" />
+      {Platform.OS !== 'web' && <LinkButton title={t('home:cameraButton')} path="/camera" />}
       <LinkButton title={t('home:pushNotificationsButton')} path="/pushNotifications" />
-    </View>
+    </Container>
   );
 };

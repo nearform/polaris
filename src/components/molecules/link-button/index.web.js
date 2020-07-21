@@ -1,31 +1,21 @@
 import React from 'react';
 import T from 'prop-types';
+// import { Button } from 'react-native';
 
 import Link from 'components/atoms/link';
-
-// Temporary styles to allign with Native view
-// TODO: apply cross-platform styles once styling approach is stable
-const linkButtonStyle = {
-  display: 'inline-block',
-  padding: '12px',
-  background: '#0790f2',
-  color: '#FFFFFF',
-  textDecoration: 'none',
-  textTransform: 'uppercase',
-  fontFamily: 'sans',
-  borderRadius: '3px',
-  boxShadow: '0px 2px 3px 3px rgba(0,0,0,0.1)'
-};
+import Button from 'components/atoms/button';
+import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 
 // React Navigation `Link` and `useLinkProps` are currently "experimental" - investigate
 // using those when they're stable - see https://reactnavigation.org/docs/link
-const LinkButton = ({ path, title, ...props }) => {
-  return <Link style={linkButtonStyle} path={path} title={title} {...props} />;
+const LinkButton = ({ path, params, ...rest }) => {
+  const { navigate } = usePlatformNavigation();
+  return <Link component={Button} path={path} onPress={() => navigate(path, params)} {...rest} />;
 };
 
 LinkButton.propTypes = {
   path: T.string.isRequired,
-  title: T.string.isRequired
+  params: T.object
 };
 
 export default LinkButton;

@@ -1,23 +1,21 @@
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import styled from '@emotion/native';
+
+import Container from 'components/atoms/container';
 import SettingItem from 'components/molecules/setting-item';
 import LanguageSelector from 'components/molecules/language-selector';
+
+const Page = styled(Container)`
+  justify-content: flex-start;
+`;
 
 export const Settings = () => {
   const { t } = useTranslation();
 
   return (
-    <View style={styles.container}>
+    <Page>
       <SettingItem label={t('settings:languageLabel')} value={<LanguageSelector />} />
-    </View>
+    </Page>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start'
-  }
-});
