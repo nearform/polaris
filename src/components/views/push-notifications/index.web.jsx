@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import Container from 'components/atoms/container';
+import Button from 'components/atoms/button';
 
 export const PushNotifications = () => {
   const { t } = useTranslation();

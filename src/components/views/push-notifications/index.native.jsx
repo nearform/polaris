@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
 import * as Notifications from 'expo-notifications';
 
 import Container from 'components/atoms/container';
+import Button from 'components/atoms/button';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
