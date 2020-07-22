@@ -233,9 +233,7 @@ Storybook will read all files inside `stories` folders and use them in Storybook
 
 Stories in `.native.js` and `.common.js` must use `storiesOf` format due to `@storybook/react-native`. `.web.js` files may use the more declarative CSF format.
 
-It is also not possible to use the `@storybooks/addon-docs` plugin as it is not compatible with `@storybook/react-native`. To work around this there is a custom set of components in `storybook/.storybook-web` to facilitate documentation that works in both formats. See the `src/components/atoms/button/stories/button.stories.common.js` for example usage.
-
-`@storybook/addon-actions` and `@storybook/addon-links` are also incompatible with `@storybook/react-native` but have been included for use with `storybook/.storybook-web` stories.
+It is also not possible to use the `@storybooks/addon-docs` plugin as it is not compatible with `@storybook/react-native`. To work around this there is a custom set of components in `storybook/story-components` to facilitate documentation that works in both storiesOf and CSF formats. See the `src/components/atoms/button/stories/button.stories.common.js` for example usage.
 
 #### Run storybook configuration and settings
 
