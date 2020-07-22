@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     margin: 0
   },
   narrowCell: {
-    fontFamily: fontFamily.mono,
     flex: 1,
     margin: 0
   },
