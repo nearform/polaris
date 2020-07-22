@@ -48,9 +48,9 @@ const Button = ({
   nextFocusRight,
   nextFocusUp,
   touchSoundDisabled,
-  ...rest
+  ...webButtonProps
 }) => (
-  <ButtonBase onClick={onPress} aria-label={accessibilityLabel} data-testid={testID} {...rest}>
+  <ButtonBase onClick={onPress} aria-label={accessibilityLabel} data-testid={testID} {...webButtonProps}>
     {title}
   </ButtonBase>
 );
