@@ -1,76 +1,78 @@
 import React from 'react';
 
 import DocText from './doc-text';
+import DocCode from './doc-code';
+import InlineCode from './inline-code';
 import insertBetween from './insert-between';
 import { StyleSheet, Text, View } from 'react-native';
+import { size } from './platform-styles';
 
 const Divider = () => <View style={styles.verticalDivider} />;
 
 const createDescription = description => {
   const nodeList = React.Children.toArray(description);
-  let content;
-  if (nodeList.length === 1) {
-    content = <Text>{nodeList}</Text>;
-  } else {
-    content = insertBetween(() => <Divider key={Math.random()} />, nodeList);
-  }
-  return <Text style={styles.text}>{content}</Text>;
+  return typeof description === 'string' ? (
+    <Text>{description}</Text>
+  ) : (
+    insertBetween(() => <Divider key={Math.random()} />, nodeList)
+  );
 };
 
-const DocItem = ({ description, example = {}, name, typeInfo, label }) => (
+const DocItem = ({ description, example = {}, name, typeInfo, label, required, defaultValue }) => (
   <View style={styles.example}>
-    {name && (
-      <DocText style={styles.title}>
-        <PropText label={label} name={name} typeInfo={typeInfo} />
-      </DocText>
+    {!!name && (
+      <PropText label={label} name={name} typeInfo={typeInfo} required={required} defaultValue={defaultValue} />
     )}
-    {description && <View style={styles.description}>{createDescription(description)}</View>}
+    {!!description && <View style={styles.description}>{createDescription(description)}</View>}
     {(example.render || example.code) && (
       <View style={styles.renderBox}>
         <DocText style={styles.exampleText}>Example</DocText>
         {example.render && <View>{example.render()}</View>}
         {example.render && example.code && <View style={styles.verticalDivider} />}
-        {example.code && <Text style={styles.code}>{example.code}</Text>}
+        {example.code && <DocCode code={example.code} />}
       </View>
     )}
   </View>
 );
 
-const PropText = ({ label, name, typeInfo }) => (
-  <DocText>
-    {label && <Text style={[styles.label, label === 'web' && styles.webLabel]}>{label}</Text>}
-    <Text style={styles.propName}>{name}</Text>
-    {typeInfo && (
-      <Text>
-        {': '}
-        <Text style={styles.code}>{typeInfo}</Text>
-      </Text>
+const PropText = ({ label, name, typeInfo, required, defaultValue }) => (
+  <View>
+    <DocText style={styles.title}>
+      {label && <Text style={[styles.label, label === 'web' && styles.webLabel]}>{label}</Text>}
+      <Text style={styles.propName}>{name}</Text>
+      {typeInfo && (
+        <Text>
+          {': '}
+          <InlineCode code={typeInfo} />
+        </Text>
+      )}
+    </DocText>
+    {required !== undefined && (
+      <DocText>
+        Required: <InlineCode code={required ? 'true' : 'false'} />
+      </DocText>
     )}
-  </DocText>
+    {!!defaultValue && <DocText>Default value: {defaultValue}</DocText>}
+  </View>
 );
 
 const styles = StyleSheet.create({
-  code: {
-    fontFamily: 'monospace, monospace',
-    fontSize: '1rem',
-    lineHeight: '1.3125em'
-  },
   example: {
-    marginBottom: 'calc(1.5 * 1.3125rem)'
+    marginBottom: size.xlarge
   },
   title: {
-    fontSize: '1rem'
+    fontSize: size.normal
   },
   text: {
     alignItems: 'stretch',
     display: 'flex',
     flexDirection: 'column',
-    fontSize: '1rem',
-    lineHeight: '1.3125em'
+    fontSize: size.normal,
+    lineHeight: size.large
   },
   label: {
     backgroundColor: '#ddd',
-    borderRadius: '1rem',
+    borderRadius: size.normal,
     color: '#555',
     marginRight: '0.5rem',
     paddingVertical: '0.125rem',
@@ -84,23 +86,23 @@ const styles = StyleSheet.create({
     color: '#025268'
   },
   description: {
-    marginTop: 'calc(0.5 * 1.3125rem)'
+    marginTop: size.xsmall
   },
   renderBox: {
     borderColor: '#E6ECF0',
     borderWidth: 1,
-    padding: '1.3125rem',
-    marginTop: '1.3125rem'
+    padding: size.large,
+    marginTop: size.large
   },
   exampleText: {
     color: '#AAB8C2',
-    fontSize: '0.8rem',
+    fontSize: size.small,
     fontWeight: 'bold',
-    marginBottom: 'calc(0.5 * 1.3125rem)',
+    marginBottom: size.xsmall,
     textTransform: 'uppercase'
   },
   verticalDivider: {
-    height: '1rem'
+    height: size.normal
   }
 });
 

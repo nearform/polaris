@@ -1,6 +1,7 @@
 import { bool } from 'prop-types';
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
+import { size } from './platform-styles';
 
 class DocText extends React.PureComponent {
   static contextTypes = {
@@ -24,12 +25,12 @@ export default DocText;
 
 const styles = StyleSheet.create({
   baseText: {
-    fontSize: '1rem',
-    lineHeight: '1.3125em'
+    fontSize: size.normal,
+    lineHeight: size.large
   },
   link: {
     color: '#1B95E0',
-    marginTop: 'calc(0.5 * 1.3125rem)',
+    marginTop: size.xsmall,
     textDecorationLine: 'underline'
   }
 });

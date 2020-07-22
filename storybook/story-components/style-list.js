@@ -1,43 +1,47 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import DocText from './doc-text';
+import { size, fontFamily } from './platform-styles';
 
-const StyleList = ({ stylePropTypes }) => (
-  <View accessibilityTraits="list">
-    {stylePropTypes.map(({ label, name, typeInfo }, i) => (
-      <DocText accessibilityTraits="listitem" key={i} style={styles.item}>
+const StyleList = ({ types }) => (
+  <View accessibilityTraits="list" style={styles.wrapper}>
+    {types.map(({ label, name, typeInfo }, i) => (
+      <View accessibilityTraits="listitem" key={i} style={styles.item}>
         {label ? <Text style={styles.label}>{label}</Text> : null}
         <Text style={styles.name}>{name}</Text>
-        {typeInfo ? ': ' : null}
+        {typeInfo ? <Text style={styles.name}>: </Text> : null}
         {typeInfo ? <Text style={styles.code}>{typeInfo}</Text> : null}
-      </DocText>
+      </View>
     ))}
   </View>
 );
 
 const styles = StyleSheet.create({
+  wrapper: {
+    marginTop: size.xsmall,
+    marginBottom: size.xsmall,
+    flexDirection: 'column'
+  },
   code: {
-    fontFamily: 'monospace, monospace',
-    lineHeight: '1.3125em'
+    fontFamily: fontFamily.mono,
+    lineHeight: size.large
   },
   item: {
-    fontSize: '0.85rem',
-    marginLeft: 20,
-    marginBottom: '0.5rem'
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginBottom: size.xsmall
   },
   name: {
     fontWeight: 'bold'
   },
   title: {
-    fontSize: '2rem'
+    fontSize: size.xlarge
   },
   label: {
-    borderRadius: '1rem',
-    paddingVertical: '0.125rem',
-    paddingHorizontal: '0.5rem',
-    marginRight: '0.5rem',
-    backgroundColor: '#bdebff',
-    color: '#025268'
+    borderRadius: size.normal,
+    paddingVertical: 1,
+    paddingHorizontal: size.xsmall,
+    marginRight: size.xsmall,
+    backgroundColor: '#ddd'
   }
 });
 

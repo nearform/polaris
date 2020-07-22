@@ -3,9 +3,10 @@ import React from 'react';
 import DocText from './doc-text';
 import insertBetween from './insert-between';
 import { StyleSheet, View } from 'react-native';
+import { size } from './platform-styles';
 
 const Title = ({ children }) => (
-  <DocText accessibilityRole="heading" style={styles.title}>
+  <DocText accessibilityRole="header" style={styles.title}>
     {children}
   </DocText>
 );
@@ -33,28 +34,27 @@ const StoryPage = ({ children, description, title, width }) => (
 
 const styles = StyleSheet.create({
   root: {
-    padding: '1rem',
+    padding: size.normal,
     flex: 1,
     flexBasis: 'auto'
   },
   divider: {
-    height: '1.3125rem'
+    height: size.large
   },
   title: {
-    fontSize: '2rem'
+    fontSize: size.xlarge
   },
   description: {
     color: '#666',
     display: 'flex',
     flexDirection: 'column',
-    fontSize: '1.25rem',
-    marginTop: 'calc(0.5 * 1.3125rem)',
-    marginBottom: 'calc(1.5 * 1.3125rem)'
+    fontSize: size.large,
+    marginTop: size.xsmall
   },
   link: {
     color: '#1B95E0',
-    fontSize: '1rem',
-    marginTop: 'calc(0.5 * 1.3125rem)',
+    fontSize: size.normal,
+    marginTop: size.xsmall,
     textDecorationLine: 'underline'
   }
 });
