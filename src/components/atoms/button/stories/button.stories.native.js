@@ -1,21 +1,35 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-import { Text, View } from 'react-native';
+import { withKnobs, text } from '@storybook/addon-knobs';
+import StoryPage, { Description, DocSection, DocText, DocItem, InlineCode } from 'storybook/story-components';
 
 import Button from '../';
 
 storiesOf('Atoms/Button', module)
   .addDecorator(storyFn => (
-    <View>
+    <StoryPage title="Native Button" url="components/atoms/button">
+      <Description>
+        <DocText>
+          An example story in a <InlineCode code=".native.js" /> file. This story is only visible when exploring
+          storybook on a native device
+        </DocText>
+      </Description>
       {storyFn()}
-      <View>
-        <Text style={{ textAlign: 'center' }}>Native Button</Text>
-      </View>
-    </View>
+    </StoryPage>
   ))
+  .addDecorator(withKnobs)
   .add('Native Only', () => (
-    <Button onPress={action('Clicked Button')} title="Hello">
-      <Text>Hello Native</Text>
-    </Button>
+    <DocSection title="With title">
+      <DocItem
+        name="title"
+        description="The title to be used for the buttons content"
+        typeInfo="string"
+        required
+        example={{
+          render: () => <Button onPress={action('Button Pressed')} title={text('text', 'Native Button')} />,
+          code: '<Button title="Native Button" onPress={handleButtonPress}>'
+        }}
+      />
+    </DocSection>
   ));
