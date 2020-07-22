@@ -1,26 +1,26 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import { Text, Platform } from 'react-native';
+import styled from '@emotion/native';
+
+const Container = styled.View`
+  width: 100%;
+  padding: 0 10px;
+  flex-direction: row;
+  justify-content: ${Platform.OS === 'web' ? 'center' : 'space-between'};
+  align-items: center;
+`;
+
+const Label = styled.View`
+  margin-right: 10;
+`;
 
 const SettingItem = ({ label, value }) => (
-  <View style={styles.item}>
-    <View style={styles.itemLabel}>
+  <Container>
+    <Label>
       <Text>{label}</Text>
-    </View>
+    </Label>
     {value}
-  </View>
+  </Container>
 );
 
 export default SettingItem;
-
-const styles = StyleSheet.create({
-  item: {
-    width: '100%',
-    paddingHorizontal: 10,
-    flexDirection: 'row',
-    justifyContent: Platform.OS === 'web' ? 'center' : 'space-between',
-    alignItems: 'center'
-  },
-  itemLabel: {
-    marginRight: 10
-  }
-});

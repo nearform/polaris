@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { Text, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
+
 import usePlatformParams from 'utils/hooks/usePlatformParams';
 import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
-
+import Container from 'components/atoms/container';
 import contentList from './content';
 
 export const ListItem = () => {
@@ -20,10 +21,10 @@ export const ListItem = () => {
 
   const { title, content } = contentItem.translations[currentLang];
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Container>
       <StatusBar style="auto" />
       <Text>{title}</Text>
       <Text>{content}</Text>
-    </View>
+    </Container>
   );
 };

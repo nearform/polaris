@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Picker } from 'react-native';
+import { Picker } from 'react-native';
+import { css } from '@emotion/native';
 
 // React Native's own picker is deprecated, this is recommended and supported in expo SDK 38
 // Import from @react-native-community/picker/js/Picker to avoid warnings due to
@@ -10,8 +11,12 @@ import { StyleSheet, Picker } from 'react-native';
 
 import propTypes from './prop-types';
 
-const PickerSheet = ({ onValueChange, styles = defaultStyles, currentOption, testID, options }) => (
-  <Picker selectedValue={currentOption?.value} style={styles.picker} onValueChange={onValueChange} testID={testID}>
+const defaultStyle = css`
+  min-width: 150;
+`;
+
+const PickerSheet = ({ onValueChange, style = defaultStyle, currentOption, testID, options }) => (
+  <Picker selectedValue={currentOption?.value} style={style} onValueChange={onValueChange} testID={testID}>
     {options.map(option => (
       <Picker.Item label={option.label || option.value} value={option.value} key={option.value} />
     ))}
@@ -20,9 +25,3 @@ const PickerSheet = ({ onValueChange, styles = defaultStyles, currentOption, tes
 
 PickerSheet.propTypes = propTypes;
 export default PickerSheet;
-
-const defaultStyles = StyleSheet.create({
-  picker: {
-    minWidth: 150
-  }
-});

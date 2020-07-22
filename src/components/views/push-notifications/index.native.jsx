@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Button, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
 import * as Notifications from 'expo-notifications';
-import { styles } from '../views.styles';
+
+import Container from 'components/atoms/container';
+import Button from 'components/atoms/button';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -55,7 +57,7 @@ export const PushNotifications = () => {
   });
 
   return (
-    <View style={styles.container}>
+    <Container>
       <Button
         title={t('pushNotificationsView:sendNotificationButton')}
         onPress={() =>
@@ -66,7 +68,7 @@ export const PushNotifications = () => {
           })
         }
       />
-    </View>
+    </Container>
   );
 };
 

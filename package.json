@@ -30,6 +30,9 @@
     "push:server:start": "node server.js"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/native": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
     "@expo/vector-icons": "^10.0.0",
     "@react-native-community/async-storage": "~1.11.0",
     "@react-native-community/masked-view": "0.1.10",
@@ -39,6 +42,7 @@
     "@react-navigation/stack": "^5.6.2",
     "date-fns": "^2.14.0",
     "dotenv": "^8.2.0",
+    "emotion-theming": "^10.0.27",
     "expo": "^38.0.0",
     "expo-camera": "~8.3.1",
     "expo-constants": "~9.1.1",
@@ -51,6 +55,7 @@
     "husky": "^4.2.5",
     "i18next": "^19.5.2",
     "i18next-browser-languagedetector": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-i18next": "^11.7.0",
@@ -107,6 +112,7 @@
     "@storybook/react": "^5.3.19",
     "@storybook/react-native": "^5.3.19",
     "@svgr/webpack": "^5.4.0",
+    "@testing-library/jest-native": "^3.1.0",
     "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",

@@ -1,13 +1,44 @@
 import * as React from 'react';
-import { Text, View, StatusBar } from 'react-native';
+import { Text, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import styled, { css } from '@emotion/native';
 
 import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 import usePlatformParams from 'utils/hooks/usePlatformParams';
 
+import Container from 'components/atoms/container';
 import PickerSheet from 'components/atoms/picker-sheet';
 import LinkButton from 'components/molecules/link-button';
 import content from './content';
+
+const Row = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const PickerContainer = styled.View`
+  border: 1px #ccc;
+  margin-left: 16;
+`;
+
+const Table = styled.View`
+  justify-content: space-around;
+  align-self: stretch;
+  align-items: stretch;
+`;
+
+const TableRow = styled(Row)`
+  height: 48;
+  padding: 0 32px;
+`;
+
+const TableCell = Container;
+
+const pickerStyle = css`
+  width: 128;
+  height: 48;
+  background-color: white;
+`;
 
 export const ListView = () => {
   const { t, i18n } = useTranslation();
@@ -15,7 +46,7 @@ export const ListView = () => {
   const params = usePlatformParams();
   const currentSort = params.queryParams?.sort || 'id';
   const sortedContent = [...content].sort((a, b) => a[currentSort] - b[currentSort]);
-  const currentLang = i18n.language;
+  const currentLang = i18n.language.split('-')[0];
 
   const sortOptions = [
     { value: 'id', label: t('listView:id') },
@@ -31,44 +62,37 @@ export const ListView = () => {
     });
   };
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Container>
       <StatusBar style="auto" />
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Row>
         <Text>{t('listView:sortBy')}</Text>
-        <View style={{ borderColor: '#ccc', borderWidth: 1, marginLeft: 16 }}>
+        <PickerContainer>
           <PickerSheet
             onValueChange={handleSortChange}
             currentOption={currentSortOption}
-            style={{
-              width: 128,
-              height: 48,
-              backgroundColor: 'white'
-            }}
+            style={pickerStyle}
             options={sortOptions}
           />
-        </View>
-      </View>
-      <View style={{ justifyContent: 'space-around', alignSelf: 'stretch', alignItems: 'stretch' }}>
+        </PickerContainer>
+      </Row>
+      <Table>
         {sortedContent.map(({ id, translations, score }) => (
-          <View
-            style={{ flexDirection: 'row', alignItems: 'center', height: 48, paddingLeft: 32, paddingRight: 32 }}
-            key={id}
-          >
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
+          <TableRow key={id}>
+            <TableCell>
               <Text>#{id}</Text>
-            </View>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
+            </TableCell>
+            <TableCell>
               <Text>{translations[currentLang].title}</Text>
-            </View>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 48 }}>
+            </TableCell>
+            <TableCell>
               <Text>{score} / 10</Text>
-            </View>
-            <View style={{ justifyContent: 'center', alignItems: 'center', height: 48 }}>
+            </TableCell>
+            <TableCell>
               <LinkButton path="/listItem/:id" params={{ id }} title={t('listView:viewButton', { id: id })} />
-            </View>
-          </View>
+            </TableCell>
+          </TableRow>
         ))}
-      </View>
-    </View>
+      </Table>
+    </Container>
   );
 };

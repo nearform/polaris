@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import { Camera as ExpoCamera } from 'expo-camera';
 import { useTranslation } from 'react-i18next';
-import { styles as commonStyles } from '../views.styles';
+import { css } from '@emotion/native';
+import Container from 'components/atoms/container';
 
-const styles = StyleSheet.create({
-  container: { flex: 1 }
-});
+const stretchStyles = css`
+  flex: 1;
+`;
 
 export const Camera = () => {
   const { t } = useTranslation();
@@ -24,15 +25,15 @@ export const Camera = () => {
   }
   if (hasPermission === false) {
     return (
-      <View style={commonStyles.container}>
+      <Container>
         <Text>{t('camera:permissionDenied')}</Text>
-      </View>
+      </Container>
     );
   }
 
   return (
-    <View style={styles.container}>
-      <ExpoCamera style={styles.container} type={ExpoCamera.Constants.Type.back} />
+    <View style={stretchStyles}>
+      <ExpoCamera style={stretchStyles} type={ExpoCamera.Constants.Type.back} />
     </View>
   );
 };
