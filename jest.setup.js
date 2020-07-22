@@ -19,6 +19,13 @@ jest.mock('expo-localization', () => ({
   locale: 'en-US'
 }));
 
+jest.mock('react-native/Libraries/LogBox/LogBox', () => ({
+  ignoreLogs: () => {},
+  ignoreAllLogs: () => {},
+  install: () => {},
+  uninstall: () => {}
+}));
+
 // Show error details and warnings in console but disable Native Yellowbox
 // which can cause infinite loops by failing to access native APIs
 global.console.disableYellowBox = true;
