@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
   }
 });
 
+// The StatusBar renders in the same space as the storybook unless we account for it.
+// SafeAreaView handles it for iOS. The custom style handles Android
 const SafeStorybook = () => (
   <SafeAreaView style={styles.AndroidSafeArea}>
     <StorybookUIRoot />
