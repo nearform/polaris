@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { action } from '@storybook/addon-actions';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import StoryPage, {
   Description,
   DocText,
@@ -25,6 +25,7 @@ storiesOf('Atoms/Button', module)
       {storyFn()}
     </StoryPage>
   ))
+  .addDecorator(withKnobs)
   .add('With title', () => (
     <DocSection title="With title">
       <DocItem
@@ -33,7 +34,7 @@ storiesOf('Atoms/Button', module)
         typeInfo="string"
         required
         example={{
-          render: () => <Button onPress={action('Button Pressed')} title="A button with a title" />,
+          render: () => <Button onPress={() => {}} title={text('text', 'A button with a title')} />,
           code: '<Button title="A button with a title" onPress={handleButtonPress}>'
         }}
       />
@@ -47,7 +48,7 @@ storiesOf('Atoms/Button', module)
         typeInfo="func"
         required
         example={{
-          render: () => <Button onPress={action('Button Pressed')} title="A button" />,
+          render: () => <Button onPress={() => {}} title="A button" />,
           code: '<Button title="A button" onPress={handleButtonPress}>'
         }}
       />
@@ -61,7 +62,7 @@ storiesOf('Atoms/Button', module)
         typeInfo="string"
         required={false}
         example={{
-          render: () => <Button onPress={action('Button Pressed')} title="A red button" color="red" />,
+          render: () => <Button onPress={() => {}} title="A red button" color={text('color', 'red')} />,
           code: '<Button title="A red button" onPress={handleButtonPress} color="red">'
         }}
       />
@@ -112,7 +113,7 @@ storiesOf('Atoms/Button', module)
       ></PropTable>
       <DocItem
         example={{
-          render: () => <Button onPress={action('Button Pressed')} title="A button" />,
+          render: () => <Button onPress={() => {}} title="A button" />,
           code: '<Button title="A red button" onPress={handleButtonPress} color="red">'
         }}
       />
