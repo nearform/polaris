@@ -12,7 +12,8 @@ import StoryPage, {
   InlineCode,
   PropTable,
   StyleList,
-  TextList
+  TextList,
+  ThemeSwitcher
 } from 'storybook/story-components';
 
 import Button from '../';
@@ -55,18 +56,10 @@ storiesOf('Atoms/Button', module)
       />
     </DocSection>
   ))
-  .add('With color', () => (
-    <DocSection title="With color">
-      <DocItem
-        name="color"
-        description="The button color"
-        typeInfo="string"
-        required={false}
-        example={{
-          render: () => <Button onPress={action('Button Pressed')} title="A red button" color={text('color', 'red')} />,
-          code: '<Button title="A red button" onPress={handleButtonPress} color="red">'
-        }}
-      />
+  .add('Themed Button', () => (
+    <DocSection title="Themed Button">
+      <ThemeSwitcher />
+      <Button title="Themed button" onPress={action('Button Pressed')} />
     </DocSection>
   ))
   .add('An example external link', () => (

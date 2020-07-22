@@ -5,6 +5,8 @@ import insertBetween from './insert-between';
 import { StyleSheet, View } from 'react-native';
 import { size } from './platform-styles';
 
+import { ThemeProvider } from 'store';
+
 const Title = ({ children }) => (
   <DocText accessibilityRole="header" style={styles.title}>
     {children}
@@ -25,11 +27,13 @@ export const Description = ({ children }) => (
 const Divider = () => <View style={styles.divider} />;
 
 const StoryPage = ({ children, description, title, width }) => (
-  <View style={[styles.root, { width }]}>
-    <Title>{title}</Title>
-    {description}
-    {children}
-  </View>
+  <ThemeProvider>
+    <View style={[styles.root, { width }]}>
+      <Title>{title}</Title>
+      {description}
+      {children}
+    </View>
+  </ThemeProvider>
 );
 
 const styles = StyleSheet.create({

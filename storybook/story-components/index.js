@@ -9,6 +9,7 @@ import InlineCode from './inline-code';
 import PropTable from './prop-table';
 import StyleList from './style-list';
 import TextList from './text-list';
+import ThemeSwitcher from './theme-switcher';
 import { DividerHorizontal, DividerVertical } from './dividers';
 import StoryPage, { Description } from './story-page';
 
@@ -25,6 +26,7 @@ export {
   PropTable,
   StyleList,
   TextList,
+  ThemeSwitcher,
   DividerHorizontal,
   DividerVertical,
   storiesOf
