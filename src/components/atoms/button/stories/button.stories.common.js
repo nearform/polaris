@@ -108,7 +108,7 @@ storiesOf('Atoms/Button', module)
       <DocItem
         example={{
           render: () => <Button onPress={action('Button Pressed')} title="A button" />,
-          code: '<Button title="A red button" onPress={handleButtonPress} color="red">'
+          code: '<Button title="A red button" onPress={handleButtonPress}>'
         }}
       />
     </DocSection>
