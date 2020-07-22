@@ -2,9 +2,7 @@ import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { size, fontFamily } from './platform-styles';
 
-const removeStartAndEndNewLines = str => str.replace(/^\s+|\s+$/g, '');
-
-const DocCode = ({ code }) => <Text style={styles.code}>{removeStartAndEndNewLines(code)}</Text>;
+const DocCode = ({ code }) => <Text style={styles.code}>{code.trim()}</Text>;
 
 const styles = StyleSheet.create({
   code: {
