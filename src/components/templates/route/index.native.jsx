@@ -3,7 +3,8 @@ import T from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { useWindowDimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator, DrawerContent } from '@react-navigation/drawer';
+import { DrawerContent } from '@react-navigation/drawer';
+import createDrawerNavigator from 'utils/navigators/create-drawer-nav';
 
 import presetRoutes, { defaultPath as presetDefaultPath, routeShape } from 'routes';
 

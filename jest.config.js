@@ -14,7 +14,8 @@ const aliasMappings = {
 const nativeMappings = {
   // React Navigation nav builders contain native elements and API calls that Jest can't handle
   // In Jest, skip the Navigation-based UI, and just follow links to their target View
-  '^utils/routing/with-navigation(.*)$': '<rootDir>/src^utils/routing/with-navigation.jest$1',
+  // No ^ because 'utils/...' may have already been mapped to 'src/...' or '../../utils' etc
+  'utils/navigators/create-drawer-nav(.*)$': '<rootDir>/src/utils/navigators/create-bare-nav$1',
   ...aliasMappings
 };
 

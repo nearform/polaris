@@ -32,8 +32,10 @@ global.console.disableYellowBox = true;
 
 jest.useFakeTimers();
 
-// TODO: Swap out navigator getter
-// jest.mock('components/templates/route-switch/drawer-nav', () => jest.requireActual('components/templates/route-switch/stack-nav.native.js'));
+jest.mock('@react-navigation/drawer', () => ({
+  createDrawerNavigator: () => {},
+  DrawerContent: () => {}
+}));
 
 /*
  * Config for react-navigation: see https://reactnavigation.org/docs/testing/
