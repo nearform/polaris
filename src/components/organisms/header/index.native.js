@@ -1,0 +1,50 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Header as NativeHeader } from 'react-native-elements';
+import { AntDesign } from '@expo/vector-icons';
+
+import { replaceParams } from 'utils/paths';
+import usePlatformLocation from 'utils/hooks/usePlatformLocation';
+
+import { defaultPath } from 'routes';
+
+const Left = ({ isHome, goBack }) =>
+  isHome ? (
+    <Text> </Text>
+  ) : (
+    <TouchableOpacity onPress={goBack}>
+      <AntDesign name="arrowleft" color="white" size={28} />
+    </TouchableOpacity>
+  );
+
+const Right = ({ toggleDrawer }) => (
+  <TouchableOpacity onPress={toggleDrawer}>
+    <AntDesign name="bars" color="white" size={28} />
+  </TouchableOpacity>
+);
+
+const Header = () => {
+  const { t } = useTranslation();
+  const navigation = useNavigation();
+  const { currentRoute, params } = usePlatformLocation();
+  const isHome = currentRoute.path === defaultPath;
+  const translatedName = t(currentRoute.name);
+  const title = replaceParams(translatedName, params);
+  return (
+    <NativeHeader
+      leftComponent={<Left isHome={isHome} goBack={navigation.goBack} />}
+      centerComponent={{
+        text: title,
+        style: {
+          color: '#fff',
+          fontSize: 21
+        }
+      }}
+      rightComponent={<Right toggleDrawer={navigation.toggleDrawer} />}
+    />
+  );
+};
+
+export default Header;

@@ -1,6 +1,4 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import SideMenu from 'react-native-side-menu';
 import styled from 'styled-components/native';
 
 import Nav from 'components/organisms/navigation/nav';
@@ -22,13 +20,10 @@ const LayoutBase = props => {
 
   return (
     <Screen>
-      <SideMenu menuPosition="left">
-        <Page>
-          {Platform.OS === 'web' && <Nav />}
-          {children}
-        </Page>
-        {Platform.OS !== 'web' && <Nav />}
-      </SideMenu>
+      <Page>
+        <Nav />
+        {children}
+      </Page>
     </Screen>
   );
 };
