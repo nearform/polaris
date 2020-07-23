@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import StoryPage, { DocText, Description, DocItem } from 'storybook/story-components';
+import StoryPage, { DocItem } from 'storybook/story-components';
 import { action } from '@storybook/addon-actions';
 
 import PickerSheet from '../';
@@ -18,11 +18,8 @@ export default {
   title: 'Atoms/Picker Sheet',
   decorators: [
     storyFn => (
-      <StoryPage title="Picker Sheet" url="components/atoms/picker-sheet">
-        <Description>
-          <DocText>The component to pick values</DocText>
-        </Description>
-        {storyFn()}
+      <StoryPage title="Picker Sheet" url="components/atoms/picker-sheet" storyFn={storyFn}>
+        The component to pick values
       </StoryPage>
     )
   ]

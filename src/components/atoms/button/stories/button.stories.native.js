@@ -2,20 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
-import StoryPage, { Description, DocSection, DocText, DocItem, InlineCode } from 'storybook/story-components';
+import StoryPage, { DocSection, DocItem, InlineCode } from 'storybook/story-components';
 
 import Button from '../';
 
 storiesOf('Atoms/Button', module)
   .addDecorator(storyFn => (
-    <StoryPage title="Native Button" url="components/atoms/button">
-      <Description>
-        <DocText>
-          An example story in a <InlineCode code=".native.js" /> file. This story is only visible when exploring
-          storybook on a native device
-        </DocText>
-      </Description>
-      {storyFn()}
+    <StoryPage title="Native Button" url="components/atoms/button" storyFn={storyFn}>
+      An example story in a <InlineCode code=".native.js" /> file. This story is only visible when exploring storybook
+      on a native device
     </StoryPage>
   ))
   .addDecorator(withKnobs)

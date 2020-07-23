@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import StoryPage, {
-  Description,
   DocText,
   DocSection,
   DocItem,
@@ -20,11 +19,8 @@ import Button from '../';
 
 storiesOf('Atoms/Button', module)
   .addDecorator(storyFn => (
-    <StoryPage title="Button component" url="components/atoms/button">
-      <Description>
-        <DocText>An example story for a button</DocText>
-      </Description>
-      {storyFn()}
+    <StoryPage title="Button component" url="components/atoms/button" storyFn={storyFn}>
+      An example story for a button
     </StoryPage>
   ))
   .addDecorator(withKnobs)

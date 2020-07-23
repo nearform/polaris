@@ -1,7 +1,7 @@
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'services/i18n/';
-import StoryPage, { DocText, Description, DocItem } from 'storybook/story-components';
+import StoryPage, { DocItem } from 'storybook/story-components';
 import { MemoryRouter } from 'react-router';
 import { ThemeProvider } from 'store';
 
@@ -12,11 +12,8 @@ export default {
   title: 'Organisms/Navigation Header',
   decorators: [
     storyFn => (
-      <StoryPage title="Navigation Header" url="components/atoms/button" width={900}>
-        <Description>
-          <DocText>Navigation Header full description.</DocText>
-        </Description>
-        {storyFn()}
+      <StoryPage title="Navigation Header" url="components/atoms/button" storyFn={storyFn} width={900}>
+        Navigation Header full description.
       </StoryPage>
     )
   ]

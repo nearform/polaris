@@ -2,7 +2,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'services/i18n/';
-import StoryPage, { DocText, Description, DocItem } from 'storybook/story-components';
+import StoryPage, { DocItem } from 'storybook/story-components';
 
 import Link from '../';
 
@@ -11,11 +11,8 @@ export default {
   title: 'Atoms/Link',
   decorators: [
     storyFn => (
-      <StoryPage title="Link With Text" url="components/atoms/link">
-        <Description>
-          <DocText>Text Link description</DocText>
-        </Description>
-        {storyFn()}
+      <StoryPage title="Link With Text" url="components/atoms/link" storyFn={storyFn}>
+        Text Link description
       </StoryPage>
     )
   ]
