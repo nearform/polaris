@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from './testing-library';
-import { UIProvider } from 'store/ui/context';
+import { ThemeProvider } from 'store';
 import Route from 'components/templates/route';
 
 const _convertToRoute = (
@@ -13,10 +13,10 @@ const _convertToRoute = (
 };
 
 export const renderWithContext = (Component, renderOptions = {}) => {
-  return render(<Component />, { ...renderOptions, wrapper: UIProvider });
+  return render(<Component />, { ...renderOptions, wrapper: ThemeProvider });
 };
 
 export const renderAsRoute = (Component, { renderOptions = {}, routeOptions } = {}) => {
   const RouteComponent = _convertToRoute(Component, routeOptions);
-  return render(<RouteComponent />, { ...renderOptions, wrapper: UIProvider });
+  return render(<RouteComponent />, { ...renderOptions, wrapper: ThemeProvider });
 };

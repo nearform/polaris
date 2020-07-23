@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 import Link from 'components/atoms/link';
 
-import { UISettingsContext } from 'store';
+import { useTheme } from 'emotion-theming';
 import { useTranslation } from 'react-i18next';
 import { usePlatformLocation, usePlatformNavigation } from 'utils/hooks';
 
@@ -30,19 +30,19 @@ export const DeepNestedView = () => (
 );
 
 export const ContextualView = () => {
-  const settings = useContext(UISettingsContext);
+  const theme = useTheme();
   const translation = useTranslation();
 
-  if (!translation) throw new Error('No t function available from useTranslation');
-  if (!settings) throw new Error('No settings available from UISettingsContext');
+  if (!translation) throw new Error('Nothing returned from useTranslation');
+  if (!theme || !theme.name) throw new Error(`${!theme ? 'No' : 'Empty'} theme returned from useTheme`);
 
-  const { t } = translation;
-  const settingsString = Object.values(settings).join(', ');
+  const { t, i18n } = translation;
 
   return (
     <View>
       <Text>{t('headingText')}</Text>
-      <Text testID="settings">{settingsString}</Text>
+      <Text testID="lang-name">Current language is {i18n.language}</Text>
+      <Text testID="theme-name">Current theme is {theme.name}</Text>
     </View>
   );
 };
@@ -60,7 +60,7 @@ export const RouteView = ({ routes }) => {
     <View>
       <Text>{name}</Text>
       <Text testID="path">{path}</Text>
-      <Link path="/tst-path" title="Test link" />
+      <Link path="/test-path" title="Test link" />
     </View>
   );
 };

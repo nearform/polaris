@@ -20,7 +20,7 @@ describe('render', () => {
   it('fails to render views containing routes', () => {
     expectToThrow(() => render(<RouteView />));
   });
-  it('fails to render routes requiring context', () => {
+  it('fails to render view requiring context', () => {
     expectToThrow(() => render(<ContextualView />));
   });
 });
