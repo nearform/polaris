@@ -32,7 +32,6 @@ export const buttonStyle = ({ theme }) => css`
 
 const ButtonBase = styled.button`
   ${buttonStyle}
-  ${console.log}
 `;
 
 const Button = ({

@@ -20,6 +20,7 @@ export const HomeScreen = () => {
       <LinkButton title={t('home:listViewButton')} path="/listView" />
       {Platform.OS !== 'web' && <LinkButton title={t('home:cameraButton')} path="/camera" />}
       <LinkButton title={t('home:pushNotificationsButton')} path="/pushNotifications" />
+      <LinkButton title={t('home:responsiveButton')} path="/responsive" />
     </Container>
   );
 };
