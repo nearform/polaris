@@ -32,8 +32,27 @@ global.console.disableYellowBox = true;
 
 jest.useFakeTimers();
 
-  DrawerContent: () => jest.fn()
-}));
+// TODO: Swap out navigator getter
+// jest.mock('components/templates/route-switch/drawer-nav', () => jest.requireActual('components/templates/route-switch/stack-nav.native.js'));
+
+/*
+ * Config for react-navigation: see https://reactnavigation.org/docs/testing/
+ */
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock');
+
+  // The mock for `call` immediately calls the callback which is incorrect
+  // So we override it with a no-op
+  Reanimated.default.call = () => {};
+
+  return Reanimated;
+});
+
+// Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
+jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+/*
+ * End of react-navigation config
+ */
 
 jest.mock('react-native-vector-icons', () => ({
   AntDesign: () => jest.fn()
