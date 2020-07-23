@@ -6,15 +6,18 @@ import Route from 'components/templates/route';
 const _asComponent = renderable => {
   if (typeof renderable === 'function') return renderable;
   return () => renderable;
-}
+};
 
 const _convertToRoute = (
-  View,
-  { path = '/test-path', name = 'Test path', defaultPath, additionalRoutes = [] } = {}
+  renderable,
+  { path = '/test-path', name = 'Test path', defaultPath, additionalRoutes = [], LayoutComponent = null } = {}
 ) => {
-  const route = { path, View, name };
+  const Component = _asComponent(renderable);
+  const route = { path, View: Component, name };
   const routes = [route, ...additionalRoutes];
-  return props => <Route defaultPath={defaultPath || path} routes={routes} layout={false} {...props} />;
+  return props => (
+    <Route defaultPath={defaultPath || path} routes={routes} LayoutComponent={LayoutComponent} {...props} />
+  );
 };
 
 export const renderWithContext = (renderable, renderOptions = {}) => {
@@ -23,7 +26,6 @@ export const renderWithContext = (renderable, renderOptions = {}) => {
 };
 
 export const renderAsRoute = (renderable, { renderOptions = {}, routeOptions } = {}) => {
-  const Component = _asComponent(renderable);
-  const RouteComponent = _convertToRoute(Component, routeOptions);
+  const RouteComponent = _convertToRoute(renderable, routeOptions);
   return render(<RouteComponent />, { ...renderOptions, wrapper: ThemeProvider });
 };

@@ -49,7 +49,7 @@ export const ContextualView = () => {
 
 export const RouteView = ({ routes }) => {
   const nav = usePlatformNavigation();
-  const location = usePlatformLocation(routes);
+  const location = usePlatformLocation();
 
   if (!nav) throw new Error('RouteView cannot access navigation via usePlatformNavigation');
   if (!location) throw new Error('RouteView cannot access location via usePlatformLocation');

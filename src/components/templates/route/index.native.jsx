@@ -10,6 +10,7 @@ import presetRoutes, { defaultPath as presetDefaultPath, routeShape } from 'rout
 
 import { replaceParams } from 'utils/paths';
 import Layout from 'components/templates/layout';
+import { RoutesProvider } from 'store/routing/routes-provider';
 
 const Drawer = createDrawerNavigator();
 const isViewRoute = route => !!route.View;
@@ -29,10 +30,7 @@ const withNavigationContainer = RouteComponent => {
 
 // Place layout inside each screen, around each view, to access navigation hooks
 const withLayout = (ViewComponent, LayoutComponent) => {
-  if (typeof LayoutComponent === 'boolean') {
-    // Apply no layout or default layout - allows layout to be disabled
-    return LayoutComponent ? withLayout(ViewComponent, Layout) : ViewComponent;
-  }
+  if (!LayoutComponent) return ViewComponent;
 
   return props => {
     return (
@@ -64,29 +62,31 @@ const Route = ({ routes = presetRoutes, defaultPath = presetDefaultPath, LayoutC
   const menuNames = viewRoutes.filter(isMenuRoute).map(route => route.path);
 
   return (
-    <Drawer.Navigator
-      initialRouteName={defaultPath}
-      drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
-      drawerContent={withMenuFilter(DrawerContent, menuNames)}
-    >
-      {viewRoutes.map(route => (
-        <Drawer.Screen
-          name={route.path}
-          component={withLayout(route.View, LayoutComponent)}
-          options={({ route: { params } }) => ({
-            title: replaceParams(t(route.name), params)
-          })}
-          key={route.path}
-        />
-      ))}
-    </Drawer.Navigator>
+    <RoutesProvider routes={routes} defaultPath={defaultPath}>
+      <Drawer.Navigator
+        initialRouteName={defaultPath}
+        drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
+        drawerContent={withMenuFilter(DrawerContent, menuNames)}
+      >
+        {viewRoutes.map(route => (
+          <Drawer.Screen
+            name={route.path}
+            component={withLayout(route.View, LayoutComponent)}
+            options={({ route: { params } }) => ({
+              title: replaceParams(t(route.name), params)
+            })}
+            key={route.path}
+          />
+        ))}
+      </Drawer.Navigator>
+    </RoutesProvider>
   );
 };
 
 Route.propTypes = {
   routes: T.arrayOf(routeShape),
   defaultPath: T.string,
-  LayoutComponent: T.oneOfType([T.bool, T.elementType])
+  LayoutComponent: T.elementType
 };
 
 export default withNavigationContainer(Route);

@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import routes from 'routes';
+import { RoutesContext } from 'store/routing/routes-provider';
 import usePlatformParams from './usePlatformParams';
 
 const usePlatformLocation = () => {
+  const { routes } = useContext(RoutesContext);
   const webLocation = useLocation();
   const params = usePlatformParams();
 
@@ -10,7 +12,7 @@ const usePlatformLocation = () => {
     path: webLocation.pathname
   };
 
-  return { ...currentRoute, params };
+  return { currentRoute, params };
 };
 
 export default usePlatformLocation;
