@@ -32,7 +32,7 @@ const Route = ({ routes = defaultRoutes }) => {
 };
 
 Route.propTypes = {
-  routes: T.arrayOf(T.shape(routeShape))
+  routes: T.arrayOf(routeShape)
 };
 
 export default withBrowserRouter(Route);
