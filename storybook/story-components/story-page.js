@@ -56,7 +56,7 @@ StoryPage.propTypes = {
   storyFn: T.func.isRequired,
   children: T.node.isRequired,
   url: T.string.isRequired,
-  width: T.string
+  width: T.number
 };
 
 export default StoryPage;
