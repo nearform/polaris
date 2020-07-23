@@ -1,8 +1,11 @@
-// import DocText from './doc-text';
 import React from 'react';
+import T from 'prop-types';
 import { StyleSheet, View, Text } from 'react-native';
-import { size } from './platform-styles';
+import { size } from './helpers/platform-styles';
 
+/**
+ * Display a text list
+ */
 const TextList = ({ items }) => (
   <View accessibilityTraits="list" style={styles.list}>
     {items.map((item, i) => (
@@ -32,5 +35,9 @@ const styles = StyleSheet.create({
     borderRadius: 50
   }
 });
+
+TextList.propTypes = {
+  items: T.arrayOf(T.node)
+};
 
 export default TextList;

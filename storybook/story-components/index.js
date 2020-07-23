@@ -11,7 +11,7 @@ import StyleList from './style-list';
 import TextList from './text-list';
 import ThemeSwitcher from './theme-switcher';
 import { DividerHorizontal, DividerVertical } from './dividers';
-import StoryPage, { Description } from './story-page';
+import StoryPage from './story-page';
 
 export default StoryPage;
 
@@ -20,7 +20,6 @@ export {
   DocCode,
   DocItem,
   DocSection,
-  Description,
   DocExternalLink,
   InlineCode,
   PropTable,

@@ -1,7 +1,12 @@
 import React from 'react';
+import T from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
-import { size, fontFamily } from './platform-styles';
+import { size, fontFamily } from './helpers/platform-styles';
 
+/**
+ * Presents a block of code in a story
+ * Template literals can be used and will be trimmed to fit
+ */
 const DocCode = ({ code }) => <Text style={styles.code}>{code.trim()}</Text>;
 
 const styles = StyleSheet.create({
@@ -15,5 +20,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee'
   }
 });
+
+DocCode.propTypes = {
+  code: T.string.isRequired
+};
 
 export default DocCode;

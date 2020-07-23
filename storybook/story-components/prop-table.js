@@ -1,6 +1,8 @@
 import React from 'react';
+import T from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
-import { size, fontFamily } from './platform-styles';
+import { size, fontFamily } from './helpers/platform-styles';
+import shouldRender from './helpers/should-render';
 
 const Row = ({ name, type, required, defaultValue, description }) => (
   <View style={styles.rowWrapper}>
@@ -9,8 +11,8 @@ const Row = ({ name, type, required, defaultValue, description }) => (
       <NarrowCell data={type} style={styles.narrowCell} />
       <NarrowCell data={required ? 'true' : 'false'} style={styles.narrowCell} />
     </View>
-    {!!description && <Text>{description}</Text>}
-    {!!defaultValue && <Text>Default Value: {defaultValue}</Text>}
+    {shouldRender(description) && <Text>{description}</Text>}
+    {shouldRender(defaultValue) && <Text>Default Value: {defaultValue}</Text>}
   </View>
 );
 
@@ -26,6 +28,9 @@ const TitleCell = ({ data }) => (
   </View>
 );
 
+/**
+ * Displays a table of props similar to the addon-docs prop table.
+ */
 const PropTable = ({ propData }) => (
   <View style={styles.gridContainer}>
     <Text style={styles.propTitle}>Props</Text>
@@ -89,5 +94,17 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.mono
   }
 });
+
+PropTable.propTypes = {
+  propData: T.arrayOf(
+    T.shape({
+      name: T.string.isRequired,
+      type: T.string.isRequired,
+      required: T.bool,
+      defaultValue: T.bool,
+      description: T.string
+    })
+  )
+};
 
 export default PropTable;

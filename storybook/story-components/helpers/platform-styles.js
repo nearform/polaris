@@ -1,5 +1,8 @@
 import { Platform } from 'react-native';
 
+/**
+ * Shared story styles
+ */
 export const size = {
   xlarge: Platform.select({
     ios: 27,

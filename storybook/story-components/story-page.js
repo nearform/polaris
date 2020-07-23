@@ -1,8 +1,8 @@
 import React from 'react';
-
+import T from 'prop-types';
 import DocText from './doc-text';
 import { StyleSheet, View, Text } from 'react-native';
-import { size, fontFamily } from './platform-styles';
+import { size, fontFamily } from './helpers/platform-styles';
 
 import { ThemeProvider } from 'store';
 
@@ -12,7 +12,13 @@ const Title = ({ children }) => (
   </DocText>
 );
 
-const StoryPage = ({ children, url, title, storyFn, width }) => (
+/**
+ * Wrapper for all stories in a story file.
+ * Apply with .addDecorator when using storiesOf or include in the decorators array
+ * if using CSF format.
+ * The storyFn must be passed in from the decorators callback.
+ */
+const StoryPage = ({ title, storyFn, children, url, width }) => (
   <ThemeProvider>
     <View style={[styles.root, { width }]}>
       <Title>{title}</Title>
@@ -44,5 +50,13 @@ const styles = StyleSheet.create({
     marginTop: size.xsmall
   }
 });
+
+StoryPage.propTypes = {
+  title: T.string.isRequired,
+  storyFn: T.func.isRequired,
+  children: T.node.isRequired,
+  url: T.string.isRequired,
+  width: T.string
+};
 
 export default StoryPage;

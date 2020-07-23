@@ -11,6 +11,9 @@ const wrapperStyle = css`
   margin: 10px 0;
 `;
 
+/**
+ * Displays a toggle to switch the theme on/off
+ */
 const ThemeSwitcher = () => {
   const { toggleTheme } = React.useContext(ThemeActionsContext);
   const theme = useTheme();
