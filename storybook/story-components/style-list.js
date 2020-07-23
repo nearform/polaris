@@ -2,7 +2,6 @@ import React from 'react';
 import T from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 import { size, fontFamily } from './helpers/platform-styles';
-import shouldRender from './helpers/should-render';
 
 /**
  * Display prop information for a single prop
@@ -16,7 +15,7 @@ const StyleList = ({ types }) => (
         {typeInfo ? <Text style={styles.name}>: </Text> : null}
         {typeInfo ? <Text style={styles.code}>{typeInfo}</Text> : null}
         {required && <Text> (Required)</Text>}
-        {shouldRender(defaultValue) && <Text>Default value: {defaultValue}</Text>}
+        {defaultValue !== undefined && <Text>Default value: {defaultValue}</Text>}
       </View>
     ))}
   </View>

@@ -2,7 +2,6 @@ import React from 'react';
 import T from 'prop-types';
 import DocText from './doc-text';
 import { StyleSheet, View } from 'react-native';
-import shouldRender from './helpers/should-render';
 import { size } from './helpers/platform-styles';
 
 const SectionTitle = ({ children }) => (
@@ -16,7 +15,7 @@ const SectionTitle = ({ children }) => (
  */
 const DocSection = ({ children, title }) => (
   <View style={styles.section}>
-    {shouldRender(title) && <SectionTitle>{title}</SectionTitle>}
+    {title !== undefined && <SectionTitle>{title}</SectionTitle>}
     {children}
   </View>
 );

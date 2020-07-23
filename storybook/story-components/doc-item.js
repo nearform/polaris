@@ -5,7 +5,6 @@ import DocCode from './doc-code';
 import DocSection from './doc-section';
 import StyleList from './style-list';
 import insertBetween from './helpers/insert-between';
-import shouldRender from './helpers/should-render';
 import { StyleSheet, Text, View } from 'react-native';
 import { size } from './helpers/platform-styles';
 
@@ -27,7 +26,7 @@ const DocItem = ({ sectionTitle, name, description, typeInfo, example = {}, labe
   const Item = (
     <View style={styles.example}>
       <StyleList types={[{ label, name, typeInfo, required, defaultValue }]} />
-      {shouldRender(description) && <View style={styles.description}>{createDescription(description)}</View>}
+      {description !== undefined && <View style={styles.description}>{createDescription(description)}</View>}
       {(example.render || example.code) && (
         <View style={styles.renderBox}>
           <DocText style={styles.exampleText}>Example</DocText>

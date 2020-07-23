@@ -2,7 +2,6 @@ import React from 'react';
 import T from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 import { size, fontFamily } from './helpers/platform-styles';
-import shouldRender from './helpers/should-render';
 
 const Row = ({ name, type, required, defaultValue, description }) => (
   <View style={styles.rowWrapper}>
@@ -11,8 +10,8 @@ const Row = ({ name, type, required, defaultValue, description }) => (
       <NarrowCell data={type} style={styles.narrowCell} />
       <NarrowCell data={required ? 'true' : 'false'} style={styles.narrowCell} />
     </View>
-    {shouldRender(description) && <Text>{description}</Text>}
-    {shouldRender(defaultValue) && <Text>Default Value: {defaultValue}</Text>}
+    {description !== undefined && <Text>{description}</Text>}
+    {defaultValue !== undefined && <Text>Default Value: {defaultValue}</Text>}
   </View>
 );
 
