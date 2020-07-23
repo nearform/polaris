@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
-import StoryPage, { DocSection, DocItem, InlineCode } from 'storybook/story-components';
+import StoryPage, { DocItem, InlineCode } from 'storybook/story-components';
 
 import Button from '../';
 
@@ -15,16 +15,15 @@ storiesOf('Atoms/Button', module)
   ))
   .addDecorator(withKnobs)
   .add('Native Only', () => (
-    <DocSection title="With title">
-      <DocItem
-        name="title"
-        description="The title to be used for the buttons content"
-        typeInfo="string"
-        required
-        example={{
-          render: () => <Button onPress={action('Button Pressed')} title={text('text', 'Native Button')} />,
-          code: '<Button title="Native Button" onPress={handleButtonPress}>'
-        }}
-      />
-    </DocSection>
+    <DocItem
+      sectionTitle="Native Only"
+      name="title"
+      description="The title to be used for the buttons content"
+      typeInfo="string"
+      required
+      example={{
+        render: () => <Button onPress={action('Button Pressed')} title={text('text', 'Native Button')} />,
+        code: '<Button title="Native Button" onPress={handleButtonPress}>'
+      }}
+    />
   ));

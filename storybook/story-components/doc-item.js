@@ -3,6 +3,7 @@ import React from 'react';
 import DocText from './doc-text';
 import DocCode from './doc-code';
 import InlineCode from './inline-code';
+import DocSection from './doc-section';
 import insertBetween from './insert-between';
 import { StyleSheet, Text, View } from 'react-native';
 import { size } from './platform-styles';
@@ -18,22 +19,32 @@ const createDescription = description => {
   );
 };
 
-const DocItem = ({ description, example = {}, name, typeInfo, label, required, defaultValue }) => (
-  <View style={styles.example}>
-    {!!name && (
-      <PropText label={label} name={name} typeInfo={typeInfo} required={required} defaultValue={defaultValue} />
-    )}
-    {!!description && <View style={styles.description}>{createDescription(description)}</View>}
-    {(example.render || example.code) && (
-      <View style={styles.renderBox}>
-        <DocText style={styles.exampleText}>Example</DocText>
-        {example.render && <View>{example.render()}</View>}
-        {example.render && example.code && <View style={styles.verticalDivider} />}
-        {example.code && <DocCode code={example.code} />}
-      </View>
-    )}
-  </View>
-);
+const renderIfPopulated = (content, component) => {
+  return content !== undefined && content !== null && (typeof content !== 'string' || content.length > 0)
+    ? component
+    : null;
+};
+
+const DocItem = ({ sectionTitle, description, example = {}, name, typeInfo, label, required, defaultValue }) => {
+  const Item = (
+    <View style={styles.example}>
+      {renderIfPopulated(
+        name,
+        <PropText label={label} name={name} typeInfo={typeInfo} required={required} defaultValue={defaultValue} />
+      )}
+      {!!description && <View style={styles.description}>{createDescription(description)}</View>}
+      {(example.render || example.code) && (
+        <View style={styles.renderBox}>
+          <DocText style={styles.exampleText}>Example</DocText>
+          {example.render && <View>{example.render()}</View>}
+          {example.render && example.code && <View style={styles.verticalDivider} />}
+          {example.code && <DocCode code={example.code} />}
+        </View>
+      )}
+    </View>
+  );
+  return sectionTitle ? <DocSection title={sectionTitle} children={Item} /> : <Item />;
+};
 
 const PropText = ({ label, name, typeInfo, required, defaultValue }) => (
   <View>

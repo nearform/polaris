@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
-import StoryPage, { DocSection, DocItem, InlineCode } from 'storybook/story-components';
+import StoryPage, { DocItem, InlineCode } from 'storybook/story-components';
 
 import Button from '../';
 
@@ -21,16 +21,15 @@ export default {
 };
 
 export const webOnly = () => (
-  <DocSection title="With title">
-    <DocItem
-      name="title"
-      description="The title to be used for the buttons content"
-      typeInfo="string"
-      required
-      example={{
-        render: () => <Button onPress={action('Button Pressed')} title={text('text', 'Web Button')} />,
-        code: '<Button title="Web Button" onPress={handleButtonPress}>'
-      }}
-    />
-  </DocSection>
+  <DocItem
+    name="title"
+    sectionTitle="webOnly"
+    description="The title to be used for the buttons content"
+    typeInfo="string"
+    required
+    example={{
+      render: () => <Button onPress={action('Button Pressed')} title={text('text', 'Web Button')} />,
+      code: '<Button title="Web Button" onPress={handleButtonPress}>'
+    }}
+  />
 );

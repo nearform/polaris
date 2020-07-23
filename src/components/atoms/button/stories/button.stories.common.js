@@ -25,32 +25,30 @@ storiesOf('Atoms/Button', module)
   ))
   .addDecorator(withKnobs)
   .add('With title', () => (
-    <DocSection title="With title">
-      <DocItem
-        name="title"
-        description="The title to be used for the buttons content"
-        typeInfo="string"
-        required
-        example={{
-          render: () => <Button onPress={action('Button Pressed')} title={text('text', 'A button with a title')} />,
-          code: '<Button title="A button with a title" onPress={handleButtonPress}>'
-        }}
-      />
-    </DocSection>
+    <DocItem
+      sectionTitle="With title"
+      name="title"
+      description="The title to be used for the buttons content"
+      typeInfo="string"
+      required
+      example={{
+        render: () => <Button onPress={action('Button Pressed')} title={text('text', 'A button with a title')} />,
+        code: '<Button title="A button with a title" onPress={handleButtonPress}>'
+      }}
+    />
   ))
   .add('With onPress', () => (
-    <DocSection title="With onPress">
-      <DocItem
-        name="onPress"
-        description="Callback for button press"
-        typeInfo="func"
-        required
-        example={{
-          render: () => <Button onPress={action('Button Pressed')} title="A button" />,
-          code: '<Button title="A button" onPress={handleButtonPress}>'
-        }}
-      />
-    </DocSection>
+    <DocItem
+      sectionTitle="With onPress"
+      name="onPress"
+      description="Callback for button press"
+      typeInfo="func"
+      required
+      example={{
+        render: () => <Button onPress={action('Button Pressed')} title="A button" />,
+        code: '<Button title="A button" onPress={handleButtonPress}>'
+      }}
+    />
   ))
   .add('Themed Button', () => (
     <DocSection title="Themed Button">
