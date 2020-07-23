@@ -1,11 +1,13 @@
 import React from 'react';
 import App from './App';
-import { render } from 'react-native-testing-library';
+import { render, cleanup } from 'utils/test-utils';
+
+afterEach(cleanup);
 
 describe('Main App', () => {
-  it('renders without crashing', () => {
-    const { toJSON } = render(<App />);
-    const tree = toJSON();
-    expect(tree).toBeDefined();
+  it('renders content including some links, without crashing', () => {
+    const { queryAllByRole } = render(<App />);
+    const links = queryAllByRole('link');
+    expect(links.length).toBeGreaterThan(0);
   });
 });

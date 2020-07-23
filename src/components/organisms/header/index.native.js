@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -8,7 +8,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { replaceParams } from 'utils/paths';
 import usePlatformLocation from 'utils/hooks/usePlatformLocation';
 
-import { defaultPath } from 'routes';
+import { RoutesContext } from 'store/routing/routes-provider';
 
 const Left = ({ isHome, goBack }) =>
   isHome ? (
@@ -29,6 +29,7 @@ const Header = () => {
   const { t } = useTranslation();
   const navigation = useNavigation();
   const { currentRoute, params } = usePlatformLocation();
+  const { defaultPath } = useContext(RoutesContext);
   const isHome = currentRoute.path === defaultPath;
   const translatedName = t(currentRoute.name);
   const title = replaceParams(translatedName, params);

@@ -1,10 +1,12 @@
 import React from 'react';
-import { Platform, View, Text } from 'react-native';
+import { Platform } from 'react-native';
 
 import { prettyOutput, queryAllDescendents } from 'utils/test-utils/platform-utils';
 
-import { render } from 'utils/test-utils/testing-library';
+import { render, cleanup } from 'utils/test-utils/testing-library';
 import { DeepNestedView, SimpleView } from './fixtures';
+
+afterEach(cleanup);
 
 describe('test utils: prettyOutput', () => {
   it('outputs simple tree as text', () => {

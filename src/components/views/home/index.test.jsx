@@ -1,16 +1,13 @@
 import React from 'react';
-import { render } from 'react-native-testing-library';
 import { HomeScreen } from '.';
-import { ThemeProvider } from 'store';
+import { renderAsRoute, cleanup } from 'utils/test-utils';
+
+afterEach(cleanup);
 
 describe('HomeScreen test', () => {
-  it('renders without crashing', () => {
-    const { toJSON } = render(
-      <ThemeProvider>
-        <HomeScreen />
-      </ThemeProvider>
-    );
-    const tree = toJSON();
-    expect(tree).toBeDefined();
+  it('renders some links without crashing', () => {
+    const { queryAllByRole } = renderAsRoute(<HomeScreen />);
+    const links = queryAllByRole('link');
+    expect(links.length).toBeGreaterThan(1);
   });
 });

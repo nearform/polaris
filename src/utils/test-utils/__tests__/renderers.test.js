@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { render, cleanup } from 'utils/test-utils/testing-library';
 import { renderAsRoute, renderWithContext } from 'utils/test-utils/renderers';
 import { prettyOutput } from 'utils/test-utils/platform-utils';
-
-import { render } from 'utils/test-utils/testing-library';
 import { expectToThrow } from 'utils/test-utils/expects';
+
 import { SimpleView, ContextualView, RouteView } from './fixtures';
+
+afterEach(cleanup);
 
 const doesRender = container => {
   const strOutput = prettyOutput(container);
