@@ -1,3 +1,6 @@
+// Importing initiates @testing-library config as a side effect even if the import is unused
+const jestPreset = require('@testing-library/react-native/jest-preset');
+
 const aliasMappings = {
   '^store/(.*)$': '<rootDir>/src/store/$1',
   '^components/(.*)$': '<rootDir>/src/components/$1',
@@ -19,7 +22,12 @@ const nativeMappings = {
   ...aliasMappings
 };
 
-const universalSettings = {
+const setupFiles = ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'];
+
+// jestPreset in native only - on web, it redirects react-native-web components back to react-native
+const nativeSetupFiles = [...jestPreset.setupFiles, ...setupFiles];
+
+const settings = {
   testTimeout: 10000,
   verbose: true,
   moduleFileExtensions: ['js', 'jsx', 'json'],
@@ -32,17 +40,23 @@ const universalSettings = {
     'node_modules/(?!((jest-)?react-native|expo-camera|react-native-adapter|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-native-vector-icons|react-native-vector-icons/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|unimodules-permissions-interface|@expo/vector-icons/.*|@unimodules|@unimodules/.*|jest-expo/.*|sentry-expo|native-base|@react-native-community/picker/js/.+\\.jsx?))'
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/'],
-  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],
+  setupFiles,
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   automock: false,
   clearMocks: true,
   moduleNameMapper: aliasMappings
 };
 
+const nativeSettings = {
+  ...settings,
+  setupFiles: nativeSetupFiles,
+  moduleNameMapper: nativeMappings
+};
+
 module.exports = {
   projects: [
-    { preset: 'jest-expo/web', ...universalSettings },
-    { preset: 'jest-expo/ios', ...universalSettings, moduleNameMapper: nativeMappings },
-    { preset: 'jest-expo/android', ...universalSettings, moduleNameMapper: nativeMappings }
+    { preset: 'jest-expo/web', ...settings },
+    { preset: 'jest-expo/ios', ...nativeSettings },
+    { preset: 'jest-expo/android', ...nativeSettings }
   ]
 };

@@ -1,5 +1,6 @@
 // Stop jest using .ios in web tests until https://github.com/nearform/polaris/issues/42 is done
-jest.mock('components/atoms/picker-sheet', () => jest.requireActual('components/atoms/picker-sheet/index.jsx'));
+// jest.mock('components/atoms/picker-sheet', () => jest.requireActual('components/atoms/picker-sheet/index.jsx'));
+jest.mock('@react-native-community/picker', () => jest.requireActual('@react-native-community/picker/js/Picker'));
 
 jest.mock('services/i18n/common', () => ({
   i18nextConfiguration: {},
@@ -55,6 +56,10 @@ jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
 /*
  * End of react-navigation config
  */
+
+jest.mock('react-native-vector-icons', () => ({
+  AntDesign: () => jest.fn()
+}));
 
 jest.mock('react-native-vector-icons', () => ({
   AntDesign: () => jest.fn()
