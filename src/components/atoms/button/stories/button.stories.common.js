@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-import { Text, View, Switch } from 'react-native';
-import { css } from '@emotion/native';
-import { useTheme } from 'emotion-theming';
+import { Text, Switch } from 'react-native';
+import styled from 'styled-components/native';
+import { useTheme } from 'styled-components';
 import { SafeView } from 'storybook/story-components-native';
 import { ThemeProvider, ThemeActionsContext } from 'store';
 
 import Button from '../';
 
-const wrapperStyle = css`
+const Container = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -20,10 +20,10 @@ const ThemeSwitcher = () => {
   const { toggleTheme } = React.useContext(ThemeActionsContext);
   const theme = useTheme();
   return (
-    <View style={wrapperStyle}>
+    <Container>
       <Text>Switch theme</Text>
       <Switch onValueChange={toggleTheme} value={theme.name !== 'light'} testID="theme-switch" />
-    </View>
+    </Container>
   );
 };
 
@@ -38,7 +38,6 @@ storiesOf('Atoms/Button', module)
       <Text>Hello Button</Text>
     </Button>
   ))
-  .add('Red Color', () => <Button onPress={action('Red Button Clicked')} title="Red Button" color="red"></Button>)
   .add('Themed Button', () => (
     <>
       <ThemeSwitcher />

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Platform } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from 'styled-components';
 
 import NearformLogo from 'assets/logos/nearform.svg';
 import Container from 'components/atoms/container';

@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 import Link from 'components/atoms/link';
-import { getButtonStyle } from 'components/atoms/button';
+import { buttonStyle } from 'components/atoms/button';
 
 const StyledLink = styled(Link)`
-  ${props => getButtonStyle(props.theme)}
+  ${buttonStyle}
 `;
 
 // React Navigation `Link` and `useLinkProps` are currently "experimental" - investigate

@@ -1,5 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { ThemeProvider } from 'store';
 
 import Button from '../';
 
@@ -27,7 +28,11 @@ export const fullWidth = () => (
       typeInfo="string"
       description="The title to be used for the buttons content"
       example={{
-        render: () => <Button onPress={action('Clicked Button')} title="Full Width Button Example" />
+        render: () => (
+          <ThemeProvider>
+            <Button onPress={action('Clicked Button')} title="Full Width Button Example" />
+          </ThemeProvider>
+        )
       }}
     />
   </DocSection>
