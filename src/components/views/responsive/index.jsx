@@ -20,16 +20,13 @@ const Block =
   Platform.OS === 'web'
     ? styledWeb.div`
   ${commonStyles}
-
   ${props => css`
     ${props.theme.breakpoints.greaterThan('sm')`
       width: 50%;
     `}
   `}
 `
-    : styledNative.View`
-${commonStyles}
-`;
+    : styledNative.View`${commonStyles}`;
 
 const StyledText = styledNative.Text`
   color: ${props => props.theme.white}
