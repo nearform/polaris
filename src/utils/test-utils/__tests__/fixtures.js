@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import Link from 'components/atoms/link';
 
-import { useTheme } from 'emotion-theming';
+import { useTheme } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { usePlatformLocation, usePlatformNavigation } from 'utils/hooks';
 

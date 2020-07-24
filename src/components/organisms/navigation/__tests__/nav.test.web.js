@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { within, fireEvent, cleanup, renderAsRoute } from 'utils/test-utils';
 import Header from '../nav';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from 'styled-components';
 
 afterEach(cleanup);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 
 import Nav from 'components/organisms/navigation/nav';
 import Header from 'components/organisms/header';
