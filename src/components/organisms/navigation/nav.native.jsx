@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 
 import Link from 'components/atoms/link';
 
@@ -13,7 +13,7 @@ const Container = styled.View`
   width: 100%;
   z-index: 1;
   shadow-offset: 0 2px;
-  shadow-radius: 2;
+  shadow-radius: 2px;
   shadow-opacity: 1;
 `;
 
@@ -21,8 +21,8 @@ const Item = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding-top: 10;
-  padding-bottom: 30;
+  padding-top: 10px;
+  padding-bottom: 30px;
 `;
 
 const Nav = () => {

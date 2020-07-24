@@ -1,21 +1,20 @@
 import React from 'react';
 import T from 'prop-types';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import styled, { css } from 'styled-components';
 
-export const getButtonStyle = theme => css`
+export const buttonStyle = ({ theme }) => css`
   display: flex;
   box-sizing: border-box;
   color: ${theme.white};
   background-color: ${theme.primary};
   padding: 8px;
   border: 1px solid transparent;
-  font-weight: ${theme.fontWeight.normal};
-  font-size: ${theme.fontSize.base};
+  font-weight: ${theme.typography.fontWeight.normal};
+  font-size: ${theme.typography.fontSize.base};
   line-height: normal;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: ${theme.font};
+  font-family: ${theme.typography.font};
   transition: all 0.2s;
   cursor: pointer;
 
@@ -32,7 +31,7 @@ export const getButtonStyle = theme => css`
 `;
 
 const ButtonBase = styled.button`
-  ${props => getButtonStyle(props.theme)};
+  ${buttonStyle}
 `;
 
 const Button = ({

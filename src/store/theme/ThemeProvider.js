@@ -1,5 +1,6 @@
 import React from 'react';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { ThemeProvider as StyledThemeProviderNative } from 'styled-components/native';
 import reducer, { initialState } from './reducer';
 import * as types from './constants';
 import themes from 'src/themes';
@@ -15,7 +16,9 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeActionsContext.Provider value={actionsRef.current}>
-      <EmotionThemeProvider theme={themes[theme]}>{children}</EmotionThemeProvider>
+      <StyledThemeProvider theme={themes[theme]}>
+        <StyledThemeProviderNative theme={themes[theme]}>{children}</StyledThemeProviderNative>
+      </StyledThemeProvider>
     </ThemeActionsContext.Provider>
   );
 };

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, StatusBar } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import styled, { css } from '@emotion/native';
+import styled from 'styled-components/native';
 
 import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
 import usePlatformParams from 'utils/hooks/usePlatformParams';
@@ -18,7 +18,7 @@ const Row = styled.View`
 
 const PickerContainer = styled.View`
   border: 1px #ccc;
-  margin-left: 16;
+  margin-left: 16px;
 `;
 
 const Table = styled.View`
@@ -28,15 +28,15 @@ const Table = styled.View`
 `;
 
 const TableRow = styled(Row)`
-  height: 48;
+  height: 48px;
   padding: 0 32px;
 `;
 
 const TableCell = Container;
 
-const pickerStyle = css`
-  width: 128;
-  height: 48;
+const StyledPicker = styled.View`
+  width: 100px;
+  height: 48px;
   background-color: white;
 `;
 
@@ -67,10 +67,10 @@ export const ListView = () => {
       <Row>
         <Text>{t('listView:sortBy')}</Text>
         <PickerContainer>
-          <PickerSheet
+          <StyledPicker
+            as={PickerSheet}
             onValueChange={handleSortChange}
             currentOption={currentSortOption}
-            style={pickerStyle}
             options={sortOptions}
           />
         </PickerContainer>

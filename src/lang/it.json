@@ -11,7 +11,8 @@
     "settingsButton": "Vai alle Impostazioni",
     "listViewButton": "Vai alla Schermata Lista",
     "cameraButton": "Vai alla Telecamera",
-    "pushNotificationsButton": "Vai alla Notifiche Push"
+    "pushNotificationsButton": "Vai alla Notifiche Push",
+    "responsiveButton": "Vai alla esempio reattivo"
   },
   "viewOne": {
     "title": "Schermata Uno",
@@ -41,6 +42,10 @@
     "sendNotificationButton": "Premere per inviare la notifica",
     "messageTitle": "Titolo originale",
     "messageBody": "Ed ecco il corpo!"
+  },
+  "responsiveView": {
+    "textWeb": "Cambia larghezza quando viewport",
+    "textNative": "Sempre a larghezza piena su nativo"
   },
   "listItem": {
     "title": "Elenco articolo {:id}"

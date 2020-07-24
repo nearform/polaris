@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 
 import Container from 'components/atoms/container';
 import SettingItem from 'components/molecules/setting-item';
