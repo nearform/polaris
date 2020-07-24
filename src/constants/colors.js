@@ -4,4 +4,4 @@ export default {
   nearformBlue: '#2165E3',
   midnightBlue: '#194CAA',
   white: 'white'
-};
+}

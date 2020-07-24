@@ -1,5 +1,5 @@
 module.exports = {
   process(src) {
-    return JSON.parse(src);
+    return JSON.parse(src)
   }
-};
+}

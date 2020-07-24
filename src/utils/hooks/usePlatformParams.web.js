@@ -1,18 +1,18 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom'
 
 const usePlatformParams = () => {
-  const webLocation = useLocation();
+  const webLocation = useLocation()
 
-  const queryString = webLocation.search;
+  const queryString = webLocation.search
 
   // If IE support is needed, install and use `query-string`
-  const queryParams = Object.fromEntries(new URLSearchParams(queryString));
-  const pathParams = useParams() || {};
+  const queryParams = Object.fromEntries(new URLSearchParams(queryString))
+  const pathParams = useParams() || {}
   const params = {
     ...pathParams,
     queryParams
-  };
-  return params;
-};
+  }
+  return params
+}
 
-export default usePlatformParams;
+export default usePlatformParams

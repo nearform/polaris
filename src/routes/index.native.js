@@ -1,7 +1,10 @@
-import routes, { defaultPath, routeShape } from './index.common';
-import { Camera } from 'components/views';
+import { Camera } from 'components/views'
 
-const nativeOnlyRoutes = [{ path: '/camera', View: Camera, name: 'camera:title', menuIndex: 10 }];
+import routes, { defaultPath, routeShape } from './index.common'
 
-export default [...routes, ...nativeOnlyRoutes];
-export { defaultPath, routeShape };
+const nativeOnlyRoutes = [
+  { path: '/camera', View: Camera, name: 'camera:title', menuIndex: 10 }
+]
+
+export default [...routes, ...nativeOnlyRoutes]
+export { defaultPath, routeShape }

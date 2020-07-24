@@ -4,4 +4,4 @@ export default {
   md: '960px',
   lg: '1280px',
   xl: '1920px'
-};
+}

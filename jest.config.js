@@ -12,7 +12,10 @@ module.exports = {
     'node_modules/(?!((jest-)?react-native|expo-camera|react-native-adapter|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-native-vector-icons|react-native-vector-icons/.*|react-navigation|react-navigation-redux-helpers|@react-navigation/.*|unimodules-permissions-interface|@expo/vector-icons/.*|@unimodules|@unimodules/.*|jest-expo/.*|sentry-expo|native-base|@react-native-community/picker/js/.+\\.jsx?))'
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/'],
-  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'],
+  setupFiles: [
+    './node_modules/react-native-gesture-handler/jestSetup.js',
+    './jest.setup.js'
+  ],
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   automock: false,
   moduleNameMapper: {
@@ -27,4 +30,4 @@ module.exports = {
     '^test-utils(.*)$': '<rootDir>/src/test-utils',
     '\\.svg$': '<rootDir>/__mocks__/svgrMock.js'
   }
-};
+}
