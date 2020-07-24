@@ -1,21 +1,29 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-import { Text, View } from 'react-native';
-import { SafeView } from 'storybook/story-components-native';
+import { withKnobs, text } from '@storybook/addon-knobs';
+import StoryPage, { DocItem, InlineCode } from 'storybook/story-components';
 
 import Button from '../';
-import { ThemeProvider } from 'store';
 
 storiesOf('Atoms/Button', module)
   .addDecorator(storyFn => (
-    <ThemeProvider>
-      <SafeView>
-        {storyFn()}
-        <View>
-          <Text style={{ textAlign: 'center' }}>Native Button</Text>
-        </View>
-      </SafeView>
-    </ThemeProvider>
+    <StoryPage title="Native Button" url="components/atoms/button" storyFn={storyFn}>
+      An example story in a <InlineCode code=".native.js" /> file. This story is only visible when exploring storybook
+      on a native device
+    </StoryPage>
   ))
-  .add('Red Color', () => <Button onPress={action('Red Button Clicked')} title="Red Button" color="red"></Button>);
+  .addDecorator(withKnobs)
+  .add('Native Only', () => (
+    <DocItem
+      sectionTitle="Native Only"
+      name="title"
+      description="The title to be used for the buttons content"
+      typeInfo="string"
+      required
+      example={{
+        render: () => <Button onPress={action('Button Pressed')} title={text('text', 'Native Button')} />,
+        code: '<Button title="Native Button" onPress={handleButtonPress}>'
+      }}
+    />
+  ));

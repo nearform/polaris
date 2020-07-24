@@ -14,7 +14,7 @@ node_modules
 .expo
 
 # storybook auto generated file for stories on native
-storybook
+storybook/storyLoader.js
 
 # production
 dist

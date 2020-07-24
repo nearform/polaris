@@ -1,3 +1,6 @@
+/**
+ * Insert an item between all other items in an array
+ */
 const insertBetween = (item, array) =>
   array.reduce((acc, curr, i, { length }) => {
     if (i && i < length) {

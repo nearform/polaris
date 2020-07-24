@@ -3,12 +3,15 @@ import { storiesOf } from '@storybook/react';
 import DocText from './doc-text';
 import DocCode from './doc-code';
 import DocItem from './doc-item';
-import DocLink from './doc-link';
+import DocExternalLink from './doc-external-link';
 import DocSection from './doc-section';
+import InlineCode from './inline-code';
+import PropTable from './prop-table';
 import StyleList from './style-list';
 import TextList from './text-list';
+import ThemeSwitcher from './theme-switcher';
 import { DividerHorizontal, DividerVertical } from './dividers';
-import StoryPage, { Description } from './story-page';
+import StoryPage from './story-page';
 
 export default StoryPage;
 
@@ -17,10 +20,12 @@ export {
   DocCode,
   DocItem,
   DocSection,
-  Description,
-  DocLink,
+  DocExternalLink,
+  InlineCode,
+  PropTable,
   StyleList,
   TextList,
+  ThemeSwitcher,
   DividerHorizontal,
   DividerVertical,
   storiesOf

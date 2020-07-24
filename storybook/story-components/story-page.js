@@ -1,62 +1,62 @@
 import React from 'react';
-
+import T from 'prop-types';
 import DocText from './doc-text';
-import insertBetween from './insert-between';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import { size, fontFamily } from './helpers/platform-styles';
+
+import { ThemeProvider } from 'store';
 
 const Title = ({ children }) => (
-  <DocText accessibilityRole="heading" style={styles.title}>
+  <DocText accessibilityRole="header" style={styles.title}>
     {children}
   </DocText>
 );
 
-export const Description = ({ children }) => (
-  <DocText style={styles.description}>
-    {insertBetween(
-      () => (
-        <Divider key={Math.random()} />
-      ),
-      React.Children.toArray(children)
-    )}
-  </DocText>
-);
-
-const Divider = () => <View style={styles.divider} />;
-
-const StoryPage = ({ children, description, title, width }) => (
-  <View style={[styles.root, { width }]}>
-    <Title>{title}</Title>
-    {description}
-    {children}
-  </View>
+/**
+ * Wrapper for all stories in a story file.
+ * Apply with .addDecorator when using storiesOf or include in the decorators array
+ * if using CSF format.
+ * The storyFn must be passed in from the decorators callback.
+ */
+const StoryPage = ({ title, storyFn, children, url, width }) => (
+  <ThemeProvider>
+    <View style={[styles.root, { width }]}>
+      <Title>{title}</Title>
+      <Text style={styles.url}>{url}</Text>
+      <Text style={styles.description}>{children}</Text>
+      {storyFn()}
+    </View>
+  </ThemeProvider>
 );
 
 const styles = StyleSheet.create({
   root: {
-    padding: '1rem',
+    padding: size.normal,
     flex: 1,
     flexBasis: 'auto'
   },
-  divider: {
-    height: '1.3125rem'
-  },
   title: {
-    fontSize: '2rem'
+    fontSize: size.xlarge
+  },
+  url: {
+    fontSize: size.small,
+    fontFamily: fontFamily.mono
   },
   description: {
     color: '#666',
     display: 'flex',
     flexDirection: 'column',
-    fontSize: '1.25rem',
-    marginTop: 'calc(0.5 * 1.3125rem)',
-    marginBottom: 'calc(1.5 * 1.3125rem)'
-  },
-  link: {
-    color: '#1B95E0',
-    fontSize: '1rem',
-    marginTop: 'calc(0.5 * 1.3125rem)',
-    textDecorationLine: 'underline'
+    fontSize: size.large,
+    marginTop: size.xsmall
   }
 });
+
+StoryPage.propTypes = {
+  title: T.string.isRequired,
+  storyFn: T.func.isRequired,
+  children: T.node.isRequired,
+  url: T.string.isRequired,
+  width: T.number
+};
 
 export default StoryPage;

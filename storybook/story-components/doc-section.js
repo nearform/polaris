@@ -1,27 +1,39 @@
 import React from 'react';
-
+import T from 'prop-types';
 import DocText from './doc-text';
 import { StyleSheet, View } from 'react-native';
+import { size } from './helpers/platform-styles';
 
 const SectionTitle = ({ children }) => (
-  <DocText accessibilityRole="heading" aria-level="2" style={styles.sectionTitle}>
+  <DocText accessibilityRole="header" aria-level="2" style={styles.sectionTitle}>
     {children}
   </DocText>
 );
 
+/**
+ * A top level container for wrapping sections of stories
+ */
 const DocSection = ({ children, title }) => (
-  <View>
-    <SectionTitle>{title}</SectionTitle>
+  <View style={styles.section}>
+    {title !== undefined && <SectionTitle>{title}</SectionTitle>}
     {children}
   </View>
 );
 
 const styles = StyleSheet.create({
+  section: {
+    marginTop: size.small
+  },
   sectionTitle: {
-    fontSize: '1.3125rem',
-    marginBottom: '1.3125rem',
+    fontSize: size.large,
+    marginBottom: size.xsmall,
     fontWeight: 'bold'
   }
 });
+
+DocSection.propTypes = {
+  children: T.node.isRequired,
+  title: T.string
+};
 
 export default DocSection;
