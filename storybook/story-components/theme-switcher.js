@@ -1,16 +1,15 @@
 import React from 'react';
-import { css } from '@emotion/native';
-import { useTheme } from 'emotion-theming';
+import styled from 'styled-components/native';
+import { useTheme } from 'styled-components';
 import { ThemeActionsContext } from 'store';
-import { Text, View, Switch } from 'react-native';
+import { Text, Switch } from 'react-native';
 
-const wrapperStyle = css`
+const Container = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 10px 0;
 `;
-
 /**
  * Displays a toggle to switch the theme on/off
  */
@@ -18,10 +17,10 @@ const ThemeSwitcher = () => {
   const { toggleTheme } = React.useContext(ThemeActionsContext);
   const theme = useTheme();
   return (
-    <View style={wrapperStyle}>
+    <Container>
       <Text>Switch theme</Text>
       <Switch onValueChange={toggleTheme} value={theme.name !== 'light'} testID="theme-switch" />
-    </View>
+    </Container>
   );
 };
 

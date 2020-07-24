@@ -11,7 +11,8 @@
     "settingsButton": "Go to Settings",
     "listViewButton": "Go to List View",
     "cameraButton": "Go to Camera",
-    "pushNotificationsButton": "Go to Push Notifications"
+    "pushNotificationsButton": "Go to Push Notifications",
+    "responsiveButton": "Go to responsive example"
   },
   "viewOne": {
     "title": "View One",
@@ -41,6 +42,10 @@
     "sendNotificationButton": "Press to Send Notification",
     "messageTitle": "Original Title",
     "messageBody": "And here is the body!"
+  },
+  "responsiveView": {
+    "textWeb": "Will change width when viewport",
+    "textNative": "Always full width on native"
   },
   "listItem": {
     "title": "List item {:id}"

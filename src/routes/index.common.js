@@ -8,6 +8,7 @@ import { ListView } from 'components/views/list/ListView';
 import { ListItem } from 'components/views/list/ListItem';
 import { Settings } from 'components/views/settings';
 import { PushNotifications } from 'components/views/push-notifications';
+import { Responsive } from 'components/views/responsive';
 // import Login from 'components/views/login'
 // import User from 'components/views/User'
 
@@ -20,7 +21,8 @@ const routes = [
   { path: '/listView', View: ListView, menuIndex: 4, name: 'listView:title' },
   { path: '/listItem/:id', View: ListItem, name: 'listItem:title' },
   { path: '/settings', View: Settings, menuIndex: 5, name: 'settings:title' },
-  { path: '/pushNotifications', View: PushNotifications, menuIndex: 6, name: 'pushNotificationsView:title' }
+  { path: '/pushNotifications', View: PushNotifications, menuIndex: 6, name: 'pushNotificationsView:title' },
+  { path: '/responsive', View: Responsive, menuIndex: 7, name: 'pushNotificationsView:title' }
   //  { path: '/login', View: Login, name: 'Log in' },
   //  { path: '/user', View: User, name: 'User profile' }
 ];
