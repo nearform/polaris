@@ -10,14 +10,15 @@ const _asComponent = renderable => {
 
 const _convertToRoute = (
   renderable,
-  { path = '/test-path', name = 'Test path', defaultPath, additionalRoutes = [], LayoutComponent = null } = {}
+  { path = '/test-path', name = 'Test path', routes, additionalRoutes = [], LayoutComponent = null } = {}
 ) => {
-  const Component = _asComponent(renderable);
-  const route = { path, View: Component, name };
-  const routes = [route, ...additionalRoutes];
-  return props => (
-    <Route defaultPath={defaultPath || path} routes={routes} LayoutComponent={LayoutComponent} {...props} />
-  );
+  if (!routes) {
+    const Component = _asComponent(renderable);
+    const route = { path, View: Component, name };
+    routes = [route, ...additionalRoutes];
+  }
+
+  return props => <Route defaultPath={path} routes={routes} LayoutComponent={LayoutComponent} {...props} />;
 };
 
 export const renderWithContext = (renderable, renderOptions = {}) => {
@@ -27,5 +28,6 @@ export const renderWithContext = (renderable, renderOptions = {}) => {
 
 export const renderAsRoute = (renderable, { renderOptions = {}, routeOptions } = {}) => {
   const RouteComponent = _convertToRoute(renderable, routeOptions);
+
   return render(<RouteComponent />, { ...renderOptions, wrapper: ThemeProvider });
 };
