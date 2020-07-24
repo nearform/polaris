@@ -1,17 +1,11 @@
-import { renderAsRoute, cleanup, firePressEvent, act } from 'utils/test-utils';
-import { routes, defaultPath } from './fixtures';
-
-// This should run in iOS and Android except for an issue where after awaiting
-// async actions, the connection to NavigationContainer's contexts is lost.
-// This appears to be related to teardown and React Navigation's forwardRefs
+import { renderWithContext, cleanup, firePressEvent, act } from 'utils/test-utils';
+import { RouteFixture } from './fixtures';
 
 afterEach(cleanup);
 
-describe('Link', () => {
+describe('LinkButton', () => {
   it('Navigates to correct route on press', async () => {
-    const { getByText, queryAllByText } = renderAsRoute(null, {
-      routeOptions: { routes, path: defaultPath }
-    });
+    const { getByText, queryAllByText } = renderWithContext(RouteFixture);
 
     expect(getByText('Screen One')).toBeTruthy();
     expect(queryAllByText('Screen Two')).toHaveLength(0);

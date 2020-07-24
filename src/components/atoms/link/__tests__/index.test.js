@@ -1,13 +1,12 @@
-import { renderAsRoute, cleanup, firePressEvent, act } from 'utils/test-utils';
-import { routes, defaultPath } from './fixtures';
+import { renderWithContext, cleanup, firePressEvent, act } from 'utils/test-utils';
+import { RouteFixture } from './fixtures';
 
 afterEach(cleanup);
 
-describe('LinkButton', () => {
+describe('Link', () => {
   it('Navigates to correct route on press', async () => {
-    const { getByText, queryAllByText } = renderAsRoute(null, {
-      routeOptions: { routes, path: defaultPath }
-    });
+    const { getByText, queryAllByText } = renderWithContext(RouteFixture);
+    await act(async () => {});
 
     expect(getByText('Screen One')).toBeTruthy();
     expect(queryAllByText('Screen Two')).toHaveLength(0);
@@ -15,6 +14,7 @@ describe('LinkButton', () => {
 
     // Find and click link in first screen
     const linkA = getByText('Go to Two');
+
     await act(async () => await firePressEvent(linkA));
 
     expect(queryAllByText('Screen One')).toHaveLength(0);

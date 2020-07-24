@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import Route from 'components/templates/route';
 
 import Link from '../index';
 
@@ -37,3 +38,5 @@ export const routes = [
 ];
 
 export const defaultPath = '/one';
+
+export const RouteFixture = () => <Route routes={routes} defaultPath={defaultPath} LayoutContainer={View} />;
