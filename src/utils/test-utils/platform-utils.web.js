@@ -1,5 +1,5 @@
 // Unify prettyPrint(nativeElement) & prettyDOM(domElement)
-import { prettyDOM as prettyOutput } from './testing-library';
+import { prettyDOM as prettyOutput, fireEvent } from './testing-library';
 export { prettyOutput };
 
 // Unify nativeElement.getProp() & domElement.getAttribute()
@@ -16,9 +16,12 @@ export const queryAllDescendents = (domContainer, { webAttr = 'type', prop = web
     case 'class':
       return domContainer.querySelectorAll(`.${value}`);
     default:
-      if (!value) return domContainer.querySelectorAll(`[${prop}]`)
+      if (!value) return domContainer.querySelectorAll(`[${prop}]`);
 
       // For example, [name="password"], [attr^="prefix"]
       return domContainer.querySelectorAll(`[${prop}${matchType}="${value}"]`);
   }
 };
+
+// Unify native fireEvent.press and web fireEvent.click
+export const firePressEvent = fireEvent.click;

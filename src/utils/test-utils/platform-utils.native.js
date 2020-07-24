@@ -1,5 +1,5 @@
 // Unify prettyPrint(nativeElement) & prettyDom(domElement)
-import { prettyPrint as prettyOutput } from './testing-library';
+import { prettyPrint as prettyOutput, fireEvent } from './testing-library';
 export { prettyOutput };
 
 // Unify nativeElement.getProp() & domElement.getAttribute()
@@ -37,3 +37,6 @@ export const queryAllDescendents = (
         throw new Error(`Invalid matchType "${matchType}" (type ${typeof matchType})`);
     }
   });
+
+// Unify native fireEvent.press and web fireEvent.click
+export const firePressEvent = fireEvent.press;
