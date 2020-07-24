@@ -1,12 +1,11 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import Constants from 'expo-constants';
-import * as Permissions from 'expo-permissions';
-import * as Notifications from 'expo-notifications';
-
-import Container from 'components/atoms/container';
-import Button from 'components/atoms/button';
+import React from 'react'
+import { Platform } from 'react-native'
+import { useTranslation } from 'react-i18next'
+import Constants from 'expo-constants'
+import * as Permissions from 'expo-permissions'
+import * as Notifications from 'expo-notifications'
+import Container from 'components/atoms/container'
+import Button from 'components/atoms/button'
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -14,32 +13,36 @@ Notifications.setNotificationHandler({
     shouldPlaySound: true,
     shouldSetBadge: true
   })
-});
+})
 
 export const PushNotifications = () => {
-  const [token, setToken] = React.useState(null);
-  const { t } = useTranslation();
+  const [token, setToken] = React.useState(null)
+  const { t } = useTranslation()
 
   const registerForPushNotificationsNative = async () => {
     try {
       if (Constants.isDevice) {
-        const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
-        let finalStatus = existingStatus;
+        const { status: existingStatus } = await Permissions.getAsync(
+          Permissions.NOTIFICATIONS
+        )
+        let finalStatus = existingStatus
         if (existingStatus !== 'granted') {
-          const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-          finalStatus = status;
+          const { status } = await Permissions.askAsync(
+            Permissions.NOTIFICATIONS
+          )
+          finalStatus = status
         }
         if (finalStatus !== 'granted') {
-          alert(t('pushNotificationsView:permissionsRejectedAlert'));
-          return;
+          alert(t('pushNotificationsView:permissionsRejectedAlert'))
+          return
         }
-        const res = await Notifications.getExpoPushTokenAsync();
-        setToken(res.data);
+        const res = await Notifications.getExpoPushTokenAsync()
+        setToken(res.data)
       } else {
-        alert(t('pushNotificationsView:physicalDevice'));
+        alert(t('pushNotificationsView:physicalDevice'))
       }
     } catch (e) {
-      alert(e.message);
+      alert(e.message)
     }
 
     if (Platform.OS === 'android') {
@@ -48,13 +51,13 @@ export const PushNotifications = () => {
         sound: true,
         priority: 'max',
         vibrate: [0, 250, 250, 250]
-      });
+      })
     }
-  };
+  }
 
   React.useEffect(() => {
-    registerForPushNotificationsNative();
-  });
+    registerForPushNotificationsNative()
+  })
 
   return (
     <Container>
@@ -69,8 +72,8 @@ export const PushNotifications = () => {
         }
       />
     </Container>
-  );
-};
+  )
+}
 
 function sendPushNotification({ expoPushToken, title, body }) {
   const message = {
@@ -78,7 +81,7 @@ function sendPushNotification({ expoPushToken, title, body }) {
     sound: 'default',
     title,
     body
-  };
+  }
 
   fetch('https://exp.host/--/api/v2/push/send', {
     method: 'POST',
@@ -88,5 +91,5 @@ function sendPushNotification({ expoPushToken, title, body }) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(message)
-  });
+  })
 }

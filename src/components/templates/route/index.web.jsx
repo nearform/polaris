@@ -1,18 +1,23 @@
-import React from 'react';
-import T from 'prop-types';
-import { Switch, Route as DomRoute, Redirect, BrowserRouter } from 'react-router-dom';
-
-import Layout from 'components/templates/layout';
-import defaultRoutes, { routeShape } from 'routes';
-import { View404 } from 'components/views/404';
+import React from 'react'
+import T from 'prop-types'
+import {
+  Switch,
+  Route as DomRoute,
+  Redirect,
+  BrowserRouter
+} from 'react-router-dom'
+import Layout from 'components/templates/layout'
+import defaultRoutes, { routeShape } from 'routes'
+import { View404 } from 'components/views/404'
 
 const withBrowserRouter = Component => {
-  return props => (
+  const WithBrowserRouter = props => (
     <BrowserRouter>
       <Component {...props} />
     </BrowserRouter>
-  );
-};
+  )
+  return WithBrowserRouter
+}
 
 const Route = ({ routes = defaultRoutes }) => {
   return (
@@ -20,19 +25,28 @@ const Route = ({ routes = defaultRoutes }) => {
       <Switch>
         {routes.map(route =>
           !route.redirectTo ? (
-            <DomRoute exact path={route.path} component={route.View} key={route.path} />
+            <DomRoute
+              exact
+              path={route.path}
+              component={route.View}
+              key={route.path}
+            />
           ) : (
-            <Redirect from={route.path} to={route.redirectTo} key={route.path} />
+            <Redirect
+              from={route.path}
+              to={route.redirectTo}
+              key={route.path}
+            />
           )
         )}
         <DomRoute component={View404} />
       </Switch>
     </Layout>
-  );
-};
+  )
+}
 
 Route.propTypes = {
   routes: T.arrayOf(T.shape(routeShape))
-};
+}
 
-export default withBrowserRouter(Route);
+export default withBrowserRouter(Route)

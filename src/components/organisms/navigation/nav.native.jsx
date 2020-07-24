@@ -1,8 +1,7 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import styled from 'styled-components/native';
-
-import Link from 'components/atoms/link';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import styled from 'styled-components/native'
+import Link from 'components/atoms/link'
 
 const Container = styled.View`
   flex-direction: row;
@@ -15,7 +14,7 @@ const Container = styled.View`
   shadow-offset: 0 2px;
   shadow-radius: 2px;
   shadow-opacity: 1;
-`;
+`
 
 const Item = styled.View`
   flex: 1;
@@ -23,10 +22,10 @@ const Item = styled.View`
   align-items: center;
   padding-top: 10px;
   padding-bottom: 30px;
-`;
+`
 
 const Nav = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <Container>
@@ -40,7 +39,7 @@ const Nav = () => {
         <Link title={t('settings:title')} path={'/settings'} />
       </Item>
     </Container>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

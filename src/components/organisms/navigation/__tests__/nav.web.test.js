@@ -1,9 +1,10 @@
-import React from 'react';
-import { render, fireEvent, cleanup } from 'react-native-testing-library';
-import { ThemeProvider } from 'store';
-import Header from '../nav.web';
+import React from 'react'
+import { render, fireEvent, cleanup } from 'react-native-testing-library'
+import { ThemeProvider } from 'store'
 
-afterEach(cleanup);
+import Header from '../nav.web'
+
+afterEach(cleanup)
 
 describe('Navigation Header Web', () => {
   it('should theme change on press works correctly', () => {
@@ -11,11 +12,11 @@ describe('Navigation Header Web', () => {
       <ThemeProvider>
         <Header />
       </ThemeProvider>
-    );
+    )
 
-    const themeSwitch = getByTestId('theme-switch');
-    expect(themeSwitch).toHaveProp('value', false);
-    fireEvent(themeSwitch, 'valueChange');
-    expect(themeSwitch).toHaveProp('value', true);
-  });
-});
+    const themeSwitch = getByTestId('theme-switch')
+    expect(themeSwitch).toHaveProp('value', false)
+    fireEvent(themeSwitch, 'valueChange')
+    expect(themeSwitch).toHaveProp('value', true)
+  })
+})

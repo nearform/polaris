@@ -1,6 +1,7 @@
-import * as React from 'react';
-import { Text, Platform } from 'react-native';
-import styled from 'styled-components/native';
+import T from 'prop-types'
+import * as React from 'react'
+import { Text, Platform } from 'react-native'
+import styled from 'styled-components/native'
 
 const Container = styled.View`
   width: 100%;
@@ -8,11 +9,11 @@ const Container = styled.View`
   flex-direction: row;
   justify-content: ${Platform.OS === 'web' ? 'center' : 'space-between'};
   align-items: center;
-`;
+`
 
 const Label = styled.View`
   margin-right: 10px;
-`;
+`
 
 const SettingItem = ({ label, value }) => (
   <Container>
@@ -21,6 +22,11 @@ const SettingItem = ({ label, value }) => (
     </Label>
     {value}
   </Container>
-);
+)
 
-export default SettingItem;
+SettingItem.propTypes = {
+  label: T.string,
+  value: T.string
+}
+
+export default SettingItem

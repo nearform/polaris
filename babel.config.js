@@ -1,7 +1,7 @@
-const alias = require('./aliases.config.js');
+const alias = require('./aliases.config.js')
 
 module.exports = api => {
-  api.cache(false);
+  api.cache(false)
   return {
     presets: ['babel-preset-expo'],
     env: {
@@ -28,5 +28,5 @@ module.exports = api => {
         ]
       }
     }
-  };
-};
+  }
+}

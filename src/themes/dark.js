@@ -1,7 +1,8 @@
-import { generateMedia } from 'styled-media-query';
-import { colors } from 'src/constants';
-import typography from './typography';
-import breakpoints from './breakpoints';
+import { generateMedia } from 'styled-media-query'
+import { colors } from 'src/constants'
+
+import typography from './typography'
+import breakpoints from './breakpoints'
 
 export default {
   name: 'dark',
@@ -11,4 +12,4 @@ export default {
   white: colors.white,
   typography,
   breakpoints: generateMedia(breakpoints)
-};
+}
