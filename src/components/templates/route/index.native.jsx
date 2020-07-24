@@ -19,24 +19,15 @@ const isMenuRoute = route => typeof route.menuIndex === 'number';
 // Sort by lowest menu index first, with non-menu views last
 const getMenuIndexSortValue = menuIndex => (typeof menuIndex === 'number' ? menuIndex : Infinity);
 
-// Enable hooks that need to be inside NavigationContainer in Route component
-const withNavigationContainer = RouteComponent => {
-  return props => (
-    <NavigationContainer>
-      <RouteComponent {...props} />
-    </NavigationContainer>
-  );
-};
-
 // Place layout inside each screen, around each view, to access navigation hooks
 const withLayout = (ViewComponent, LayoutComponent) => {
   if (!LayoutComponent) return ViewComponent;
 
   return props => {
     return (
-      <Layout>
+      <LayoutComponent>
         <ViewComponent {...props} />
-      </Layout>
+      </LayoutComponent>
     );
   };
 };
@@ -53,7 +44,7 @@ const withMenuFilter = (DrawerComponent, menuNames) => {
   };
 };
 
-const Route = ({ routes = presetRoutes, defaultPath = presetDefaultPath, LayoutComponent = Layout }) => {
+const RouteNavigator = ({ routes = presetRoutes, defaultPath = presetDefaultPath, LayoutComponent = Layout }) => {
   const dimensions = useWindowDimensions();
   const { t } = useTranslation();
 
@@ -83,10 +74,17 @@ const Route = ({ routes = presetRoutes, defaultPath = presetDefaultPath, LayoutC
   );
 };
 
-Route.propTypes = {
+RouteNavigator.propTypes = {
   routes: T.arrayOf(routeShape),
   defaultPath: T.string,
   LayoutComponent: T.elementType
 };
 
-export default withNavigationContainer(Route);
+// Enable hooks that need to be inside NavigationContainer in Route component
+const Route = props => (
+  <NavigationContainer>
+    <RouteNavigator {...props} />
+  </NavigationContainer>
+);
+
+export default Route;
