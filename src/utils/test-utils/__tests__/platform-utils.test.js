@@ -45,4 +45,4 @@ describe('test utils: queryAllDescendents', () => {
     const wildcardMatches = queryAllDescendents(container, { value: 'er', matchType: '$', ...idTypes });
     expect(wildcardMatches).toHaveLength(2);
   });
-})
+});
