@@ -2,10 +2,10 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { Camera as ExpoCamera } from 'expo-camera';
 import { useTranslation } from 'react-i18next';
-import { css } from '@emotion/native';
+import styled from 'styled-components/native';
 import Container from 'components/atoms/container';
 
-const stretchStyles = css`
+const Wrapper = styled.View`
   flex: 1;
 `;
 
@@ -31,9 +31,5 @@ export const Camera = () => {
     );
   }
 
-  return (
-    <View style={stretchStyles}>
-      <ExpoCamera style={stretchStyles} type={ExpoCamera.Constants.Type.back} />
-    </View>
-  );
+  return <Wrapper as={ExpoCamera} type={ExpoCamera.Constants.Type.back} />;
 };

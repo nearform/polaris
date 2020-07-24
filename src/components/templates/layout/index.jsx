@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import SideMenu from 'react-native-side-menu';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 
 import Nav from 'components/organisms/navigation/nav';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, Platform } from 'react-native';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 
 const Container = styled.View`
   width: 100%;
@@ -11,7 +11,7 @@ const Container = styled.View`
 `;
 
 const Label = styled.View`
-  margin-right: 10;
+  margin-right: 10px;
 `;
 
 const SettingItem = ({ label, value }) => (
