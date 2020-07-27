@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import StoryPage, { DocItem } from 'storybook/story-components'
 import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react-native'
-import { withKnobs } from '@storybook/addon-knobs'
-import { I18nextProvider } from 'react-i18next'
-import i18n from 'services/i18n/'
 
 import PickerSheet from '../'
 
@@ -27,7 +24,6 @@ storiesOf('Atoms/Picker Sheet', module)
       The component to pick values
     </StoryPage>
   ))
-  .addDecorator(withKnobs)
   .add('With Items', () => {
     const [currentOption, setCurrentOption] = useState(options[0])
     const handlePickerChange = value => {
@@ -36,18 +32,16 @@ storiesOf('Atoms/Picker Sheet', module)
       action('onValueChange')(selectedOption.label)
     }
     return (
-      <I18nextProvider i18n={i18n}>
-        <DocItem
-          example={{
-            render: (
-              <PickerSheet
-                onValueChange={handlePickerChange}
-                currentOption={currentOption}
-                options={options}
-              />
-            )
-          }}
-        />
-      </I18nextProvider>
+      <DocItem
+        example={{
+          render: (
+            <PickerSheet
+              onValueChange={handlePickerChange}
+              currentOption={currentOption}
+              options={options}
+            />
+          )
+        }}
+      />
     )
   })
