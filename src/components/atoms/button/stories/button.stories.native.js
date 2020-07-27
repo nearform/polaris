@@ -1,16 +1,27 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, text } from '@storybook/addon-knobs';
-import StoryPage, { DocItem, InlineCode } from 'storybook/story-components';
+import React from 'react'
+import { storiesOf } from '@storybook/react-native'
+import { action } from '@storybook/addon-actions'
+import { withKnobs, text } from '@storybook/addon-knobs'
+import StoryPage, { DocItem, InlineCode } from 'storybook/story-components'
 
-import Button from '../';
+import Button from '../'
+
+const render = () => (
+  <Button
+    onPress={action('Button Pressed')}
+    title={text('text', 'Native Button')}
+  />
+)
 
 storiesOf('Atoms/Button', module)
   .addDecorator(storyFn => (
-    <StoryPage title="Native Button" url="components/atoms/button" storyFn={storyFn}>
-      An example story in a <InlineCode code=".native.js" /> file. This story is only visible when exploring storybook
-      on a native device
+    <StoryPage
+      title="Native Button"
+      url="components/atoms/button"
+      storyFn={storyFn}
+    >
+      An example story in a <InlineCode code=".native.js" /> file. This story is
+      only visible when exploring storybook on a native device
     </StoryPage>
   ))
   .addDecorator(withKnobs)
@@ -22,8 +33,8 @@ storiesOf('Atoms/Button', module)
       typeInfo="string"
       required
       example={{
-        render: () => <Button onPress={action('Button Pressed')} title={text('text', 'Native Button')} />,
+        render,
         code: '<Button title="Native Button" onPress={handleButtonPress}>'
       }}
     />
-  ));
+  ))

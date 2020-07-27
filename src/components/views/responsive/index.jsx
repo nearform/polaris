@@ -1,11 +1,11 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import styledWeb, { css } from 'styled-components';
-import styledNative from 'styled-components/native';
+import React from 'react'
+import { Platform } from 'react-native'
+import { useTranslation } from 'react-i18next'
+import styledWeb, { css } from 'styled-components'
+import styledNative from 'styled-components/native'
+import Container from 'components/atoms/container'
 
-import Container from 'components/atoms/container';
-import breakpoints from '../../../themes/breakpoints';
+import breakpoints from '../../../themes/breakpoints'
 
 const commonStyles = css`
   display: flex;
@@ -14,7 +14,7 @@ const commonStyles = css`
   height: 100px;
   width: 100%;
   background-color: ${props => props.theme.primary};
-`;
+`
 
 const Block =
   Platform.OS === 'web'
@@ -26,14 +26,14 @@ const Block =
     `}
   `}
 `
-    : styledNative.View`${commonStyles}`;
+    : styledNative.View`${commonStyles}`
 
 const StyledText = styledNative.Text`
   color: ${props => props.theme.white}
-`;
+`
 
 export const Responsive = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <Container>
@@ -45,5 +45,5 @@ export const Responsive = () => {
         </StyledText>
       </Block>
     </Container>
-  );
-};
+  )
+}

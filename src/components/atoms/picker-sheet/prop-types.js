@@ -1,4 +1,4 @@
-import T from 'prop-types';
+import T from 'prop-types'
 
 export default {
   onValueChange: T.func.isRequired,
@@ -12,4 +12,4 @@ export default {
   nativeID: T.string,
   testID: T.string,
   cancelLabel: T.string // Used in iOS only
-};
+}

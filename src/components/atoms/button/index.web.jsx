@@ -1,6 +1,6 @@
-import React from 'react';
-import T from 'prop-types';
-import styled, { css } from 'styled-components';
+import React from 'react'
+import T from 'prop-types'
+import styled, { css } from 'styled-components'
 
 export const buttonStyle = ({ theme }) => css`
   display: flex;
@@ -28,11 +28,11 @@ export const buttonStyle = ({ theme }) => css`
   &:disabled {
     opacity: 0.4;
   }
-`;
+`
 
 const ButtonBase = styled.button`
   ${buttonStyle}
-`;
+`
 
 const Button = ({
   onPress,
@@ -49,16 +49,29 @@ const Button = ({
   touchSoundDisabled,
   ...webButtonProps
 }) => (
-  <ButtonBase onClick={onPress} aria-label={accessibilityLabel} data-testid={testID} {...webButtonProps}>
+  <ButtonBase
+    onClick={onPress}
+    aria-label={accessibilityLabel}
+    data-testid={testID}
+    {...webButtonProps}
+  >
     {title}
   </ButtonBase>
-);
+)
 
 Button.propTypes = {
+  color: T.string,
+  hasTVPreferredFocus: T.bool,
+  nextFocusDown: T.node,
+  nextFocusForward: T.node,
+  nextFocusLeft: T.node,
+  nextFocusRight: T.node,
+  nextFocusUp: T.node,
+  touchSoundDisabled: T.bool,
   title: T.string.isRequired,
   onPress: T.func.isRequired,
   accessibilityLabel: T.string,
   testID: T.string
-};
+}
 
-export default Button;
+export default Button
