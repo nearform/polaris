@@ -24,20 +24,18 @@ export default {
   ]
 }
 
-const render = () => (
-  <ThemeProvider>
-    <I18nextProvider i18n={i18n}>
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    </I18nextProvider>
-  </ThemeProvider>
-)
-
 export const header = () => (
   <DocItem
     example={{
-      render
+      render: (
+        <ThemeProvider>
+          <I18nextProvider i18n={i18n}>
+            <MemoryRouter>
+              <Header />
+            </MemoryRouter>
+          </I18nextProvider>
+        </ThemeProvider>
+      )
     }}
   />
 )

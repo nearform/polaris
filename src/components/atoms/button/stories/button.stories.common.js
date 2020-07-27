@@ -17,7 +17,7 @@ import StoryPage, {
 
 import Button from '../'
 
-const render = () => (
+const render = (
   <Button
     onPress={action('Button Pressed')}
     title={text('text', 'A button with a title')}

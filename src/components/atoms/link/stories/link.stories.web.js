@@ -3,21 +3,15 @@ import { MemoryRouter } from 'react-router'
 import { I18nextProvider } from 'react-i18next'
 import i18n from 'services/i18n/'
 import StoryPage, { DocItem } from 'storybook/story-components'
+import { withKnobs, text } from '@storybook/addon-knobs'
 
 import Link from '../'
-
-const render = () => (
-  <I18nextProvider i18n={i18n}>
-    <MemoryRouter>
-      <Link title={'Text Link'} path={'/test'} />
-    </MemoryRouter>
-  </I18nextProvider>
-)
 
 export default {
   component: Link,
   title: 'Atoms/Link',
   decorators: [
+    withKnobs,
     storyFn => (
       <StoryPage
         title="Link With Text"
@@ -33,7 +27,13 @@ export default {
 export const linkWithText = () => (
   <DocItem
     example={{
-      render
+      render: (
+        <I18nextProvider i18n={i18n}>
+          <MemoryRouter>
+            <Link title={text('text', 'Text Link')} path={'/test'} />
+          </MemoryRouter>
+        </I18nextProvider>
+      )
     }}
   />
 )

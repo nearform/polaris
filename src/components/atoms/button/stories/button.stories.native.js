@@ -6,13 +6,6 @@ import StoryPage, { DocItem, InlineCode } from 'storybook/story-components'
 
 import Button from '../'
 
-const render = () => (
-  <Button
-    onPress={action('Button Pressed')}
-    title={text('text', 'Native Button')}
-  />
-)
-
 storiesOf('Atoms/Button', module)
   .addDecorator(storyFn => (
     <StoryPage
@@ -33,7 +26,12 @@ storiesOf('Atoms/Button', module)
       typeInfo="string"
       required
       example={{
-        render,
+        render: (
+          <Button
+            onPress={action('Button Pressed')}
+            title={text('text', 'Native Button')}
+          />
+        ),
         code: '<Button title="Native Button" onPress={handleButtonPress}>'
       }}
     />

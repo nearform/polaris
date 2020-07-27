@@ -37,18 +37,16 @@ export const WithItems = () => {
     action('onValueChange')(selectedOption.label)
   }
 
-  const render = () => (
-    <PickerSheet
-      onValueChange={handlePickerChange}
-      currentOption={currentOption}
-      options={options}
-    />
-  )
-
   return (
     <DocItem
       example={{
-        render
+        render: (
+          <PickerSheet
+            onValueChange={handlePickerChange}
+            currentOption={currentOption}
+            options={options}
+          />
+        )
       }}
     />
   )
