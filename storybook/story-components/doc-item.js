@@ -33,7 +33,7 @@ const DocItem = ({
   defaultValue
 }) => {
   const Item = (
-    <View style={styles.example}>
+    <View>
       <StyleList types={[{ label, name, typeInfo, required, defaultValue }]} />
       {description !== undefined && (
         <View style={styles.description}>{createDescription(description)}</View>
