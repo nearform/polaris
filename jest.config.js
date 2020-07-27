@@ -1,5 +1,5 @@
 // Importing initiates @testing-library config as a side effect even if the import is unused
-const jestPreset = require('@testing-library/react-native/jest-preset');
+const jestPreset = require('@testing-library/react-native/jest-preset')
 
 const aliasMappings = {
   '^store/(.*)$': '<rootDir>/src/store/$1',
@@ -12,20 +12,24 @@ const aliasMappings = {
   '^routes(.*)$': '<rootDir>/src/routes/$1',
   '^test-utils(.*)$': '<rootDir>/src/test-utils/$1',
   '\\.svg$': '<rootDir>/__mocks__/svgrMock.js'
-};
+}
 
 const nativeMappings = {
   // React Navigation nav builders contain native elements and API calls that Jest can't handle
   // In Jest, skip the Navigation-based UI, and just follow links to their target View
   // No ^ because 'utils/...' may have already been mapped to 'src/...' or '../../utils' etc
-  'utils/navigators/create-drawer-nav(.*)$': '<rootDir>/src/utils/navigators/create-bare-nav$1',
+  'utils/navigators/create-drawer-nav(.*)$':
+    '<rootDir>/src/utils/navigators/create-bare-nav$1',
   ...aliasMappings
-};
+}
 
-const setupFiles = ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest.setup.js'];
+const setupFiles = [
+  './node_modules/react-native-gesture-handler/jestSetup.js',
+  './jest.setup.js'
+]
 
 // jestPreset in native only - on web, it redirects react-native-web components back to react-native
-const nativeSetupFiles = [...jestPreset.setupFiles, ...setupFiles];
+const nativeSetupFiles = [...jestPreset.setupFiles, ...setupFiles]
 
 const settings = {
   testTimeout: 10000,
@@ -45,13 +49,13 @@ const settings = {
   automock: false,
   clearMocks: true,
   moduleNameMapper: aliasMappings
-};
+}
 
 const nativeSettings = {
   ...settings,
   setupFiles: nativeSetupFiles,
   moduleNameMapper: nativeMappings
-};
+}
 
 module.exports = {
   projects: [
@@ -59,4 +63,4 @@ module.exports = {
     { preset: 'jest-expo/ios', ...nativeSettings },
     { preset: 'jest-expo/android', ...nativeSettings }
   ]
-};
+}

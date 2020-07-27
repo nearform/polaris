@@ -1,11 +1,17 @@
-import React from 'react';
-import T from 'prop-types';
-import { Text, TouchableOpacity } from 'react-native';
+import React from 'react'
+import T from 'prop-types'
+import { Text, TouchableOpacity } from 'react-native'
+import usePlatformNavigation from 'utils/hooks/usePlatformNavigation'
 
-import usePlatformNavigation from 'utils/hooks/usePlatformNavigation';
-
-const Link = ({ path, title, params, Component = TouchableOpacity, titleAsProp, ...rest }) => {
-  const { navigate } = usePlatformNavigation();
+const Link = ({
+  path,
+  title,
+  params,
+  Component = TouchableOpacity,
+  titleAsProp,
+  ...rest
+}) => {
+  const { navigate } = usePlatformNavigation()
   return (
     <Component
       title={titleAsProp ? title : null}
@@ -15,8 +21,8 @@ const Link = ({ path, title, params, Component = TouchableOpacity, titleAsProp, 
     >
       {titleAsProp ? null : <Text>{title}</Text>}
     </Component>
-  );
-};
+  )
+}
 
 Link.propTypes = {
   path: T.string.isRequired,
@@ -24,6 +30,6 @@ Link.propTypes = {
   params: T.object,
   Component: T.elementType,
   titleAsProp: T.bool
-};
+}
 
-export default Link;
+export default Link

@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import Route from 'components/templates/route';
+import React from 'react'
+import { View, Text } from 'react-native'
+import Route from 'components/templates/route'
 
-import Link from '../index';
+import Link from '../index'
 
 export const ScreenOne = () => {
   return (
@@ -11,8 +11,8 @@ export const ScreenOne = () => {
       <Link path="/two" title="Go to Two" />
       <Link path="/three" title="Go to Three" />
     </View>
-  );
-};
+  )
+}
 
 export const ScreenTwo = () => {
   return (
@@ -20,8 +20,8 @@ export const ScreenTwo = () => {
       <Text>Screen Two</Text>
       <Link path="/three" title="Go to Three" />
     </View>
-  );
-};
+  )
+}
 
 export const ScreenThree = () => (
   <View>
@@ -29,14 +29,16 @@ export const ScreenThree = () => (
     <Link path="/one" title="Go to One" />
     <Link path="/three" title="Go to Three" />
   </View>
-);
+)
 
 export const routes = [
   { path: '/one', name: 'One', View: ScreenOne },
   { path: '/two', name: 'Two', View: ScreenTwo },
   { path: '/three', name: 'Three', View: ScreenThree }
-];
+]
 
-export const defaultPath = '/one';
+export const defaultPath = '/one'
 
-export const RouteFixture = () => <Route routes={routes} defaultPath={defaultPath} LayoutContainer={View} />;
+export const RouteFixture = () => (
+  <Route routes={routes} defaultPath={defaultPath} LayoutContainer={View} />
+)
