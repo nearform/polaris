@@ -1,101 +1,42 @@
-import T from 'prop-types'
 import React from 'react'
+import T from 'prop-types'
 import { useTranslation } from 'react-i18next'
-import { useWindowDimensions, Text, TouchableOpacity } from 'react-native'
-import { NavigationContainer, useNavigation } from '@react-navigation/native'
-import { createDrawerNavigator, DrawerContent } from '@react-navigation/drawer'
-import { Header } from 'react-native-elements'
-import { AntDesign } from '@expo/vector-icons'
-import routes, { defaultPath } from 'routes'
+import { useWindowDimensions } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { DrawerContent } from '@react-navigation/drawer'
+import createDrawerNavigator from 'utils/navigators/create-drawer-nav'
+import presetRoutes, { defaultPath as presetDefaultPath } from 'routes'
 import { replaceParams } from 'utils/paths'
 import Layout from 'components/templates/layout'
-import usePlatformLocation from 'utils/hooks/usePlatformLocation'
+import { RoutesProvider } from 'store/routing/routes-provider'
+
+import propTypes from './prop-types'
 
 const Drawer = createDrawerNavigator()
 const isViewRoute = route => !!route.View
 const isMenuRoute = route => typeof route.menuIndex === 'number'
-const viewRoutes = routes.filter(isViewRoute)
 
 // Sort by lowest menu index first, with non-menu views last
 const getMenuIndexSortValue = menuIndex =>
   typeof menuIndex === 'number' ? menuIndex : Infinity
-viewRoutes.sort(
-  (a, b) =>
-    getMenuIndexSortValue(a.menuIndex) - getMenuIndexSortValue(b.menuIndex)
-)
-
-const menuNames = viewRoutes.filter(isMenuRoute).map(route => route.path)
-
-const Left = ({ isHome, goBack }) =>
-  isHome ? (
-    <Text> </Text>
-  ) : (
-    <TouchableOpacity onPress={goBack}>
-      <AntDesign name="arrowleft" color="white" size={28} />
-    </TouchableOpacity>
-  )
-Left.propTypes = {
-  isHome: T.bool,
-  goBack: T.func
-}
-
-const Right = ({ toggleDrawer }) => (
-  <TouchableOpacity onPress={toggleDrawer}>
-    <AntDesign name="bars" color="white" size={28} />
-  </TouchableOpacity>
-)
-Right.propTypes = {
-  toggleDrawer: T.func
-}
-
-const CustomHeader = () => {
-  const { t } = useTranslation()
-  const navigation = useNavigation()
-  const { currentRoute, params } = usePlatformLocation()
-  const isHome = currentRoute.path === defaultPath
-  const translatedName = t(currentRoute.name)
-  const title = replaceParams(translatedName, params)
-  return (
-    <Header
-      leftComponent={<Left isHome={isHome} goBack={navigation.goBack} />}
-      centerComponent={{
-        text: title,
-        style: {
-          color: '#fff',
-          fontSize: 21
-        }
-      }}
-      rightComponent={<Right toggleDrawer={navigation.toggleDrawer} />}
-    />
-  )
-}
-
-// Enable hooks that need to be inside NavigationContainer in Route component
-const withNavigationContainer = RouteComponent => {
-  const WithNavigationContainer = props => (
-    <NavigationContainer>
-      <RouteComponent {...props} />
-    </NavigationContainer>
-  )
-  return WithNavigationContainer
-}
 
 // Place layout inside each screen, around each view, to access navigation hooks
-const withLayout = (ViewComponent, screenName) => {
-  const WrappedView = props => {
+const withLayout = (ViewComponent, LayoutComponent) => {
+  if (!LayoutComponent) return ViewComponent
+
+  const ViewWithLayout = props => {
     return (
-      <Layout>
-        <CustomHeader />
+      <LayoutComponent>
         <ViewComponent {...props} />
-      </Layout>
+      </LayoutComponent>
     )
   }
-  return WrappedView
+  return ViewWithLayout
 }
 
 // Have navigator aware of all routes, but show only menu routes in the nav drawer
-const withMenuFilter = DrawerComponent => {
-  const WithMenuFilter = ({ state, ...props }) => {
+const withMenuFilter = (DrawerComponent, menuNames) => {
+  const DrawerWithFilteredRoutes = ({ state, ...props }) => {
     const drawerRoutes = state.routes
     const filteredState = {
       ...state,
@@ -103,36 +44,56 @@ const withMenuFilter = DrawerComponent => {
     }
     return <DrawerComponent state={filteredState} {...props} />
   }
-  WithMenuFilter.propTypes = {
-    state: T.shape({
-      routes: T.array
-    })
+  DrawerWithFilteredRoutes.propTypes = {
+    state: T.shape({ routes: T.array.isRequired })
   }
-  return WithMenuFilter
+  return DrawerWithFilteredRoutes
 }
 
-const Route = () => {
+const RouteNavigator = ({
+  routes = presetRoutes,
+  defaultPath = presetDefaultPath,
+  LayoutComponent = Layout
+}) => {
   const dimensions = useWindowDimensions()
   const { t } = useTranslation()
 
+  const viewRoutes = routes.filter(isViewRoute)
+  viewRoutes.sort(
+    (a, b) =>
+      getMenuIndexSortValue(a.menuIndex) - getMenuIndexSortValue(b.menuIndex)
+  )
+  const menuNames = viewRoutes.filter(isMenuRoute).map(route => route.path)
+
   return (
-    <Drawer.Navigator
-      initialRouteName={defaultPath}
-      drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
-      drawerContent={withMenuFilter(DrawerContent)}
-    >
-      {viewRoutes.map(route => (
-        <Drawer.Screen
-          name={route.path}
-          component={withLayout(route.View, route.path)}
-          options={({ route: { params } }) => ({
-            title: replaceParams(t(route.name), params)
-          })}
-          key={route.path}
-        />
-      ))}
-    </Drawer.Navigator>
+    <RoutesProvider routes={routes} defaultPath={defaultPath}>
+      <Drawer.Navigator
+        initialRouteName={defaultPath}
+        drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
+        drawerContent={withMenuFilter(DrawerContent, menuNames)}
+      >
+        {viewRoutes.map(route => (
+          <Drawer.Screen
+            name={route.path}
+            component={withLayout(route.View, LayoutComponent)}
+            options={({ route: { params } }) => ({
+              title: replaceParams(t(route.name), params)
+            })}
+            key={route.path}
+          />
+        ))}
+      </Drawer.Navigator>
+    </RoutesProvider>
   )
 }
 
-export default withNavigationContainer(Route)
+RouteNavigator.propTypes = propTypes
+
+// Enable hooks that need to be inside NavigationContainer in Route component
+const Route = props => (
+  <NavigationContainer>
+    <RouteNavigator {...props} />
+  </NavigationContainer>
+)
+
+export default Route

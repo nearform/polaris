@@ -1,7 +1,6 @@
 import React from 'react'
-import { render, fireEvent } from 'react-native-testing-library'
+import { renderWithContext, fireEvent } from 'utils/test-utils'
 
-// Explictly target .web until https://github.com/nearform/polaris/issues/42 is done
 import PickerSheet from '../index'
 
 const mocks = {
@@ -13,7 +12,7 @@ const mocks = {
 describe('Picker Sheet', () => {
   it('calls onValueChange function on value change', () => {
     const { onValueChange, options, currentOption } = mocks
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithContext(
       <PickerSheet
         onValueChange={onValueChange}
         options={options}
@@ -23,7 +22,7 @@ describe('Picker Sheet', () => {
     )
 
     const picker = getByTestId('picker')
-    fireEvent(picker, 'valueChange', options[1].value)
+    fireEvent.change(picker, 'change', options[1].value)
     expect(onValueChange).toBeCalled()
   })
 })

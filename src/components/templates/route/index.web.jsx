@@ -1,5 +1,4 @@
-import React from 'react'
-import T from 'prop-types'
+import React, { Fragment } from 'react'
 import {
   Switch,
   Route as DomRoute,
@@ -7,46 +6,55 @@ import {
   BrowserRouter
 } from 'react-router-dom'
 import Layout from 'components/templates/layout'
-import defaultRoutes, { routeShape } from 'routes'
+import presetRoutes, { defaultPath as presetDefaultPath } from 'routes'
 import { View404 } from 'components/views/404'
+import { RoutesProvider } from 'store/routing/routes-provider'
 
-const withBrowserRouter = Component => {
-  const WithBrowserRouter = props => (
-    <BrowserRouter>
-      <Component {...props} />
+import propTypes from './prop-types'
+
+const Route = ({
+  routes = presetRoutes,
+  defaultPath = presetDefaultPath,
+  LayoutComponent = Layout,
+  basename = '/'
+}) => {
+  // Allow null to be passed, disabling layout component
+  if (!LayoutComponent) LayoutComponent = Fragment
+
+  return (
+    <BrowserRouter basename={basename}>
+      <RoutesProvider routes={routes} defaultPath={defaultPath}>
+        <LayoutComponent>
+          <Switch>
+            {routes.map(route =>
+              !route.redirectTo ? (
+                <DomRoute
+                  exact
+                  path={route.path}
+                  component={route.View}
+                  key={route.path}
+                />
+              ) : (
+                <Redirect
+                  from={route.path}
+                  to={route.redirectTo}
+                  key={route.path}
+                />
+              )
+            )}
+            {defaultPath !== basename ? (
+              <Redirect from={basename} to={defaultPath} />
+            ) : (
+              ''
+            )}
+            <DomRoute component={View404} />
+          </Switch>
+        </LayoutComponent>
+      </RoutesProvider>
     </BrowserRouter>
   )
-  return WithBrowserRouter
 }
 
-const Route = ({ routes = defaultRoutes }) => {
-  return (
-    <Layout>
-      <Switch>
-        {routes.map(route =>
-          !route.redirectTo ? (
-            <DomRoute
-              exact
-              path={route.path}
-              component={route.View}
-              key={route.path}
-            />
-          ) : (
-            <Redirect
-              from={route.path}
-              to={route.redirectTo}
-              key={route.path}
-            />
-          )
-        )}
-        <DomRoute component={View404} />
-      </Switch>
-    </Layout>
-  )
-}
+Route.propTypes = propTypes
 
-Route.propTypes = {
-  routes: T.arrayOf(T.shape(routeShape))
-}
-
-export default withBrowserRouter(Route)
+export default Route
