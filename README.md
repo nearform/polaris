@@ -297,6 +297,15 @@ and treat it like a normal React component:
 
 Note that props on the svg component are forwarded to the root `<svg>` element.
 
+## Authentication
+
+Polaris includes an authentication example via [Auth0](https://auth0.com/). To connect to your Auth0 app you need to:
+
+- Create your own native application on Auth0
+- Log in with your expo account via expo cli
+- Add the AppSession's auth URL to `Allowed Callback URLs` on Auth0. We use the Expo's `auth.expo.io` proxy for native devices, you can read more about the format [here](https://docs.expo.io/versions/latest/sdk/auth-session/#it-makes-redirect-url-allowlists-easier-to). For web you need to add your environment url.
+- Replace environment variables in .env file with your Auth0 client ID and domain.
+
 ## End-to-end web testing
 
 Polaris uses [Cypress](https://www.cypress.io/) to define and run end-to-end tests for the web application.
