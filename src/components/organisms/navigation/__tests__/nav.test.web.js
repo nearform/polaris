@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import { within, fireEvent, cleanup, renderAsRoute } from 'utils/test-utils'
 import { useTheme } from 'styled-components'
 
-import Header from '../nav'
+import Navigation from '../'
 
 afterEach(cleanup)
 
@@ -11,7 +11,7 @@ const ThemeSwitchFixture = () => {
   const theme = useTheme()
   return (
     <View>
-      <Header />
+      <Navigation />
       <Text>Theme: {theme.name}</Text>
     </View>
   )
