@@ -22,7 +22,7 @@ storiesOf('Molecules/Setting Item', module)
         example={{
           render: (
             <SettingItem
-              label="Foo"
+              label="A User Setting"
               value={
                 <PickerSheet
                   onValueChange={value => {
