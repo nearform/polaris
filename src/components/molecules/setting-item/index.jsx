@@ -26,7 +26,7 @@ const SettingItem = ({ label, value }) => (
 
 SettingItem.propTypes = {
   label: T.string,
-  value: T.string
+  value: T.node
 }
 
 export default SettingItem

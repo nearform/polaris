@@ -17,7 +17,7 @@ import StoryPage, {
 
 import Button from '../'
 
-const render = () => (
+const render = (
   <Button
     onPress={action('Button Pressed')}
     title={text('text', 'A button with a title')}
@@ -119,7 +119,7 @@ storiesOf('Atoms/Button', module)
           { name: 'onPress', type: 'func', required: true },
           { name: 'color', type: 'string', required: false }
         ]}
-      ></PropTable>
+      />
       <DocItem
         example={{
           render,

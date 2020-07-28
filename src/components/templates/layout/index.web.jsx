@@ -1,7 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 import styled from 'styled-components/native'
-import Nav from 'components/organisms/navigation/nav'
+import Navigation from 'components/organisms/navigation'
 
 const Screen = styled.View`
   overflow: hidden;
@@ -21,7 +21,7 @@ const LayoutBase = props => {
   return (
     <Screen>
       <Page>
-        <Nav />
+        <Navigation />
         {children}
       </Page>
     </Screen>

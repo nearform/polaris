@@ -235,6 +235,8 @@ Stories in `.native.js` and `.common.js` must use `storiesOf` format due to `@st
 
 It is also not possible to use the `@storybooks/addon-docs` plugin as it is not compatible with `@storybook/react-native`. To work around this there is a custom set of components in `storybook/story-components` to facilitate documentation that works in both storiesOf and CSF formats. See the `src/components/atoms/button/stories/button.stories.common.js` for example usage.
 
+Theme and routing are automatically added to the story when decorating a story with a story page. To define linked screens use a `screens` prop in `StoryPage` and then reference the screen in the `path` of the `Link` components. See the `atoms/link` story for an example.
+
 #### Run storybook configuration and settings
 
 Storybook's configuration and support files located inside `/storybook` folder in root of Polaris.
@@ -308,19 +310,19 @@ Test files suffixed `.test.js` or `.test.jsx` will be run in all platforms. To t
 Import from `utils/test-utils` and Polaris will take from [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro) for web tests and from [@testing-library/react-native](https://testing-library.com/docs/native-testing-library/intro) for iOS and Android, for example:
 
 ```js
-import { render, cleanup, act, within } from 'utils/test-utils';
+import { render, cleanup, act, within } from 'utils/test-utils'
 // from @testing-library/react on web and @testing-library/react-native on native
 
-afterEach(cleanup); // this is recommended for all tests
+afterEach(cleanup) // this is recommended for all tests
 
 describe('Some component', () => {
   it('contains three accessible links', () => {
-    const { getAllByRole } = render(<SomeComponent />);
+    const { getAllByRole } = render(<SomeComponent />)
     // gets by accessibilityRole on native and aria-role on web
-    const links = getAllByRole('link');
-    expect(links).toHaveLength(3);
+    const links = getAllByRole('link')
+    expect(links).toHaveLength(3)
   })
-});
+})
 ```
 
 #### Renderers
@@ -329,29 +331,34 @@ Polaris includes two renderers to use in place of `@testing-library`'s `render` 
 
 ##### `renderWithContext(element, renderOptions)`
 
-Renders the element inside the same contexts and setup as the main app. `renderOptions` are optional and passed to the underlying `render` call. 
+Renders the element inside the same contexts and setup as the main app. `renderOptions` are optional and passed to the underlying `render` call.
 
-Required for any component using theming or i18n. 
+Required for any component using theming or i18n.
 
 ```js
-import { renderWithContext } from 'utils/test-utils/';
+import { renderWithContext } from 'utils/test-utils/'
 
 // In test...
-  const { /* same as @testing-library render */ } = renderWithContext(<SomeComponent />);
+const {
+  /* same as @testing-library render */
+} = renderWithContext(<SomeComponent />)
 ```
+
 ##### `renderAsRoute(element, { renderOptions, routeOptions: { additionalRoutes, ...routeProps } })`
 
-Plugs the component into Polaris's routing system, then renders the `Route` switcher  component, wrapped in contexts like `renderWithContext`, selecting this component as the active route. In Jest on Native, React Navigation navigators are swapped in Webpack for `BareNavigator`, a custom navigator with no UI to avoid failures on importing native navigation elements.
+Plugs the component into Polaris's routing system, then renders the `Route` switcher component, wrapped in contexts like `renderWithContext`, selecting this component as the active route. In Jest on Native, React Navigation navigators are swapped in Webpack for `BareNavigator`, a custom navigator with no UI to avoid failures on importing native navigation elements.
 
-Both `routeOptions` and `renderOptions` are optional and usually not required. `renderOptions` are passed to the underlying `render`. `routeOptions` are passed to `Route` as props except for `additionalRoutes` which is an optional array of `route` objects added to the generated routes array after this rendered component. 
+Both `routeOptions` and `renderOptions` are optional and usually not required. `renderOptions` are passed to the underlying `render`. `routeOptions` are passed to `Route` as props except for `additionalRoutes` which is an optional array of `route` objects added to the generated routes array after this rendered component.
 
-Required for any component using routing hooks, such as any component containing links.  
+Required for any component using routing hooks, such as any component containing links.
 
 ```js
-import { renderWithContext } from 'utils/test-utils/';
+import { renderWithContext } from 'utils/test-utils/'
 
 // In test...
-  const { /* same as @testing-library render */ } = renderAsRoute(SomeComponent);
+const {
+  /* same as @testing-library render */
+} = renderAsRoute(SomeComponent)
 ```
 
 #### Platform utils
@@ -363,15 +370,15 @@ In some cases, @testing-library/react and @testing-library/react-native differ a
 Unifies `nativeElement.findAll()` & `domElement.querySelectorAll()`, for ad hoc lookups where none of @testing-library's `within(element).queryAllBy*`methods are suitable. For example:
 
 ```js
-import { queryAllDescendents } from 'utils/test-utils/';
+import { queryAllDescendents } from 'utils/test-utils/'
 
 // In test...
-  const idsStartWith_test = queryAllDescendents(element, {
-    nativeProp: 'nativeID', 
-    webAttr: 'id',
-    value: 'test',
-    matchType: '^'
-  })
+const idsStartWith_test = queryAllDescendents(element, {
+  nativeProp: 'nativeID',
+  webAttr: 'id',
+  value: 'test',
+  matchType: '^'
+})
 ```
 
 ##### `getAttrOrProp(element, name:string)`
@@ -379,10 +386,10 @@ import { queryAllDescendents } from 'utils/test-utils/';
 Unifies `nativeElement.getProp()` & `domElement.getAttribute()`. If the name differs between plaforms, a ternary can be used, for example:
 
 ```js
-import { getAttrOrProp } from 'utils/test-utils/';
+import { getAttrOrProp } from 'utils/test-utils/'
 
 // In test...
-  const id = getAttrOrProp(element, Platform.OS === 'web' ? 'id' : 'nativeID');
+const id = getAttrOrProp(element, Platform.OS === 'web' ? 'id' : 'nativeID')
 ```
 
 ##### `prettyOutput(element)`
@@ -392,11 +399,11 @@ Unifies `prettyPrint(nativeElement)` & `prettyDOM(domElement)`. Useful for inspe
 For example, this outputs the entire render in a readable format, once per platform:
 
 ```js
-import { prettyOutput } from 'utils/test-utils/';
+import { prettyOutput } from 'utils/test-utils/'
 
 // In test...
-  const { container } = render(<SomeComponent />);
-  console.log(prettyOutput(container));
+const { container } = render(<SomeComponent />)
+console.log(prettyOutput(container))
 ```
 
 ##### `firePressEvent(element)`
