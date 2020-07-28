@@ -17,7 +17,7 @@ storiesOf('Organisms/Navigation Header', module)
       Navigation Header full description.
     </StoryPage>
   ))
-  .add('Plain Link', () => (
+  .add('Default', () => (
     <DocItem
       example={{
         render: (

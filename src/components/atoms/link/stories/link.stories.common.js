@@ -1,6 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
-import StoryPage, { DocItem } from 'storybook/story-components'
+import StoryPage, {
+  DocItem,
+  DocSection,
+  PropTable
+} from 'storybook/story-components'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
 import Link from '../'
@@ -17,13 +21,31 @@ storiesOf('Atoms/Link', module)
     </StoryPage>
   ))
   .addDecorator(withKnobs)
-  .add('Plain Link', () => (
-    <DocItem
-      sectionTitle="Plain Link"
-      example={{
-        render: (
-          <Link title={text('text', 'Text Link')} path={'/linked-screen'} />
-        )
-      }}
-    />
+  .add('Default', () => (
+    <DocSection>
+      <PropTable
+        propData={[
+          {
+            name: 'title',
+            type: 'string',
+            required: true,
+            description: 'The link text'
+          },
+          {
+            name: 'path',
+            type: 'string',
+            required: true,
+            description: 'The linked path/screen'
+          }
+        ]}
+      />
+      <DocItem
+        example={{
+          render: (
+            <Link title={text('text', 'Text Link')} path={'/linked-screen'} />
+          ),
+          code: `<Link title="Text Link" path="/linked-screen" />`
+        }}
+      />
+    </DocSection>
   ))

@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 StoryPage.propTypes = {
   title: T.string.isRequired,
   storyFn: T.func.isRequired,
-  children: T.node.isRequired,
+  children: T.node,
   url: T.string.isRequired,
   width: T.number
 }

@@ -119,7 +119,7 @@ storiesOf('Atoms/Button', module)
           { name: 'onPress', type: 'func', required: true },
           { name: 'color', type: 'string', required: false }
         ]}
-      ></PropTable>
+      />
       <DocItem
         example={{
           render,
