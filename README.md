@@ -299,6 +299,15 @@ and treat it like a normal React component:
 
 Note that props on the svg component are forwarded to the root `<svg>` element.
 
+## Authentication
+
+Polaris includes an authentication example via [Auth0](https://auth0.com/). To connect to your Auth0 app you need to:
+
+- Create your own native application on Auth0
+- Log in with your expo account via expo cli
+- Add the AppSession's auth URL to `Allowed Callback URLs` on Auth0. Each Expo user has it's own URL for different projects, the basic structure of this URL is `https://auth.expo.io/@your-username/your-expo-app-slug`. You can read more about the format [here](https://docs.expo.io/versions/latest/sdk/auth-session/#it-makes-redirect-url-allowlists-easier-to). For web you need to add your environment url.
+- Replace environment variables in .env file with your Auth0 client ID and domain.
+
 ## Unit testing with Jest
 
 Polaris uses [Expo's "Universal" jest presets](https://blog.expo.io/testing-universal-react-native-apps-with-jest-and-expo-113b4bf9cc44), [@testing-library](https://testing-library.com/docs/intro) and some custom test utils to run unit tests in Web, Android and iOS Jest environments. In most cases, it should be possible using these to write one test file that works on all platforms.

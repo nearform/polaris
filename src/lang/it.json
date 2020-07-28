@@ -12,7 +12,8 @@
     "listViewButton": "Vai alla Schermata Lista",
     "cameraButton": "Vai alla Telecamera",
     "pushNotificationsButton": "Vai alla Notifiche Push",
-    "responsiveButton": "Vai alla esempio reattivo"
+    "responsiveButton": "Vai alla esempio reattivo",
+    "authButton": "Vai all'esempio di autenticazione"
   },
   "viewOne": {
     "title": "Schermata Uno",
@@ -46,6 +47,13 @@
   "responsiveView": {
     "textWeb": "Cambia larghezza quando viewport",
     "textNative": "Sempre a larghezza piena su nativo"
+  },
+  "authView": {
+    "title": "Autenticazione",
+    "loginButton": "Accedi con Auth0",
+    "welcomeText": "Ti sei autenticato",
+    "errorTitle": "Errore di autenticazione",
+    "defaultErrorMessage": "qualcosa è andato storto"
   },
   "listItem": {
     "title": "Elenco articolo {:id}"
