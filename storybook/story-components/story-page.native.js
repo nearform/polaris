@@ -1,7 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 import DocText from './doc-text'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, ScrollView } from 'react-native'
 import { size, fontFamily } from './helpers/platform-styles'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -11,11 +11,11 @@ import { ThemeProvider } from 'store'
 const Stack = createStackNavigator()
 
 const Story = ({ storyFn, children, url, width }) => (
-  <View style={[styles.root, { width }]}>
+  <ScrollView style={[styles.root, { width }]}>
     <Text style={styles.url}>{url}</Text>
     <Text style={styles.description}>{children}</Text>
     {storyFn()}
-  </View>
+  </ScrollView>
 )
 
 const DefaultLinkedScreen = (
