@@ -1,16 +1,19 @@
-import React from 'react';
-import T from 'prop-types';
-import DocText from './doc-text';
-import { StyleSheet, View, Text } from 'react-native';
-import { size, fontFamily } from './helpers/platform-styles';
+import React from 'react'
+import T from 'prop-types'
+import DocText from './doc-text'
+import { StyleSheet, View, Text } from 'react-native'
+import { MemoryRouter } from 'react-router'
+import { I18nextProvider } from 'react-i18next'
+import i18n from 'services/i18n/'
+import { size, fontFamily } from './helpers/platform-styles'
 
-import { ThemeProvider } from 'store';
+import { ThemeProvider } from 'store'
 
 const Title = ({ children }) => (
   <DocText accessibilityRole="header" style={styles.title}>
     {children}
   </DocText>
-);
+)
 
 /**
  * Wrapper for all stories in a story file.
@@ -20,14 +23,18 @@ const Title = ({ children }) => (
  */
 const StoryPage = ({ title, storyFn, children, url, width }) => (
   <ThemeProvider>
-    <View style={[styles.root, { width }]}>
-      <Title>{title}</Title>
-      <Text style={styles.url}>{url}</Text>
-      <Text style={styles.description}>{children}</Text>
-      {storyFn()}
-    </View>
+    <I18nextProvider i18n={i18n}>
+      <MemoryRouter>
+        <View style={[styles.root, { width }]}>
+          <Title>{title}</Title>
+          <Text style={styles.url}>{url}</Text>
+          <Text style={styles.description}>{children}</Text>
+          {storyFn()}
+        </View>
+      </MemoryRouter>
+    </I18nextProvider>
   </ThemeProvider>
-);
+)
 
 const styles = StyleSheet.create({
   root: {
@@ -49,7 +56,7 @@ const styles = StyleSheet.create({
     fontSize: size.large,
     marginTop: size.xsmall
   }
-});
+})
 
 StoryPage.propTypes = {
   title: T.string.isRequired,
@@ -57,6 +64,6 @@ StoryPage.propTypes = {
   children: T.node.isRequired,
   url: T.string.isRequired,
   width: T.number
-};
+}
 
-export default StoryPage;
+export default StoryPage

@@ -3,7 +3,7 @@ import React from 'react'
 import { Platform } from 'react-native'
 import SideMenu from 'react-native-side-menu'
 import styled from 'styled-components/native'
-import Nav from 'components/organisms/navigation/nav'
+import Navigation from 'components/organisms/navigation'
 
 const Screen = styled.View`
   overflow: hidden;
@@ -24,10 +24,10 @@ const LayoutBase = props => {
     <Screen>
       <SideMenu menuPosition="left">
         <Page>
-          {Platform.OS === 'web' && <Nav />}
+          {Platform.OS === 'web' && <Navigation />}
           {children}
         </Page>
-        {Platform.OS !== 'web' && <Nav />}
+        {Platform.OS !== 'web' && <Navigation />}
       </SideMenu>
     </Screen>
   )
