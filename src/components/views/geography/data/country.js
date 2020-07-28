@@ -1,14 +1,14 @@
-{
-  "type": "Feature",
-  "properties": {
-    "name": "Spain",
-    "population": "47.4M",
-    "area": "505,990",
-    "capital": "Madrid"
+export default {
+  type: 'Feature',
+  properties: {
+    name: 'Spain',
+    population: '47.4M',
+    area: '505,990',
+    capital: 'Madrid'
   },
-  "geometry": {
-    "type": "MultiPolygon",
-    "coordinates": [
+  geometry: {
+    type: 'MultiPolygon',
+    coordinates: [
       [
         [
           [-17.885121222999942, 27.797919012000037],

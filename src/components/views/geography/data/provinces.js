@@ -1,11 +1,11 @@
-{
-  "type": "FeatureCollection",
-  "features": [
+export default {
+  type: 'FeatureCollection',
+  features: [
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [3.213645, 39.957514],
@@ -3983,16 +3983,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Illes Balears",
-        "community": "Illes Balears"
+      properties: {
+        name: 'Illes Balears',
+        community: 'Illes Balears'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-5.840833, 43.660619],
@@ -10353,16 +10353,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Asturias",
-        "community": "Principado de Asturias"
+      properties: {
+        name: 'Asturias',
+        community: 'Principado de Asturias'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-7.680295, 43.787137],
@@ -19873,16 +19873,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "A Coruña",
-        "community": "Galicia"
+      properties: {
+        name: 'A Coruña',
+        community: 'Galicia'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [1.74871, 42.494818],
@@ -24552,16 +24552,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Girona",
-        "community": "Cataluña"
+      properties: {
+        name: 'Girona',
+        community: 'Cataluña'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-13.890506, 28.756853],
@@ -25981,16 +25981,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Las Palmas",
-        "community": "Canarias"
+      properties: {
+        name: 'Las Palmas',
+        community: 'Canarias'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-8.181012, 42.858278],
@@ -32021,16 +32021,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Pontevedra",
-        "community": "Galicia"
+      properties: {
+        name: 'Pontevedra',
+        community: 'Galicia'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-16.15754, 28.58816],
@@ -37691,16 +37691,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Santa Cruz De Tenerife",
-        "community": "Canarias"
+      properties: {
+        name: 'Santa Cruz De Tenerife',
+        community: 'Canarias'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-3.590244, 43.513559],
@@ -38528,16 +38528,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Cantabria",
-        "community": "Cantabria"
+      properties: {
+        name: 'Cantabria',
+        community: 'Cantabria'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-4.406576, 37.27412],
@@ -38634,16 +38634,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Málaga",
-        "community": "Andalucía"
+      properties: {
+        name: 'Málaga',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.181908, 37.898818],
@@ -39555,16 +39555,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Almería",
-        "community": "Andalucía"
+      properties: {
+        name: 'Almería',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-1.149852, 38.746067],
@@ -40562,16 +40562,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Murcia",
-        "community": "Murcia"
+      properties: {
+        name: 'Murcia',
+        community: 'Murcia'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-1.483657, 39.41824],
@@ -40686,16 +40686,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Albacete",
-        "community": "Castilla-La Mancha"
+      properties: {
+        name: 'Albacete',
+        community: 'Castilla-La Mancha'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-5.013857, 41.16425],
@@ -40813,16 +40813,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Ávila",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Ávila',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-3.026895, 43.216568],
@@ -40958,16 +40958,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Araba/Álava",
-        "community": "País Vasco"
+      properties: {
+        name: 'Araba/Álava',
+        community: 'País Vasco'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-4.677889, 39.434849],
@@ -41164,16 +41164,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Badajoz",
-        "community": "Extremadura"
+      properties: {
+        name: 'Badajoz',
+        community: 'Extremadura'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-0.159684, 38.883508],
@@ -41526,16 +41526,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Alacant/Alicante",
-        "community": "Comunitat Valenciana"
+      properties: {
+        name: 'Alacant/Alicante',
+        community: 'Comunitat Valenciana'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-7.920184, 42.566658],
@@ -41653,16 +41653,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Ourense",
-        "community": "Galicia"
+      properties: {
+        name: 'Ourense',
+        community: 'Galicia'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [1.918206, 42.317783],
@@ -41842,16 +41842,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Barcelona",
-        "community": "Cataluña"
+      properties: {
+        name: 'Barcelona',
+        community: 'Cataluña'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-3.249184, 43.195997],
@@ -42112,16 +42112,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Burgos",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Burgos',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-6.230476, 40.486602],
@@ -42283,16 +42283,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Cáceres",
-        "community": "Extremadura"
+      properties: {
+        name: 'Cáceres',
+        community: 'Extremadura'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-5.431317, 37.050394],
@@ -42579,16 +42579,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Cádiz",
-        "community": "Andalucía"
+      properties: {
+        name: 'Cádiz',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-0.164957, 40.788631],
@@ -42857,16 +42857,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Castelló/Castellón",
-        "community": "Comunitat Valenciana"
+      properties: {
+        name: 'Castelló/Castellón',
+        community: 'Comunitat Valenciana'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-4.138967, 39.566451],
@@ -43021,16 +43021,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Ciudad Real",
-        "community": "Castilla-La Mancha"
+      properties: {
+        name: 'Ciudad Real',
+        community: 'Castilla-La Mancha'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.766826, 38.532968],
@@ -43135,16 +43135,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Jaén",
-        "community": "Andalucía"
+      properties: {
+        name: 'Jaén',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-5.035409, 38.726189],
@@ -43314,16 +43314,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Córdoba",
-        "community": "Andalucía"
+      properties: {
+        name: 'Córdoba',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.152111, 40.657693],
@@ -43456,16 +43456,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Cuenca",
-        "community": "Castilla-La Mancha"
+      properties: {
+        name: 'Cuenca',
+        community: 'Castilla-La Mancha'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.549753, 38.082888],
@@ -43585,16 +43585,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Granada",
-        "community": "Andalucía"
+      properties: {
+        name: 'Granada',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.901019, 41.325565],
@@ -43771,16 +43771,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Guadalajara",
-        "community": "Castilla-La Mancha"
+      properties: {
+        name: 'Guadalajara',
+        community: 'Castilla-La Mancha'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-1.790863, 43.395366],
@@ -43927,16 +43927,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Gipuzkoa/Guipúzcoa",
-        "community": "País Vasco"
+      properties: {
+        name: 'Gipuzkoa/Guipúzcoa',
+        community: 'País Vasco'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-6.926904, 38.204441],
@@ -44043,16 +44043,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Huelva",
-        "community": "Andalucía"
+      properties: {
+        name: 'Huelva',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-0.747266, 42.922374],
@@ -44218,16 +44218,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Huesca",
-        "community": "Aragón"
+      properties: {
+        name: 'Huesca',
+        community: 'Aragón'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-4.893577, 43.238479],
@@ -44394,16 +44394,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "León",
-        "community": "Castilla y León"
+      properties: {
+        name: 'León',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [0.716037, 42.858321],
@@ -44598,16 +44598,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Lleida",
-        "community": "Cataluña"
+      properties: {
+        name: 'Lleida',
+        community: 'Cataluña'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.997229, 42.642139],
@@ -44734,16 +44734,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "La Rioja",
-        "community": "La Rioja"
+      properties: {
+        name: 'La Rioja',
+        community: 'La Rioja'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.344003, 42.145502],
@@ -44867,16 +44867,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Soria",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Soria',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-1.652305, 43.310241],
@@ -45048,16 +45048,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Navarra",
-        "community": "Navarra"
+      properties: {
+        name: 'Navarra',
+        community: 'Navarra'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-5.344965, 35.87106],
@@ -45088,16 +45088,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Ceuta",
-        "community": "Ceuta"
+      properties: {
+        name: 'Ceuta',
+        community: 'Ceuta'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-7.636218, 43.752801],
@@ -45501,16 +45501,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Lugo",
-        "community": "Galicia"
+      properties: {
+        name: 'Lugo',
+        community: 'Galicia'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-3.536705, 41.160576],
@@ -45678,16 +45678,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Madrid",
-        "community": "Comunidad de Madrid"
+      properties: {
+        name: 'Madrid',
+        community: 'Comunidad de Madrid'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-4.456763, 43.057045],
@@ -45892,16 +45892,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Palencia",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Palencia',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-6.475919, 41.287337],
@@ -46039,16 +46039,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Salamanca",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Salamanca',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-3.963827, 41.586082],
@@ -46142,16 +46142,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Segovia",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Segovia',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-5.725076, 38.195777],
@@ -46327,16 +46327,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Sevilla",
-        "community": "Andalucía"
+      properties: {
+        name: 'Sevilla',
+        community: 'Andalucía'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-4.37514, 40.314258],
@@ -46507,16 +46507,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Toledo",
-        "community": "Castilla-La Mancha"
+      properties: {
+        name: 'Toledo',
+        community: 'Castilla-La Mancha'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [1.438562, 41.575683],
@@ -46948,16 +46948,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Tarragona",
-        "community": "Cataluña"
+      properties: {
+        name: 'Tarragona',
+        community: 'Cataluña'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-0.502556, 41.354389],
@@ -47123,16 +47123,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Teruel",
-        "community": "Aragón"
+      properties: {
+        name: 'Teruel',
+        community: 'Aragón'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-0.987142, 39.980725],
@@ -47283,16 +47283,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "València/Valencia",
-        "community": "Comunitat Valenciana"
+      properties: {
+        name: 'València/Valencia',
+        community: 'Comunitat Valenciana'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-5.112002, 42.311842],
@@ -47442,16 +47442,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Valladolid",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Valladolid',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.751495, 43.456648],
@@ -47754,16 +47754,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Bizkaia/Vizcaya",
-        "community": "País Vasco"
+      properties: {
+        name: 'Bizkaia/Vizcaya',
+        community: 'País Vasco'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-6.761138, 42.239866],
@@ -47914,16 +47914,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Zamora",
-        "community": "Castilla y León"
+      properties: {
+        name: 'Zamora',
+        community: 'Castilla y León'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-0.909105, 42.744036],
@@ -48154,16 +48154,16 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Zaragoza",
-        "community": "Aragón"
+      properties: {
+        name: 'Zaragoza',
+        community: 'Aragón'
       }
     },
     {
-      "type": "Feature",
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+      type: 'Feature',
+      geometry: {
+        type: 'MultiPolygon',
+        coordinates: [
           [
             [
               [-2.950577, 35.265458],
@@ -48175,9 +48175,9 @@
           ]
         ]
       },
-      "properties": {
-        "name": "Melilla",
-        "community": "Melilla"
+      properties: {
+        name: 'Melilla',
+        community: 'Melilla'
       }
     }
   ]
