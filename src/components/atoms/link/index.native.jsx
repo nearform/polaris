@@ -15,6 +15,7 @@ const Link = ({
   return (
     <Component
       title={titleAsProp ? title : null}
+      accessibilityRole="link"
       onPress={() => navigate(path, params)}
       {...rest}
     >

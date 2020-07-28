@@ -1,7 +1,5 @@
-import T from 'prop-types'
 import React from 'react'
-import { Platform } from 'react-native'
-import SideMenu from 'react-native-side-menu'
+import T from 'prop-types'
 import styled from 'styled-components/native'
 import Navigation from 'components/organisms/navigation'
 
@@ -22,13 +20,10 @@ const LayoutBase = props => {
 
   return (
     <Screen>
-      <SideMenu menuPosition="left">
-        <Page>
-          {Platform.OS === 'web' && <Navigation />}
-          {children}
-        </Page>
-        {Platform.OS !== 'web' && <Navigation />}
-      </SideMenu>
+      <Page>
+        <Navigation />
+        {children}
+      </Page>
     </Screen>
   )
 }

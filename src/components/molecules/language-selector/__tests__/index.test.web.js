@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import { useTranslation } from 'react-i18next'
-import { act, render, fireEvent } from 'react-native-testing-library'
+import { act, render, fireEvent } from 'utils/test-utils'
 
 import LanguageSelector from '../index'
 
@@ -18,10 +18,11 @@ const LanguageTestContainer = () => {
 describe('Language Selector', () => {
   it('updates useTranslation consumers with new i18n langcode on value change', async () => {
     const { getByTestId, queryAllByText } = render(<LanguageTestContainer />)
+
     const languagePicker = getByTestId('language-selector')
 
     await act(async () => {
-      await fireEvent(languagePicker, 'valueChange', 'en')
+      await fireEvent.change(languagePicker, { target: { value: 'en' } })
     })
     const en1 = queryAllByText('langcode: en')
     const it1 = queryAllByText('langcode: it')
@@ -29,7 +30,7 @@ describe('Language Selector', () => {
     expect(it1).toHaveLength(0)
 
     await act(async () => {
-      await fireEvent(languagePicker, 'valueChange', 'it')
+      await fireEvent.change(languagePicker, { target: { value: 'it' } })
     })
     const en2 = queryAllByText('langcode: en')
     const it2 = queryAllByText('langcode: it')
