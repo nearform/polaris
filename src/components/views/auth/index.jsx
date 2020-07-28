@@ -60,7 +60,7 @@ export const Auth = () => {
     <Container>
       {data ? (
         <>
-          <Avatar source={{ uri: data.picture }} />
+          {data.picture && <Avatar source={{ uri: data.picture }} />}
           <Text>
             {t('authView:welcomeText')}, {data.name}!
           </Text>
