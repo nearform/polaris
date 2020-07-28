@@ -235,6 +235,8 @@ Stories in `.native.js` and `.common.js` must use `storiesOf` format due to `@st
 
 It is also not possible to use the `@storybooks/addon-docs` plugin as it is not compatible with `@storybook/react-native`. To work around this there is a custom set of components in `storybook/story-components` to facilitate documentation that works in both storiesOf and CSF formats. See the `src/components/atoms/button/stories/button.stories.common.js` for example usage.
 
+Theme and routing are automatically added to the story when decorating a story with a story page. To define linked screens use a `screens` prop in `StoryPage` and then reference the screen in the `path` of the `Link` components. See the `atoms/link` story for an example.
+
 #### Run storybook configuration and settings
 
 Storybook's configuration and support files located inside `/storybook` folder in root of Polaris.
