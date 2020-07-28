@@ -8,6 +8,7 @@ import { ListItem } from 'components/views/list/ListItem'
 import { Settings } from 'components/views/settings'
 import { PushNotifications } from 'components/views/push-notifications'
 import { Responsive } from 'components/views/responsive'
+import { Auth } from 'components/views/auth'
 // import Login from 'components/views/login'
 // import User from 'components/views/User'
 
@@ -36,6 +37,12 @@ const routes = [
     View: Responsive,
     menuIndex: 7,
     name: 'pushNotificationsView:title'
+  },
+  {
+    path: '/auth',
+    View: Auth,
+    menuIndex: 8,
+    name: 'authView:title'
   }
   //  { path: '/login', View: Login, name: 'Log in' },
   //  { path: '/user', View: User, name: 'User profile' }

@@ -12,7 +12,8 @@
     "listViewButton": "Go to List View",
     "cameraButton": "Go to Camera",
     "pushNotificationsButton": "Go to Push Notifications",
-    "responsiveButton": "Go to responsive example"
+    "responsiveButton": "Go to responsive example",
+    "authButton": "Go to auth example"
   },
   "viewOne": {
     "title": "View One",
@@ -46,6 +47,13 @@
   "responsiveView": {
     "textWeb": "Will change width when viewport",
     "textNative": "Always full width on native"
+  },
+  "authView": {
+    "title": "Authentication",
+    "loginButton": "Log in with Auth0",
+    "welcomeText": "You are logged in",
+    "errorTitle": "Authentication error",
+    "defaultErrorMessage": "something went wrong"
   },
   "listItem": {
     "title": "List item {:id}"

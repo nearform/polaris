@@ -30,6 +30,7 @@ export const HomeScreen = () => {
         path="/pushNotifications"
       />
       <LinkButton title={t('home:responsiveButton')} path="/responsive" />
+      <LinkButton title={t('home:authButton')} path="/auth" />
     </Container>
   )
 }
