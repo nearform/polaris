@@ -4,7 +4,8 @@
     "cancel": "Cancel"
   },
   "home": {
-    "title": "Home Screen",
+    "title": "Geography App",
+    "chooseACountry": "Choose a country to get started",
     "viewOneButton": "Go to View One",
     "viewTwoButton": "Go to View Two",
     "viewThreeButton": "Go to View Three",
@@ -68,5 +69,9 @@
   },
   "errors": {
     "404": "404: Page {{path}}not found"
+  },
+  "geography": {
+    "title": "Geography",
+    "spain": "Spain"
   }
 }
