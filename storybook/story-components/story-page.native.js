@@ -10,7 +10,7 @@ import { ThemeProvider } from 'store'
 
 const Stack = createStackNavigator()
 
-const Story = ({ title, storyFn, children, url, width }) => (
+const Story = ({ storyFn, children, url, width }) => (
   <View style={[styles.root, { width }]}>
     <Text style={styles.url}>{url}</Text>
     <Text style={styles.description}>{children}</Text>
@@ -34,32 +34,36 @@ function LinkedScreen({ name, screen }) {
  * if using CSF format.
  * The storyFn must be passed in from the decorators callback.
  */
-const StoryPage = props => (
-  <ThemeProvider>
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="home">
-        <Stack.Screen
-          name="home"
-          options={{
-            title: props.title,
-            headerStyle: styles.headerStyle,
-            headerTitleStyle: styles.title,
-            headerTitleAlign: 'left'
-          }}
-          component={() => <Story {...props} />}
-        />
+const StoryPage = props => {
+  const StoryScreen = () => <Story {...props} />
+  return (
+    <ThemeProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="home">
+          <Stack.Screen
+            name="home"
+            options={{
+              title: props.title,
+              headerStyle: styles.headerStyle,
+              headerTitleStyle: styles.title,
+              headerTitleAlign: 'left'
+            }}
+            component={StoryScreen}
+          />
 
-        {props.screens &&
-          props.screens.map(({ name, screen }) => (
-            <Stack.Screen
-              name={name}
-              component={screen ? screen : LinkedScreen}
-            />
-          ))}
-      </Stack.Navigator>
-    </NavigationContainer>
-  </ThemeProvider>
-)
+          {props.screens &&
+            props.screens.map(({ name, screen }) => (
+              <Stack.Screen
+                key={name}
+                name={name}
+                component={screen ? screen : LinkedScreen}
+              />
+            ))}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
+  )
+}
 
 const styles = StyleSheet.create({
   root: {
