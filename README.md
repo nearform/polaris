@@ -30,7 +30,7 @@ For every language supported, a JSON file containing all the translated labels i
 }
 ```
 
-To insert a label in a React component, use the `useTranslation` hook and the `t` function provideded by [react-i18next](https://react.i18next.com/latest/usetranslation-hook):
+To insert a label in a React component, use the `useTranslation` hook and the `t` function provided by [react-i18next](https://react.i18next.com/latest/usetranslation-hook):
 
 ```JSX
 ...
@@ -54,7 +54,7 @@ In the example above, you can see how the library also provides support for date
 
 ## Routing
 
-Polaris uses [React Navigation](https://reactnavigation.org/) in Native (Android and iOS), and [React Router DOM](https://reactrouter.com/web/guides/quick-start) in Web. This allows all platforms to be given fully-featured, robust platform-appropriate routing without comprimises.
+Polaris uses [React Navigation](https://reactnavigation.org/) in Native (Android and iOS), and [React Router DOM](https://reactrouter.com/web/guides/quick-start) in Web. This allows all platforms to be given fully-featured, robust platform-appropriate routing without compromises.
 
 [React Navigation is developing Web routing features](https://reactnavigation.org/docs/web-support/), so it may be possible to drop React Router DOM, but currently (Summer 2020) these features are "experimental" and not ready for production.
 
@@ -126,7 +126,7 @@ Returns `{ currentRoute, params }`:
 
 Returns an object of key:value pairs of params in the current location.
 
-Query string params in a URL, such as `?sort=id&direction=asc`, are stored as nested object of key:value pairs under the key `queryParams`, for example, this params object, with a path `/list/:type/`, would give a web URL `/list/products?search=cars&sort=price`, with all these params available in Web and Native:
+Query string params in an URL, such as `?sort=id&direction=asc`, are stored as a nested object of key:value pairs under the key `queryParams`. For example, this params object, with a path `/list/:type/`, would give a web URL `/list/products?search=cars&sort=price`, with all these params available in Web and Native:
 
 ```
   {
@@ -176,7 +176,7 @@ Templates consist mostly of groups of organisms stitched together to form reusab
 
 #### 5. Views
 
-Views are specific instances of content for templates. Placeholder is replaced with real representative content to give an accurate depiction of what a user will ultimately see.
+Views are specific instances of content for templates. A placeholder is replaced with real representative content to give an accurate depiction of what a user will ultimately see.
 
 Atomic design provides a clear methodology for crafting design systems. Clients and developers are able to better appreciate the concept of design systems by actually seeing the steps laid out in front of them.
 
@@ -212,7 +212,7 @@ Polaris has Storybook integration for developing UI components separately in iso
 
 #### Create stories for native and web platform
 
-Storybook integrates with Polaris and offers an easy solution to presents UI components on different platform for native and web. You would need to create subfolder called `stories` inside your component folder. Then use different file names to target different platforms where you want to develop, view or test your components.
+Storybook integrates with Polaris and offers an easy solution to present the UI components on both native and web platforms. To create a new story you would need to create a subfolder called `stories` inside your component folder. Then use different filenames to target different platforms where you want to develop, view or test your components.
 
 For example:
 
@@ -225,7 +225,7 @@ src/components/atoms/button
   - index.jsx
 ```
 
-Storybook will read all files inside `stories` folders and use them in Storybook explorer UI:
+Storybook will read all files inside the `stories` folders and use them in Storybook explorer UI:
 
 - `*.stories.native.js` file(s) will be used inside react storybook for Native platform `ios` and `android`.
 - `*.stories.web.js` files(s) will be used inside react storybook for Web
@@ -255,7 +255,7 @@ In Polaris you can run Storybook' stories for components separately on its own p
 
 ##### Storybook Web (Browser)
 
-On Web, it runs standard Stroybook Explorer Interface with npm command:
+On Web, it runs the standard Storybook Explorer Interface with npm command:
 
 ```bash
 $ npm run storybook:web
@@ -265,7 +265,7 @@ After it runs, browser will open storybook's url at `http://localhost:9001`
 
 ##### Storybook Native (iOS, Android)
 
-On Native it runs Storybook Native Explorer Interface with npm command:
+On Native it runs the Storybook Native Explorer Interface:
 
 for `ios` run:
 
@@ -279,7 +279,7 @@ for `android` run:
 $ npm run storybook:android
 ```
 
-After, it runs Storybook Explorer Application for native devices on `ios` or `android` device or inside simulators.
+After it runs, Storybook Explorer Application will open on the native device or on the simulator/emulator.
 
 ## SVGs
 
@@ -392,7 +392,7 @@ const idsStartWith_test = queryAllDescendents(element, {
 
 ##### `getAttrOrProp(element, name:string)`
 
-Unifies `nativeElement.getProp()` & `domElement.getAttribute()`. If the name differs between plaforms, a ternary can be used, for example:
+Unifies `nativeElement.getProp()` & `domElement.getAttribute()`. If the name differs between platforms, a ternary can be used, for example:
 
 ```js
 import { getAttrOrProp } from 'utils/test-utils/'
