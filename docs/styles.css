@@ -1,0 +1,109 @@
+:root {
+  --accel-secondary-color: #76a3c5;
+}
+
+/* custom list numbers */
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol > li {
+  counter-increment: li;
+}
+
+ol > li::before {
+  content: counter(li) '.';
+  color: #484cac;
+  font-weight: bold;
+  float: left;
+  width: 1.5em;
+  margin-left: -1em;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #394662;
+  position: fixed;
+  top: 0;
+  height: 90px;
+  width: 100%;
+  z-index: 100;
+}
+
+#navbar div {
+  position: fixed;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 26px;
+  top: 45px;
+}
+
+#logo {
+  position: fixed;
+  top: 30px;
+  left: 33px;
+}
+
+#nav-right > * {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 40px;
+}
+
+#nav-right a {
+  margin: 16px;
+  display: inline-block;
+  border-bottom: 3px solid #394662;
+  transition: border-color 300ms ease, opacity 200ms ease, color 300ms ease;
+  color: #fff;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+#nav-right a:hover {
+  border-bottom: 3px solid var(--accel-secondary-color);
+  color: var(--accel-secondary-color);
+}
+
+#nav-right {
+  margin-right: 26px;
+}
+
+@media (max-width: 500px) {
+  #nav-right {
+    margin-right: 5px;
+  }
+
+  #nav-right a {
+    padding: 5px;
+  }
+}
+
+.content {
+  margin-top: 90px;
+}
+
+.github-corner {
+  margin-top: 90px;
+}
+
+.github-corner svg {
+  fill: var(--accel-secondary-color);
+}
+
+.sidebar {
+  margin-top: 90px;
+}
+
+.sidebar-toggle {
+  margin-top: 90px;
+}
+
+img[src*='#logo'] {
+  width: 100%;
+  margin: calc(50vh - 90px) 0px;
+  transform: translate(0%, -50%);
+}
