@@ -1,0 +1,53 @@
+name: Test CI
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v1
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Set up Expo
+        uses: expo/expo-github-action@v5
+        with:
+          expo-version: 3.x
+          expo-cache: true
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm run prestorybook
+
+      - name: Run lint
+        run: |
+          npm run lint
+
+      - name: Run tests
+        run: |
+          npm run test:ci
+
+      - name: Lighthouse check
+        run: |
+          expo build:web
+          npm install -g @lhci/cli@0.4.x
+          lhci autorun \
+            --collect.staticDistDir='./web-build'
+            --upload.target=temporary-public-storage \
+            --upload.githubAppToken=$LHCI_GITHUB_APP_TOKEN || echo "LHCI failed!"
