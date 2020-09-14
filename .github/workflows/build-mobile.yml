@@ -6,6 +6,7 @@ on:
 
 jobs:
   build-mobile:
+    name: 'Building for mobile'
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +36,7 @@ jobs:
           npm ci
           npm run prestorybook
 
-      - name: Build web
+      - name: Build mobile
         run: |
           expo export -f --dev --public-url http://localhost
 

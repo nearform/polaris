@@ -6,6 +6,7 @@ on:
 
 jobs:
   cypress:
+    name: 'Cypress Test'
     runs-on: ubuntu-latest
 
     steps:

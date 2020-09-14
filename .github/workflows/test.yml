@@ -6,7 +6,12 @@ on:
 
 jobs:
   test:
+    name: 'Linting, Testing'
     runs-on: ubuntu-latest
+
+    env:
+      CI: true
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
     steps:
       - name: Checkout project
