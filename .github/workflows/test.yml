@@ -48,11 +48,14 @@ jobs:
         run: |
           npm run test:ci
 
-      - name: Lighthouse check
+      - name: Build
         run: |
           expo build:web
+
+      - name: Lighthouse check
+        run: |
           npm install -g @lhci/cli@0.4.x
           lhci autorun \
-            --collect.staticDistDir='./web-build'
+            --collect.staticDistDir='./web-build' \
             --upload.target=temporary-public-storage \
             --upload.githubAppToken=$LHCI_GITHUB_APP_TOKEN || echo "LHCI failed!"
