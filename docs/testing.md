@@ -141,6 +141,3 @@ or interactively using [Cypress test runner](https://docs.cypress.io/guides/core
 ```sh
 npm run e2e:web:open
 ```
-
-[logo-img]: docs/img/Polaris_logo.svg
-[docs]: https://nf-polaris.netlify.com/#/

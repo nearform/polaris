@@ -1,6 +1,8 @@
 # Storybook integration
 
-Polaris has Storybook integration for developing UI components separately in isolation environment, as an individual piece. This is useful tool for faster development and quicker iteration. Also, it's good to serve as a guide so we don't recreate a component someone else has done. The latter contributes to reusability.
+Polaris uses [Storybook](https://storybook.js.org/) for developing UI components.
+
+[Storybook](https://storybook.js.org/) is a tool for UI development. It makes development faster and easier by isolating components. This allows you to work on one component at a time. You can develop entire UIs without needing to start up a complex dev stack, force certain data into your database, or navigate around your application.
 
 ### Create stories for native and web platform
 

@@ -31,3 +31,6 @@ and treat it like a normal React component:
 ```
 
 Note that props on the svg component are forwarded to the root `<svg>` element.
+
+[logo-img]: docs/img/Polaris_logo.svg
+[docs]: https://nf-polaris.netlify.com/#/
