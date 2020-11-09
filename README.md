@@ -1,20 +1,14 @@
 [![Logo][logo-img]][docs]
 
-Polaris is Nearform's framework React Native app builder that allows simultaneous development of web, iOS and Android applications.
+Polaris is Nearform's framework React Native app builder that uses [Expo](https://expo.io) for rapid prototyping and simultaneous development of web, iOS and Android applications.
 
-Polaris has been designed to take on the "heavy lifting" of complicated tasks such as autherisation, internationalisation, etc. These are tasks that take time to set up and wire into every project, will always be required but do not add specific, measurable product value. Using Polaris gives developmers time to work on what makes their apps different, rather than spending time on the construction.
+Polaris has been designed to take on the "heavy lifting" of complicated tasks such as autherisation, internationalisation, [push notifications](/docs/pushNotifications.md), etc. These are tasks that take time to set up and wire into every project, will always be required but do not add specific, measurable product value. By using Polaris you get time to work on what makes your app different, rather than spending time on the construction.
 
-Polaris is an oppinionated curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches. It aims to provide the necessary tools to create native mobile apps and web apps with a single codebase.
+Polaris is an oppinionated curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches (see [ADRs](/docs/ADRS/README.md)). All decisions that have been made in Polaris have been tried and tested in [production code](https://www.nearform.com/services/accelerators/polaris/).
 
-All decisions that have been made in Polaris have been tried and tested in production code with the following apps (developed by Nearform) using this settup
-
-- Covid apps in Ireland, Scotland, Jersey, New York, Gibralter
-
-Polaris has Storybook integration for developing UI components separately in isolation environment, as an individual piece. This is useful tool for faster development and quicker iteration. Also, it's good to serve as a guide so we don't recreate a component someone else has done. The latter contributes to reusability. Polaris uses Atomic design patterns to construct front end components.
+Polaris has [Storybook](https://storybook.js.org/) integration for developing UI components separately in isolation environment, as an individual piece. This is useful tool for faster development and quicker iteration. Also, it's good to serve as a guide so we don't recreate a component someone else has done. The latter contributes to reusability. Polaris uses Atomic design patterns to construct front end components.
 
 ustalises Expo
-
-Polaris supports [push notifications](/docs/pushNotifications.md), both for web and app
 
 ## CI
 
