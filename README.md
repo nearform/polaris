@@ -6,9 +6,7 @@ Polaris has been designed to take on the "heavy lifting" of complicated tasks su
 
 Polaris is an oppinionated curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches (see [ADRs](/docs/ADRS/README.md)). All decisions that have been made in Polaris have been tried and tested in [production code](https://www.nearform.com/services/accelerators/polaris/).
 
-Polaris has [Storybook](https://storybook.js.org/) integration for developing UI components separately in isolation environment, as an individual piece. This is useful tool for faster development and quicker iteration. Also, it's good to serve as a guide so we don't recreate a component someone else has done. The latter contributes to reusability. Polaris uses Atomic design patterns to construct front end components.
-
-ustalises Expo
+Polaris uses [Storybook](/docs/storybook.md) integration for developing UI components separately in an isolation environment, as an individual piece. By doing so it allows for faster, independant development of UI components, and acts as a useful reference point to help prevent duplication of work. Polaris adopts Atomic Design Patterns to construct front end components, whiic helps with the development of reusable components.
 
 ## CI
 
