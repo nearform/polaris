@@ -1,5 +1,8 @@
 # Firebase integration
 
+Why Firebase ?
+Firebase covers every need a mobile developer might have, from establishing real-time databases to analyzing crashes on your app to making predictions at extremely low cost. The operations and internal functions are solid, simple and the documentation is really good.
+
 [Firebase](https://firebase.google.com/docs) gives you functionality like analytics, databases, messaging and crash reporting so you can move quickly and focus on your users. Firebase is built on Google infrastructure and scales automatically, for even the largest apps.
 
 You are able to add [Firebase](https://firebase.google.com/docs) using Expo to install it. Firebase JS SDK supports Authentication, Firestore & Realtime databases, Storage, and Functions on React Native.
