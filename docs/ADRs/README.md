@@ -3,3 +3,5 @@
 Polaris is an opinionated scafolding. Decisions have been made as to the technologies used therein, and these are documented here.
 
 ## index
+
+[Why JavaScript as the development language](developmentLanguage.md)

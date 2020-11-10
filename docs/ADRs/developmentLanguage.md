@@ -1,10 +1,10 @@
 # Title
 
-Primary development language
+Development language
 
 ## Status
 
-Accepted
+Accepted June 2020
 
 ## Context
 
