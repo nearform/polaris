@@ -35,6 +35,8 @@ $ npm run storybook:web
 
 After it runs, browser will open storybook's url at `http://localhost:9001`
 
+![storybook-homepage]
+
 #### Storybook Native (iOS, Android)
 
 On Native it runs the Storybook Native Explorer Interface:
@@ -75,3 +77,4 @@ Note that props on the svg component are forwarded to the root `<svg>` element.
 
 [logo]: ../img/Polaris_logo.svg
 [polaris-homepage]: ../img/homescreen.jpg
+[storybook-homepage]: ../img/storybook.jpg
