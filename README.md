@@ -1,4 +1,4 @@
-[![Logo][logo]][docs]
+![Logo][logo]
 
 Polaris is Nearform's framework React Native app builder that uses [Expo] for rapid prototyping and simultaneous development of web, iOS and Android applications.
 
