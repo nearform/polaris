@@ -37,4 +37,4 @@ Note that props on the svg component are forwarded to the root `<svg>` element.
 
 <!-- Images -->
 
-[logo]: img/Polaris_logo.svg
+[logo]: ../img/Polaris_logo.svg
