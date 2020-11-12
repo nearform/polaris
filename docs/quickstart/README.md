@@ -101,7 +101,7 @@ Web push notifications are not yet supported out of the box with Expo, so we shi
 
 [logo]: ../img/Polaris_logo.svg
 
-[polaris-homepage]: ../img/homescreen.jpg | width=100, heigt=212
+[polaris-homepage]: ../img/homescreen.jpg width="100" height="212"
 [storybook-homepage]: ../img/storybook.jpg
 
 <!-- External links -->
