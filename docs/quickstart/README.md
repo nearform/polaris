@@ -35,7 +35,7 @@ $ npm run storybook:web
 
 After it runs, browser will open storybook's url at `http://localhost:9001`
 
-![storybook-homepage][storybook homepage on web]
+![storybook-homepage]
 
 ### Storybook Native (iOS, Android)
 
