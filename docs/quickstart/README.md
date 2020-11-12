@@ -15,7 +15,43 @@ $ npm install
 $ npm start
 ```
 
+You will be able to run the applicaiton through expo on your desktop, or, via the QR code, on your mobile device.
+
 SUGGESTION - be good to have a "create polaris app" script option that would allow developer to pick out which of the components that are used (such as "Do you want camera integration y/n?")
+
+[polaris-homepage]
+
+### Run storybook for native and web platform
+
+In Polaris you can run [Storybook's](storybook.md) stories for components separately on its own platform Native (ios, android) and Web.
+
+#### Storybook Web (Browser)
+
+On Web, it runs the standard Storybook Explorer Interface with npm command:
+
+```bash
+$ npm run storybook:web
+```
+
+After it runs, browser will open storybook's url at `http://localhost:9001`
+
+#### Storybook Native (iOS, Android)
+
+On Native it runs the Storybook Native Explorer Interface:
+
+for `ios` run:
+
+```bash
+$ npm run storybook:ios
+```
+
+for `android` run:
+
+```bash
+$ npm run storybook:android
+```
+
+After it runs, Storybook Explorer Application will open on the native device or on the simulator/emulator.
 
 ## SVGs
 
@@ -38,3 +74,4 @@ Note that props on the svg component are forwarded to the root `<svg>` element.
 <!-- Images -->
 
 [logo]: ../img/Polaris_logo.svg
+[polaris-homepage]: ../img/homescreen.jpg
