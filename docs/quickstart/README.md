@@ -17,8 +17,6 @@ $ npm start
 
 You will be able to run the applicaiton through expo on your desktop, or, via the QR code, on your mobile device.
 
-SUGGESTION - be good to have a "create polaris app" script option that would allow developer to pick out which of the components that are used (such as "Do you want camera integration y/n?")
-
 ![polaris-homepage]
 
 ## Storybook
