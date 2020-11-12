@@ -77,4 +77,4 @@ Note that props on the svg component are forwarded to the root `<svg>` element.
 
 [logo]: ../img/Polaris_logo.svg
 [polaris-homepage]: ../img/homescreen.jpg
-[storybook-homepage]: ../img/storybook.jpg
+[storybook-homepage]: ../img/storybook.jpg=100x215
