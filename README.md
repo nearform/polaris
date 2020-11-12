@@ -4,7 +4,7 @@ Polaris is Nearform's framework React Native app builder that uses [Expo] for ra
 
 Polaris has been designed to take on the "heavy lifting" of complicated tasks such as authentication, internationalisation, [push notifications], set up of [testing framework](/docts/testing.md) etc. These are tasks that take time to set up and wire into every project, will always be required but do not add specific, measurable product value. By using Polaris you get time to work on what makes your app different, rather than spending time on the construction.
 
-Polaris is an oppinionated curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches (see [ADRs]. All decisions that have been made in Polaris have been tried and tested in [production code].
+Polaris is an oppinionated curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches (see [ADRs]). All decisions that have been made in Polaris have been tried and tested in [production code].
 
 <!-- External Links -->
 
