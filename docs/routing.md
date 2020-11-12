@@ -6,7 +6,7 @@ Polaris uses [React Navigation](https://reactnavigation.org/) in Native (Android
 
 To ease development, Polaris provides cross-platform components, hooks and utilities for common routing and navigation operations:
 
-### /routes
+## /routes
 
 Default export is an array of route objects following this example shape:
 
@@ -43,11 +43,11 @@ const { currentRoute, params } = usePlatformLocation()
 const currentTitle = replaceParams(t(currentRoute.name), params)
 ```
 
-#### /components/templates/routes
+### /components/templates/routes
 
 Handles platform-specific routing and renders the appropriate `View` of the chosen route. All components and hooks below should be used inside this.
 
-#### `Link({ path:string (required), title:string (required), params:object (optional), ...props })`
+### `Link({ path:string (required), title:string (required), params:object (optional), ...props })`
 
 Renders a `<a>` link on Web and a `TouchableOpacity` on Native. `title` is the text displayed to the user in the link. Other props such as `style` are passed through.
 
@@ -57,18 +57,18 @@ Where a path contains params, pass the _template_ to `path` and a keyed object t
   <Link path="/users/:id/edit" params={{ id: 5 }} style={/* passed through */} />
 ```
 
-#### `LinkButton({ path:string (required), params:object (optional), ...props })`
+### `LinkButton({ path:string (required), params:object (optional), ...props })`
 
 Same as `Link` but renders as a button.
 
-#### usePlatformLocation()
+### usePlatformLocation()
 
 Returns `{ currentRoute, params }`:
 
 - `currentRoute` is the current route object as defined in `/routes` above
 - `params` matches the output of `usePlatformParams` below
 
-#### usePlatformParams()
+### usePlatformParams()
 
 Returns an object of key:value pairs of params in the current location.
 
@@ -84,7 +84,7 @@ Query string params in an URL, such as `?sort=id&direction=asc`, are stored as a
   }
 ```
 
-#### usePlatformNavigation()
+### usePlatformNavigation()
 
 Returns an object of functions memoized with `useCallback`, `{ navigate, setParams, replaceParams }`:
 

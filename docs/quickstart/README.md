@@ -21,11 +21,11 @@ SUGGESTION - be good to have a "create polaris app" script option that would all
 
 ![polaris-homepage]
 
-### Run storybook for native and web platform
+## Storybook
 
-In Polaris you can run [Storybook's](storybook.md) stories for components separately on its own platform Native (ios, android) and Web.
+In Polaris you can run [Storybook's](polaris_UI.md) stories for components separately on its own platform Native (ios, android) and Web.
 
-#### Storybook Web (Browser)
+### Storybook Web (Browser)
 
 On Web, it runs the standard Storybook Explorer Interface with npm command:
 
@@ -37,7 +37,7 @@ After it runs, browser will open storybook's url at `http://localhost:9001`
 
 ![storybook-homepage]
 
-#### Storybook Native (iOS, Android)
+### Storybook Native (iOS, Android)
 
 On Native it runs the Storybook Native Explorer Interface:
 
@@ -55,7 +55,7 @@ $ npm run storybook:android
 
 After it runs, Storybook Explorer Application will open on the native device or on the simulator/emulator.
 
-## End-to-end web testing
+## End-to-end web Testing
 
 Polaris uses [Cypress] to define and run end-to-end tests for the web application.
 
@@ -77,23 +77,25 @@ or interactively using [Cypress test runner](https://docs.cypress.io/guides/core
 npm run e2e:web:open
 ```
 
-## SVGs
+## Push Notifications
 
-Be aware that imported SVGs are automatically converted to normal React components. This is possible via `react-native-svg-transformer` library on native and `@svgr/webpack` loader on web. If you are interested in how the generated component looks like, head over to the [svgr documentation](https://react-svgr.com/docs/getting-started/).
+Polaris supports both native and web push notifications.
 
-So to render an svg, simply import it:
+### Native push notifications:
 
-```
-import Logo from 'assets/logos/logo.svg';
-```
+Native push notifications are only supported on real devices, so it's not possible to test on a simulator.
 
-and treat it like a normal React component:
+- currently routed through Expo servers, although it's possible to send them through a custom node server if needed due to security, similar to web push notifications
+- to get the example working, you need to login with an Expo account on the computer with `expo login -u <username> -p <password>`
 
-```
-<Logo width={200} height={50} fill="#2165e3" title="Logo" />
-```
+### Web push notifications:
 
-Note that props on the svg component are forwarded to the root `<svg>` element.
+Web push notifications are not yet supported out of the box with Expo, so we shipped a workaround with a custom node server.
+
+- first create a .env for storing [VAPID](https://tools.ietf.org/html/draft-ietf-webpush-vapid-04) keys with `npm run create:env`
+- generate VAPID keys with `npm run push:generate:web` and save them in the .env file created in previous step
+- run the node server with `npm run push:server:start`
+- restart expo build process and you should be able to run the example
 
 <!-- Images -->
 
