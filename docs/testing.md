@@ -119,25 +119,3 @@ describe('Some component', () => {
     // Note we're in an async `it` callback function
     await act(async () => await firePressEvent(element));
 ```
-
-## End-to-end web testing
-
-Polaris uses [Cypress](https://www.cypress.io/) to define and run end-to-end tests for the web application.
-
-Execute the Expo web application before starting any test:
-
-```sh
-npm run web
-```
-
-Then you can run the test in two different modes, silently with:
-
-```sh
-npm run e2e:web:run
-```
-
-or interactively using [Cypress test runner](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview):
-
-```sh
-npm run e2e:web:open
-```

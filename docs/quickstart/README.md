@@ -55,6 +55,28 @@ $ npm run storybook:android
 
 After it runs, Storybook Explorer Application will open on the native device or on the simulator/emulator.
 
+## End-to-end web testing
+
+Polaris uses [Cypress] to define and run end-to-end tests for the web application.
+
+Execute the Expo web application before starting any test:
+
+```sh
+npm run web
+```
+
+Then you can run the test in two different modes, silently with:
+
+```sh
+npm run e2e:web:run
+```
+
+or interactively using [Cypress test runner](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview):
+
+```sh
+npm run e2e:web:open
+```
+
 ## SVGs
 
 Be aware that imported SVGs are automatically converted to normal React components. This is possible via `react-native-svg-transformer` library on native and `@svgr/webpack` loader on web. If you are interested in how the generated component looks like, head over to the [svgr documentation](https://react-svgr.com/docs/getting-started/).
@@ -78,3 +100,7 @@ Note that props on the svg component are forwarded to the root `<svg>` element.
 [logo]: ../img/Polaris_logo.svg
 [polaris-homepage]: ../img/homescreen.jpg
 [storybook-homepage]: ../img/storybook.jpg=100x215
+
+<!-- External links -->
+
+[cypress]: https://www.cypress.io/
