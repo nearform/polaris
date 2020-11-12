@@ -19,7 +19,7 @@ You will be able to run the applicaiton through expo on your desktop, or, via th
 
 SUGGESTION - be good to have a "create polaris app" script option that would allow developer to pick out which of the components that are used (such as "Do you want camera integration y/n?")
 
-![polaris-homepage](../img/homescreen.jpg width="100" height="212")[polaris homepage on an android device]
+![polaris-homepage][polaris homepage on an android device]
 
 ## Storybook
 
@@ -100,8 +100,8 @@ Web push notifications are not yet supported out of the box with Expo, so we shi
 <!-- Images -->
 
 [logo]: ../img/Polaris_logo.svg
-
-[polaris-homepage][storybook-homepage]: ../img/storybook.jpg
+[polaris-homepage]: ../img/homescreen.jpg
+[storybook-homepage]: ../img/storybook.jpg
 
 <!-- External links -->
 
