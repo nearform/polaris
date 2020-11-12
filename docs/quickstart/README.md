@@ -15,13 +15,13 @@ $ npm install
 $ npm start
 ```
 
-You will be able to run the applicaiton through expo on your desktop, or, via the QR code, on your mobile device.
+Follow the onscreen instructions that will allow you to run the Polaris applicaiton through [Expo] on your desktop, or, via the QR code, on your mobile device.
 
 ![polaris-homepage]
 
 ## Storybook
 
-In Polaris you can run [Storybook's](polaris_UI.md) stories for components separately on its own platform Native (ios, android) and Web.
+In Polaris you can run [Storybook's](polaris_UI.md) stories for components separately on its own Platform Native (iOs, Android) and Web.
 
 ### Storybook Web (Browser)
 
@@ -39,31 +39,31 @@ After it runs, browser will open storybook's url at `http://localhost:9001`
 
 On Native it runs the Storybook Native Explorer Interface:
 
-for `ios` run:
+for `iOs` run:
 
 ```bash
 $ npm run storybook:ios
 ```
 
-for `android` run:
+for `Android` run:
 
 ```bash
 $ npm run storybook:android
 ```
 
-After it runs, Storybook Explorer Application will open on the native device or on the simulator/emulator.
+After it runs, use [Expo] on your iOs or Android device to access Storybook Explorer Application will open or use the simulator/emulator instructions as shown on screen.
 
 ## End-to-end web Testing
 
 Polaris uses [Cypress] to define and run end-to-end tests for the web application.
 
-Execute the Expo web application before starting any test:
+1. Start the Expo web application:
 
 ```sh
 npm run web
 ```
 
-Then you can run the test in two different modes, silently with:
+2. Then you can run the tests either, silently with:
 
 ```sh
 npm run e2e:web:run
@@ -95,6 +95,16 @@ Web push notifications are not yet supported out of the box with Expo, so we shi
 - run the node server with `npm run push:server:start`
 - restart expo build process and you should be able to run the example
 
+# Further Information
+
+[Authentication](authentication.md)
+[Database integration](databases.md)
+[Dev Ops](/devops)
+[Internationalisation](internationalisation.md)
+[Routing](routing.md)
+[Testing](testing.md)
+[UI elements](polaris_UI.md)
+
 <!-- Images -->
 
 [logo]: ../img/Polaris_logo.svg
@@ -104,3 +114,4 @@ Web push notifications are not yet supported out of the box with Expo, so we shi
 <!-- External links -->
 
 [cypress]: https://www.cypress.io/
+[expo]: https://expo.io
