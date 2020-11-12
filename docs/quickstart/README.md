@@ -1,4 +1,4 @@
-# ![logo]
+![Logo][logo]
 
 # Quick Start Guide
 
@@ -19,7 +19,7 @@ You will be able to run the applicaiton through expo on your desktop, or, via th
 
 SUGGESTION - be good to have a "create polaris app" script option that would allow developer to pick out which of the components that are used (such as "Do you want camera integration y/n?")
 
-![polaris-homepage]
+![polaris-homepage][polaris homepage on an android device]
 
 ## Storybook
 
@@ -35,7 +35,7 @@ $ npm run storybook:web
 
 After it runs, browser will open storybook's url at `http://localhost:9001`
 
-![storybook-homepage]
+![storybook-homepage][storybook homepage on web]
 
 ### Storybook Native (iOS, Android)
 
@@ -100,7 +100,8 @@ Web push notifications are not yet supported out of the box with Expo, so we shi
 <!-- Images -->
 
 [logo]: ../img/Polaris_logo.svg
-[polaris-homepage]: ../img/homescreen.jpg=100x212
+
+[polaris-homepage]: ../img/homescreen.jpg =100x212
 [storybook-homepage]: ../img/storybook.jpg
 
 <!-- External links -->
