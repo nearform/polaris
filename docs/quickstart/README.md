@@ -97,13 +97,13 @@ Web push notifications are not yet supported out of the box with Expo, so we shi
 
 # Further Information
 
-[Authentication](authentication.md)
-[Database integration](databases.md)
-[Dev Ops](/devops)
-[Internationalisation](internationalisation.md)
-[Routing](routing.md)
-[Testing](testing.md)
-[UI elements](polaris_UI.md)
+- [Authentication](../authentication.md)
+- [Database integration](../databases.md)
+- [Dev Ops](..//devops)
+- [Internationalisation](../internationalisation.md)
+- [Routing](../routing.md)
+- [Testing](../testing.md)
+- [UI elements](../polaris_UI.md)
 
 <!-- Images -->
 
