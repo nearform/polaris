@@ -6,7 +6,7 @@ Polaris has been designed to take on the "heavy lifting" of complicated tasks su
 
 Polaris is an oppinionated curated set of libraries, tools, and conventions assembled together to allow developers to focus on their app's functionality instead of spending hours picking and choosing different libraries and approaches (see [ADRs]). All decisions that have been made in Polaris have been tried and tested in [production code].
 
-## [Get started using Polaris](/quicksatart)
+### [Get started using Polaris](/quickstart)
 
 <!-- External Links -->
 
@@ -15,7 +15,6 @@ Polaris is an oppinionated curated set of libraries, tools, and conventions asse
 
 <!-- Internal Links -->
 
-[quick start guide]: quickstart/
 [push notifications]: /docs/pushNotifications.md
 [adrs]: /docs/ADRS/README.md
 
