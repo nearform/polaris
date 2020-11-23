@@ -72,7 +72,8 @@
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1",
     "styled-media-query": "^2.1.2",
-    "web-push": "^3.4.4"
+    "web-push": "^3.4.4",
+    "expo-sharing": "~8.2.1"
   },
   "lint-staged": {
     "*.{js,jsx}": [
