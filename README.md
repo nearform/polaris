@@ -15,7 +15,7 @@ Polaris is an oppinionated curated set of libraries, tools, and conventions asse
 
 <!-- Internal Links -->
 
-[quick start guide]: quick-start/
+[quick start guide]: quickstart/
 [push notifications]: /docs/pushNotifications.md
 [adrs]: /docs/ADRS/README.md
 
