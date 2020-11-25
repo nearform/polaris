@@ -9,6 +9,7 @@ import { Settings } from 'components/views/settings'
 import { PushNotifications } from 'components/views/push-notifications'
 import { Responsive } from 'components/views/responsive'
 import { Auth } from 'components/views/auth'
+import { Bluetooth } from 'components/views/bluetoothReader'
 // import Login from 'components/views/login'
 // import User from 'components/views/User'
 
@@ -43,6 +44,12 @@ const routes = [
     View: Auth,
     menuIndex: 8,
     name: 'authView:title'
+  },
+  {
+    path: '/bluetooth',
+    View: Bluetooth,
+    menuIndex: 9,
+    name: 'bluetoothView:title'
   }
   //  { path: '/login', View: Login, name: 'Log in' },
   //  { path: '/user', View: User, name: 'User profile' }

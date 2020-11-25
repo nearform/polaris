@@ -34,6 +34,9 @@ export const HomeScreen = () => {
       {Platform.OS !== 'web' && (
         <LinkButton title={t('home:qrCodeButton')} path="/qrCode" />
       )}
+      {Platform.OS === 'web' && (
+        <LinkButton title={t('home:bluetoothButton')} path="/bluetooth" />
+      )}
     </Container>
   )
 }

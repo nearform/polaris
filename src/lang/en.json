@@ -14,7 +14,8 @@
     "pushNotificationsButton": "Go to Push Notifications",
     "responsiveButton": "Go to responsive example",
     "authButton": "Go to auth example",
-    "qrCodeButton": "Go to QR Code"
+    "qrCodeButton": "Go to QR Code",
+    "bluetoothButton": "Scan for bluetooth input"
   },
   "viewOne": {
     "title": "View One",
@@ -70,6 +71,12 @@
   "qrCode": {
     "title": "QR Code",
     "scanAgainButton": "Tap to Scan Again"
+  },
+  "buletooth": {
+    "title": "Bluetooth reading",
+    "scanButton": "Click to scan for bluetooth",
+    "deviceFound": "Device found",
+    "defaultErrorMessage": "something went wrong"
   },
   "nav": {
     "topLeft": "Top Left",
