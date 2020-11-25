@@ -36,6 +36,10 @@ Atomic design provides a clear methodology for crafting design systems. Clients 
 
 Atomic design allows us to roll out higher quality, more consistent, reusable and understandable components' UI faster.
 
+### Further Information
+
+https://atomicdesign.bradfrost.com/
+
 ## Storybook integration
 
 Polaris uses [Storybook](https://storybook.js.org/) for developing UI components.
