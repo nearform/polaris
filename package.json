@@ -64,6 +64,7 @@
     "react-i18next": "^11.7.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-ble-manager": "^7.4.1",
+    "react-native-bluetooth-classic": "^1.60.0-rc.4",
     "react-native-bluetooth-serial": "^1.0.0-rc1",
     "react-native-elements": "^2.0.4",
     "react-native-gesture-handler": "~1.6.0",
