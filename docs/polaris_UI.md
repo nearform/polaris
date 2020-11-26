@@ -1,6 +1,6 @@
 # Polaris UI
 
-## Atomic Design for UI Components
+# Atomic Design for UI Components
 
 Polaris has Atomic Design structure for its UI components.
 
@@ -87,7 +87,82 @@ Storybook's configuration and support files located inside `/storybook` folder i
 
 See the [Quick start guide](/quickstart/) for instructions on how to run Storybook.
 
-## SVGs
+## Storybook components
+
+Set of components to facilitate documenting and writing stories. Examples can be found in the UI stories under `Storybook Helpers/Components`
+
+### `<DocSection>`
+
+A top level container for wrapping sections of stories
+
+### `<DocText>`
+
+A text element with accessabilityRole or a link, primarily used for describing elements inside DocSection
+
+### `<DocCode>`
+
+Presents a block of code in a story
+
+Template literals can be used and will be trimmed to fit
+
+### `<DocItem>`
+
+Utility for documenting a component, you can provide basic info, render, and code example
+
+### `<DocExternalLink>`
+
+Displays a link to an external href
+
+### `<InlineCode>`
+
+Display an inline code snippet
+
+### `<PropTable>`
+
+Displays a table of props similar to the addon-docs prop table.
+
+### `<StyleList>`
+
+Display prop information for a single prop
+
+### `<TextList>`
+
+Display a list of text items
+
+### `<ThemeSwitcher>`
+
+Displays a toggle to switch the theme on/off
+
+### `<DividerHorizontal>`
+
+Horizontal divider
+
+### `<DividerVertical>`
+
+Vertical divider
+
+### `<StoryPage>`
+
+Wrapper for all stories in a story file.
+
+Apply with .addDecorator when using storiesOf or include in the decorators array if using CSF format.
+
+```
+  storiesOf('Main/Sub', module)
+ .addDecorator(storyFn => (
+   <StoryPage
+     title="Title"
+     url="components/myComponent"
+     storyFn={storyFn}
+   >
+     An example story page
+   </StoryPage>
+ ))
+```
+
+The storyFn must be passed in from the decorators callback.
+
+# SVGs
 
 Be aware that imported SVGs are automatically converted to normal React components. This is possible via `react-native-svg-transformer` library on native and `@svgr/webpack` loader on web. If you are interested in how the generated component looks like, head over to the [svgr documentation](https://react-svgr.com/docs/getting-started/).
 
@@ -104,3 +179,7 @@ and treat it like a normal React component:
 ```
 
 Note that props on the svg component are forwarded to the root `<svg>` element.
+
+# Styling
+
+Polaris uses [styled-components](https://styled-components.com/) to handle component styling.
