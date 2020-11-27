@@ -72,7 +72,7 @@
     "title": "QR Code",
     "scanAgainButton": "Tap to Scan Again"
   },
-  "buletooth": {
+  "bluetooth": {
     "title": "Bluetooth reading",
     "scanButton": "Click to scan for bluetooth",
     "deviceFound": "Device found",
