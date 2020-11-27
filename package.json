@@ -18,8 +18,8 @@
     "test:ci": "jest --ci",
     "prestorybook": "rnstl",
     "storybook:web": "start-storybook -p 9001 -c ./storybook/.storybook-web",
-    "storybook:ios": "run-p prestorybook && RUN_STORYBOOK=true expo start -c --ios",
-    "storybook:android": "run-p prestorybook && RUN_STORYBOOK=true expo start -c --android",
+    "storybook:ios": "run-p prestorybook && cross-env RUN_STORYBOOK=true expo start -c --ios",
+    "storybook:android": "run-p prestorybook && cross-env RUN_STORYBOOK=true expo start -c --android",
     "test:watch": "jest --watch",
     "checks": "run-p lint:fix && run-p lint && run-p test",
     "e2e:web:open": "cypress open",
@@ -87,7 +87,8 @@
   "config": {
     "react-native-storybook-loader": {
       "searchDir": [
-        "./src"
+        "./src",
+        "./storybook/story-components"
       ],
       "pattern": "**/stories/{*.stories.common,*.stories.native}.js",
       "outputFile": "./storybook/storyLoader.js"
@@ -125,6 +126,7 @@
     "babel-plugin-inline-dotenv": "^1.5.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-expo": "^8.2.3",
+    "cross-env": "^7.0.2",
     "cypress": "^4.9.0",
     "docsify-cli": "^4.4.1",
     "eslint": "^7.3.1",
