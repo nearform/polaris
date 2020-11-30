@@ -14,7 +14,8 @@
     "pushNotificationsButton": "Go to Push Notifications",
     "responsiveButton": "Go to responsive example",
     "authButton": "Go to auth example",
-    "qrCodeButton": "Go to QR Code"
+    "qrCodeButton": "Go to QR Code",
+    "mapButton": "Go to map"
   },
   "viewOne": {
     "title": "View One",
@@ -78,6 +79,9 @@
       "light": "Light",
       "dark": "Dark"
     }
+  },
+  "map": {
+    "title": "Map"
   },
   "errors": {
     "404": "404: Page {{path}}not found"
