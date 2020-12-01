@@ -32,7 +32,10 @@ export const HomeScreen = () => {
       <LinkButton title={t('home:responsiveButton')} path="/responsive" />
       <LinkButton title={t('home:authButton')} path="/auth" />
       {Platform.OS !== 'web' && (
-        <LinkButton title={t('home:qrCodeButton')} path="/qrCode" />
+        <>
+          <LinkButton title={t('home:qrCodeButton')} path="/qrCode" />
+          <LinkButton title={t('home:mapButton')} path="/map" />
+        </>
       )}
     </Container>
   )
