@@ -35,7 +35,7 @@ const PhotoButtons = styled.View`
   flex-direction: row;
   justify-content: space-between;
   background-color: #2b343b;
-  height: 20%;
+  height: 70px;
 `
 
 const PhotoActionButton = styled.Text`
@@ -45,8 +45,15 @@ const PhotoActionButton = styled.Text`
 `
 
 const ImageContainer = styled.Image`
-  height: 90%;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
+`
+const Display = styled.View`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-bottom: 70px;
 `
 
 export const Camera = () => {
@@ -104,18 +111,17 @@ export const Camera = () => {
     </Wrapper>
   ) : (
     <Wrapper>
-      <ImageContainer
-        source={{ uri: photo.uri }}
-        style={{ height: '85%', width: '100%' }}
-      />
-      <PhotoButtons>
-        <TouchableOpacity onPress={() => setPhoto(null)}>
-          <PhotoActionButton>re-take</PhotoActionButton>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={redirectImage}>
-          <PhotoActionButton>forward</PhotoActionButton>
-        </TouchableOpacity>
-      </PhotoButtons>
+      <Display>
+        <ImageContainer source={{ uri: photo.uri }} />
+        <PhotoButtons>
+          <TouchableOpacity onPress={() => setPhoto(null)}>
+            <PhotoActionButton>re-take</PhotoActionButton>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={redirectImage}>
+            <PhotoActionButton>forward</PhotoActionButton>
+          </TouchableOpacity>
+        </PhotoButtons>
+      </Display>
     </Wrapper>
   )
 }

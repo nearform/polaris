@@ -6,7 +6,6 @@ import Link from 'components/atoms/link'
 const Container = styled.View`
   flex-direction: row;
   background-color: white;
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
