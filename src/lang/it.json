@@ -64,7 +64,10 @@
   },
   "camera": {
     "title": "Fotocamera",
-    "permissionDenied": "Nessun accesso alla fotocamera"
+    "permissionDenied": "Nessun accesso alla fotocamera",
+    "sharingNotAvailable": "La condivisione non è disponibile sulla tua piattaforma",
+    "photoRetake": "scatta di nuovo",
+    "photoForward": "inviare"
   },
   "nav": {
     "topLeft": "Alto Sinistra",

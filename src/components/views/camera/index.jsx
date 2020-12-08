@@ -75,7 +75,7 @@ export const Camera = () => {
     const isAvailable = await Sharing.isAvailableAsync()
 
     if (!isAvailable) {
-      alert(`Uh oh, sharing isn't available on your platform`)
+      alert(t('camera:sharingNotAvailable'))
     }
 
     await Sharing.shareAsync(photo.uri)
@@ -115,10 +115,10 @@ export const Camera = () => {
         <ImageContainer source={{ uri: photo.uri }} />
         <PhotoButtons>
           <TouchableOpacity onPress={() => setPhoto(null)}>
-            <PhotoActionButton>re-take</PhotoActionButton>
+            <PhotoActionButton>{t('camera:photoRetake')}</PhotoActionButton>
           </TouchableOpacity>
           <TouchableOpacity onPress={redirectImage}>
-            <PhotoActionButton>forward</PhotoActionButton>
+            <PhotoActionButton>{t('camera:photoForward')}</PhotoActionButton>
           </TouchableOpacity>
         </PhotoButtons>
       </Display>
