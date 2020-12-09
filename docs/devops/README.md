@@ -6,10 +6,10 @@ Deployment for Polaris is a fully featured, modern, production grade experience 
 
 ## Deploy Polaris
 
-An example deployment of Polaris to [GCP] is provided. For simplicity, we use a CD pipeline workflow which follows master branch changes and does an automatic deployment. There is a working examples of a CD pipeline in the `.github/workflows` folder.
+An example deployment of Polaris to [GCP] is provided. For simplicity, we use a CD pipeline workflow which follows master branch changes and does an automatic deployment. There is a working examples of a CD pipeline in the `github/workflows` folder.
 
 **Note:** CD workflow pipelines are expected to be adjusted or completely changed to fulfill project needs.
-To adjust the pipeline see [integration.yml file](.github/workflows/integration.yml).
+To adjust the pipeline see `github/workflows/integration.yml`
 
 ## Lint, Test and Build
 
