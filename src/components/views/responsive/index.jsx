@@ -13,7 +13,7 @@ const commonStyles = css`
   align-items: center;
   height: 100px;
   width: 100%;
-  background-color: ${props => props.theme.primary};
+  background-color: ${props => props.theme.colors.primary};
 `
 
 const Block =
@@ -29,7 +29,7 @@ const Block =
     : styledNative.View`${commonStyles}`
 
 const StyledText = styledNative.Text`
-  color: ${props => props.theme.white}
+  color: ${props => props.theme.colors.white}
 `
 
 export const Responsive = () => {

@@ -7,7 +7,7 @@ import { BarCodeScanner } from 'expo-barcode-scanner'
 const QRCodeText = styled.Text`
   text-align: center;
   padding-top: 20px;
-  font-size: 30px;
+  font-size: ${props => props.theme.typography.fontSize.h1};
 `
 
 const QRCodeContainer = styled.View`

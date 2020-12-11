@@ -11,9 +11,7 @@ const Wrapper = styled.View`
   height: 85px;
   flex-direction: row;
   align-items: stretch;
-  border-bottom-color: #e0e0e0;
-  border-bottom-width: 1px;
-  background-color: ${props => props.theme.bgColor};
+  background-color: ${props => props.theme.colors.backgroundPrimary};
 `
 
 const Column = Container
@@ -31,7 +29,7 @@ const Center = styled(Container)`
 `
 
 const ThemeText = styled.Text`
-  color: ${props => props.theme.textColor};
+  color: ${props => props.theme.colors.textPrimary};
 `
 
 export default function Header() {

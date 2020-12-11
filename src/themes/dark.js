@@ -7,10 +7,13 @@ import spacing from './spacing'
 
 export default {
   name: 'dark',
-  textColor: colors.lightColor,
-  bgColor: colors.darkColor,
-  primary: colors.midnightBlue,
-  white: colors.white,
+  colors: {
+    textPrimary: colors.lightPrimary,
+    textSecondary: colors.darkSecondary,
+    backgroundPrimary: colors.darkPrimary,
+    primary: colors.midnightBlue,
+    white: colors.white
+  },
   typography,
   breakpoints: generateMedia(breakpoints),
   spacing: spacing

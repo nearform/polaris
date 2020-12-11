@@ -8,6 +8,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { replaceParams } from 'utils/paths'
 import usePlatformLocation from 'utils/hooks/usePlatformLocation'
 import { RoutesContext } from 'store/routing/routes-provider'
+import { useTheme } from 'styled-components'
 
 const Left = ({ isHome, goBack }) =>
   isHome ? (
@@ -36,6 +37,7 @@ Right.propTypes = {
 const Header = () => {
   const { t } = useTranslation()
   const navigation = useNavigation()
+  const theme = useTheme()
   const { currentRoute, params } = usePlatformLocation()
   const { defaultPath } = useContext(RoutesContext)
   const isHome = currentRoute.path === defaultPath
@@ -47,7 +49,7 @@ const Header = () => {
       centerComponent={{
         text: title,
         style: {
-          color: '#fff',
+          color: theme.colors.white,
           fontSize: 21
         }
       }}

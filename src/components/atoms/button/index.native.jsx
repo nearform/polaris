@@ -4,7 +4,7 @@ import { useTheme } from 'styled-components'
 
 const ButtonAtom = props => {
   const theme = useTheme()
-  return <Button color={theme.primary} {...props} />
+  return <Button color={theme.colors.primary} {...props} />
 }
 
 export default ButtonAtom

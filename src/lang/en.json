@@ -47,6 +47,7 @@
     "messageBody": "And here is the body!"
   },
   "responsiveView": {
+    "title": "Responsive View",
     "textWeb": "Will change width when viewport",
     "textNative": "Always full width on native"
   },

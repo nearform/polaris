@@ -15,7 +15,7 @@ export const HomeScreen = () => {
       <NearformLogo
         width={200}
         height={50}
-        fill={theme.primary}
+        fill={theme.colors.primary}
         title="Nearform logo"
       />
       <LinkButton title={t('home:viewOneButton')} path="/viewOne" />

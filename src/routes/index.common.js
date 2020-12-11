@@ -36,7 +36,7 @@ const routes = [
     path: '/responsive',
     View: Responsive,
     menuIndex: 7,
-    name: 'pushNotificationsView:title'
+    name: 'responsiveView:title'
   },
   {
     path: '/auth',
