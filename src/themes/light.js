@@ -3,6 +3,7 @@ import { colors } from 'src/constants'
 
 import typography from './typography'
 import breakpoints from './breakpoints'
+import spacing from './spacing'
 
 export default {
   name: 'light',
@@ -11,5 +12,6 @@ export default {
   primary: colors.nearformBlue,
   white: colors.white,
   typography,
-  breakpoints: generateMedia(breakpoints)
+  breakpoints: generateMedia(breakpoints),
+  spacing: spacing
 }

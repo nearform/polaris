@@ -5,14 +5,14 @@ import styled from 'styled-components/native'
 
 const Container = styled.View`
   width: 100%;
-  padding: 0 10px;
+  padding: ${props => props.theme.spacing(1)};
   flex-direction: row;
   justify-content: ${Platform.OS === 'web' ? 'center' : 'space-between'};
   align-items: center;
 `
 
 const Label = styled.View`
-  margin-right: 10px;
+  margin-right: ${props => props.theme.spacing(1)};
 `
 
 const SettingItem = ({ label, value }) => (

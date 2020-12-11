@@ -13,7 +13,7 @@ const startingRegion = {
 
 const Title = styled.Text`
   padding: 3px 3px;
-  font-size: 16px;
+  font-size: ${props => props.theme.spacing(2)};
   font-weight: bold;
 `
 

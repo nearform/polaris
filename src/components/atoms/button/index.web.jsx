@@ -7,7 +7,7 @@ export const buttonStyle = ({ theme }) => css`
   box-sizing: border-box;
   color: ${theme.white};
   background-color: ${theme.primary};
-  padding: 8px;
+  padding: ${theme.spacing(1)};
   border: 1px solid transparent;
   font-weight: ${theme.typography.fontWeight.normal};
   font-size: ${theme.typography.fontSize.base};
