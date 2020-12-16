@@ -182,4 +182,19 @@ Note that props on the svg component are forwarded to the root `<svg>` element.
 
 # Styling
 
-Polaris uses [styled-components](https://styled-components.com/) to handle component styling.
+Polaris uses [styled-components](https://styled-components.com/) to handle component styling and to aid in providing a reusable format that works for both [native](https://styled-components.com/docs/basics#react-native) and [web](<(https://styled-components.com/)>).
+
+Styled components was chosen over Emotion due to Styled Components ability interpolate the theme inside template literals. Also, Emotion previously had a better performance, but is no longer the case.
+
+Some important caveats ([See styled components docs for details](https://styled-components.com/docs/basics#react-native)):
+
+- The `flex` property works like CSS and not as it does in legacy React Native
+- Native cannot use `keyframes` and `createGlobalStyle`
+
+### Breakpoints
+
+Breakpoints are defined in `src/themes/breakpoints.js` and are available on the theme.
+
+### Themes
+
+Themes are defined in `src/themes` and can be switched between them using the `ThemeActionsContext`. See `src/components/organisms/navigation/index.web.jsx` for an example.
