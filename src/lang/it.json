@@ -5,9 +5,7 @@
   },
   "home": {
     "title": "Home Page",
-    "viewOneButton": "Vai alla Schermata Uno",
-    "viewTwoButton": "Vai alla Schermata Due",
-    "viewThreeButton": "Vai alla Schermata Tre",
+    "simpleButton": "Vai alla Schermata Semplice",
     "settingsButton": "Vai alle Impostazioni",
     "listViewButton": "Vai alla Schermata Lista",
     "cameraButton": "Vai alla Telecamera",
@@ -15,17 +13,9 @@
     "responsiveButton": "Vai alla esempio reattivo",
     "authButton": "Vai all'esempio di autenticazione"
   },
-  "viewOne": {
-    "title": "Schermata Uno",
-    "message": "Schermata Uno"
-  },
-  "viewTwo": {
-    "title": "Schermata Due",
-    "message": "Schermata Due"
-  },
-  "viewThree": {
-    "title": "Schermata Tre",
-    "message": "Schermata Tre"
+  "simple": {
+    "title": "Schermata Semplice",
+    "message": "Schermata Semplice"
   },
   "listView": {
     "title": "Schermata Lista",

@@ -5,9 +5,7 @@
   },
   "home": {
     "title": "Home Screen",
-    "viewOneButton": "Go to View One",
-    "viewTwoButton": "Go to View Two",
-    "viewThreeButton": "Go to View Three",
+    "simpleButton": "Go to Simple View",
     "settingsButton": "Go to Settings",
     "listViewButton": "Go to List View",
     "cameraButton": "Go to Camera",
@@ -17,17 +15,9 @@
     "qrCodeButton": "Go to QR Code",
     "mapButton": "Go to map"
   },
-  "viewOne": {
-    "title": "View One",
-    "message": "View One Screen"
-  },
-  "viewTwo": {
-    "title": "View Two",
-    "message": "View Two Screen"
-  },
-  "viewThree": {
-    "title": "View Three",
-    "message": "View Three Screen"
+  "simple": {
+    "title": "Simple View",
+    "message": "Simple View Screen"
   },
   "listView": {
     "title": "List View",
