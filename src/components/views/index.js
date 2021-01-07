@@ -1,7 +1,5 @@
 export { HomeScreen } from './home'
-export { ViewOne } from './viewOne'
-export { ViewTwo } from './viewTwo'
-export { ViewThree } from './viewThree'
+export { Simple } from './simple'
 export { Settings } from './settings'
 export { Camera } from './camera'
 export { PushNotifications } from './push-notifications'
