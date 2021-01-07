@@ -16,5 +16,5 @@ export default {
   },
   typography,
   breakpoints: generateMedia(breakpoints),
-  spacing: spacing
+  spacing
 }
