@@ -5,9 +5,9 @@ import styled, { css } from 'styled-components'
 export const buttonStyle = ({ theme }) => css`
   display: flex;
   box-sizing: border-box;
-  color: ${theme.white};
-  background-color: ${theme.primary};
-  padding: 8px;
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.primary};
+  padding: ${theme.spacing(1)};
   border: 1px solid transparent;
   font-weight: ${theme.typography.fontWeight.normal};
   font-size: ${theme.typography.fontSize.base};
@@ -20,9 +20,9 @@ export const buttonStyle = ({ theme }) => css`
 
   &:hover:not([disabled]),
   &:active:not([disabled]) {
-    color: ${theme.primary};
-    background-color: ${theme.white};
-    border-color: ${theme.primary};
+    color: ${theme.colors.primary};
+    background-color: ${theme.colors.white};
+    border-color: ${theme.colors.primary};
   }
 
   &:disabled {

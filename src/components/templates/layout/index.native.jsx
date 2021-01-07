@@ -1,20 +1,9 @@
 import React from 'react'
 import T from 'prop-types'
-import styled from 'styled-components/native'
 import Navigation from 'components/organisms/navigation'
 import Header from 'components/organisms/header'
-
-const Screen = styled.View`
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-`
-
-const Page = styled.View`
-  flex: 1;
-  background-color: white;
-  padding-bottom: 0;
-`
+import Screen from 'components/atoms/screen'
+import Page from 'components/atoms/page'
 
 const LayoutBase = ({ children }) => {
   return (

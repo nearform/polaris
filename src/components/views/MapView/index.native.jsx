@@ -13,13 +13,13 @@ const startingRegion = {
 
 const Title = styled.Text`
   padding: 3px 3px;
-  font-size: 16px;
+  font-size: ${props => props.theme.spacing(2)};
   font-weight: bold;
 `
 
 const Description = styled.Text`
   text-align: left;
-  color: #3f3f3f;
+  color: ${props => props.theme.colors.textSecondary};
   padding: 0 3px;
   text-align: left;
   align-self: stretch;

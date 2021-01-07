@@ -17,7 +17,7 @@ const Row = styled.View`
 
 const PickerContainer = styled.View`
   border: 1px #ccc;
-  margin-left: 16px;
+  margin-left: ${props => props.theme.spacing(2)};
 `
 
 const Table = styled.View`
@@ -28,7 +28,7 @@ const Table = styled.View`
 
 const TableRow = styled(Row)`
   height: 48px;
-  padding: 0 32px;
+  padding: 0 ${props => props.theme.spacing(4)};
 `
 
 const TableCell = Container
