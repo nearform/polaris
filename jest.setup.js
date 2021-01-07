@@ -1,6 +1,6 @@
 jest.mock('services/i18n/common', () => ({
   i18nextConfiguration: {},
-  supportedLocales: {
+  resources: {
     en: {
       name: 'English'
     },

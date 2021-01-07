@@ -29,5 +29,5 @@ const config = Object.assign({}, i18nextConfiguration, {
 
 i18n.use(initReactI18next).init(config)
 
-export { supportedLocales } from './common'
+export { resources } from './common'
 export default i18n

@@ -13,10 +13,10 @@ const formatDate = (date, dateFormat, language) => {
   return format(date, dateFormat, { locale: locale })
 }
 
-const fallback = 'en'
+const supportedLanguages = ['en', 'it']
 const namespaces = ['common']
-const defaultNamespace = 'common'
-export const supportedLocales = {
+
+export const resources = {
   en: {
     name: 'English',
     ...translationEN
@@ -28,10 +28,11 @@ export const supportedLocales = {
 }
 
 export const i18nextConfiguration = {
-  fallbackLng: fallback,
-  resources: supportedLocales,
+  supportedLngs: supportedLanguages,
+  fallbackLng: supportedLanguages[0],
+  resources,
   ns: namespaces,
-  defaultNS: defaultNamespace,
+  defaultNS: namespaces[0],
   interpolation: {
     escapeValue: false,
     format: (value, format, language) => {
