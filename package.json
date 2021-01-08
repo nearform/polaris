@@ -1,6 +1,7 @@
 {
+  "name": "polaris",
+  "private": true,
   "main": "./index.js",
-  "name": "Polaris",
   "scripts": {
     "start": "expo start",
     "web": "expo start --web",
@@ -21,11 +22,10 @@
     "storybook:ios": "run-p prestorybook && cross-env RUN_STORYBOOK=true expo start -c --ios",
     "storybook:android": "run-p prestorybook && cross-env RUN_STORYBOOK=true expo start -c --android",
     "test:watch": "jest --watch",
-    "checks": "run-p lint:fix && run-p lint && run-p test",
+    "checks": "run-p lint:fix test",
     "e2e:web:open": "cypress open",
     "e2e:web:run": "cypress run",
     "e2e:web:run:ci": "wait-on http://localhost:19006 && npm run e2e:web:run -- --config video=false",
-    "postinstall": "npm i jest@26.1.0",
     "create:env": "node -r fs -e \"fs.copyFileSync('.env.sample', '.env', fs.constants.COPYFILE_EXCL)\"",
     "push:generate:web": "web-push generate-vapid-keys",
     "push:server:start": "node server.js"
@@ -152,6 +152,5 @@
     "react-native-svg-transformer": "^0.14.3",
     "react-test-renderer": "^16.13.1",
     "wait-on": "^5.0.1"
-  },
-  "private": true
+  }
 }
