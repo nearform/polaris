@@ -54,7 +54,7 @@
     "fastify-cors": "^4.0.0",
     "husky": "^4.2.5",
     "i18next": "^19.8.4",
-    "i18next-browser-languagedetector": "^5.0.0",
+    "i18next-browser-languagedetector": "^6.0.1",
     "jwt-decode": "^2.2.0",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
