@@ -38,7 +38,7 @@
     "@react-navigation/bottom-tabs": "^5.7.1",
     "@react-navigation/drawer": "^5.8.4",
     "@react-navigation/native": "^5.6.1",
-    "@react-navigation/stack": "^5.6.2",
+    "@react-navigation/stack": "^5.12.8",
     "date-fns": "^2.14.0",
     "dotenv": "^8.2.0",
     "expo": "^38.0.0",
