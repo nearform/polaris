@@ -108,7 +108,7 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.8.6",
+    "@babel/core": "^7.13.1",
     "@babel/preset-env": "^7.12.11",
     "@expo/webpack-config": "^0.12.52",
     "@storybook/addon-actions": "^5.3.19",
