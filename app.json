@@ -19,7 +19,9 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nearform.polaris",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "useNextNotificationsApi": true
