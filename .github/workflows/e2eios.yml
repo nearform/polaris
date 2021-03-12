@@ -1,0 +1,53 @@
+
+name: Expo e2e ios tests
+
+on:
+  push :
+    branches : [master]
+
+jobs:
+  ios-e2e-tests:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - uses: actions/setup-java@v1.4.3
+        with:
+          java-version: '9.0.4' # The JDK version to make available on the path.
+          java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+          architecture: x64 # (x64 or x86) - defaults to x64
+      - uses: sinoru/actions-setup-xcode@v1.1.2
+        with:
+          xcode-version: '11.2.1' # Exact version of a Xcode version to use
+          apple-id: ${{ secrets.EXPO_APPLE_ID }} # Apple ID to download from Apple Developer when Xcode not available in local
+          apple-id-password: ${{ secrets.EXPO_APPLE_PASSWORD }}
+      - uses: expo/expo-github-action@v5
+        with:
+          expo-version: 3.x
+          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
+          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+      - name: Install deps
+        run: yarn install
+      - name: Build iOS app
+        run: expo build:ios --type simulator
+        env:
+          EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
+          EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLE_PASSWORD}}    
+      - name: Create artifacts folder
+        run: mkdir -p ipas
+      - name: Save artifacts
+        run: curl "$(expo url:ipa --non-interactive)" -o ipas/ci-proto.tar.gz
+      - name: Unizip ipa
+        run: tar -xvzf ipas/ci-proto.tar.gz -C ./ipas
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ios-builds
+          path: ipas/
+      - name: Install appium 
+        run: npm install -g appium appium-doctor
+      # - name: Run apium checks
+      #   run: appium-doctor --ios
+      - name: Run appium tests
+        run: yarn e2e:ios:run:ci

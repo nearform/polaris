@@ -26,6 +26,8 @@
     "e2e:web:open": "cypress open",
     "e2e:web:run": "cypress run",
     "e2e:web:run:ci": "wait-on http://localhost:19006 && npm run e2e:web:run -- --config video=false",
+    "e2e:ios:run": "node e2e/index",
+    "e2e:ios:run:ci": "concurrently \"appium\"  \"npm:e2e-t\"",
     "create:env": "node -r fs -e \"fs.copyFileSync('.env.sample', '.env', fs.constants.COPYFILE_EXCL)\"",
     "push:generate:web": "web-push generate-vapid-keys",
     "push:server:start": "node server.js"
@@ -151,6 +153,8 @@
     "react-native-storybook-loader": "^2.0.2",
     "react-native-svg-transformer": "^0.14.3",
     "react-test-renderer": "^16.13.1",
-    "wait-on": "^5.0.1"
+    "wait-on": "^5.0.1",
+    "concurrently": "^6.0.0",
+    "webdriverio": "^7.1.1"
   }
 }
