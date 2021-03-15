@@ -1,0 +1,85 @@
+name: Manual Build
+on:
+  workflow_dispatch:
+    inputs:
+      expo-version:
+         description: 'The Expo CLI version'
+         required: false
+         default: ''
+      expo-cli-username:
+         description: 'The Expo CLI username'
+         required: true
+         default: ''
+      expo-cli-password:
+         description: 'The Expo CLI password'
+         required: true
+         default: ''
+      platform:
+        description: 'android or ios'
+        required: true
+        default: 'all'
+      # google-services-json-key:
+      #   description: ''
+      #   required: true
+      #   default: '${{ secrets.GOOGLE_SERVICES_JSON_KEY_BASE64}}'
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 14.x ]
+        java-version: ['9.0.4']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/setup-java@v1.4.3
+        with:
+          java-version: ${{ matrix.java-version }} # The JDK version to make available on the path.
+          java-package: jdk                        # (jre, jdk, or jdk+fx) - defaults to jdk
+          architecture: x64                        # (x64 or x86) - defaults to x64
+      - uses: expo/expo-github-action@v5
+        with:
+          expo-version: ${{ github.event.inputs.expo-version }} 
+          expo-username: ${{ github.event.inputs.expo-cli-username }} 
+          expo-password: ${{ github.event.inputs.expo-cli-password }} 
+      - name: Deps install
+        run: yarn install
+      - name: Build (Android)
+        if: github.event.inputs.platform  == 'android' || github.event.inputs.platform  == 'all'
+        run: expo build:android --config ./app.json
+      - name: Build (IOS)
+        if: github.event.inputs.platform  == 'ios' || github.event.inputs.platform  == 'all'
+        run: expo build:ios --config app.json
+  # push-to-playstore:
+  #   needs: [build]
+  #   runs-on: macos-latest
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       node-version: [ 14.x ]
+  #       java-version: ['9.0.4']
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #     - uses: actions/setup-java@v1.4.3
+  #       with:
+  #         java-version: ${{ matrix.java-version }} # The JDK version to make available on the path.
+  #         java-package: jdk                        # (jre, jdk, or jdk+fx) - defaults to jdk
+  #         architecture: x64                        # (x64 or x86) - defaults to x64
+  #     - uses: expo/expo-github-action@v5
+  #       with:
+  #         expo-version: ${{ github.event.inputs.expo-version }} 
+  #         expo-username: ${{ github.event.inputs.expo-cli-username }} 
+  #         expo-password: ${{ github.event.inputs.expo-cli-password }} 
+  #     - name: Install deps
+  #       run: yarn install
+  #     - name: Upload to Google Play Console
+  #       run: expo upload:android --latest --key ./services.json
+
+
