@@ -46,7 +46,7 @@
     "expo-barcode-scanner": "~8.2.1",
     "expo-camera": "~8.3.1",
     "expo-constants": "~9.1.1",
-    "expo-localization": "~8.2.1",
+    "expo-localization": "~10.1.0",
     "expo-notifications": "~0.3.3",
     "expo-permissions": "~9.0.1",
     "expo-sharing": "~8.2.1",
