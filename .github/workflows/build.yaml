@@ -54,6 +54,9 @@ jobs:
       - name: Build (IOS)
         if: github.event.inputs.platform  == 'ios' || github.event.inputs.platform  == 'all'
         run: expo build:ios --config app.json
+        env:
+            EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
+            EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLE_PASSWORD}} 
   # push-to-playstore:
   #   needs: [build]
   #   runs-on: macos-latest
