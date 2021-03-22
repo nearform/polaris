@@ -1,37 +1,47 @@
 name: e2e android tests
 
 # TODO: change this to only run on master pushes
-on: pull_request
+on:
+  # pull_request:
+  workflow_dispatch:
+    inputs:
+      skip-build:
+        description: 'Whether to skip the build and use the latest produced artifacts'
+        required: false
+        default: false
 
 jobs:
   build:
+    if: ${{ !github.event.inputs.skip_build }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
+      - id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
       - uses: actions/cache@v2
+        id: yarn-cache
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-yarn-
       - uses: actions/cache@v2
         with:
-        path: ~/.turtle
-        key: ${{ runner.os }}-turtle
-        restore-keys: |
-          ${{ runner.os }}-turtle
+          path: ~/.turtle
+          key: ${{ runner.os }}-turtle
+          restore-keys: |
+            ${{ runner.os }}-turtle
       - uses: actions/setup-java@v1.4.3
         with:
           java-version: '8'
       - uses: expo/expo-github-action@v5
         with:
-          expo-packager: npm
           expo-cache: true
           expo-token: ${{ secrets.EXPO_TOKEN }}
-      - run: npm i
+      - run: yarn
       - run: expo doctor
       - run: expo diagnostics
       # TODO: what about a server when the app is running on a device?
@@ -41,7 +51,7 @@ jobs:
       - run: |
           echo "$EXPO_ANDROID_KEYSTORE_BASE64" > keystore.jks.base64
           base64 --decode keystore.jks.base64 > keystore.jks
-          npm run build:local:android -- --public-url http://localhost:5000/android-index.json --allow-non-https-public-url --keystore-path ./keystore.jks --keystore-alias $EXPO_ANDROID_KEYSTORE_ALIAS
+          yarn build:local:android -- --public-url http://localhost:5000/android-index.json --allow-non-https-public-url --keystore-path ./keystore.jks --keystore-alias $EXPO_ANDROID_KEYSTORE_ALIAS
         env:
           EXPO_ANDROID_KEYSTORE_BASE64: ${{ secrets.EXPO_ANDROID_KEYSTORE_BASE64 }}
           EXPO_ANDROID_KEYSTORE_ALIAS: ${{ secrets.EXPO_ANDROID_KEYSTORE_ALIAS }}
@@ -69,7 +79,7 @@ jobs:
           # run_id: 669563691
           name: build
           path: build
-      - run: npm i
+      - run: yarn
         working-directory: e2e
       - run: npx appium-doctor --android
       - run: npx appium &
@@ -77,7 +87,7 @@ jobs:
         with:
           api-level: 29
           working-directory: e2e
-          script: npm run e2e:android:run
+          script: yarn e2e:android:run
 
   upload:
     if: false
@@ -99,6 +109,5 @@ jobs:
           path: build
       - uses: expo/expo-github-action@v5
         with:
-          expo-packager: npm
           expo-cache: true
           expo-token: ${{ secrets.EXPO_TOKEN }}
