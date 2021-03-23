@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Platform } from 'react-native'
+import { Platform, Text } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import styled, { useTheme } from 'styled-components'
 import NearformLogo from 'assets/logos/nearform.svg'
@@ -39,6 +39,7 @@ export const HomeScreen = () => {
           <StyledLinkButton title={t('home:mapButton')} path="/map" />
         </>
       )}
+      <Text testID="welcome">Text for tests</Text>
     </Container>
   )
 }
