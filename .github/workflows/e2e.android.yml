@@ -5,14 +5,12 @@ on:
   # pull_request:
   workflow_dispatch:
     inputs:
-      skip-build:
-        description: 'Whether to skip the build and use the latest produced artifacts'
-        required: false
-        default: false
+      artifact-run-id:
+        description: 'Run id from which to get earlier artifacts, instead of generating new ones'
 
 jobs:
   build:
-    if: ${{ !github.event.inputs.skip_build }}
+    if: ${{ !github.event.inputs.artifact-run-id }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -64,19 +62,24 @@ jobs:
 
   e2e:
     needs: build
+    if: always()
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      # TODO: this action can be useful to download from another build in case we want to split this into multiple workflows
-      # - uses: dawidd6/action-download-artifact@v2
-      - uses: actions/download-artifact@v2
+      - name: Download artifact from run ${{ github.event.inputs.artifact-run-id }}
+        uses: dawidd6/action-download-artifact@v2
+        if: ${{ github.event.inputs.artifact-run-id }}
         with:
-          # (inputs for the other action)
-          # workflow: e2e.android.yml
-          # run_id: 669563691
+          workflow: ${{ github.workflow }}
+          name: build
+          path: build
+          run_id: ${{ github.event.inputs.artifact-run-id }}
+      - uses: actions/download-artifact@v2
+        if: ${{ !github.event.inputs.artifact-run-id }}
+        with:
           name: build
           path: build
       - run: yarn
@@ -90,24 +93,28 @@ jobs:
           script: yarn e2e:android:run
 
   upload:
-    if: false
-    needs: build
+    needs: e2e
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      # TODO: this action can be useful to download from another build in case we want to split this into multiple workflows
-      # - uses: dawidd6/action-download-artifact@v2
-      - uses: actions/download-artifact@v2
+      - name: Download artifact from run ${{ github.event.inputs.artifact-run-id }}
+        uses: dawidd6/action-download-artifact@v2
+        if: ${{ github.event.inputs.artifact-run-id }}
         with:
-          # (inputs for the other action)
-          workflow: e2e.android.yml
-          run_id: 669563691
+          workflow: ${{ github.workflow }}
+          name: build
+          path: build
+          run_id: ${{ github.event.inputs.artifact-run-id }}
+      - uses: actions/download-artifact@v2
+        if: ${{ !github.event.inputs.artifact-run-id }}
+        with:
           name: build
           path: build
       - uses: expo/expo-github-action@v5
         with:
           expo-cache: true
           expo-token: ${{ secrets.EXPO_TOKEN }}
+      - run: echo publishing...
