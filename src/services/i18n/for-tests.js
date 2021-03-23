@@ -14,10 +14,6 @@ const config = Object.assign({}, i18nextConfiguration, {
   interpolation: {
     escapeValue: false
   },
-  react: {
-    wait: false,
-    suspense: false
-  },
   resources: {
     en: {
       core: {
