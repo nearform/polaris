@@ -94,6 +94,7 @@ jobs:
 
   upload:
     needs: e2e
+    if: always()
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
@@ -117,4 +118,8 @@ jobs:
         with:
           expo-cache: true
           expo-token: ${{ secrets.EXPO_TOKEN }}
-      - run: echo publishing...
+      - run: |
+          echo "$PLAY_STORE_SERVICE_ACCOUNT_KEY_JSON" > play-store-account-key.json
+          expo upload:android --key ./play-store-account-key.json --path ./build/polaris.apk --type apk --release-status draft
+        env:
+          PLAY_STORE_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_KEY_JSON }}

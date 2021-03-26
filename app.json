@@ -25,7 +25,8 @@
     },
     "android": {
       "package": "com.nearform.polaris",
-      "useNextNotificationsApi": true
+      "useNextNotificationsApi": true,
+      "versionCode": 2
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
