@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "e2e:android:run": "wait-on tcp:4723 && node ."
+    "e2e:android:run": "wait-on tcp:4723 && node .",
+    "e2e:web:run": "wait-on tcp:4723 && node . web"
   },
   "dependencies": {
     "webdriverio": "^7.2.1",
