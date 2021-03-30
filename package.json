@@ -36,7 +36,7 @@
     "@expo/vector-icons": "^12.0.4",
     "@react-native-community/async-storage": "~1.11.0",
     "@react-native-community/masked-view": "0.1.10",
-    "@react-native-community/picker": "1.6.0",
+    "@react-native-community/picker": "1.8.1",
     "@react-navigation/bottom-tabs": "^5.7.1",
     "@react-navigation/drawer": "^5.12.3",
     "@react-navigation/native": "^5.6.1",
