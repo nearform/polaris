@@ -11,8 +11,8 @@ You need the latest stable version of Expo. This is straightforward to install a
 ```bash
 $ git clone git@github.com:nearform/polaris.git
 $ cd polaris
-$ npm install
-$ npm start
+$ yarn install
+$ yarn start
 ```
 
 Follow the onscreen instructions that will allow you to run the Polaris applicaiton through [Expo] on your desktop, or, via the QR code, on your mobile device.
@@ -25,10 +25,10 @@ In Polaris you can run [Storybook's](polaris_UI.md) stories for components separ
 
 ### Storybook Web (Browser)
 
-On Web, it runs the standard Storybook Explorer Interface with npm command:
+On Web, it runs the standard Storybook Explorer Interface with yarn command:
 
 ```bash
-$ npm run storybook:web
+$ yarn storybook:web
 ```
 
 After it runs, browser will open storybook's url at `http://localhost:9001`
@@ -42,13 +42,13 @@ On Native it runs the Storybook Native Explorer Interface:
 for `iOs` run:
 
 ```bash
-$ npm run storybook:ios
+$ yarn storybook:ios
 ```
 
 for `Android` run:
 
 ```bash
-$ npm run storybook:android
+$ yarn storybook:android
 ```
 
 After it runs, use [Expo] on your iOs or Android device to access Storybook Explorer Application will open or use the simulator/emulator instructions as shown on screen.
@@ -60,19 +60,19 @@ Polaris uses [Cypress] to define and run end-to-end tests for the web applicatio
 1. Start the Expo web application:
 
 ```sh
-npm run web
+yarn web
 ```
 
 2. Then you can run the tests either, silently with:
 
 ```sh
-npm run e2e:web:run
+yarn e2e:web:run
 ```
 
 or interactively using [Cypress test runner](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview):
 
 ```sh
-npm run e2e:web:open
+yarn e2e:web:open
 ```
 
 ## Push Notifications
@@ -90,9 +90,9 @@ Native push notifications are only supported on real devices, so it's not possib
 
 Web push notifications are not yet supported out of the box with Expo, so we shipped a workaround with a custom node server.
 
-- first create a .env for storing [VAPID](https://tools.ietf.org/html/draft-ietf-webpush-vapid-04) keys with `npm run create:env`
-- generate VAPID keys with `npm run push:generate:web` and save them in the .env file created in previous step
-- run the node server with `npm run push:server:start`
+- first create a .env for storing [VAPID](https://tools.ietf.org/html/draft-ietf-webpush-vapid-04) keys with `yarn create:env`
+- generate VAPID keys with `yarn push:generate:web` and save them in the .env file created in previous step
+- run the node server with `yarn push:server:start`
 - restart expo build process and you should be able to run the example
 
 # Further Information
