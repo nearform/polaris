@@ -15,7 +15,7 @@ Our documentation is run by serving the docs folder at a given port.
 From the root folder on a command console, enter the command:
 
 ```sh
-yarn run start:docs
+yarn start:docs
 ```
 
 This displays the following:
