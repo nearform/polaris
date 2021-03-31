@@ -152,7 +152,7 @@
     "prettier": "^2.0.5",
     "react-native-storybook-loader": "^2.0.2",
     "react-native-svg-transformer": "^0.14.3",
-    "react-test-renderer": "^16.13.1",
+    "react-test-renderer": "^17.0.2",
     "turtle-cli": "^0.20.7",
     "wait-on": "^5.0.1"
   }
