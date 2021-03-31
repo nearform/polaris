@@ -113,7 +113,7 @@
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.12.11",
     "@expo/webpack-config": "^0.12.52",
-    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-actions": "^6.2.1",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-ondevice-actions": "^5.3.19",
     "@storybook/addon-ondevice-knobs": "^5.3.19",
