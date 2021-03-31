@@ -50,7 +50,7 @@ jobs:
           echo "$EXPO_IOS_DISTRIBUTION_CERTIFICATE_BASE64" > cert.p12.base64
           echo "$EXPO_IOS_PROVISIONING_PROFILE_BASE64" > profile.mobileprovision.base64
           base64 --decode -i cert.p12.base64 -o cert.p12
-          base64 --decode -i profile.mobileprovision.base64 -o 
+          base64 --decode -i profile.mobileprovision.base64 -o profile.mobileprovision.base64
           turtle build:ios --type=archive --build-dir=. --allow-non-https-public-url --public-url=http://localhost:5000/ios-index.json --team-id=$EXPO_IOS_TEAM_ID --dist-p12-path=cert.p12 --provisioning-profile-path=profile.mobileprovision
         env:
           EXPO_IOS_DISTRIBUTION_CERTIFICATE_BASE64: ${{ secrets.EXPO_IOS_DISTRIBUTION_CERTIFICATE_BASE64 }}
