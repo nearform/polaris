@@ -15,4 +15,4 @@ const configuration = {
   }
 }
 
-module.exports = configuration
+module.exports = { configuration }
