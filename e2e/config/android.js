@@ -11,9 +11,6 @@ const configuration = {
     automationName: 'UiAutomator2',
     app: appPath,
     avd: emulator
-    // TODO: this should ideally be true (which is the default) but it seems
-    // the test run can't detect when the app has started for some reason
-    // appWaitForLaunch: false
   }
 }
 
