@@ -1,9 +1,5 @@
 const configuration = {
-  path: '/wd/hub',
-  port: 4723,
   capabilities: {
-    platformName: 'Android',
-    automationName: 'UiAutomator2',
     browserName: 'chrome'
   }
 }

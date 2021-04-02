@@ -1,6 +1,6 @@
 const path = require('path')
 
-const appPath = path.normalize(path.join(__dirname, '/../build/polaris.app'))
+const appPath = path.normalize(path.join(__dirname, '/../../build/polaris.app'))
 const simulator = 'iPhone 11'
 
 const configuration = {
