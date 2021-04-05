@@ -47,17 +47,6 @@ jobs:
       # TODO: check if running the server is needed to do the build
       - run: npx serve dist &
       - run: |
-          echo "$EXPO_IOS_DISTRIBUTION_CERTIFICATE_BASE64" > cert.p12.base64
-          echo "$EXPO_IOS_PROVISIONING_PROFILE_BASE64" > profile.mobileprovision.base64
-          base64 --decode cert.p12.base64 > cert.p12
-          base64 --decode profile.mobileprovision.base64 > profile.mobileprovision
-          yarn build:local:ios -- --type=archive --build-dir=. --allow-non-https-public-url --public-url=http://localhost:5000/ios-index.json --team-id=$EXPO_IOS_TEAM_ID --dist-p12-path=cert.p12 --provisioning-profile-path=profile.mobileprovision
-        env:
-          EXPO_IOS_DISTRIBUTION_CERTIFICATE_BASE64: ${{ secrets.EXPO_IOS_DISTRIBUTION_CERTIFICATE_BASE64 }}
-          EXPO_IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.EXPO_IOS_PROVISIONING_PROFILE_BASE64 }}
-          EXPO_IOS_TEAM_ID: ${{ secrets.EXPO_IOS_TEAM_ID }}
-          EXPO_IOS_DIST_P12_PASSWORD: ${{ secrets.EXPO_IOS_DIST_P12_PASSWORD }}
-      - run: |
           echo "$EXPO_ANDROID_KEYSTORE_BASE64" > keystore.jks.base64
           base64 --decode keystore.jks.base64 > keystore.jks
           yarn build:local:android -- --public-url http://localhost:5000/android-index.json --allow-non-https-public-url --keystore-path ./keystore.jks --keystore-alias $EXPO_ANDROID_KEYSTORE_ALIAS
