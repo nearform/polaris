@@ -73,6 +73,7 @@ jobs:
 
   ios-build:
     runs-on: macos-latest
+    if: ${{ !github.event.inputs.artifact-run-id }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
