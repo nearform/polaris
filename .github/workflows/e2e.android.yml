@@ -71,7 +71,7 @@ jobs:
   #         name: build
   #         path: build/
 
-  build-ios:
+  ios-build:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
@@ -154,6 +154,34 @@ jobs:
   #         api-level: 29
   #         working-directory: e2e
   #         script: yarn e2e:android:run
+
+  ios-release:
+    needs: ios-build
+    if: always()
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: Download artifact from run ${{ github.event.inputs.artifact-run-id }}
+        uses: dawidd6/action-download-artifact@v2
+        if: ${{ github.event.inputs.artifact-run-id }}
+        with:
+          workflow: ${{ github.workflow }}
+          name: build
+          path: build
+          run_id: ${{ github.event.inputs.artifact-run-id }}
+      - uses: actions/download-artifact@v2
+        if: ${{ !github.event.inputs.artifact-run-id }}
+        with:
+          name: build
+          path: build
+      - run: fastlane ios_release
+        env:
+          APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.IOS_API_KEY_KEY_ID }}
+          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.IOS_API_KEY_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.IOS_API_KEY_KEY_CONTENT_BASE64 }}
 
   # upload:
   #   needs: e2e
