@@ -9715,10 +9715,10 @@ expo-web-browser@^8.5.0:
   dependencies:
     compare-urls "^2.0.0"
 
-expo-web-browser@~8.3.1:
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/expo-web-browser/-/expo-web-browser-8.3.1.tgz#c88cc349dfa1db31cfdbe365753b6840054d0152"
-  integrity sha512-mDxSNpc/Ww/RX6MhmPRUWo2xNi8HGZ1TDMqIjTvUzrL7pGG9VerX0EDMhfLgo6c7KVOY1ngbTyybApZTXgPCOQ==
+expo-web-browser@~9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/expo-web-browser/-/expo-web-browser-9.0.0.tgz#9e12c0d08f19665cbae7b565a11e9c1b2e584cda"
+  integrity sha512-w9jd5U5Cvo9CbD0K/I7Ol+PCn4OZLqveRENoJ+CA9nP2G35XBwTx4zEd7y05MViYEOfJ1fViCER1/pWwJZYcNg==
   dependencies:
     compare-urls "^2.0.0"
 
