@@ -13,7 +13,7 @@
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
     "build:local:ios": "turtle build:ios",
-    "build:local:android": "turtle build:android --type=apk --output=build/polaris.apk",
+    "build:local:android": "turtle build:android",
     "eject": "expo eject",
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "npm run lint -- --fix",

@@ -60,7 +60,7 @@ jobs:
       - run: |
           echo "$EXPO_ANDROID_KEYSTORE_BASE64" > keystore.jks.base64
           base64 --decode keystore.jks.base64 > keystore.jks
-          yarn build:local:android -- --public-url http://localhost:5000/android-index.json --allow-non-https-public-url --keystore-path ./keystore.jks --keystore-alias $EXPO_ANDROID_KEYSTORE_ALIAS
+          yarn build:local:android -- --type=apk --output=build/polaris.apk --public-url=http://localhost:5000/android-index.json --allow-non-https-public-url --keystore-path=./keystore.jks --keystore-alias=$EXPO_ANDROID_KEYSTORE_ALIAS
         env:
           EXPO_ANDROID_KEYSTORE_BASE64: ${{ secrets.EXPO_ANDROID_KEYSTORE_BASE64 }}
           EXPO_ANDROID_KEYSTORE_ALIAS: ${{ secrets.EXPO_ANDROID_KEYSTORE_ALIAS }}
