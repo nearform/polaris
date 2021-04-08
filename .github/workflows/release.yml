@@ -46,6 +46,7 @@ jobs:
           path: dist/
 
   android:
+    needs: export
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v2
@@ -78,6 +79,7 @@ jobs:
           path: build/
 
   ios:
+    needs: export
     runs-on: macos-latest
     steps:
       - uses: actions/download-artifact@v2
