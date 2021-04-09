@@ -53,7 +53,8 @@
   },
   "settings": {
     "title": "Settings",
-    "languageLabel": "Language:"
+    "languageLabel": "Language:",
+    "versionLabel": "Version:"
   },
   "camera": {
     "title": "Camera",

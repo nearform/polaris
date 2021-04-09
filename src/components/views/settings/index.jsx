@@ -1,5 +1,7 @@
 import * as React from 'react'
+import { Text } from 'react-native'
 import { useTranslation } from 'react-i18next'
+import * as Application from 'expo-application'
 import styled from 'styled-components/native'
 import Container from 'components/atoms/container'
 import SettingItem from 'components/molecules/setting-item'
@@ -17,6 +19,14 @@ export const Settings = () => {
       <SettingItem
         label={t('settings:languageLabel')}
         value={<LanguageSelector />}
+      />
+      <SettingItem
+        label={t('settings:versionLabel')}
+        value={
+          <Text>
+            {`${Application.nativeApplicationVersion} (${Application.nativeBuildVersion})`}
+          </Text>
+        }
       />
     </Page>
   )
