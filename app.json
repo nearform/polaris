@@ -21,12 +21,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.nearform.polaris",
+      "buildNumber": "3",
       "supportsTablet": true
     },
     "android": {
       "package": "com.nearform.polaris",
-      "useNextNotificationsApi": true,
-      "versionCode": 2
+      "versionCode": 3,
+      "useNextNotificationsApi": true
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
