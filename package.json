@@ -67,7 +67,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-elements": "^3.3.2",
     "react-native-gesture-handler": "~1.6.0",
-    "react-native-maps": "^0.27.1",
+    "react-native-maps": "^0.28.0",
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
