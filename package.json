@@ -133,7 +133,7 @@
     "cross-env": "^7.0.3",
     "cypress": "^4.9.0",
     "docsify-cli": "^4.4.2",
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-cypress": "^2.11.2",
