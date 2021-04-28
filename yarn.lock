@@ -20516,10 +20516,10 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-turtle-cli@^0.21.4:
-  version "0.21.4"
-  resolved "https://registry.yarnpkg.com/turtle-cli/-/turtle-cli-0.21.4.tgz#9db25fe78d871cb6b1d81328da7ab1aa80dec25b"
-  integrity sha512-eAnYzvLRfpdV8uyJ7O0XXh/GidabI+DnJ2RHup1Gy4KJtiXVLT1JusA9DESrcWBkXcowB+CaRiMhbRFus3MFJg==
+turtle-cli@^0.21.6:
+  version "0.21.6"
+  resolved "https://registry.yarnpkg.com/turtle-cli/-/turtle-cli-0.21.6.tgz#f591b24321a2aac16d207b0b926e1bbabb23f17c"
+  integrity sha512-OCJNEwSb9ZBrmMezvBD1JpXJ1QNmaapDW25dLg3jpoZKPOyh9UrZTNAZgV1hd1t9uFGge1+uldaGACHILwJHwQ==
   dependencies:
     "@expo/config" "~3.3.9"
     "@expo/spawn-async" "^1.4.2"
