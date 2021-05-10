@@ -9742,10 +9742,10 @@ fast-text-encoding@^1.0.0:
   resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.3.tgz#ec02ac8e01ab8a319af182dae2681213cfe9ce53"
   integrity sha512-dtm4QZH9nZtcDt8qJiOH9fcQd1NAgi+K1O2DbE6GG1PPCK/BWfOH3idCTRQ4ImXRUOyopDEgDEnVEE7Y/2Wrig==
 
-fastify-cors@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/fastify-cors/-/fastify-cors-6.0.0.tgz#59764802f7260898f0ae4f9f1aa626d5e1c16a8b"
-  integrity sha512-OIvNV3EJsE0vnKkn9GIgAQiimSrc6raKTq8YBtEt8XZ4KyPyAZ6BdKDxpjPLQBQfZLgqGgcThCea53AWqI2DgA==
+fastify-cors@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/fastify-cors/-/fastify-cors-6.0.1.tgz#300e0f1cbeedda19d9de284e9cf05c65842c182b"
+  integrity sha512-eeNTdQNmBsqHL87we+X74n9+H0hTDX0cXGVdyZjGf9om2pZfigAZwuSxaUUE2pLP9tp5+rEd5kejKQ8+ZCvAoA==
   dependencies:
     fastify-plugin "^3.0.0"
     vary "^1.1.2"
