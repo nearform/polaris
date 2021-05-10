@@ -17565,10 +17565,10 @@ react-native-size-matters@^0.3.1:
   resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.3.1.tgz#24d0cfc335a2c730f6d58bd7b43ea5a41be4b49f"
   integrity sha512-mKOfBLIBFBcs9br1rlZDvxD5+mAl8Gfr5CounwJtxI6Z82rGrMO+Kgl9EIg3RMVf3G855a85YVqHJL2f5EDRlw==
 
-react-native-storybook-loader@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-storybook-loader/-/react-native-storybook-loader-2.0.2.tgz#04890f0f28dd861fc6eb55c2bb3284c62418fcb5"
-  integrity sha512-p39ezu9v3YMQTMuX4x1qxRkAkrB/rmdxUXD0yM0kHoecXita1e+IJD8ZAN1Ulv5HVa91MUtHDXjaMTxinTQPcA==
+react-native-storybook-loader@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-storybook-loader/-/react-native-storybook-loader-2.0.4.tgz#37bf37193e69b42a0b2aa0daeed4de8dbfeeae28"
+  integrity sha512-MmBdO7ugBkHEZa4F1qXFgjB7ejURmKGTZ/3o6zXPgUpaoMdh8tT5LLliJH9uOFzh7oY13TfTMZ9HyCa3E/dqLg==
   dependencies:
     colors "^1.1.2"
     find-up "^4.1.0"
