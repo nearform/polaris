@@ -13,7 +13,7 @@ jobs:
     if: ${{ !github.event.inputs.artifact-run-id }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
@@ -64,7 +64,7 @@ jobs:
     if: always()
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
