@@ -34,8 +34,7 @@ storiesOf('Atoms/Button', module)
         required
         example={{
           render,
-          code:
-            '<Button title="A button with a title" onPress={handleButtonPress}>'
+          code: '<Button title="A button with a title" onPress={handleButtonPress}>'
         }}
       />
       <ThemeSwitcher />
