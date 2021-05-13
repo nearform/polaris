@@ -36,7 +36,8 @@ export const PushNotifications = () => {
 
 async function sendPushNotification(message) {
   const serviceWorkerRegistration = await navigator.serviceWorker.ready
-  const subscription = await serviceWorkerRegistration.pushManager.getSubscription()
+  const subscription =
+    await serviceWorkerRegistration.pushManager.getSubscription()
 
   const body = {
     subscription,
