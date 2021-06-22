@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-java@v1.4.3
         with:
           java-version: '8'
-      - uses: expo/expo-github-action@5.5.1
+      - uses: expo/expo-github-action@6.0.0
         with:
           expo-cache: true
           expo-token: ${{ secrets.EXPO_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
         with:
           name: dist
           path: dist
-      - uses: expo/expo-github-action@5.5.1
+      - uses: expo/expo-github-action@6.0.0
         with:
           expo-cache: true
           expo-token: ${{ secrets.EXPO_TOKEN }}

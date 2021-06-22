@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
-      - uses: expo/expo-github-action@5.5.1
+      - uses: expo/expo-github-action@6.0.0
         with:
           expo-version: 3.x
           expo-cache: true
@@ -52,7 +52,7 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
-      - uses: expo/expo-github-action@5.5.1
+      - uses: expo/expo-github-action@6.0.0
         with:
           expo-version: 3.x
           expo-cache: true
